@@ -1,0 +1,47 @@
+\thispagestyle {empty}
+\contentsline {chapter}{List of figures}{v}{chapter*.2}
+\contentsline {chapter}{List of tables}{vii}{chapter*.3}
+\contentsline {chapter}{\numberline {1}Aplicaciones de la miner\IeC {\'\i }a de datos en ingenier\IeC {\'\i }a de prote\IeC {\'\i }nas}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Desarrollo de modelos predictorios para mutaciones puntuales}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Herramientas computacionales asociadas a evaluaci\IeC {\'o}n de mutaciones}{4}{section.2.1}
+\contentsline {section}{\numberline {2.2}Aprendizaje de M\IeC {\'a}quinas}{4}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Algoritmos de aprendizaje supervisado}{5}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}K-Vecinos Cercanos}{5}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Naive Bayes}{6}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}\IeC {\'A}rboles de Decisi\IeC {\'o}n}{7}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}M\IeC {\'a}quina Soporte de Vectores}{9}{subsection.2.2.5}
+\contentsline {subparagraph}{Complejidad\\\\}{11}{section*.5}
+\contentsline {subparagraph}{Formulaci\IeC {\'o}n Matem\IeC {\'a}tica\\\\}{11}{section*.6}
+\contentsline {subparagraph}{SVC\\\\}{12}{section*.8}
+\contentsline {subparagraph}{NuSVC\\\\}{13}{section*.9}
+\contentsline {subparagraph}{SVR\\\\}{13}{section*.10}
+\contentsline {subsection}{\numberline {2.2.6}M\IeC {\'e}todos de ensamble}{13}{subsection.2.2.6}
+\contentsline {subsubsection}{Bagging}{14}{section*.11}
+\contentsline {subsubsection}{Random Forest}{14}{section*.12}
+\contentsline {subsubsection}{AdaBoost}{15}{section*.14}
+\contentsline {subsubsection}{Gradient Tree Boosting}{16}{section*.15}
+\contentsline {subsection}{\numberline {2.2.7}Redes Neuronales y Deep Learning}{16}{subsection.2.2.7}
+\contentsline {subsection}{\numberline {2.2.8}Medidas de desempe\IeC {\~n}o}{17}{subsection.2.2.8}
+\contentsline {subsection}{\numberline {2.2.9}Problemas asociados a los modelos de aprendizaje supervisado}{19}{subsection.2.2.9}
+\contentsline {subsection}{\numberline {2.2.10}Validaci\IeC {\'o}n de modelos}{20}{subsection.2.2.10}
+\contentsline {subsubsection}{Validaci\IeC {\'o}n Cruzada}{21}{section*.17}
+\contentsline {subsubsection}{Leave one out (Dejar uno)}{22}{section*.19}
+\contentsline {subsection}{\numberline {2.2.11}Meta Learning}{22}{subsection.2.2.11}
+\contentsline {section}{\numberline {2.3}Hip\IeC {\'o}tesis}{22}{section.2.3}
+\contentsline {section}{\numberline {2.4}Objetivos}{23}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Objetivo general}{23}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Objetivos espec\IeC {\'\i }ficos}{23}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}Metodolog\IeC {\'\i }a propuesta}{24}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Preparaci\IeC {\'o}n de set de datos}{24}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Implementaci\IeC {\'o}n de meta modelos de clasificaci\IeC {\'o}n/regresi\IeC {\'o}n}{25}{subsection.2.5.2}
+\contentsline {subsubsection}{Exploraci\IeC {\'o}n de modelos}{26}{section*.23}
+\contentsline {subsubsection}{Selecci\IeC {\'o}n de modelos}{28}{section*.24}
+\contentsline {subsubsection}{Generaci\IeC {\'o}n de meta modelos}{30}{section*.25}
+\contentsline {subsection}{\numberline {2.5.3}C\IeC {\'o}mo usar los meta modelos para la clasificaci\IeC {\'o}n de nuevos ejemplos?}{30}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}Uso de meta modelos en sistemas de prote\IeC {\'\i }nas}{31}{subsection.2.5.4}
+\contentsline {chapter}{\numberline {3}Codificaci\IeC {\'o}n de secuencias lineales de prote\IeC {\'\i }nas}{33}{chapter.3}
+\contentsline {chapter}{\numberline {4}Filogen\IeC {\'e}tica, propiedades fisicoqu\IeC {\'\i }micas y miner\IeC {\'\i }a de datos aplicadas al dise\IeC {\~n}o de mutaciones en secuencias de prote\IeC {\'\i }nas}{35}{chapter.4}
+\contentsline {chapter}{\numberline {5}Modelamiento matem\IeC {\'a}tico discreto aplicado al estudio de estructuras de prote\IeC {\'\i }nas.}{37}{chapter.5}
+\contentsline {chapter}{\numberline {6}Reconocimiento de patrones y extracci\IeC {\'o}n de informaci\IeC {\'o}n en sistemas complejos multi-dimensionales}{39}{chapter.6}
+\contentsline {chapter}{\numberline {7}Un caso de estudio completo: Aplicaci\IeC {\'o}n de t\IeC {\'e}cnicas de miner\IeC {\'\i }a de datos y reconocimiento de patrones para modelar el sistema de interacci\IeC {\'o}n ant\IeC {\'\i }geno anticuerpo}{41}{chapter.7}
+\contentsline {chapter}{References}{43}{chapter*.27}

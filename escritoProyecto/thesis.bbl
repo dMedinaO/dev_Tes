@@ -1,0 +1,406 @@
+\begin{thebibliography}{}
+
+\bibitem[Abdelaziz et~al., 2018]{ABDELAZIZ2018117}
+Abdelaziz, A., Elhoseny, M., Salama, A.~S., and Riad, A. (2018).
+\newblock A machine learning model for improving healthcare services on cloud
+  computing environment.
+\newblock {\em Measurement}, 119:117 -- 128.
+
+\bibitem[Alm et~al., 2005]{alm2005emotions}
+Alm, C.~O., Roth, D., and Sproat, R. (2005).
+\newblock Emotions from text: machine learning for text-based emotion
+  prediction.
+\newblock In {\em Proceedings of the conference on human language technology
+  and empirical methods in natural language processing}, pages 579--586.
+  Association for Computational Linguistics.
+
+\bibitem[Amari and Wu, 1999]{amari1999improving}
+Amari, S.-i. and Wu, S. (1999).
+\newblock Improving support vector machine classifiers by modifying kernel
+  functions.
+\newblock {\em Neural Networks}, 12(6):783--789.
+
+\bibitem[Arel et~al., 2010]{arel2010deep}
+Arel, I., Rose, D.~C., Karnowski, T.~P., et~al. (2010).
+\newblock Deep machine learning-a new frontier in artificial intelligence
+  research.
+\newblock {\em IEEE computational intelligence magazine}, 5(4):13--18.
+
+\bibitem[Barandiaran, 1998]{barandiaran1998random}
+Barandiaran, I. (1998).
+\newblock The random subspace method for constructing decision forests.
+\newblock {\em IEEE transactions on pattern analysis and machine intelligence},
+  20(8).
+
+\bibitem[Bengio, 2009]{MAL-006}
+Bengio, Y. (2009).
+\newblock Learning deep architectures for ai.
+\newblock {\em Foundations and Trends® in Machine Learning}, 2(1):1--127.
+
+\bibitem[Bengio et~al., 2013]{bengio2013representation}
+Bengio, Y., Courville, A., and Vincent, P. (2013).
+\newblock Representation learning: A review and new perspectives.
+\newblock {\em IEEE transactions on pattern analysis and machine intelligence},
+  35(8):1798--1828.
+
+\bibitem[Bhargava et~al., 2013]{bhargava2013decision}
+Bhargava, N., Sharma, G., Bhargava, R., and Mathuria, M. (2013).
+\newblock Decision tree analysis on j48 algorithm for data mining.
+\newblock {\em Proceedings of International Journal of Advanced Research in
+  Computer Science and Software Engineering}, 3(6).
+
+\bibitem[Breiman, 1996]{breiman1996bagging}
+Breiman, L. (1996).
+\newblock Bagging predictors.
+\newblock {\em Machine learning}, 24(2):123--140.
+
+\bibitem[Breiman, 1998]{breiman1998}
+Breiman, L. (1998).
+\newblock Arcing classifier (with discussion and a rejoinder by the author).
+\newblock {\em Ann. Statist.}, 26(3):801--849.
+
+\bibitem[Breiman, 1999]{breiman1999pasting}
+Breiman, L. (1999).
+\newblock Pasting small votes for classification in large databases and
+  on-line.
+\newblock {\em Machine learning}, 36(1-2):85--103.
+
+\bibitem[Breiman, 2001]{Breiman2001}
+Breiman, L. (2001).
+\newblock Random forests.
+\newblock {\em Machine Learning}, 45(1):5--32.
+
+\bibitem[Breiman, 2017]{breiman2017classification}
+Breiman, L. (2017).
+\newblock {\em Classification and regression trees}.
+\newblock Routledge.
+
+\bibitem[Broom et~al., 2017]{Broom2017}
+Broom, A., Jacobi, Z., Trainor, K., and Meiering, E.~M. (2017).
+\newblock Computational tools help improve protein stability but with a
+  solubility tradeoff.
+\newblock {\em J Biol Chem}, 292(35):14349--14361.
+\newblock 28710274[pmid].
+
+\bibitem[CAO et~al., 2013]{CAO2013745}
+CAO, Y., MIAO, Q.-G., LIU, J.-C., and GAO, L. (2013).
+\newblock Advance and prospects of adaboost algorithm.
+\newblock {\em Acta Automatica Sinica}, 39(6):745 -- 758.
+
+\bibitem[Capriotti et~al., 2005]{Capriotti2005}
+Capriotti, E., Fariselli, P., and Casadio, R. (2005).
+\newblock I-mutant2.0: predicting stability changes upon mutation from the
+  protein sequence or structure.
+\newblock {\em Nucleic Acids Res}, 33(Web Server issue):W306--W310.
+\newblock 15980478[pmid].
+
+\bibitem[Capriotti et~al., 2008]{Capriotti2008}
+Capriotti, E., Fariselli, P., Rossi, I., and Casadio, R. (2008).
+\newblock A three-state prediction of single point mutations on protein
+  stability changes.
+\newblock {\em BMC Bioinformatics}, 9(2):S6.
+
+\bibitem[Chang and Lin, 2011]{chang2011libsvm}
+Chang, C.-C. and Lin, C.-J. (2011).
+\newblock Libsvm: A library for support vector machines.
+\newblock {\em ACM transactions on intelligent systems and technology (TIST)},
+  2(3):27.
+
+\bibitem[{Chen} et~al., 2017]{7912315}
+{Chen}, M., {Hao}, Y., {Hwang}, K., {Wang}, L., and {Wang}, L. (2017).
+\newblock Disease prediction by machine learning over big data from healthcare
+  communities.
+\newblock {\em IEEE Access}, 5:8869--8879.
+
+\bibitem[Cooley et~al., 1997]{cooley1997web}
+Cooley, R., Mobasher, B., Srivastava, J., et~al. (1997).
+\newblock Web mining: Information and pattern discovery on the world wide web.
+\newblock In {\em ictai}, volume~97, pages 558--567.
+
+\bibitem[Danielsson, 1980]{DANIELSSON1980227}
+Danielsson, P.-E. (1980).
+\newblock Euclidean distance mapping.
+\newblock {\em Computer Graphics and Image Processing}, 14(3):227 -- 248.
+
+\bibitem[Deng and Yu, 2014]{SIG-039}
+Deng, L. and Yu, D. (2014).
+\newblock Deep learning: Methods and applications.
+\newblock {\em Foundations and Trends® in Signal Processing},
+  7(3–4):197--387.
+
+\bibitem[Dietterich, 2000]{dietterich2000ensemble}
+Dietterich, T.~G. (2000).
+\newblock Ensemble methods in machine learning.
+\newblock In {\em International workshop on multiple classifier systems}, pages
+  1--15. Springer.
+
+\bibitem[{Dudani}, 1976]{5408784}
+{Dudani}, S.~A. (1976).
+\newblock The distance-weighted k-nearest-neighbor rule.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics},
+  SMC-6(4):325--327.
+
+\bibitem[Duygulu et~al., 2002]{imageA}
+Duygulu, P., Barnard, K., de~Freitas, J. F.~G., and Forsyth, D.~A. (2002).
+\newblock Object recognition as machine translation: Learning a lexicon for a
+  fixed image vocabulary.
+\newblock In Heyden, A., Sparr, G., Nielsen, M., and Johansen, P., editors,
+  {\em Computer Vision --- ECCV 2002}, pages 97--112, Berlin, Heidelberg.
+  Springer Berlin Heidelberg.
+
+\bibitem[Freund and Mason, 1999]{freund1999alternating}
+Freund, Y. and Mason, L. (1999).
+\newblock The alternating decision tree learning algorithm.
+\newblock In {\em icml}, volume~99, pages 124--133.
+
+\bibitem[Friedman et~al., 2001]{friedman2001elements}
+Friedman, J., Hastie, T., and Tibshirani, R. (2001).
+\newblock {\em The elements of statistical learning}, volume~1.
+\newblock Springer series in statistics New York.
+
+\bibitem[Friedman, 2001]{gradient}
+Friedman, J.~H. (2001).
+\newblock Greedy function approximation: A gradient boosting machine.
+\newblock {\em The Annals of Statistics}, 29(5):1189--1232.
+
+\bibitem[Friedman, 2002]{FRIEDMAN2002367}
+Friedman, J.~H. (2002).
+\newblock Stochastic gradient boosting.
+\newblock {\em Computational Statistics AND Data Analysis}, 38(4):367 -- 378.
+\newblock Nonlinear Methods and Data Mining.
+
+\bibitem[Getov et~al., 2016]{Getov2016}
+Getov, I., Petukh, M., and Alexov, E. (2016).
+\newblock Saafec: Predicting the effect of single point mutations on protein
+  folding free energy using a knowledge-modified mm/pbsa approach.
+\newblock {\em Int J Mol Sci}, 17(4):512--512.
+\newblock 27070572[pmid].
+
+\bibitem[Golub et~al., 1979]{crossval}
+Golub, G.~H., Heath, M., and Wahba, G. (1979).
+\newblock Generalized cross-validation as a method for choosing a good ridge
+  parameter.
+\newblock {\em Technometrics}, 21(2):215--223.
+
+\bibitem[Gossage et~al., 2014]{article}
+Gossage, L., Pires, D., Olivera-Nappa, A., A.~Asenjo, J., Bycroft, M.,
+  Blundell, T., and Eisen, T. (2014).
+\newblock An integrated computational approach can classify vhl missense
+  mutations according to risk of clear cell renal carcinoma.
+\newblock {\em Human molecular genetics}, 23.
+
+\bibitem[Guyon et~al., 1993]{guyon1993automatic}
+Guyon, I., Boser, B., and Vapnik, V. (1993).
+\newblock Automatic capacity tuning of very large vc-dimension classifiers.
+\newblock In {\em Advances in neural information processing systems}, pages
+  147--155.
+
+\bibitem[Hastie et~al., 2009]{hastie2009multi}
+Hastie, T., Rosset, S., Zhu, J., and Zou, H. (2009).
+\newblock Multi-class adaboost.
+\newblock {\em Statistics and its Interface}, 2(3):349--360.
+
+\bibitem[Hawkins, 2004]{hawkins2004problem}
+Hawkins, D.~M. (2004).
+\newblock The problem of overfitting.
+\newblock {\em Journal of chemical information and computer sciences},
+  44(1):1--12.
+
+\bibitem[HECHT-NIELSEN, 1992]{HECHTNIELSEN199265}
+HECHT-NIELSEN, R. (1992).
+\newblock Iii.3 - theory of the backpropagation neural network**based on
+  “nonindent” by robert hecht-nielsen, which appeared in proceedings of the
+  international joint conference on neural networks 1, 593–611, june 1989. ©
+  1989 ieee.
+\newblock In Wechsler, H., editor, {\em Neural Networks for Perception}, pages
+  65 -- 93. Academic Press.
+
+\bibitem[Indyk and Motwani, 1998]{indyk1998approximate}
+Indyk, P. and Motwani, R. (1998).
+\newblock Approximate nearest neighbors: towards removing the curse of
+  dimensionality.
+\newblock In {\em Proceedings of the thirtieth annual ACM symposium on Theory
+  of computing}, pages 604--613. ACM.
+
+\bibitem[Japkowicz and Stephen, 2002]{japkowicz2002class}
+Japkowicz, N. and Stephen, S. (2002).
+\newblock The class imbalance problem: A systematic study.
+\newblock {\em Intelligent data analysis}, 6(5):429--449.
+
+\bibitem[John and Langley, 1995]{john1995estimating}
+John, G.~H. and Langley, P. (1995).
+\newblock Estimating continuous distributions in bayesian classifiers.
+\newblock In {\em Proceedings of the Eleventh conference on Uncertainty in
+  artificial intelligence}, pages 338--345. Morgan Kaufmann Publishers Inc.
+
+\bibitem[{Keller} et~al., 1985]{6313426}
+{Keller}, J.~M., {Gray}, M.~R., and {Givens}, J.~A. (1985).
+\newblock A fuzzy k-nearest neighbor algorithm.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics},
+  SMC-15(4):580--585.
+
+\bibitem[Khan and Vihinen, 2010]{Khan2010}
+Khan, S. and Vihinen, M. (2010).
+\newblock Performance of protein stability predictors.
+\newblock {\em Human Mutation}, 31(6):675--684.
+
+\bibitem[Kohavi et~al., 1995]{kohavi1995study}
+Kohavi, R. et~al. (1995).
+\newblock A study of cross-validation and bootstrap for accuracy estimation and
+  model selection.
+\newblock In {\em Ijcai}, volume~14, pages 1137--1145. Montreal, Canada.
+
+\bibitem[Kotsiantis et~al., 2007]{kotsiantis2007supervised}
+Kotsiantis, S.~B., Zaharakis, I., and Pintelas, P. (2007).
+\newblock Supervised machine learning: A review of classification techniques.
+\newblock {\em Emerging artificial intelligence applications in computer
+  engineering}, 160:3--24.
+
+\bibitem[Larra{\~n}aga et~al., 2006]{juanito}
+Larra{\~n}aga, P., Calvo, B., Santana, R., Bielza, C., Galdiano, J., Inza, I.,
+  Lozano, J.~A., Arma{\~n}anzas, R., Santaf{\'e}, G., P{\'e}rez, A., and
+  Robles, V. (2006).
+\newblock Machine learning in bioinformatics.
+\newblock {\em Briefings in Bioinformatics}, 7(1):86--112.
+
+\bibitem[Liao and Xu, 2015]{LIAO20155328}
+Liao, H. and Xu, Z. (2015).
+\newblock Approaches to manage hesitant fuzzy linguistic information based on
+  the cosine distance and similarity measures for hfltss and their application
+  in qualitative decision making.
+\newblock {\em Expert Systems with Applications}, 42(12):5328 -- 5336.
+
+\bibitem[Louppe and Geurts, 2012]{ref10.1007/978-3-642-33460-3_28}
+Louppe, G. and Geurts, P. (2012).
+\newblock Ensembles on random patches.
+\newblock In Flach, P.~A., De~Bie, T., and Cristianini, N., editors, {\em
+  Machine Learning and Knowledge Discovery in Databases}, pages 346--361,
+  Berlin, Heidelberg. Springer Berlin Heidelberg.
+
+\bibitem[Maesschalck et~al., 2000]{DEMAESSCHALCK20001}
+Maesschalck, R.~D., Jouan-Rimbaud, D., and Massart, D. (2000).
+\newblock The mahalanobis distance.
+\newblock {\em Chemometrics and Intelligent Laboratory Systems}, 50(1):1 -- 18.
+
+\bibitem[Manning et~al., 2010]{manning2010introduction}
+Manning, C., Raghavan, P., and Sch{\"u}tze, H. (2010).
+\newblock Introduction to information retrieval.
+\newblock {\em Natural Language Engineering}, 16(1):100--103.
+
+\bibitem[Metsis et~al., 2006]{metsis2006spam}
+Metsis, V., Androutsopoulos, I., and Paliouras, G. (2006).
+\newblock Spam filtering with naive bayes-which naive bayes?
+\newblock In {\em CEAS}, volume~17, pages 28--69. Mountain View, CA.
+
+\bibitem[Michie et~al., 1994]{michie1994machine}
+Michie, D., Spiegelhalter, D.~J., Taylor, C., et~al. (1994).
+\newblock Machine learning.
+\newblock {\em Neural and Statistical Classification}, 13.
+
+\bibitem[Netzer et~al., 2011]{netzer2011reading}
+Netzer, Y., Wang, T., Coates, A., Bissacco, A., Wu, B., and Ng, A.~Y. (2011).
+\newblock Reading digits in natural images with unsupervised feature learning.
+
+\bibitem[Olivera-Nappa et~al., 2011]{Olivera-Nappa2011}
+Olivera-Nappa, A., Andrews, B.~A., and Asenjo, J.~A. (2011).
+\newblock Mutagenesis objective search and selection tool (mosst): an algorithm
+  to predict structure-function related mutations in proteins.
+\newblock {\em BMC Bioinformatics}, 12(1):122.
+
+\bibitem[Pandurangan et~al., 2017]{Pandurangan2017}
+Pandurangan, A.~P., Ochoa-Monta{\~n}o, B., Ascher, D.~B., and Blundell, T.~L.
+  (2017).
+\newblock Sdm: a server for predicting effects of mutations on protein
+  stability.
+\newblock {\em Nucleic Acids Res}, 45(W1):W229--W235.
+\newblock 28525590[pmid].
+
+\bibitem[Parthiban et~al., 2006]{Parthiban2006}
+Parthiban, V., Gromiha, M.~M., and Schomburg, D. (2006).
+\newblock Cupsat: prediction of protein stability upon point mutations.
+\newblock {\em Nucleic Acids Res}, 34(Web Server issue):W239--W242.
+\newblock 16845001[pmid].
+
+\bibitem[Pedregosa et~al., 2011]{pedregosa2011scikit}
+Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel,
+  O., Blondel, M., Prettenhofer, P., Weiss, R., Dubourg, V., et~al. (2011).
+\newblock Scikit-learn: Machine learning in python.
+\newblock {\em Journal of machine learning research}, 12(Oct):2825--2830.
+
+\bibitem[Perlibakas, 2004]{PERLIBAKAS2004711}
+Perlibakas, V. (2004).
+\newblock Distance measures for pca-based face recognition.
+\newblock {\em Pattern Recognition Letters}, 25(6):711 -- 724.
+
+\bibitem[Quan et~al., 2016]{Quan2016}
+Quan, L., Lv, Q., and Zhang, Y. (2016).
+\newblock Strum: structure-based prediction of protein stability changes upon
+  single-point mutation.
+\newblock {\em Bioinformatics}, 32(19):2936--2946.
+\newblock 27318206[pmid].
+
+\bibitem[Rohl et~al., 2004]{rohl2004protein}
+Rohl, C.~A., Strauss, C.~E., Misura, K.~M., and Baker, D. (2004).
+\newblock Protein structure prediction using rosetta.
+\newblock In {\em Methods in enzymology}, volume 383, pages 66--93. Elsevier.
+
+\bibitem[{Ruck} et~al., 1990]{80266}
+{Ruck}, D.~W., {Rogers}, S.~K., {Kabrisky}, M., {Oxley}, M.~E., and {Suter},
+  B.~W. (1990).
+\newblock The multilayer perceptron as an approximation to a bayes optimal
+  discriminant function.
+\newblock {\em IEEE Transactions on Neural Networks}, 1(4):296--298.
+
+\bibitem[Sarwar et~al., 2000]{sarwar2000application}
+Sarwar, B., Karypis, G., Konstan, J., and Riedl, J. (2000).
+\newblock Application of dimensionality reduction in recommender system-a case
+  study.
+\newblock Technical report, Minnesota Univ Minneapolis Dept of Computer
+  Science.
+
+\bibitem[Scholkopf and Smola, 2001]{scholkopf2001learning}
+Scholkopf, B. and Smola, A.~J. (2001).
+\newblock {\em Learning with kernels: support vector machines, regularization,
+  optimization, and beyond}.
+\newblock MIT press.
+
+\bibitem[Schymkowitz et~al., 2005]{Schymkowitz2005}
+Schymkowitz, J., Borg, J., Stricher, F., Nys, R., Rousseau, F., and Serrano, L.
+  (2005).
+\newblock The foldx web server: an online force field.
+\newblock {\em Nucleic Acids Res}, 33(Web Server issue):W382--W388.
+\newblock 15980494[pmid].
+
+\bibitem[Smola and Sch{\"o}lkopf, 2004]{smola2004tutorial}
+Smola, A.~J. and Sch{\"o}lkopf, B. (2004).
+\newblock A tutorial on support vector regression.
+\newblock {\em Statistics and computing}, 14(3):199--222.
+
+\bibitem[Tan, 2005]{TAN2005667}
+Tan, S. (2005).
+\newblock Neighbor-weighted k-nearest neighbor for unbalanced text corpus.
+\newblock {\em Expert Systems with Applications}, 28(4):667 -- 671.
+
+\bibitem[Vaisman and Masso, 2008]{vaisman}
+Vaisman, I.~I. and Masso, M. (2008).
+\newblock {Accurate prediction of stability changes in protein mutants by
+  combining machine learning with structure based computational mutagenesis}.
+\newblock {\em Bioinformatics}, 24(18):2002--2009.
+
+\bibitem[Van Der~Maaten et~al., 2009]{van2009dimensionality}
+Van Der~Maaten, L., Postma, E., and Van~den Herik, J. (2009).
+\newblock Dimensionality reduction: a comparative.
+\newblock {\em J Mach Learn Res}, 10(66-71):13.
+
+\bibitem[Wu et~al., 2004]{wu2004probability}
+Wu, T.-F., Lin, C.-J., and Weng, R.~C. (2004).
+\newblock Probability estimates for multi-class classification by pairwise
+  coupling.
+\newblock {\em Journal of Machine Learning Research}, 5(Aug):975--1005.
+
+\bibitem[Zhang, 2004]{zhang2004optimality}
+Zhang, H. (2004).
+\newblock The optimality of naive bayes.
+\newblock {\em AA}, 1(2):3.
+
+\end{thebibliography}

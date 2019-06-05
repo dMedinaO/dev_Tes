@@ -1,0 +1,87 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+A level-1 auxiliary file: Chapter1/chapter1.aux
+A level-1 auxiliary file: Chapter2/chapter2.aux
+A level-1 auxiliary file: Chapter3/chapter3.aux
+A level-1 auxiliary file: Chapter4/chapter4.aux
+A level-1 auxiliary file: Chapter5/chapter5.aux
+A level-1 auxiliary file: Chapter6/chapter6.aux
+A level-1 auxiliary file: Chapter7/chapter7.aux
+The style file: apalike.bst
+Database file #1: References/references.bib
+Warning--I'm ignoring Capriotti2005's extra "note" field
+--line 54 of file References/references.bib
+Warning--I'm ignoring Capriotti2005's extra "note" field
+--line 55 of file References/references.bib
+Warning--I'm ignoring Quan2016's extra "note" field
+--line 76 of file References/references.bib
+Warning--I'm ignoring Quan2016's extra "note" field
+--line 77 of file References/references.bib
+Warning--I'm ignoring Broom2017's extra "note" field
+--line 116 of file References/references.bib
+Warning--I'm ignoring Broom2017's extra "note" field
+--line 117 of file References/references.bib
+Warning--I'm ignoring Schymkowitz2005's extra "note" field
+--line 141 of file References/references.bib
+Warning--I'm ignoring Schymkowitz2005's extra "note" field
+--line 142 of file References/references.bib
+Warning--I'm ignoring Pandurangan2017's extra "note" field
+--line 164 of file References/references.bib
+Warning--I'm ignoring Pandurangan2017's extra "note" field
+--line 165 of file References/references.bib
+Warning--I'm ignoring Parthiban2006's extra "note" field
+--line 223 of file References/references.bib
+Warning--I'm ignoring Parthiban2006's extra "note" field
+--line 224 of file References/references.bib
+Warning--I'm ignoring Getov2016's extra "note" field
+--line 275 of file References/references.bib
+You're missing a field name---line 1305 of file References/references.bib
+ :  abstract = {Abstract We have developed a method to both predict the geometry and the relative stability of point mutants that may be used for arbitrary mutations. The geometry optimization procedure was first tested on a new benchmark of 2141 ordered pairs of X-ray crystal structures of proteins that differ by a single point mutation, the largest data set to date. An empirical energy function, which includes terms representing the energy contributions of the folded and denatured proteins and uses the predicted mutant side chain conformation, was fit to a training set consisting of half of a diverse set of 1816 experimental stability values for single point mutations in 81 different proteins. The data included a substantial number of small to large residue mutations not considered by previous prediction studies. After removing 22 (≈2\%) outliers, the stability calculation gave a standard deviation of 1.08 kcal/mol with a correlation coefficient of 0.82. The prediction method was then tested on the remaining half of the experimental data, giving a standard deviation of 1.10 kcal/mol and covariance of 0.66 for 97\% of the test set. A regression fit of the energy function to a subset of 137 mutants, for which both native and mutant structures were available, gave a prediction error comparable to that for the complete training set with predicted side chain conformations. We found that about half of the variation is due to conformation-independent residue contributions. Finally, a fit to the experimental stability data using these residue parameters exclusively suggests guidelines for improving protein stability in the absence of detailed structure information. Proteins 2004. © 2004 Wiley-Liss, Inc.},
+ :                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 ,
+I'm skipping whatever remains of this entry
+Warning--can't use both volume and number fields in friedman2001elements
+Warning--can't use both volume and number fields in kohavi1995study
+Warning--empty journal in netzer2011reading
+You've used 68 entries,
+            1935 wiz_defined-function locations,
+            939 strings with 16365 characters,
+and the built_in function-call counts, 29740 in all, are:
+= -- 2919
+> -- 1211
+< -- 50
++ -- 438
+- -- 406
+* -- 2595
+:= -- 5049
+add.period$ -- 221
+call.type$ -- 68
+change.case$ -- 532
+chr.to.int$ -- 68
+cite$ -- 71
+duplicate$ -- 1105
+empty$ -- 2110
+format.name$ -- 501
+if$ -- 5926
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 70
+newline$ -- 350
+num.names$ -- 210
+pop$ -- 437
+preamble$ -- 1
+purify$ -- 534
+quote$ -- 0
+skip$ -- 853
+stack$ -- 0
+substring$ -- 2256
+swap$ -- 183
+text.length$ -- 19
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 402
+warning$ -- 3
+while$ -- 237
+width$ -- 0
+write$ -- 914
+(There was 1 error message)
