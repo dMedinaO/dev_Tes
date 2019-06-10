@@ -45,45 +45,49 @@ Repeated entry---line 1459 of file References/references.bib
  : @article{Schymkowitz2005
  :                         ,
 I'm skipping whatever remains of this entry
-You've used 27 entries,
+Repeated entry---line 1696 of file References/references.bib
+ : @article{Parthiban2006
+ :                       ,
+I'm skipping whatever remains of this entry
+You've used 30 entries,
             1935 wiz_defined-function locations,
-            701 strings with 10410 characters,
-and the built_in function-call counts, 12771 in all, are:
-= -- 1204
-> -- 660
-< -- 8
-+ -- 239
-- -- 231
-* -- 1223
-:= -- 2226
-add.period$ -- 90
-call.type$ -- 27
-change.case$ -- 250
-chr.to.int$ -- 27
-cite$ -- 27
-duplicate$ -- 400
-empty$ -- 834
-format.name$ -- 266
-if$ -- 2471
-int.to.chr$ -- 1
+            717 strings with 10966 characters,
+and the built_in function-call counts, 14129 in all, are:
+= -- 1336
+> -- 719
+< -- 9
++ -- 260
+- -- 251
+* -- 1354
+:= -- 2458
+add.period$ -- 99
+call.type$ -- 30
+change.case$ -- 275
+chr.to.int$ -- 29
+cite$ -- 30
+duplicate$ -- 442
+empty$ -- 930
+format.name$ -- 291
+if$ -- 2736
+int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 27
-newline$ -- 145
-num.names$ -- 83
-pop$ -- 193
+missing$ -- 30
+newline$ -- 160
+num.names$ -- 92
+pop$ -- 211
 preamble$ -- 1
-purify$ -- 250
+purify$ -- 275
 quote$ -- 0
-skip$ -- 293
+skip$ -- 323
 stack$ -- 0
-substring$ -- 926
-swap$ -- 44
+substring$ -- 1047
+swap$ -- 47
 text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 162
+type$ -- 180
 warning$ -- 0
-while$ -- 88
+while$ -- 98
 width$ -- 0
-write$ -- 371
-(There were 2 error messages)
+write$ -- 410
+(There were 3 error messages)

@@ -15,13 +15,13 @@ El análisis del efecto de mutaciones puntuales en proteínas, es una de las pro
 
 Diferentes modelos predictivos han sido desarrollados para poder predecir cambios de energía libre, en base a algoritmos de aprendizaje supervisado o mediante técnicas de minería de datos, y así, determinar el efecto de la mutación en set de proteínas de interés \cite{Quan2016,Capriotti2008,Broom2017,Khan2010,vaisman,Getov2016,Capriotti2005}. No obstante, en casos más específicos, se han desarrollado modelos para proteínas exclusivas con el fin de asociar la mutación a un rasgo clínico, particularmente, enfocado a casos de cáncer \cite{article, Forbes2010}, cambios en termo estabilidad \cite{Tian2010}, propiedades geométricas \cite{Barenboim2008}, entre las principales.
 
-Sin importar el uso o la respuesta de los modelos, es necesario construir set de datos con ejemplos etiquetados, es decir, cuya respuesta sea conocida para poder entrenar modelos y así evaluar su desempeño. Los enfoques principales al desarrollo de descriptores se basan en propiedades fisicoquímicas y termodinámicas, así como también, el ambiente bajo el cual se encuentra la mutación \cite{Capriotti2005}, ya sea a partir de la información estructural o sólo considerando la secuencia lineal. Sin embargo, no son considerados, los componentes asociados a conceptos filogenéticos y la propensión a cambios de dicha mutación generando un gap entre ambos puntos de vista \cite{Olivera-Nappa2011}.
+Sin importar el uso o la respuesta de los modelos, es necesario construir set de datos con ejemplos etiquetados, es decir, cuya respuesta sea conocida para poder entrenar modelos basados en algoritmos de aprendizaje supervisado y así evaluar su desempeño. Los enfoques principales al desarrollo de descriptores se basan en propiedades fisicoquímicas y termodinámicas, así como también, el ambiente bajo el cual se encuentra la mutación \cite{Capriotti2005}, ya sea a partir de la información estructural o sólo considerando la secuencia lineal. Sin embargo, no son considerados, los componentes asociados a conceptos filogenéticos y la propensión a cambios de dicha mutación generando un gap entre ambos puntos de vista \cite{Olivera-Nappa2011}.
 
 Dado a los modelos existentes y en vista a la necesidad de generar nuevos sistemas de predicción para mutaciones puntuales en proteínas, en respuesta al aumento considerable de reportes en los últimos años, se propone una nueva metodología para el diseño e implementación de modelos predictivos en mutaciones puntuales de proteínas.
 
-Las mutaciones son descritas desde los puntos de vista estructural, termodinámico y filogenético. El desarrollo de los predictores es inspirados en el concepto de Meta Learning y es apoyado con técnicas estadísticas, tanto para la selección de modelos como para la evaluación de medidas de desempeño, entregando como resultado un conjunto de modelos para las mutaciones puntuales reportadas unificados en un único meta modelo.
+Las mutaciones son descritas desde los puntos de vista estructural, termodinámico y filogenético. El desarrollo de los predictores es inspirados en el concepto de Meta Learning y es apoyado con técnicas estadísticas, tanto para la selección de modelos como para la evaluación de medidas de desempeño, entregando como resultado, un conjunto de modelos para las mutaciones puntuales reportadas unificados en un único meta modelo.
 
-Esta metodología ha sido evaluada para generar estimadores en diferentes proteínas con mutaciones reportadas con respuesta conocida, como por ejemplo: evaluando las diferencias de energía libre que provoca la mutación y clasificaciones para evaluar si el cambio aumenta o disminuye la estabilidad. A su vez, se implementaron modelos de clasificación para determinar la propensión clínica en un conjunto de mutaciones conocidas relacionados con el gen \textit{p}VHL, responsable de la enfermedad von Hippel Lindau.
+Esta metodología ha sido evaluada para generar estimadores en diferentes proteínas con mutaciones reportadas con respuesta conocida, como por ejemplo: evaluando las diferencias de energía libre que provoca la mutación y clasificaciones para evaluar si la sustitución de residuos aumenta o disminuye la estabilidad. A su vez, se implementaron modelos de clasificación para determinar la propensión clínica en un conjunto de mutaciones conocidas relacionados con el gen \textit{p}VHL, responsable de la enfermedad von Hippel Lindau, con el fin de exponer la versatilidad de la metodología.
 
 A continuación, se describen algunas herramientas computacionales y su significancia para este estudio a la hora de comparar y analizar los resultados obtenidos, seguido además, de los conceptos relacionados al aprendizaje supervisado, junto con la metodología propuesta, los resultados y discusiones del proceso, así como también su uso de esto en casos particulares.
 
@@ -35,23 +35,28 @@ A continuación, se exponen algunas herramientas básicas en el estudio de estab
 
 FoldX es una herramienta computacional, que implementa un campo de fuerza empírico desarrollado para la evaluación eficiente del efecto de las mutaciones sobre la estabilidad, el plegamiento y la dinámica de las proteínas y los ácidos nucleicos \cite{Schymkowitz2005}. Se basa principalmente en el cálculo de energía libre a partir de estructuras 3D de macromoléculas. Sin embargo, permite además, estimar las posiciones de los protones y los puentes de hidrógeno. 
 
-La energía libre, es calculada utilizando la siguiente función
+La energía libre, es calculada utilizando la siguiente expresión matemática de aportes energéticos:
+
 
 $\Delta G=Wvdw \cdot \Delta Gvdw+WsolvH \cdot \Delta GsolvH+WsolvP \cdot \Delta GsolvP+ \Delta Gwb+ \Delta Ghbond+ \Delta Gel+ \Delta GKon+Wmc \cdot T \cdot \Delta Smc+Wsc \cdot T \cdot \Delta Ssc$
+
+Los componentes se definen a continuación.
 
 \begin{itemize}
 	
 	\item $\Delta Gvdw$ es la suma de las contribuciones de van der Waals de todos los átomo con respecto a la interacción con el solvente.
 	
-	\item $\Delta GsolvH$ y $\Delta GsolvP$ son las diferencias en energía de solvatación para grupos apolares y polares respectivamente, cuando estos cambias desde el estado no plegado a plegado.
+	\item $\Delta GsolvH$ y $\Delta GsolvP$ son las diferencias en energía de solvatación para grupos apolares y polares respectivamente, cuando estos cambian desde el estado no plegado a plegado.
 	
 	\item $\Delta Ghbond$ es la diferencia de energía libre entre la formación de un enlace de hidrógeno intra-molecular y un inter-molecular.
 	
 	\item $\Delta Gwb$ es la energía libre de estabilización adicional proporcionada por una molécula de agua que hace más de un enlace de hidrógeno a la proteína que no se puede tener en cuenta con aproximaciones de solventes no explícitas \cite{petukhov1999local}. 
 	
-	\item $\Delta Gel$ es la contribución electrostática de los grupos cargados, incluyendo las hélices dipolo. $\Delta Smc$ es el costo de la entropía de fijar la columna vertebral en el estado plegado; este término depende de la tendencia intrínseca de un aminoácido particular a adoptar ciertos ángulos diedros \cite{munoz1996local, munoz1995hydrophobic}. 
+	\item $\Delta Gel$ es la contribución electrostática de los grupos cargados, incluyendo las hélices dipolo. 
 	
-	\item Finalmente $\Delta Ssc$ es el costo de entropía de fijar una cadena lateran en una conformación particular \cite{abagyan1994biased}. 
+	\item $\Delta Smc$ es el costo de la entropía de fijar el back-bone en el estado plegado; este término depende de la tendencia intrínseca de un aminoácido particular a adoptar ciertos ángulos diedros \cite{munoz1996local, munoz1995hydrophobic}. 
+	
+	\item Finalmente $\Delta Ssc$ es el costo de entropía de fijar una cadena lateral en una conformación particular \cite{abagyan1994biased}. 
 	
 	\item Si la estimación se desarrolla sobre proteínas oligoméricas o complejos de proteína, se adicionan dos términos a la contribución energética: $\Delta Gkon$ que refleja el efecto de las interacciones electrostáticas en la constante de asociación $kon$ (esto se aplica solo a las energías de enlace de la subunidad) \cite{vijayakumar1998electrostatic} y $\Delta Str$ que es la pérdida de entropía traslacional y rotacional que se deriva de la formación del complejo. Este último término se cancela cuando observamos el efecto de mutaciones puntuales en complejos. 
 	
@@ -61,16 +66,31 @@ $\Delta G=Wvdw \cdot \Delta Gvdw+WsolvH \cdot \Delta GsolvH+WsolvP \cdot \Delta 
 	
 \end{itemize}
 
-Como entrada principal, recibe una estructura PDB\footnote{Protein Data Bank} y dentro de los resultados más relevantes, se encuentran los cálculos de energía libre.
+Como entrada principal, recibe una estructura PDB\footnote{Protein Data Bank. Formato para la exposición de macromoléculas u estructuras en torno a coordenadas espaciales, obtenidas desde una cristalografía de rayos X, resnonancia magnética nuclear, o a través de modelos computacionales.} y dentro de los resultados más relevantes, se encuentran los cálculos de energía libre.
 
-Ha sido usada en diferentes investigaciones, incluyendo el análisis de mutaciones puntuales aplicados a ingeniería de proteínas \cite{BU201825, Alibes2010}, evaluación de mutaciones en genomas \cite{Sanchez2008}, análisis de termoestabilidad \cite{Bu2018, 10.1093/protein/gzv004}, interacciones proteínas-DNA \cite{NADRA20113}, entre las principales.
+Ha sido usada en diferentes investigaciones, incluyendo el análisis de mutaciones puntuales aplicados a ingeniería de proteínas \cite{BU201825, Alibes2010}, evaluación de mutaciones en genomas \cite{Sanchez2008}, análisis de termoestabilidad \cite{Bu2018, 10.1093/protein/gzv004}, interacciones proteínas-DNA \cite{NADRA20113}, entre las principales, razón por la cual, es considerada como una herramienta común a la hora de la evaluación de mutaciones y una referente para comparar resultados de nuevas herramientas o métodos computacionales.
 
 \subsection{I-Mutant}
 
+I-Mutant, es una familia de software basados en algoritmos de aprendizaje supervisado para la predicción automática de estabilidad de proteínas ante cambios de residuos o sustituciones expresadas en mutaciones puntuales \cite{capriotti2005mutant2}, las cuales se reflejan en los cambios de energía libre. Emplea como algoritmo para entrenamiento de modelos, Support Vector Machine (SVM), permitiendo la evaluación de las mutaciones desde la secuencia lineal de proteína o a su vez desde la estructura 3D en formato PDB.
+
+El método fue entrenado y testeado desde la base de datos ProTherm \cite{Bava2004}, la cual representa el mayor repositorio de experimentos termodinámicos con respuestas en energía libre basados en cambios de estabilidad de la proteína para mutaciones, en diferentes condiciones. 
+
+Actualmente  I-Mutant permite la clasificación de la estabilidad de la mutación y a su vez facilita la predicción de los cambios de energía libre $\Delta \Delta G$. Las medidas de desempeño se diferencian dependiendo del uso de I-Mutant y del tipo de set de datos. Si se trabaja con datos de secuencias lineales presenta una accuracy de un 77\% y un coeficiente de relación de un 0.62 con un error asociado de 1.45 kcal/mol. Para el caso en que los datos procedan de información estructural, los desempeños mejoran de manera no significativa, obteniendo una accuracy de un 80\% y un coeficiente de relación de un 0.71 con un error asociado de 1.30 kcal/mol.
+
+Si bien, es uno de los métodos más utilizados, el hecho de utilizar Support Vector Machine como algoritmo de aprendizaje supervisado para el entrenamiento de modelos, limita un poco para los set de datos con alta no linealidad, dado a que el algoritmo sólo traza hiperplanos. Esto podría provoca sobre ajuste o generar bajos desempeños.
+
 \subsection{CUPSAT}
+
+CUPSAT (Cologne University Protein Stability Analysis Tool) es una herramienta web para analizar y predecir la estabilidad de la proteína frente a cambios o sustituciones puntuales de residuos. La herramienta utiliza información estructural específica de los átomos participantes en la mutación, tales como: ángulos de torsión y potenciales de energía, con el fin de predecir los cambios en diferencia de energía que representa la sustitución, expresados en forma de $\Delta \Delta G$ \cite{Parthiban2006}. 
+
+Como requisitos para su uso, es necesario la estructura en formato PDB y la posición del residuo a ser mutado. Como resultado, entrega información sobre el sitio de la mutación, principalmente accesibilidad al solvente, estructura secundaria y ángulos de torsión. Además, entrega información detallada sobre las 19 posibles mutaciones para el residuo objetivo.
+
+La herramienta fue testeada utilizado 1538 mutaciones desde denaturaciones térmicas y 1603 denaturaciones aplicando técnicas químicas. Presentado un desempeño mayor al 80\% de accuracy.
 
 \subsection{Dmutant}
 
+Otra \cite{Zhou2002}
 \subsection{MUpro}
 
 \subsection{MultiMutate}
