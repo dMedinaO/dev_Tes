@@ -1,0 +1,81 @@
+%!TEX root = ../thesis.tex
+%*******************************************************************************
+%****************************** Second Chapter *********************************
+%*******************************************************************************
+
+\chapter{Modelos predictivos asociados a mutaciones puntuales en proteínas}
+
+\ifpdf
+    \graphicspath{{Chapter2/Figs/Raster/}{Chapter2/Figs/PDF/}{Chapter2/Figs/}}
+\else
+    \graphicspath{{Chapter2/Figs/Vector/}{Chapter2/Figs/}}
+\fi
+
+El análisis del efecto de mutaciones puntuales en proteínas, es una de las problemáticas más estudiadas en los últimos años. Los estudios se enfocan principalmente, en la evaluación de cambios en la estabilidad de la proteína mediante la variación de energía libre que la mutación provoca \cite{Schymkowitz2005,Pandurangan2017,rohl2004protein,Parthiban2006}. 
+
+Diferentes modelos predictivos han sido desarrollados para poder predecir cambios de energía libre, en base a algoritmos de aprendizaje supervisado o mediante técnicas de minería de datos, y así, determinar el efecto de la mutación en set de proteínas de interés \cite{Quan2016,Capriotti2008,Broom2017,Khan2010,vaisman,Getov2016,Capriotti2005}. No obstante, en casos más específicos, se han desarrollado modelos para proteínas exclusivas con el fin de asociar la mutación a un rasgo clínico, particularmente, enfocado a casos de cáncer \cite{article, Forbes2010}, cambios en termo estabilidad \cite{Tian2010}, propiedades geométricas \cite{Barenboim2008}, entre las principales.
+
+Sin importar el uso o la respuesta de los modelos, es necesario construir set de datos con ejemplos etiquetados, es decir, cuya respuesta sea conocida para poder entrenar modelos y así evaluar su desempeño. Los enfoques principales al desarrollo de descriptores se basan en propiedades fisicoquímicas y termodinámicas, así como también, el ambiente bajo el cual se encuentra la mutación \cite{Capriotti2005}, ya sea a partir de la información estructural o sólo considerando la secuencia lineal. Sin embargo, no son considerados, los componentes asociados a conceptos filogenéticos y la propensión a cambios de dicha mutación generando un gap entre ambos puntos de vista \cite{Olivera-Nappa2011}.
+
+Dado a los modelos existentes y en vista a la necesidad de generar nuevos sistemas de predicción para mutaciones puntuales en proteínas, en respuesta al aumento considerable de reportes en los últimos años, se propone una nueva metodología para el diseño e implementación de modelos predictivos en mutaciones puntuales de proteínas.
+
+Las mutaciones son descritas desde los puntos de vista estructural, termodinámico y filogenético. El desarrollo de los predictores es inspirados en el concepto de Meta Learning y es apoyado con técnicas estadísticas, tanto para la selección de modelos como para la evaluación de medidas de desempeño, entregando como resultado un conjunto de modelos para las mutaciones puntuales reportadas unificados en un único meta modelo.
+
+Esta metodología ha sido evaluada para generar estimadores en diferentes proteínas con mutaciones reportadas con respuesta conocida, como por ejemplo: evaluando las diferencias de energía libre que provoca la mutación y clasificaciones para evaluar si el cambio aumenta o disminuye la estabilidad. A su vez, se implementaron modelos de clasificación para determinar la propensión clínica en un conjunto de mutaciones conocidas relacionados con el gen \textit{p}VHL, responsable de la enfermedad von Hippel Lindau.
+
+A continuación, se describen algunas herramientas computacionales y su significancia para este estudio a la hora de comparar y analizar los resultados obtenidos, seguido además, de los conceptos relacionados al aprendizaje supervisado, junto con la metodología propuesta, los resultados y discusiones del proceso, así como también su uso de esto en casos particulares.
+
+\section{Herramientas computacionales asociadas a evaluación de mutaciones}
+
+Las herramientas computacionales asociadas a la evaluación de mutaciones puntuales se centran principalmente en el análisis de cómo ésta afecta a la estabilidad o la predicción de energía libre asociada a los residuos involucrados en la mutación. Sin embargo, a pesar de que el objetivo es el mismo, se centran en diferentes enfoques para abordar la problemática.
+
+A continuación, se exponen algunas herramientas básicas en el estudio de estabilidad de proteínas, las cuales se aplicarán como métodos de comparación para los resultados obtenidos aplicando la metodología propuesta.
+
+\subsection{FoldX}
+
+FoldX es una herramienta computacional, que implementa un campo de fuerza empírico desarrollado para la evaluación eficiente del efecto de las mutaciones sobre la estabilidad, el plegamiento y la dinámica de las proteínas y los ácidos nucleicos \cite{Schymkowitz2005}. Se basa principalmente en el cálculo de energía libre a partir de estructuras 3D de macromoléculas. Sin embargo, permite además, estimar las posiciones de los protones y los puentes de hidrógeno. 
+
+La energía libre, es calculada utilizando la siguiente función
+
+$\Delta G=Wvdw \cdot \Delta Gvdw+WsolvH \cdot \Delta GsolvH+WsolvP \cdot \Delta GsolvP+ \Delta Gwb+ \Delta Ghbond+ \Delta Gel+ \Delta GKon+Wmc \cdot T \cdot \Delta Smc+Wsc \cdot T \cdot \Delta Ssc$
+
+\begin{itemize}
+	
+	\item $\Delta Gvdw$ es la suma de las contribuciones de van der Waals de todos los átomo con respecto a la interacción con el solvente.
+	
+	\item $\Delta GsolvH$ y $\Delta GsolvP$ son las diferencias en energía de solvatación para grupos apolares y polares respectivamente, cuando estos cambias desde el estado no plegado a plegado.
+	
+	\item $\Delta Ghbond$ es la diferencia de energía libre entre la formación de un enlace de hidrógeno intra-molecular y un inter-molecular.
+	
+	\item $\Delta Gwb$ es la energía libre de estabilización adicional proporcionada por una molécula de agua que hace más de un enlace de hidrógeno a la proteína que no se puede tener en cuenta con aproximaciones de solventes no explícitas \cite{petukhov1999local}. 
+	
+	\item $\Delta Gel$ es la contribución electrostática de los grupos cargados, incluyendo las hélices dipolo. $\Delta Smc$ es el costo de la entropía de fijar la columna vertebral en el estado plegado; este término depende de la tendencia intrínseca de un aminoácido particular a adoptar ciertos ángulos diedros \cite{munoz1996local, munoz1995hydrophobic}. 
+	
+	\item Finalmente $\Delta Ssc$ es el costo de entropía de fijar una cadena lateran en una conformación particular \cite{abagyan1994biased}. 
+	
+	\item Si la estimación se desarrolla sobre proteínas oligoméricas o complejos de proteína, se adicionan dos términos a la contribución energética: $\Delta Gkon$ que refleja el efecto de las interacciones electrostáticas en la constante de asociación $kon$ (esto se aplica solo a las energías de enlace de la subunidad) \cite{vijayakumar1998electrostatic} y $\Delta Str$ que es la pérdida de entropía traslacional y rotacional que se deriva de la formación del complejo. Este último término se cancela cuando observamos el efecto de mutaciones puntuales en complejos. 
+	
+	\item Los valores de energía de $\Delta Gvdw$, $\Delta GsolvH$, $\Delta GsolvP$ y $\Delta Ghbond$ atribuidos a cada tipo de átomo se han derivado de un conjunto de datos experimentales, y $\Delta Smc$ y $\Delta Smc$ han sido considerados desde estimaciones teóricas. 
+	
+	\item Los términos $Wvdw$, $WsolvH$, $WsolvP$, $Wmc$ y $Wsc$ corresponden a los factores de ponderación aplicados a los términos de energía bruta. Todos son 1, excepto por la contribución de van der Waals que es de 0.33 (las contribuciones de van der Waals se derivan de la transferencia de energía de vapor a agua, mientras que en la proteína vamos de solvente a proteína).
+	
+\end{itemize}
+
+Como entrada principal, recibe una estructura PDB\footnote{Protein Data Bank} y dentro de los resultados más relevantes, se encuentran los cálculos de energía libre.
+
+Ha sido usada en diferentes investigaciones, incluyendo el análisis de mutaciones puntuales aplicados a ingeniería de proteínas \cite{BU201825, Alibes2010}, evaluación de mutaciones en genomas \cite{Sanchez2008}, análisis de termoestabilidad \cite{Bu2018, 10.1093/protein/gzv004}, interacciones proteínas-DNA \cite{NADRA20113}, entre las principales.
+
+\subsection{I-Mutant}
+
+\subsection{CUPSAT}
+
+\subsection{Dmutant}
+
+\subsection{MUpro}
+
+\subsection{MultiMutate}
+
+\subsection{SDM}
+
+\subsection{MOSST}
+

@@ -1,0 +1,177 @@
+\begin{thebibliography}{}
+
+\bibitem[Abagyan and Totrov, 1994]{abagyan1994biased}
+Abagyan, R. and Totrov, M. (1994).
+\newblock Biased probability monte carlo conformational searches and
+  electrostatic calculations for peptides and proteins.
+\newblock {\em Journal of molecular biology}, 235(3):983--1002.
+
+\bibitem[Alib{\'e}s et~al., 2010]{Alibes2010}
+Alib{\'e}s, A., Nadra, A.~D., De~Masi, F., Bulyk, M.~L., Serrano, L., and
+  Stricher, F. (2010).
+\newblock Using protein design algorithms to understand the molecular basis of
+  disease caused by protein-dna interactions: the pax6 example.
+\newblock {\em Nucleic Acids Research}, 38(21):7422--7431.
+
+\bibitem[Barenboim et~al., 2008]{Barenboim2008}
+Barenboim, M., Masso, M., Vaisman, I.~I., and Jamison, D.~C. (2008).
+\newblock Statistical geometry based prediction of nonsynonymous snp functional
+  effects using random forest and neuro-fuzzy classifiers.
+\newblock {\em Proteins: Structure, Function, and Bioinformatics},
+  71(4):1930--1939.
+
+\bibitem[Broom et~al., 2017]{Broom2017}
+Broom, A., Jacobi, Z., Trainor, K., and Meiering, E.~M. (2017).
+\newblock Computational tools help improve protein stability but with a
+  solubility tradeoff.
+\newblock {\em J Biol Chem}, 292(35):14349--14361.
+\newblock 28710274[pmid].
+
+\bibitem[Bu{\ss} et~al., 2018]{Bu2018}
+Bu{\ss}, O., Muller, D., Jager, S., Rudat, J., and Rabe, K.~S. (2018).
+\newblock Improvement in the thermostability of a b-amino acid converting
+  o-transaminase by using foldx.
+\newblock {\em ChemBioChem}, 19(4):379--387.
+
+\bibitem[Buß et~al., 2018]{BU201825}
+Buß, O., Rudat, J., and Ochsenreither, K. (2018).
+\newblock Foldx as protein engineering tool: Better than random based
+  approaches?
+\newblock {\em Computational and Structural Biotechnology Journal}, 16:25 --
+  33.
+
+\bibitem[Capriotti et~al., 2005]{Capriotti2005}
+Capriotti, E., Fariselli, P., and Casadio, R. (2005).
+\newblock I-mutant2.0: predicting stability changes upon mutation from the
+  protein sequence or structure.
+\newblock {\em Nucleic Acids Res}, 33(Web Server issue):W306--W310.
+\newblock 15980478[pmid].
+
+\bibitem[Capriotti et~al., 2008]{Capriotti2008}
+Capriotti, E., Fariselli, P., Rossi, I., and Casadio, R. (2008).
+\newblock A three-state prediction of single point mutations on protein
+  stability changes.
+\newblock {\em BMC Bioinformatics}, 9(2):S6.
+
+\bibitem[Forbes et~al., 2010]{Forbes2010}
+Forbes, S.~A., Bindal, N., Bamford, S., Cole, C., Kok, C.~Y., Beare, D., Jia,
+  M., Shepherd, R., Leung, K., Menzies, A., Teague, J.~W., Campbell, P.~J.,
+  Stratton, M.~R., and Futreal, P.~A. (2010).
+\newblock Cosmic: mining complete cancer genomes in the catalogue of somatic
+  mutations in cancer.
+\newblock {\em Nucleic Acids Research}, 39(suppl\_1):D945--D950.
+
+\bibitem[Getov et~al., 2016]{Getov2016}
+Getov, I., Petukh, M., and Alexov, E. (2016).
+\newblock Saafec: Predicting the effect of single point mutations on protein
+  folding free energy using a knowledge-modified mm/pbsa approach.
+\newblock {\em Int J Mol Sci}, 17(4):512--512.
+\newblock 27070572[pmid].
+
+\bibitem[Gossage et~al., 2014]{article}
+Gossage, L., Pires, D., Olivera-Nappa, A., A.~Asenjo, J., Bycroft, M.,
+  Blundell, T., and Eisen, T. (2014).
+\newblock An integrated computational approach can classify vhl missense
+  mutations according to risk of clear cell renal carcinoma.
+\newblock {\em Human molecular genetics}, 23.
+
+\bibitem[Heselpoth et~al., 2015]{10.1093/protein/gzv004}
+Heselpoth, R.~D., Yin, Y., Moult, J., and Nelson, D.~C. (2015).
+\newblock {Increasing the stability of the bacteriophage endolysin PlyC using
+  rationale-based FoldX computational modeling}.
+\newblock {\em Protein Engineering, Design and Selection}, 28(4):85--92.
+
+\bibitem[Khan and Vihinen, 2010]{Khan2010}
+Khan, S. and Vihinen, M. (2010).
+\newblock Performance of protein stability predictors.
+\newblock {\em Human Mutation}, 31(6):675--684.
+
+\bibitem[Mu{\~n}oz et~al., 1995]{munoz1995hydrophobic}
+Mu{\~n}oz, V., Blanco, F.~J., and Serrano, L. (1995).
+\newblock The hydrophobic-staple motif and a role for loop-residues in
+  $\alpha$-helix stability and protein folding.
+\newblock {\em Nature structural biology}, 2(5):380.
+
+\bibitem[Mu{\~n}oz and Serrano, 1996]{munoz1996local}
+Mu{\~n}oz, V. and Serrano, L. (1996).
+\newblock Local versus nonlocal interactions in protein folding and
+  stability--an experimentalist's point of view.
+\newblock {\em Folding and Design}, 1(4):R71--R77.
+
+\bibitem[Nadra et~al., 2011]{NADRA20113}
+Nadra, A.~D., Serrano, L., and Alibés, A. (2011).
+\newblock Chapter one - dna-binding specificity prediction with foldx.
+\newblock In Voigt, C., editor, {\em Synthetic Biology, Part B}, volume 498 of
+  {\em Methods in Enzymology}, pages 3 -- 18. Academic Press.
+
+\bibitem[Olivera-Nappa et~al., 2011]{Olivera-Nappa2011}
+Olivera-Nappa, A., Andrews, B.~A., and Asenjo, J.~A. (2011).
+\newblock Mutagenesis objective search and selection tool (mosst): an algorithm
+  to predict structure-function related mutations in proteins.
+\newblock {\em BMC Bioinformatics}, 12(1):122.
+
+\bibitem[Pandurangan et~al., 2017]{Pandurangan2017}
+Pandurangan, A.~P., Ochoa-Monta{\~n}o, B., Ascher, D.~B., and Blundell, T.~L.
+  (2017).
+\newblock Sdm: a server for predicting effects of mutations on protein
+  stability.
+\newblock {\em Nucleic Acids Res}, 45(W1):W229--W235.
+\newblock 28525590[pmid].
+
+\bibitem[Parthiban et~al., 2006]{Parthiban2006}
+Parthiban, V., Gromiha, M.~M., and Schomburg, D. (2006).
+\newblock Cupsat: prediction of protein stability upon point mutations.
+\newblock {\em Nucleic Acids Res}, 34(Web Server issue):W239--W242.
+\newblock 16845001[pmid].
+
+\bibitem[Petukhov et~al., 1999]{petukhov1999local}
+Petukhov, M., Cregut, D., Soares, C.~M., and Serrano, L. (1999).
+\newblock Local water bridges and protein conformational stability.
+\newblock {\em Protein Science}, 8(10):1982--1989.
+
+\bibitem[Quan et~al., 2016]{Quan2016}
+Quan, L., Lv, Q., and Zhang, Y. (2016).
+\newblock Strum: structure-based prediction of protein stability changes upon
+  single-point mutation.
+\newblock {\em Bioinformatics}, 32(19):2936--2946.
+\newblock 27318206[pmid].
+
+\bibitem[Rohl et~al., 2004]{rohl2004protein}
+Rohl, C.~A., Strauss, C.~E., Misura, K.~M., and Baker, D. (2004).
+\newblock Protein structure prediction using rosetta.
+\newblock In {\em Methods in enzymology}, volume 383, pages 66--93. Elsevier.
+
+\bibitem[S{\'a}nchez et~al., 2008]{Sanchez2008}
+S{\'a}nchez, I.~E., Beltrao, P., Stricher, F., Schymkowitz, J.,
+  Ferkinghoff-Borg, J., Rousseau, F., and Serrano, L. (2008).
+\newblock Genome-wide prediction of sh2 domain targets using structural
+  information and the foldx algorithm.
+\newblock {\em PLOS Computational Biology}, 4(4):e1000052.
+
+\bibitem[Schymkowitz et~al., 2005]{Schymkowitz2005}
+Schymkowitz, J., Borg, J., Stricher, F., Nys, R., Rousseau, F., and Serrano, L.
+  (2005).
+\newblock The foldx web server: an online force field.
+\newblock {\em Nucleic Acids Res}, 33(Web Server issue):W382--W388.
+\newblock 15980494[pmid].
+
+\bibitem[Tian et~al., 2010]{Tian2010}
+Tian, J., Wu, N., Chu, X., and Fan, Y. (2010).
+\newblock Predicting changes in protein thermostability brought about by
+  single- or multi-site mutations.
+\newblock {\em BMC Bioinformatics}, 11(1):370.
+
+\bibitem[Vaisman and Masso, 2008]{vaisman}
+Vaisman, I.~I. and Masso, M. (2008).
+\newblock {Accurate prediction of stability changes in protein mutants by
+  combining machine learning with structure based computational mutagenesis}.
+\newblock {\em Bioinformatics}, 24(18):2002--2009.
+
+\bibitem[Vijayakumar et~al., 1998]{vijayakumar1998electrostatic}
+Vijayakumar, M., Wong, K.-Y., Schreiber, G., Fersht, A.~R., Szabo, A., and
+  Zhou, H.-X. (1998).
+\newblock Electrostatic enhancement of diffusion-controlled protein-protein
+  association: comparison of theory and experiment on barnase and barstar.
+\newblock {\em Journal of molecular biology}, 278(5):1015--1024.
+
+\end{thebibliography}
