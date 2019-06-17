@@ -49,45 +49,68 @@ Repeated entry---line 1696 of file References/references.bib
  : @article{Parthiban2006
  :                       ,
 I'm skipping whatever remains of this entry
-You've used 30 entries,
+Repeated entry---line 1777 of file References/references.bib
+ : @article{Wainreb2011
+ :                     ,
+I'm skipping whatever remains of this entry
+I was expecting a `{' or a `('---line 1791 of file References/references.bib
+ :  abstract={Motivation: Accurate prediction of protein stability is important for understanding the molecular underpinnings of diseases and for the design of new proteins. We introduce a novel approach for the prediction of changes in protein stability that arise from a single-site amino acid substitution; the approach uses available data on mutations occurring in the same position and in other positions. Our algorithm, named Pro-Maya (Protein Mutant stAbilitY Analyzer), combines a collaborative filtering baseline model, Random Forests regression and a diverse set of features. Pro-Maya predicts the stability free energy difference of mutant versus wild type, denoted as DDG.Results: We evaluated our algorithm extensively using cross-validation on two previously utilized datasets of single amino acid mutations and a (third) validation set. The results indicate that using known DDG values of mutations at the query position improves the accuracy of DDG predictions for other mutations in that position. The accuracy of our predictions in such cases significantly surpasses that of similar methods, achieving, e.g. a Pearson's correlation coefficient of 0.79 and a root mean square error of 0.96 on the validation set. Because Pro-Maya uses a diverse set of features, including predictions using two other methods, it also performs slightly better than other methods in the absence of additional experimental data on the query positions.Availability: Pro-Maya is freely available via web server at http://bental.tau.ac.il/ProMaya.Contact:nirb@tauex.tau.ac.il; 
+ :                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 wolf@cs.tau.ac.ilSupplementary Information:Supplementary data are available at Bioinformatics online.},
+I'm skipping whatever remains of this entry
+I was expecting a `{' or a `('---line 1791 of file References/references.bib
+ :  abstract={Motivation: Accurate prediction of protein stability is important for understanding the molecular underpinnings of diseases and for the design of new proteins. We introduce a novel approach for the prediction of changes in protein stability that arise from a single-site amino acid substitution; the approach uses available data on mutations occurring in the same position and in other positions. Our algorithm, named Pro-Maya (Protein Mutant stAbilitY Analyzer), combines a collaborative filtering baseline model, Random Forests regression and a diverse set of features. Pro-Maya predicts the stability free energy difference of mutant versus wild type, denoted as DDG.Results: We evaluated our algorithm extensively using cross-validation on two previously utilized datasets of single amino acid mutations and a (third) validation set. The results indicate that using known DDG values of mutations at the query position improves the accuracy of DDG predictions for other mutations in that position. The accuracy of our predictions in such cases significantly surpasses that of similar methods, achieving, e.g. a Pearson's correlation coefficient of 0.79 and a root mean square error of 0.96 on the validation set. Because Pro-Maya uses a diverse set of features, including predictions using two other methods, it also performs slightly better than other methods in the absence of additional experimental data on the query positions.Availability: Pro-Maya is freely available via web server at http://bental.tau.ac.il/ProMaya.Contact:nirb@tauex.tau.ac.il; wolf@cs.tau.ac.ilsupplementary 
+ :                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                Information:Supplementary data are available at Bioinformatics online.},
+I'm skipping whatever remains of this entry
+Repeated entry---line 1797 of file References/references.bib
+ : @incollection{abola1984protein
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 2182 of file References/references.bib
+ : @inproceedings{metsis2006spam
+ :                              ,
+I'm skipping whatever remains of this entry
+Warning--empty year in prot20185
+Warning--can't use both volume and number fields in friedman2001elements
+Warning--empty journal in netzer2011reading
+You've used 97 entries,
             1935 wiz_defined-function locations,
-            717 strings with 10966 characters,
-and the built_in function-call counts, 14129 in all, are:
-= -- 1336
-> -- 719
-< -- 9
-+ -- 260
-- -- 251
-* -- 1354
-:= -- 2458
-add.period$ -- 99
-call.type$ -- 30
-change.case$ -- 275
-chr.to.int$ -- 29
-cite$ -- 30
-duplicate$ -- 442
-empty$ -- 930
-format.name$ -- 291
-if$ -- 2736
-int.to.chr$ -- 2
+            1096 strings with 22939 characters,
+and the built_in function-call counts, 43902 in all, are:
+= -- 4205
+> -- 2061
+< -- 50
++ -- 756
+- -- 709
+* -- 3998
+:= -- 7548
+add.period$ -- 308
+call.type$ -- 97
+change.case$ -- 825
+chr.to.int$ -- 90
+cite$ -- 100
+duplicate$ -- 1519
+empty$ -- 2981
+format.name$ -- 834
+if$ -- 8620
+int.to.chr$ -- 8
 int.to.str$ -- 0
-missing$ -- 30
-newline$ -- 160
-num.names$ -- 92
-pop$ -- 211
+missing$ -- 103
+newline$ -- 495
+num.names$ -- 297
+pop$ -- 700
 preamble$ -- 1
-purify$ -- 275
+purify$ -- 831
 quote$ -- 0
-skip$ -- 323
+skip$ -- 1129
 stack$ -- 0
-substring$ -- 1047
-swap$ -- 47
-text.length$ -- 4
+substring$ -- 3202
+swap$ -- 217
+text.length$ -- 25
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 180
-warning$ -- 0
-while$ -- 98
+type$ -- 570
+warning$ -- 3
+while$ -- 327
 width$ -- 0
-write$ -- 410
-(There were 3 error messages)
+write$ -- 1293
+(There were 8 error messages)

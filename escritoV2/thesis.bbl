@@ -6,12 +6,43 @@ Abagyan, R. and Totrov, M. (1994).
   electrostatic calculations for peptides and proteins.
 \newblock {\em Journal of molecular biology}, 235(3):983--1002.
 
+\bibitem[Abdelaziz et~al., 2018]{ABDELAZIZ2018117}
+Abdelaziz, A., Elhoseny, M., Salama, A.~S., and Riad, A. (2018).
+\newblock A machine learning model for improving healthcare services on cloud
+  computing environment.
+\newblock {\em Measurement}, 119:117 -- 128.
+
+\bibitem[Abola et~al., 1984]{abola1984protein}
+Abola, E.~E., Bernstein, F.~C., and Koetzle, T.~F. (1984).
+\newblock The protein data bank.
+\newblock In {\em Neutrons in Biology}, pages 441--441. Springer.
+
+\bibitem[Alexov et~al., 2012]{Alexov2012}
+Alexov, E., Zhang, J., Wang, L., Zhenirovskyy, M., Gao, Y., and Zhang, Z.
+  (2012).
+\newblock Predicting folding free energy changes upon single point mutations.
+\newblock {\em Bioinformatics}, 28(5):664--671.
+
 \bibitem[Alib{\'e}s et~al., 2010]{Alibes2010}
 Alib{\'e}s, A., Nadra, A.~D., De~Masi, F., Bulyk, M.~L., Serrano, L., and
   Stricher, F. (2010).
 \newblock Using protein design algorithms to understand the molecular basis of
   disease caused by protein-dna interactions: the pax6 example.
 \newblock {\em Nucleic Acids Research}, 38(21):7422--7431.
+
+\bibitem[Alm et~al., 2005]{alm2005emotions}
+Alm, C.~O., Roth, D., and Sproat, R. (2005).
+\newblock Emotions from text: machine learning for text-based emotion
+  prediction.
+\newblock In {\em Proceedings of the conference on human language technology
+  and empirical methods in natural language processing}, pages 579--586.
+  Association for Computational Linguistics.
+
+\bibitem[Ancien et~al., 2018]{ancien2018prediction}
+Ancien, F., Pucci, F., Godfroid, M., and Rooman, M. (2018).
+\newblock Prediction and interpretation of deleterious coding variants in terms
+  of protein structural stability.
+\newblock {\em Scientific reports}, 8(1):4480.
 
 \bibitem[Barenboim et~al., 2008]{Barenboim2008}
 Barenboim, M., Masso, M., Vaisman, I.~I., and Jamison, D.~C. (2008).
@@ -26,12 +57,55 @@ Bava, K.~A., Gromiha, M.~M., Uedaira, H., Kitajima, K., and Sarai, A. (2004).
   mutants.
 \newblock {\em Nucleic Acids Research}, 32(suppl\_1):D120--D121.
 
-\bibitem[Broom et~al., 2017]{Broom2017}
-Broom, A., Jacobi, Z., Trainor, K., and Meiering, E.~M. (2017).
+\bibitem[Berman et~al., 2000]{berman2000protein}
+Berman, H.~M., Westbrook, J., Feng, Z., Gilliland, G., Bhat, T.~N., Weissig,
+  H., Shindyalov, I.~N., and Bourne, P.~E. (2000).
+\newblock The protein data bank.
+\newblock {\em Nucleic acids research}, 28(1):235--242.
+
+\bibitem[Berry and Linoff, 2004]{berry2004data}
+Berry, M.~J. and Linoff, G.~S. (2004).
+\newblock {\em Data mining techniques: for marketing, sales, and customer
+  relationship management}.
+\newblock John Wiley \& Sons.
+
+\bibitem[Bhargava et~al., 2013]{bhargava2013decision}
+Bhargava, N., Sharma, G., Bhargava, R., and Mathuria, M. (2013).
+\newblock Decision tree analysis on j48 algorithm for data mining.
+\newblock {\em Proceedings of International Journal of Advanced Research in
+  Computer Science and Software Engineering}, 3(6).
+
+\bibitem[Bordner and Abagyan, ]{prot20185}
+Bordner, A.~J. and Abagyan, R.~A.
+\newblock Large-scale prediction of protein geometry and stability changes for
+  arbitrary single point mutations.
+\newblock {\em Proteins: Structure, Function, and Bioinformatics},
+  57(2):400--413.
+
+\bibitem[{Braha} and {Shmilovici}, 2002]{983448}
+{Braha}, D. and {Shmilovici}, A. (2002).
+\newblock Data mining for improving a cleaning process in the semiconductor
+  industry.
+\newblock {\em IEEE Transactions on Semiconductor Manufacturing},
+  15(1):91--101.
+
+\bibitem[Breiman, 2017]{breiman2017classification}
+Breiman, L. (2017).
+\newblock {\em Classification and regression trees}.
+\newblock Routledge.
+
+\bibitem[Broom et~al., 2017a]{Broom2017}
+Broom, A., Jacobi, Z., Trainor, K., and Meiering, E.~M. (2017a).
 \newblock Computational tools help improve protein stability but with a
   solubility tradeoff.
 \newblock {\em J Biol Chem}, 292(35):14349--14361.
 \newblock 28710274[pmid].
+
+\bibitem[Broom et~al., 2017b]{broom2017computational}
+Broom, A., Jacobi, Z., Trainor, K., and Meiering, E.~M. (2017b).
+\newblock Computational tools help improve protein stability but with a
+  solubility tradeoff.
+\newblock {\em Journal of Biological Chemistry}, 292(35):14349--14361.
 
 \bibitem[Bu{\ss} et~al., 2018]{Bu2018}
 Bu{\ss}, O., Muller, D., Jager, S., Rudat, J., and Rabe, K.~S. (2018).
@@ -59,11 +133,107 @@ Capriotti, E., Fariselli, P., and Casadio, R. (2005b).
 \newblock {\em Nucleic Acids Res}, 33(Web Server issue):W306--W310.
 \newblock 15980478[pmid].
 
-\bibitem[Capriotti et~al., 2008]{Capriotti2008}
-Capriotti, E., Fariselli, P., Rossi, I., and Casadio, R. (2008).
+\bibitem[Capriotti et~al., 2008a]{Capriotti2008}
+Capriotti, E., Fariselli, P., Rossi, I., and Casadio, R. (2008a).
 \newblock A three-state prediction of single point mutations on protein
   stability changes.
 \newblock {\em BMC Bioinformatics}, 9(2):S6.
+
+\bibitem[Capriotti et~al., 2008b]{capriotti2008three}
+Capriotti, E., Fariselli, P., Rossi, I., and Casadio, R. (2008b).
+\newblock A three-state prediction of single point mutations on protein
+  stability changes.
+\newblock {\em BMC bioinformatics}, 9(2):S6.
+
+\bibitem[Chawla et~al., 2002]{chawla2002smote}
+Chawla, N.~V., Bowyer, K.~W., Hall, L.~O., and Kegelmeyer, W.~P. (2002).
+\newblock Smote: synthetic minority over-sampling technique.
+\newblock {\em Journal of artificial intelligence research}, 16:321--357.
+
+\bibitem[Chen et~al., 2017]{Chen2017}
+Chen, C., Lu, Z., and Ciucci, F. (2017).
+\newblock Data mining of molecular dynamics data reveals li diffusion
+  characteristics in garnet li7la3zr2o12.
+\newblock {\em Scientific Reports}, 7:40769 EP --.
+\newblock Article.
+
+\bibitem[Chen et~al., 2009]{Chen2009}
+Chen, J., Huang, H., Tian, S., and Qu, Y. (2009).
+\newblock Feature selection for text classification with na{\"i}ve bayes.
+\newblock {\em Expert Systems with Applications}, 36(3, Part 1):5432--5435.
+
+\bibitem[{Chen} et~al., 2017]{7912315}
+{Chen}, M., {Hao}, Y., {Hwang}, K., {Wang}, L., and {Wang}, L. (2017).
+\newblock Disease prediction by machine learning over big data from healthcare
+  communities.
+\newblock {\em IEEE Access}, 5:8869--8879.
+
+\bibitem[Chien and Chen, 2008]{Chien2008}
+Chien, C.-F. and Chen, L.-F. (2008).
+\newblock Data mining to improve personnel selection and enhance human capital:
+  A case study in high-technology industry.
+\newblock {\em Expert Systems with Applications}, 34(1):280--290.
+
+\bibitem[Cooley et~al., 1997]{cooley1997web}
+Cooley, R., Mobasher, B., Srivastava, J., et~al. (1997).
+\newblock Web mining: Information and pattern discovery on the world wide web.
+\newblock In {\em ictai}, volume~97, pages 558--567.
+
+\bibitem[Curtarolo et~al., 2003]{PhysRevLett.91.135503}
+Curtarolo, S., Morgan, D., Persson, K., Rodgers, J., and Ceder, G. (2003).
+\newblock Predicting crystal structures with data mining of quantum
+  calculations.
+\newblock {\em Phys. Rev. Lett.}, 91:135503.
+
+\bibitem[Danielsson, 1980]{DANIELSSON1980227}
+Danielsson, P.-E. (1980).
+\newblock Euclidean distance mapping.
+\newblock {\em Computer Graphics and Image Processing}, 14(3):227 -- 248.
+
+\bibitem[Duan et~al., 2011]{LDuan}
+Duan, L., Street, W.~N., and Xu, E. (2011).
+\newblock Healthcare information systems: data mining methods in the creation
+  of a clinical recommender system.
+\newblock {\em Enterprise Information Systems}, 5(2):169--181.
+
+\bibitem[{Dudani}, 1976]{5408784}
+{Dudani}, S.~A. (1976).
+\newblock The distance-weighted k-nearest-neighbor rule.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics},
+  SMC-6(4):325--327.
+
+\bibitem[Dunham, 2006]{dunham2006data}
+Dunham, M.~H. (2006).
+\newblock {\em Data mining: Introductory and advanced topics}.
+\newblock Pearson Education India.
+
+\bibitem[Duygulu et~al., 2002]{imageA}
+Duygulu, P., Barnard, K., de~Freitas, J. F.~G., and Forsyth, D.~A. (2002).
+\newblock Object recognition as machine translation: Learning a lexicon for a
+  fixed image vocabulary.
+\newblock In Heyden, A., Sparr, G., Nielsen, M., and Johansen, P., editors,
+  {\em Computer Vision --- ECCV 2002}, pages 97--112, Berlin, Heidelberg.
+  Springer Berlin Heidelberg.
+
+\bibitem[Fayyad et~al., 1996a]{fayyad1996data}
+Fayyad, U., Piatetsky-Shapiro, G., and Smyth, P. (1996a).
+\newblock From data mining to knowledge discovery in databases.
+\newblock {\em AI magazine}, 17(3):37--37.
+
+\bibitem[Fayyad et~al., 1996b]{fayyad1996kdd}
+Fayyad, U., Piatetsky-Shapiro, G., and Smyth, P. (1996b).
+\newblock The kdd process for extracting useful knowledge from volumes of data.
+\newblock {\em Communications of the ACM}, 39(11):27--34.
+
+\bibitem[Fayyad et~al., 1996c]{fayyad1996knowledge}
+Fayyad, U.~M., Piatetsky-Shapiro, G., Smyth, P., et~al. (1996c).
+\newblock Knowledge discovery and data mining: Towards a unifying framework.
+\newblock In {\em KDD}, volume~96, pages 82--88.
+
+\bibitem[Fisher, 1936]{fisher1936use}
+Fisher, R.~A. (1936).
+\newblock The use of multiple measurements in taxonomic problems.
+\newblock {\em Annals of eugenics}, 7(2):179--188.
 
 \bibitem[Forbes et~al., 2010]{Forbes2010}
 Forbes, S.~A., Bindal, N., Bamford, S., Cole, C., Kok, C.~Y., Beare, D., Jia,
@@ -73,12 +243,34 @@ Forbes, S.~A., Bindal, N., Bamford, S., Cole, C., Kok, C.~Y., Beare, D., Jia,
   mutations in cancer.
 \newblock {\em Nucleic Acids Research}, 39(suppl\_1):D945--D950.
 
-\bibitem[Getov et~al., 2016]{Getov2016}
-Getov, I., Petukh, M., and Alexov, E. (2016).
+\bibitem[Freund and Mason, 1999]{freund1999alternating}
+Freund, Y. and Mason, L. (1999).
+\newblock The alternating decision tree learning algorithm.
+\newblock In {\em icml}, volume~99, pages 124--133.
+
+\bibitem[Friedman et~al., 2001]{friedman2001elements}
+Friedman, J., Hastie, T., and Tibshirani, R. (2001).
+\newblock {\em The elements of statistical learning}, volume~1.
+\newblock Springer series in statistics New York.
+
+\bibitem[{Ge} et~al., 2017]{8051033}
+{Ge}, Z., {Song}, Z., {Ding}, S.~X., and {Huang}, B. (2017).
+\newblock Data mining and analytics in the process industry: The role of
+  machine learning.
+\newblock {\em IEEE Access}, 5:20590--20616.
+
+\bibitem[Getov et~al., 2016a]{Getov2016}
+Getov, I., Petukh, M., and Alexov, E. (2016a).
 \newblock Saafec: Predicting the effect of single point mutations on protein
   folding free energy using a knowledge-modified mm/pbsa approach.
 \newblock {\em Int J Mol Sci}, 17(4):512--512.
 \newblock 27070572[pmid].
+
+\bibitem[Getov et~al., 2016b]{getov2016saafec}
+Getov, I., Petukh, M., and Alexov, E. (2016b).
+\newblock Saafec: predicting the effect of single point mutations on protein
+  folding free energy using a knowledge-modified mm/pbsa approach.
+\newblock {\em International journal of molecular sciences}, 17(4):512.
 
 \bibitem[Gossage et~al., 2014]{article}
 Gossage, L., Pires, D., Olivera-Nappa, A., A.~Asenjo, J., Bycroft, M.,
@@ -87,16 +279,128 @@ Gossage, L., Pires, D., Olivera-Nappa, A., A.~Asenjo, J., Bycroft, M.,
   mutations according to risk of clear cell renal carcinoma.
 \newblock {\em Human molecular genetics}, 23.
 
+\bibitem[Han and Gao, 2009]{han2009research}
+Han, J. and Gao, J. (2009).
+\newblock Research challenges for data mining in science and engineering.
+\newblock {\em Next Generation of Data Mining}, pages 1--18.
+
+\bibitem[Hand, 2006]{hand2006data}
+Hand, D.~J. (2006).
+\newblock Data mining.
+\newblock {\em Encyclopedia of Environmetrics}, 2.
+
 \bibitem[Heselpoth et~al., 2015]{10.1093/protein/gzv004}
 Heselpoth, R.~D., Yin, Y., Moult, J., and Nelson, D.~C. (2015).
 \newblock {Increasing the stability of the bacteriophage endolysin PlyC using
   rationale-based FoldX computational modeling}.
 \newblock {\em Protein Engineering, Design and Selection}, 28(4):85--92.
 
+\bibitem[Hofmann and Klinkenberg, 2013]{hofmann2013rapidminer}
+Hofmann, M. and Klinkenberg, R. (2013).
+\newblock {\em RapidMiner: Data mining use cases and business analytics
+  applications}.
+\newblock CRC Press.
+
+\bibitem[Jain et~al., 1988]{jain1988algorithms}
+Jain, A.~K., Dubes, R.~C., et~al. (1988).
+\newblock {\em Algorithms for clustering data}, volume~6.
+\newblock Prentice hall Englewood Cliffs.
+
+\bibitem[John and Langley, 1995]{john1995estimating}
+John, G.~H. and Langley, P. (1995).
+\newblock Estimating continuous distributions in bayesian classifiers.
+\newblock In {\em Proceedings of the Eleventh conference on Uncertainty in
+  artificial intelligence}, pages 338--345. Morgan Kaufmann Publishers Inc.
+
+\bibitem[{Keller} et~al., 1985]{6313426}
+{Keller}, J.~M., {Gray}, M.~R., and {Givens}, J.~A. (1985).
+\newblock A fuzzy k-nearest neighbor algorithm.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics},
+  SMC-15(4):580--585.
+
 \bibitem[Khan and Vihinen, 2010]{Khan2010}
 Khan, S. and Vihinen, M. (2010).
 \newblock Performance of protein stability predictors.
 \newblock {\em Human Mutation}, 31(6):675--684.
+
+\bibitem[Larra{\~n}aga et~al., 2006]{juanito}
+Larra{\~n}aga, P., Calvo, B., Santana, R., Bielza, C., Galdiano, J., Inza, I.,
+  Lozano, J.~A., Arma{\~n}anzas, R., Santaf{\'e}, G., P{\'e}rez, A., and
+  Robles, V. (2006).
+\newblock Machine learning in bioinformatics.
+\newblock {\em Briefings in Bioinformatics}, 7(1):86--112.
+
+\bibitem[Lee et~al., 2008]{Lee2008}
+Lee, J.~K., Williams, P.~D., and Cheon, S. (2008).
+\newblock Data mining in genomics.
+\newblock {\em Clinics in Laboratory Medicine}, 28(1):145--166.
+
+\bibitem[Lewis, 1998]{10.1007/BFb0026666}
+Lewis, D.~D. (1998).
+\newblock Naive (bayes) at forty: The independence assumption in information
+  retrieval.
+\newblock In N{\'e}dellec, C. and Rouveirol, C., editors, {\em Machine
+  Learning: ECML-98}, pages 4--15, Berlin, Heidelberg. Springer Berlin
+  Heidelberg.
+
+\bibitem[{Li} et~al., 2008]{4548625}
+{Li}, M., {Wang}, J., and {Chen}, J. (2008).
+\newblock A fast agglomerate algorithm for mining functional modules in protein
+  interaction networks.
+\newblock In {\em 2008 International Conference on BioMedical Engineering and
+  Informatics}, volume~1, pages 3--7.
+
+\bibitem[Li et~al., 2008]{li2008fast}
+Li, M., Wang, J., and Chen, J. (2008).
+\newblock A fast agglomerate algorithm for mining functional modules in protein
+  interaction networks.
+\newblock In {\em 2008 International conference on biomedical engineering and
+  informatics}, volume~1, pages 3--7. IEEE.
+
+\bibitem[Liao and Xu, 2015]{LIAO20155328}
+Liao, H. and Xu, Z. (2015).
+\newblock Approaches to manage hesitant fuzzy linguistic information based on
+  the cosine distance and similarity measures for hfltss and their application
+  in qualitative decision making.
+\newblock {\em Expert Systems with Applications}, 42(12):5328 -- 5336.
+
+\bibitem[Ma et~al., 2013]{Ma2013}
+Ma, X., Wu, Y.-J., Wang, Y., Chen, F., and Liu, J. (2013).
+\newblock Mining smart card data for transit riders' travel patterns.
+\newblock {\em Transportation Research Part C: Emerging Technologies},
+  36:1--12.
+
+\bibitem[Maesschalck et~al., 2000]{DEMAESSCHALCK20001}
+Maesschalck, R.~D., Jouan-Rimbaud, D., and Massart, D. (2000).
+\newblock The mahalanobis distance.
+\newblock {\em Chemometrics and Intelligent Laboratory Systems}, 50(1):1 -- 18.
+
+\bibitem[Manning et~al., 2010]{manning2010introduction}
+Manning, C., Raghavan, P., and Sch{\"u}tze, H. (2010).
+\newblock Introduction to information retrieval.
+\newblock {\em Natural Language Engineering}, 16(1):100--103.
+
+\bibitem[Mao et~al., 2004]{MAO2004787}
+Mao, L., Wang, Y., Liu, Y., and Hu, X. (2004).
+\newblock Molecular determinants for atp-binding in proteins: A data mining and
+  quantum chemical analysis.
+\newblock {\em Journal of Molecular Biology}, 336(3):787 -- 807.
+
+\bibitem[Masso and Vaisman, 2008]{masso2008accurate}
+Masso, M. and Vaisman, I.~I. (2008).
+\newblock Accurate prediction of stability changes in protein mutants by
+  combining machine learning with structure based computational mutagenesis.
+\newblock {\em Bioinformatics}, 24(18):2002--2009.
+
+\bibitem[Metsis et~al., 2006]{metsis2006spam}
+Metsis, V., Androutsopoulos, I., and Paliouras, G. (2006).
+\newblock Spam filtering with naive bayes-which naive bayes?
+\newblock In {\em CEAS}, volume~17, pages 28--69. Mountain View, CA.
+
+\bibitem[Michie et~al., 1994]{michie1994machine}
+Michie, D., Spiegelhalter, D.~J., Taylor, C., et~al. (1994).
+\newblock Machine learning.
+\newblock {\em Neural and Statistical Classification}, 13.
 
 \bibitem[Mu{\~n}oz et~al., 1995]{munoz1995hydrophobic}
 Mu{\~n}oz, V., Blanco, F.~J., and Serrano, L. (1995).
@@ -115,6 +419,15 @@ Nadra, A.~D., Serrano, L., and Alibés, A. (2011).
 \newblock Chapter one - dna-binding specificity prediction with foldx.
 \newblock In Voigt, C., editor, {\em Synthetic Biology, Part B}, volume 498 of
   {\em Methods in Enzymology}, pages 3 -- 18. Academic Press.
+
+\bibitem[Netzer et~al., 2011]{netzer2011reading}
+Netzer, Y., Wang, T., Coates, A., Bissacco, A., Wu, B., and Ng, A.~Y. (2011).
+\newblock Reading digits in natural images with unsupervised feature learning.
+
+\bibitem[Obenshain, 2004]{obenshain2004}
+Obenshain, M.~K. (2004).
+\newblock Application of data mining techniques to healthcare data.
+\newblock {\em Infection Control \&; Hospital Epidemiology}, 25(8):690–695.
 
 \bibitem[Olivera-Nappa et~al., 2011]{Olivera-Nappa2011}
 Olivera-Nappa, A., Andrews, B.~A., and Asenjo, J.~A. (2011).
@@ -136,17 +449,58 @@ Parthiban, V., Gromiha, M.~M., and Schomburg, D. (2006).
 \newblock {\em Nucleic Acids Res}, 34(Web Server issue):W239--W242.
 \newblock 16845001[pmid].
 
+\bibitem[Pedregosa et~al., 2011]{pedregosa2011scikit}
+Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel,
+  O., Blondel, M., Prettenhofer, P., Weiss, R., Dubourg, V., et~al. (2011).
+\newblock Scikit-learn: Machine learning in python.
+\newblock {\em Journal of machine learning research}, 12(Oct):2825--2830.
+
+\bibitem[Perlibakas, 2004]{PERLIBAKAS2004711}
+Perlibakas, V. (2004).
+\newblock Distance measures for pca-based face recognition.
+\newblock {\em Pattern Recognition Letters}, 25(6):711 -- 724.
+
+\bibitem[Petukh et~al., 2016]{petukh2016saambe}
+Petukh, M., Dai, L., and Alexov, E. (2016).
+\newblock Saambe: webserver to predict the charge of binding free energy caused
+  by amino acids mutations.
+\newblock {\em International journal of molecular sciences}, 17(4):547.
+
 \bibitem[Petukhov et~al., 1999]{petukhov1999local}
 Petukhov, M., Cregut, D., Soares, C.~M., and Serrano, L. (1999).
 \newblock Local water bridges and protein conformational stability.
 \newblock {\em Protein Science}, 8(10):1982--1989.
 
-\bibitem[Quan et~al., 2016]{Quan2016}
-Quan, L., Lv, Q., and Zhang, Y. (2016).
+\bibitem[Potapov et~al., 2009]{1gzp030}
+Potapov, V., Cohen, M., and Schreiber, G. (2009).
+\newblock {Assessing computational methods for predicting protein stability
+  upon mutation: good on average but not in the details}.
+\newblock {\em Protein Engineering, Design and Selection}, 22(9):553--560.
+
+\bibitem[Quan et~al., 2016a]{Quan2016}
+Quan, L., Lv, Q., and Zhang, Y. (2016a).
 \newblock Strum: structure-based prediction of protein stability changes upon
   single-point mutation.
 \newblock {\em Bioinformatics}, 32(19):2936--2946.
 \newblock 27318206[pmid].
+
+\bibitem[Quan et~al., 2016b]{quan2016strum}
+Quan, L., Lv, Q., and Zhang, Y. (2016b).
+\newblock Strum: structure-based prediction of protein stability changes upon
+  single-point mutation.
+\newblock {\em Bioinformatics}, 32(19):2936--2946.
+
+\bibitem[Ramakrishnan et~al., 2015]{Ramakrishnan2015}
+Ramakrishnan, R., Dral, P.~O., Rupp, M., and von Lilienfeld, O.~A. (2015).
+\newblock Big data meets quantum chemistry approximations: The d-machine
+  learning approach.
+\newblock {\em Journal of Chemical Theory and Computation}, 11(5):2087--2096.
+
+\bibitem[Rebhan et~al., 1998]{Rebhan1998}
+Rebhan, M., Chalifa-Caspi, V., Prilusky, J., and Lancet, D. (1998).
+\newblock Genecards: a novel functional genomics compendium with automated data
+  mining and query reformulation support.
+\newblock {\em Bioinformatics}, 14(8):656--664.
 
 \bibitem[Rohl et~al., 2004]{rohl2004protein}
 Rohl, C.~A., Strauss, C.~E., Misura, K.~M., and Baker, D. (2004).
@@ -167,6 +521,17 @@ Schymkowitz, J., Borg, J., Stricher, F., Nys, R., Rousseau, F., and Serrano, L.
 \newblock {\em Nucleic Acids Res}, 33(Web Server issue):W382--W388.
 \newblock 15980494[pmid].
 
+\bibitem[Sun et~al., 2017]{Sun2017}
+Sun, L., Li, L., Peng, Y., Jia, Z., and Alexov, E. (2017).
+\newblock Predicting protein-dna binding free energy change upon missense
+  mutations using modified mm/pbsa approach: Sampdi webserver.
+\newblock {\em Bioinformatics}, 34(5):779--786.
+
+\bibitem[Tan, 2005]{TAN2005667}
+Tan, S. (2005).
+\newblock Neighbor-weighted k-nearest neighbor for unbalanced text corpus.
+\newblock {\em Expert Systems with Applications}, 28(4):667 -- 671.
+
 \bibitem[Tian et~al., 2010]{Tian2010}
 Tian, J., Wu, N., Chu, X., and Fan, Y. (2010).
 \newblock Predicting changes in protein thermostability brought about by
@@ -186,11 +551,35 @@ Vijayakumar, M., Wong, K.-Y., Schreiber, G., Fersht, A.~R., Szabo, A., and
   association: comparison of theory and experiment on barnase and barstar.
 \newblock {\em Journal of molecular biology}, 278(5):1015--1024.
 
-\bibitem[Zhou and Zhou, 2002]{Zhou2002}
-Zhou, H. and Zhou, Y. (2002).
-\newblock Distance-scaled, finite ideal-gas reference state improves
-  structure-derived potentials of mean force for structure selection and
-  stability prediction.
-\newblock {\em Protein Science}, 11(11):2714--2726.
+\bibitem[Wainreb et~al., 2011]{Wainreb2011}
+Wainreb, G., Ashkenazy, H., Wolf, L., Ben-Tal, N., and Dehouck, Y. (2011).
+\newblock Protein stability: a single recorded mutation aids in predicting the
+  effects of other mutations in the same amino acid site.
+\newblock {\em Bioinformatics}, 27(23):3286--3292.
+
+\bibitem[Walt et~al., 2011]{doi:10.1109/MCSE.2011.37}
+Walt, S. v.~d., Colbert, S.~C., and Varoquaux, G. (2011).
+\newblock The numpy array: A structure for efficient numerical computation.
+\newblock {\em Computing in Science \& Engineering}, 13(2):22--30.
+
+\bibitem[Yang et~al., 2005]{Yang:2005:GFM:1081870.1081962}
+Yang, H., Parthasarathy, S., and Mehta, S. (2005).
+\newblock A generalized framework for mining spatio-temporal patterns in
+  scientific data.
+\newblock In {\em Proceedings of the Eleventh ACM SIGKDD International
+  Conference on Knowledge Discovery in Data Mining}, KDD '05, pages 716--721,
+  New York, NY, USA. ACM.
+
+\bibitem[Yoo et~al., 2012]{Yoo2012}
+Yoo, I., Alafaireet, P., Marinov, M., Pena-Hernandez, K., Gopidi, R., Chang,
+  J.-F., and Hua, L. (2012).
+\newblock Data mining in healthcare and biomedicine: A survey of the
+  literature.
+\newblock {\em Journal of Medical Systems}, 36(4):2431--2448.
+
+\bibitem[Zhang, 2004]{zhang2004optimality}
+Zhang, H. (2004).
+\newblock The optimality of naive bayes.
+\newblock {\em AA}, 1(2):3.
 
 \end{thebibliography}

@@ -2,7 +2,7 @@
 %*******************************************************************************
 %****************************** Third Chapter **********************************
 %*******************************************************************************
-\chapter{Digitalizando propiedades fisicoquímicas de proteínas a partir de su secuencia lineal}
+\chapter{Digitalización de secuencias lineales de proteínas aplicadas al reconocimiento de patrones y modelos predictivos}
 
 % **************************** Define Graphics Path **************************
 \ifpdf
@@ -11,5 +11,128 @@
     \graphicspath{{Chapter3/Figs/Vector/}{Chapter3/Figs/}}
 \fi
 
-Existen cerca de X proteínas reportadas en las bases de datos. Sin embargo, sólo un número limitado de ellas presentan cristal o estructura tridimensional reportada, lo cual dificulta diferentes estudios posibles a la hora de analizar mutaciones y cambios conformacionales que conlleva dicho cambio por medio de técnicas bioinformáticas que requieren la estructura de la proteína.
+Desarrollar modelos predictivos basados en algoritmos de aprendizaje supervisado, o, la identificación de patrones aplicando técnicas de clustering, son tareas muy relevantes a la hora de trabajar con secuencias de proteínas, ya sea para identificar grupos con características comunes o entrenar modelos predictivos de respuestas de interés. En ambos casos, se requiere el uso de conjuntos de datos altamente informativos y con características numéricas para poder utilizar los métodos implementados en las librerías actuales \cite{pedregosa2011scikit}.
+
+Diferentes metodologías se han implementado, para manipular las variables categóricas en set de datos y lograr su codificación numérica. Enfoques basados en adición de columnas según las categorías o simple transformación empleando representaciones en conjuntos naturales suelen ser utilizados. No obstante, generan bastante discusión sobre las nuevas representaciones y a su vez, el hecho de aumentar el número de columnas, conlleva a incrementar las dimensiones del conjunto de datos, provocando efectos en los desempeños de los algoritmos. 
+
+Particularmente, en secuencias de proteínas, se han utilizado las frecuencias de los residuos para codificarlos, la cual, pese a su simplicidad, ha resultado ser efectiva en diferentes casos de uso. No obstante, este tipo de codificación, no permite explorar el ambiente bajo el cual se encuentran los residuos y tampoco considera el efecto de propiedades fisicoquímicas ni termodinámicas.
+
+En diferentes estudios, los residuos se describen a partir de sus propiedades fisicoquímicas y adicional a ello, se emplea información que permite describir el ambiente del residuo a caracterizar, empleando binarizaciones que describen los residuos cercanos, ya sea por medio del uso de un rango espacial, utilizando modelos o estructuras tridimensionales en donde se representan las coordenadas espaciales de los residuos, o empleando un rango lineal en secuencias lineales.
+
+Otros estudios, se han basado en adicionar información filogenética a las descripciones de los residuos. Sin embargo, estos, sólo se basan en el análisis de mutaciones y permiten evaluar la propensión de que dicho cambio ocurra. No obstante, su uso ha permitido obtener resultados satisfactorios a la hora de entrenar modelos predictivos.
+
+Un enfoque basado en las propiedades fisicoquímicas en combinación con la aplicación de transformaciones de Fourier, ha permitido demostrar que ciertos residuos permiten entregar las características asociadas a la propiedad en estudio, además, facilita comprender el aporte del ambiente sobre estos y representa una forma de estudio novedosa para el uso de información de secuencias lineales. Siendo una metodología ampliamente utilizada para identificar residuos que aporten a la propiedad, por medio de peacks de frecuencias de señales.
+
+A pesar de ser una metodología interesante a la hora de estudiar secuencias lineales, exhiben problemas notorios sobre la selección de las propiedades relevantes a analizar, ya que, existe un número considerablemente alto de propiedades posibles a utilizar y es factible que diferentes familias de proteínas exhiban comportamientos notoriamente no similares y diverjan en cuanto a las propiedades que puedan ser representativas, inclusive, a la hora de estudiar mutaciones en una misma proteína puede que no sólo una propiedad permita su caracterización, si no, que un conjunto pequeño de éstas.
+
+En el presente capítulo, se exponen en detalle, diferentes formas de representar secuencias lineales de proteínas, seguido a su vez del planteamiento del uso de transformadas de Fourier para la digitalización de propiedades fisicoquímicas y cómo es posible utilizar éstas para la identificación de patrones en secuencias lineales o el desarrollo de modelos de clasificación/regresión y la exposición de casos de uso en diferentes proteínas de interés. 
+
+\section{Metodologías asociadas a la codificación de variables categóricas}
+
+Diferentes metodologías existen para poder codificar variables categóricas, a su vez, para set de datos de proteínas con secuencias lineales, es factible utilizar sus propiedades fisicoquímicas o frecuencias de residuos. Cada una de estas metodologías se expone a continuación.
+
+\subsection{One Hot encoder}
+
+One Hot encoder, es una de las técnicas más utilizadas a la hora de codificar variables categóricas y se basa principalmente en la adición de columnas con respecto a las categorías existentes en un conjunto de datos.
+
+Dado el vector  $x$ de tamaño $n$ con $m$ categorías, por definición, One Hot encoder agrega al conjunto de datos $m$ columnas, tal que, por cada categoría se adiciona una nueva columna al set de datos. Las nuevas columnas se completan con una binarización de los elementos, indicando si el elemento $x_{i}$ posee la categoría $m_{j}$ con un valor 1 y en caso contrario 0. Es posible expresar esto como se expone a continuación.
+
+Sea $x$ vector de $m$ categorías de dimensiones
+$n \times 1$ representado por
+\[ x = \left( \begin{array}{ccc}
+x_{0}\\
+x_{1}\\
+\vdots\\
+x_{n-1} \end{array} \right)\] 
+Su codificación mediante One Hot Encoder corresponde a
+\[ x'(x) = \left( \begin{array}{ccccc}
+1 & 0 & 0 & \cdots & 0 \\
+0 & 1 & 0 & \cdots & 0 \\
+\vdots\\
+0 & 0 & 0 & \cdots & 1 \end{array} \right) \] 
+
+Esta metodología, si bien es altamente usada, implica que, a medida que aumentan la cantidad de categorías incrementan el número de columnas a agregar en el set de datos, es decir, si se tienen $m$ categorías se adicionan $m$ columnas. Esto último puede provocar que los set de datos se afecten por problemas relacionados con la \textit{maldición de dimensionalidad}, ya que, a medida que aumentan los descriptores, aumenta la probabilidad de que estos no sean informativos, provocando una adición de información innecesaria y que perjudicaría el rendimiento de los algoritmos de aprendizajes supervisado y no supervisado.
+
+\subsection{Ordinal encoder}
+
+Ordinal encoder es una simplicación de One Hot encoder, ya que simplemente codifica las categorías con números en el conjunto $[0, m-1]$. Es decir, sea el vector $x$ de tamaño $n$ con $m$ categorías y sea $M$ el espacio de las posibles categorías con $M = [m_{1}, \cdots, m_{m}]$, y cuya codificación implica el vector $M' = [0, \cdots, m-1]$. $\forall $ elemento que $\in$ a $x$ se obtiene su codificación a partir del elemento $M'(M(m_{i}))$ que corresponde a la codificación de la categoría en el espacio $M$.
+
+Si bien, esta es una técnica ampliamente utilizada, es cuestionable con respecto al orden en que trata las categorías, la representación de la información y el mantenimiento del significado de la data. Razón por la cual, se usa sólo en los casos en que la adición de múltiples descriptores empleando One Hot Encoder sea perjudicial a la hora de implementar modelos de clasificación o regresión, e inclusive, en la búsqueda de patrones.
+
+\subsection{Frecuencias de residuos}
+
+Una secuencia lineal de proteína, corresponde a un vector $v$ de tamaño $n$ donde cada elemento corresponde a un residuo que pertenece a la secuencia. El uso de esta información para alimentar modelos de clasificación o regresión conlleva la codificación de sus elementos. Sin embargo, a la hora de utilizar las codificaciones basadas en One Hot Encoder, el conjunto de datos no queda estándar en cuanto a sus dimensiones, ya que el largo de las secuencias puede variar y a su vez, el número de columnas a agregar corresponde a $nx20$ dado a que son $n$ residuos y el espacio muestral $M$ es de tamaño 20 lo que genera un aumento considerable en la cantidad de dimensiones.
+
+Con el fin de poder representar las secuencias lineales de proteínas, se idearon metodologías que consideran la frecuencia de aparición de los residuos en la secuencia, de tal manera de poder codificarla en un vector de tamaño 20, donde cada elemento representa el número de incidencias del residuo dividido por el largo del vector. Así, cada elemento se encuentra en un rango $[0,1]$ donde 0 indica no incidencia del residuo y 1, incidencia total.
+
+Expresado de forma matemática, sea $s$ una secuencia lineal de proteínas con $r$ residuos, su codificación se basa en la frecuencia de aparición del residuo en $s$, tal que, sea $R$ el espacio de los posibles residuos $r$ en $s$, se estima para cada $r_{j} \in\ R$ su frecuencia:
+
+\begin{center}
+	$f(r_{j}) = \dfrac{cont(r_{j})\ if\  (r_{i}==r_{j})}{n}$
+\end{center}
+
+Finalmente, se tiene que cada residuo $r_{i}$ se representa en su valor de frecuencia $f(r_{i})$, generando un set de datos de tamaños $sx20$ con $s$ secuencias representadas por un vector de tamaño 20.
+
+Esta es una de las representaciones más utilizadas y más simples a la hora de codificar secuencias lineales de proteínas. Sin embargo, presenta diferentes problemas tales como:
+
+\begin{itemize}
+	
+	\item No considera información sobre los residuos asociados a propiedades fisicoquímicas, esto complica el hecho de representar un set de datos de secuencias o mutaciones, ya que no representa la realidad y sólo expone el comportamiento de las frecuencias de residuos, favoreciendo a aquellos con una mayor incidencia en sus elementos.
+	
+	\item La codificación por frecuencias es utilizada como un primer acercamiento a la representación del problema y principalmente perjudica a los modelos ya que puede generar atributos no informativos, como lo son los residuos sin incidencia, esto conlleva a modelos sobre ajustados y a creación de set de datos no informativos.
+	
+	\item No evalúa elementos relevantes a la caracterización de residuos claves, ambiente bajo el cual ocurren mutaciones o componentes adicionales que facilitarían una mayor comprensión del problema, ya que, sólo conocer las incidencias, proporciona un conocimiento sobre la moda y cuáles son los residuos más relevantes. No obstante, sólo permite inferir características, relacionadas a estos.
+\end{itemize}
+
+El uso de las frecuencias de residuos, es una de las primeras aproximaciones a la codificación de secuencias lineales de proteínas. No obstante, en todos los casos donde han sido utilizadas, se agrega información adicional, que permite comprender diferentes comportamientos y evalúa ciertas propiedades del entorno, razones por las cuales, se recomiendan utilizarlas en conjunto con otros descriptores. 
+
+\subsection{Uso de propiedades fisicoquímicas}
+
+El uso de propiedades fisicoquímicas para describir un residuo es ampliamente empleado en la generación de descriptores para conjuntos de datos en ingeniería de proteínas. Diversos enfoques y modelos han sido construidos o entrenados, contemplando información asociada a componentes termodinámicos del residuo, en particular, a la hora de describir residuos para evaluar cambios en la energía libre, relacionados a efectos en la estabilidad de una proteína.
+
+Se han reportado cerca de 570 propiedades fisicoquímicas que pueden ser utilizadas para describir un residuo en una secuencia lineal de proteínas. A su vez, es posible caracterizar estos residuos empleando un conjunto de propiedades estructurales, termodinámicas e inclusive filogenéticas. Es decir, diferentes puntos de vista que permitan describir los residuos pertenecientes a una secuencia. Sin embargo, el hecho de seleccionar qué descriptores son relevantes y cuáles no, radica en un problema de evaluación de características, el cual es común, en el área de la minería de datos. 
+
+Dado al gran conjunto de propiedades existentes y a la diversidad de descriptores que pueden ser utilizados para un conjunto de secuencias lineales de proteínas, es necesaria una selección correcta de las características, las cuales permitan formar set de datos informativos y con una correlación mínima entre sus elementos. 
+
+Contemplando esta problemática, técnicas de reducción de dimensionalidad o análisis de características son las más utilizadas a la hora de seleccionar los descriptores más informativos para un conjunto de datos. No obstante, en ocasiones, el conocimiento sobre el problema es un factor relevante a considerar. 
+
+Dada la relevancia de la selección de descriptores correctos para poder caracterizar y codificar secuencias lineales a partir de propiedades, se describen a continuación algunas técnicas de reducción de dimensionalidad y análisis de características que pueden ser empleadas para dar solución a esta problemática.
+
+\subsubsection{Técnicas de reducción de dimensionalidad}
+
+Diferentes técnicas para el análisis de características y reducción de dimensionalidad han sido implementadas en el campo de minería de datos, con el fin de poder permitir la selección de descriptores informativos y sin contemplar conjuntos de datos altamente dimensionales. Dentro de las principales destacan: Análisis de correlación, mutual information, evaluaciones espaciales con respecto al entrenamiento de modelos empleando Random Forest, Análisis de componentes principales (PCA) y sus variantes como métodos lineales y reducción de dimensionalidad empleando métodos no lineales. 
+
+\subsubsection{Análisis de correlación}
+
+\subsubsection{Mutual information}
+
+\subsubsection{Análisis espaciales de características}
+
+\subsubsection{Métodos de reducción de dimensionalidad lineales}
+
+\subsubsection{Métodos de reducción de dimensionalidad no lineales}
+
+\subsection{Codificación de residuos con adición de información de su entorno}
+
+Adicional a las técnicas explicadas previamente con respecto a las codificaciones existentes, en algunos casos, no sólo basta con una única codificación del residuo, si no, que es relevante adicionar información que puede ser importante para describir los residuos. Normalmente, junto con las codificaciones basadas en propiedades fisicoquímicas, se emplean técnicas que permitan describir el ambiente bajo el cual se encuentre el residuo.
+
+En la gran mayoría de los casos, se adiciona información de los residuos cercanos al residuo de interés, esto depende del tipo de datos bajo el cual se esté trabajando, es decir, si son secuencias lineales o son estructuras de proteínas en formato PDB. 
+
+Para el caso de que sean secuencias lineales, sea $s$ secuencia de residuos de tamaño $n$ y sea $r_{i}$ el residuo de interés a evaluar su ambiente. Se crea una ventana de tamaño $n'$ que contempla la cantidad de residuos $r_j$ cercanos al residuo $r_{i}$, de tal manera que se crea un nuevo sub conjunto $s'$ de datos de tamaño $2n'$ con $n'$ residuos a la izquierda y $n'$ a la derecha. El cual normalmente es codificado empleando binarización de elementos, así, en algunas ocasiones, a cada residuo, se le adicionan 20 descriptores que permiten indicar la ausencia o presencia de residuos cercanos a su entorno y el cual se completa con el conjunto de residuos $s'$.
+
+Cuando se manejan estructuras de proteínas en formato PDB, la codificación y la evaluación del ambiente es similar. Sin embargo, en vez de utilizar una ventana de tamaño $n'$ se utiliza un radio espacial de valor $x$ para el cual, se toma el residuo y se estiman las distancias de los elementos cercanos, ya sea entorno a los carbonos $\alpha$ o a otros elementos. Esto, a diferencia de las secuencias lineales, permite adicionar información sobre las propiedades de distancia, ángulos y conformación de estabilidad por interacciones electrostáticas débiles que pueden generarse a partir de la proximidad de los elementos. No obstante, es una inferencia de su uso y se requieren de diferentes tipos de elementos que permitan caracterizar los eventos asociados al ambiente estructural asociado al residuo.
+
+Actualmente, el uso de codificaciones mediante propiedades fisicoquímicas y el empleo de información adicional basada en descriptores de ambientes, es una de las metodologías más utilizadas a la hora de generar set de datos relacionados a mutaciones. Sin embargo, debido a que sólo se considera distancia, la binarización de los elementos no se ve afectada por sustituciones en residuos lejanos al lugar de ocurrencia, lo que denota la necesidad de idear metodologías que permitan contemplar el aporte completo de residuos a la caracterización de propiedades y cómo sustituciones puntuales afectan enormemente a residuos de interés. Una de las formas en las que se ha intentado dar solución a esta problemática, es modelar las propiedades fisicoquímicas de los residuos de las secuencias, a partir del uso de transformaciones de Fourier y en particular, empleando algoritmos relacionados a dichos conceptos, que aprovechen las ventajas referidas a la manipulación de espacios de frecuencias por sobre elementos temporales.
+
+\section{Transformaciones de Fourier}
+
+\subsection{Uso de Transformadas de Fourier en digitalización de propiedades fisicoquímicas}
+
+\section{Hipótesis}
+
+\section{Objetivos}
+
+\section{Metodología}
+
+
  
