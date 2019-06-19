@@ -69,48 +69,52 @@ Repeated entry---line 2182 of file References/references.bib
  : @inproceedings{metsis2006spam
  :                              ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 2225 of file References/references.bib
+ : @inproceedings{kohavi1995study
+ :                               ,
+I'm skipping whatever remains of this entry
 Warning--empty year in prot20185
-Warning--can't use both volume and number fields in friedman2001elements
+Warning--can't use both volume and number fields in kohavi1995study
 Warning--empty journal in netzer2011reading
-You've used 97 entries,
+You've used 129 entries,
             1935 wiz_defined-function locations,
-            1096 strings with 22939 characters,
-and the built_in function-call counts, 43902 in all, are:
-= -- 4205
-> -- 2061
-< -- 50
-+ -- 756
-- -- 709
-* -- 3998
-:= -- 7548
-add.period$ -- 308
-call.type$ -- 97
-change.case$ -- 825
-chr.to.int$ -- 90
-cite$ -- 100
-duplicate$ -- 1519
-empty$ -- 2981
-format.name$ -- 834
-if$ -- 8620
+            1276 strings with 28120 characters,
+and the built_in function-call counts, 57224 in all, are:
+= -- 5556
+> -- 2505
+< -- 77
++ -- 908
+- -- 851
+* -- 5128
+:= -- 9787
+add.period$ -- 410
+call.type$ -- 129
+change.case$ -- 1053
+chr.to.int$ -- 122
+cite$ -- 132
+duplicate$ -- 2039
+empty$ -- 3980
+format.name$ -- 1025
+if$ -- 11296
 int.to.chr$ -- 8
 int.to.str$ -- 0
-missing$ -- 103
-newline$ -- 495
-num.names$ -- 297
-pop$ -- 700
+missing$ -- 134
+newline$ -- 656
+num.names$ -- 397
+pop$ -- 872
 preamble$ -- 1
-purify$ -- 831
+purify$ -- 1058
 quote$ -- 0
-skip$ -- 1129
+skip$ -- 1534
 stack$ -- 0
-substring$ -- 3202
-swap$ -- 217
-text.length$ -- 25
+substring$ -- 4304
+swap$ -- 300
+text.length$ -- 31
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 570
+type$ -- 762
 warning$ -- 3
-while$ -- 327
+while$ -- 449
 width$ -- 0
-write$ -- 1293
-(There were 8 error messages)
+write$ -- 1717
+(There were 9 error messages)
