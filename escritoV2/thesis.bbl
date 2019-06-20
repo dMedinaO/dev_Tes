@@ -168,6 +168,11 @@ Capriotti, E., Fariselli, P., Rossi, I., and Casadio, R. (2008b).
   stability changes.
 \newblock {\em BMC bioinformatics}, 9(2):S6.
 
+\bibitem[Castillo et~al., 2015]{castillo2015bayesian}
+Castillo, I., Schmidt-Hieber, J., Van~der Vaart, A., et~al. (2015).
+\newblock Bayesian linear regression with sparse priors.
+\newblock {\em The Annals of Statistics}, 43(5):1986--2018.
+
 \bibitem[Chang and Lin, 2011]{chang2011libsvm}
 Chang, C.-C. and Lin, C.-J. (2011).
 \newblock Libsvm: A library for support vector machines.
@@ -325,12 +330,22 @@ Golub, G.~H., Heath, M., and Wahba, G. (1979).
   parameter.
 \newblock {\em Technometrics}, 21(2):215--223.
 
+\bibitem[Golub and Van~Loan, 1980]{golub1980analysis}
+Golub, G.~H. and Van~Loan, C.~F. (1980).
+\newblock An analysis of the total least squares problem.
+\newblock {\em SIAM journal on numerical analysis}, 17(6):883--893.
+
 \bibitem[Gossage et~al., 2014]{article}
 Gossage, L., Pires, D., Olivera-Nappa, A., A.~Asenjo, J., Bycroft, M.,
   Blundell, T., and Eisen, T. (2014).
 \newblock An integrated computational approach can classify vhl missense
   mutations according to risk of clear cell renal carcinoma.
 \newblock {\em Human molecular genetics}, 23.
+
+\bibitem[Graybill, 1976]{graybill1976theory}
+Graybill, F.~A. (1976).
+\newblock {\em Theory and application of the linear model}.
+\newblock Number QA279. G72 1976. Duxbury press North Scituate, MA.
 
 \bibitem[Guyon et~al., 1993]{guyon1993automatic}
 Guyon, I., Boser, B., and Vapnik, V. (1993).
@@ -347,6 +362,11 @@ Han, J. and Gao, J. (2009).
 Hand, D.~J. (2006).
 \newblock Data mining.
 \newblock {\em Encyclopedia of Environmetrics}, 2.
+
+\bibitem[Hans, 2009]{hans2009bayesian}
+Hans, C. (2009).
+\newblock Bayesian lasso regression.
+\newblock {\em Biometrika}, 96(4):835--845.
 
 \bibitem[Hastie et~al., 2009]{hastie2009multi}
 Hastie, T., Rosset, S., Zhu, J., and Zou, H. (2009).
@@ -367,6 +387,11 @@ HECHT-NIELSEN, R. (1992).
   1989 ieee.
 \newblock In Wechsler, H., editor, {\em Neural Networks for Perception}, pages
   65 -- 93. Academic Press.
+
+\bibitem[Hoerl and Kennard, 1970]{hoerl1970ridge}
+Hoerl, A.~E. and Kennard, R.~W. (1970).
+\newblock Ridge regression: Biased estimation for nonorthogonal problems.
+\newblock {\em Technometrics}, 12(1):55--67.
 
 \bibitem[Hofmann and Klinkenberg, 2013]{hofmann2013rapidminer}
 Hofmann, M. and Klinkenberg, R. (2013).
@@ -541,6 +566,13 @@ Parthiban, V., Gromiha, M.~M., and Schomburg, D. (2006).
 \newblock {\em Nucleic Acids Res}, 34(Web Server issue):W239--W242.
 \newblock 16845001[pmid].
 
+\bibitem[Pati et~al., 1993]{pati1993orthogonal}
+Pati, Y.~C., Rezaiifar, R., and Krishnaprasad, P.~S. (1993).
+\newblock Orthogonal matching pursuit: Recursive function approximation with
+  applications to wavelet decomposition.
+\newblock In {\em Proceedings of 27th Asilomar conference on signals, systems
+  and computers}, pages 40--44. IEEE.
+
 \bibitem[Pedregosa et~al., 2011]{pedregosa2011scikit}
 Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel,
   O., Blondel, M., Prettenhofer, P., Weiss, R., Dubourg, V., et~al. (2011).
@@ -703,5 +735,11 @@ Zhou, H. and Zhou, Y. (2004).
   stability.
 \newblock {\em Proteins: Structure, Function, and Bioinformatics},
   54(2):315--322.
+
+\bibitem[Zou and Hastie, 2005]{zou2005regularization}
+Zou, H. and Hastie, T. (2005).
+\newblock Regularization and variable selection via the elastic net.
+\newblock {\em Journal of the royal statistical society: series B (statistical
+  methodology)}, 67(2):301--320.
 
 \end{thebibliography}

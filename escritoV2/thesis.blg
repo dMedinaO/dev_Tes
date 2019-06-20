@@ -71,48 +71,53 @@ Repeated entry---line 2225 of file References/references.bib
  : @inproceedings{kohavi1995study
  :                               ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 2286 of file References/references.bib
+ : @article{michie1994machine
+ :                           ,
+I'm skipping whatever remains of this entry
 Warning--empty year in prot20185
+Warning--there's a number but no series in graybill1976theory
 Warning--can't use both volume and number fields in kohavi1995study
 Warning--empty journal in netzer2011reading
-You've used 118 entries,
+You've used 125 entries,
             1935 wiz_defined-function locations,
-            1213 strings with 25544 characters,
-and the built_in function-call counts, 51876 in all, are:
-= -- 5051
-> -- 2223
-< -- 75
-+ -- 806
-- -- 752
-* -- 4608
-:= -- 8861
-add.period$ -- 376
-call.type$ -- 118
-change.case$ -- 949
-chr.to.int$ -- 112
-cite$ -- 121
-duplicate$ -- 1873
-empty$ -- 3631
-format.name$ -- 915
-if$ -- 10266
+            1250 strings with 26648 characters,
+and the built_in function-call counts, 54728 in all, are:
+= -- 5345
+> -- 2317
+< -- 82
++ -- 838
+- -- 782
+* -- 4853
+:= -- 9341
+add.period$ -- 399
+call.type$ -- 125
+change.case$ -- 997
+chr.to.int$ -- 119
+cite$ -- 129
+duplicate$ -- 1982
+empty$ -- 3843
+format.name$ -- 958
+if$ -- 10834
 int.to.chr$ -- 7
 int.to.str$ -- 0
-missing$ -- 123
-newline$ -- 601
-num.names$ -- 362
-pop$ -- 786
+missing$ -- 131
+newline$ -- 636
+num.names$ -- 383
+pop$ -- 824
 preamble$ -- 1
-purify$ -- 954
+purify$ -- 1003
 quote$ -- 0
-skip$ -- 1417
+skip$ -- 1499
 stack$ -- 0
-substring$ -- 3899
-swap$ -- 280
-text.length$ -- 29
+substring$ -- 4134
+swap$ -- 295
+text.length$ -- 31
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 696
-warning$ -- 3
-while$ -- 409
+type$ -- 736
+warning$ -- 4
+while$ -- 436
 width$ -- 0
-write$ -- 1572
-(There were 9 error messages)
+write$ -- 1664
+(There were 10 error messages)

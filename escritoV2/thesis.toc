@@ -27,44 +27,44 @@
 \contentsline {section}{\numberline {2.3}Herramientas computacionales asociadas a evaluaci\IeC {\'o}n de mutaciones}{31}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Herramientas necesarias para la caracterizaci\IeC {\'o}n de los set de datos}{33}{subsection.2.3.1}
 \contentsline {subsubsection}{SDM}{34}{section*.21}
-\contentsline {subsubsection}{MOSST}{34}{section*.22}
-\contentsline {section}{\numberline {2.4}Hip\IeC {\'o}tesis}{34}{section.2.4}
-\contentsline {section}{\numberline {2.5}Objetivos}{34}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Objetivo general}{35}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Objetivos espec\IeC {\'\i }ficos}{35}{subsection.2.5.2}
-\contentsline {section}{\numberline {2.6}Metodolog\IeC {\'\i }a propuesta}{35}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Preparaci\IeC {\'o}n de set de datos}{35}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}Implementaci\IeC {\'o}n de meta modelos de clasificaci\IeC {\'o}n/regresi\IeC {\'o}n}{37}{subsection.2.6.2}
-\contentsline {subsubsection}{Exploraci\IeC {\'o}n de modelos}{38}{section*.25}
-\contentsline {subsubsection}{Selecci\IeC {\'o}n de modelos}{40}{section*.26}
-\contentsline {subsubsection}{Generaci\IeC {\'o}n y evaluaci\IeC {\'o}n de meta modelos}{42}{section*.27}
-\contentsline {subsection}{\numberline {2.6.3}C\IeC {\'o}mo usar los meta modelos para la clasificaci\IeC {\'o}n de nuevos ejemplos?}{43}{subsection.2.6.3}
-\contentsline {subsection}{\numberline {2.6.4}Uso de meta modelos en sistemas de prote\IeC {\'\i }nas}{43}{subsection.2.6.4}
-\contentsline {section}{\numberline {2.7}An\IeC {\'a}lisis y evaluaci\IeC {\'o}n de los set de datos a utilizar}{44}{section.2.7}
-\contentsline {subsection}{\numberline {2.7.1}Set de datos utilizados}{44}{subsection.2.7.1}
-\contentsline {subsubsection}{Descripci\IeC {\'o}n general}{44}{section*.29}
-\contentsline {subsubsection}{Evaluaci\IeC {\'o}n del desbalance de clases y distribuci\IeC {\'o}n de respuestas continuas}{48}{section*.31}
-\contentsline {chapter}{\numberline {3}Digitalizaci\IeC {\'o}n de secuencias lineales de prote\IeC {\'\i }nas aplicadas al reconocimiento de patrones y modelos predictivos }{51}{chapter.3}
-\contentsline {section}{\numberline {3.1}Metodolog\IeC {\'\i }as asociadas a la codificaci\IeC {\'o}n de variables categ\IeC {\'o}ricas}{52}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}One Hot encoder}{52}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Ordinal encoder}{53}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}Frecuencias de residuos}{54}{subsection.3.1.3}
-\contentsline {subsection}{\numberline {3.1.4}Uso de propiedades fisicoqu\IeC {\'\i }micas}{55}{subsection.3.1.4}
-\contentsline {subsubsection}{T\IeC {\'e}cnicas de reducci\IeC {\'o}n de dimensionalidad}{56}{section*.34}
-\contentsline {subsubsection}{An\IeC {\'a}lisis de correlaci\IeC {\'o}n}{56}{section*.35}
-\contentsline {subsubsection}{Mutual information}{56}{section*.36}
-\contentsline {subsubsection}{An\IeC {\'a}lisis espaciales de caracter\IeC {\'\i }sticas}{56}{section*.37}
-\contentsline {subsubsection}{M\IeC {\'e}todos de reducci\IeC {\'o}n de dimensionalidad lineales}{56}{section*.38}
-\contentsline {paragraph}{An\IeC {\'a}lisis de Componentes Principales (PCA)\\\\}{57}{section*.39}
-\contentsline {subparagraph}{Definici\IeC {\'o}n\\\\}{57}{section*.40}
-\contentsline {subparagraph}{Propiedades\\\\}{58}{section*.41}
-\contentsline {subsubsection}{M\IeC {\'e}todos de reducci\IeC {\'o}n de dimensionalidad no lineales}{59}{section*.42}
-\contentsline {subsection}{\numberline {3.1.5}Codificaci\IeC {\'o}n de residuos con adici\IeC {\'o}n de informaci\IeC {\'o}n de su entorno}{59}{subsection.3.1.5}
-\contentsline {section}{\numberline {3.2}Transformaciones de Fourier}{61}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Uso de Transformadas de Fourier en digitalizaci\IeC {\'o}n de propiedades fisicoqu\IeC {\'\i }micas}{61}{subsection.3.2.1}
-\contentsline {section}{\numberline {3.3}Hip\IeC {\'o}tesis}{61}{section.3.3}
-\contentsline {section}{\numberline {3.4}Objetivos}{61}{section.3.4}
-\contentsline {section}{\numberline {3.5}Metodolog\IeC {\'\i }a}{61}{section.3.5}
-\contentsline {chapter}{\numberline {4}Filogen\IeC {\'e}tica, propiedades fisicoqu\IeC {\'\i }micas y miner\IeC {\'\i }a de datos aplicadas al dise\IeC {\~n}o de mutaciones en secuencias de prote\IeC {\'\i }nas}{63}{chapter.4}
-\contentsline {chapter}{\numberline {5}Planificaci\IeC {\'o}n y estado de avance.}{65}{chapter.5}
-\contentsline {chapter}{Referencias}{67}{chapter*.43}
+\contentsline {subsubsection}{MOSST}{35}{section*.22}
+\contentsline {section}{\numberline {2.4}Hip\IeC {\'o}tesis}{35}{section.2.4}
+\contentsline {section}{\numberline {2.5}Objetivos}{36}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Objetivo general}{36}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Objetivos espec\IeC {\'\i }ficos}{36}{subsection.2.5.2}
+\contentsline {section}{\numberline {2.6}Metodolog\IeC {\'\i }a propuesta}{37}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Preparaci\IeC {\'o}n de set de datos}{37}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Implementaci\IeC {\'o}n de meta modelos de clasificaci\IeC {\'o}n/regresi\IeC {\'o}n}{39}{subsection.2.6.2}
+\contentsline {subsubsection}{Exploraci\IeC {\'o}n de modelos}{39}{section*.25}
+\contentsline {subsubsection}{Selecci\IeC {\'o}n de modelos}{41}{section*.26}
+\contentsline {subsubsection}{Generaci\IeC {\'o}n y evaluaci\IeC {\'o}n de meta modelos}{44}{section*.27}
+\contentsline {subsection}{\numberline {2.6.3}C\IeC {\'o}mo usar los meta modelos para la clasificaci\IeC {\'o}n de nuevos ejemplos?}{45}{subsection.2.6.3}
+\contentsline {subsection}{\numberline {2.6.4}Uso de meta modelos en sistemas de prote\IeC {\'\i }nas}{45}{subsection.2.6.4}
+\contentsline {section}{\numberline {2.7}An\IeC {\'a}lisis y evaluaci\IeC {\'o}n de los set de datos a utilizar}{46}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Set de datos utilizados}{46}{subsection.2.7.1}
+\contentsline {subsubsection}{Descripci\IeC {\'o}n general}{46}{section*.29}
+\contentsline {subsubsection}{Evaluaci\IeC {\'o}n del desbalance de clases y distribuci\IeC {\'o}n de respuestas continuas}{50}{section*.31}
+\contentsline {chapter}{\numberline {3}Digitalizaci\IeC {\'o}n de secuencias lineales de prote\IeC {\'\i }nas aplicadas al reconocimiento de patrones y modelos predictivos }{53}{chapter.3}
+\contentsline {section}{\numberline {3.1}Metodolog\IeC {\'\i }as asociadas a la codificaci\IeC {\'o}n de variables categ\IeC {\'o}ricas}{54}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}One Hot encoder}{54}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Ordinal encoder}{55}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Frecuencias de residuos}{56}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.4}Uso de propiedades fisicoqu\IeC {\'\i }micas}{57}{subsection.3.1.4}
+\contentsline {subsubsection}{T\IeC {\'e}cnicas de reducci\IeC {\'o}n de dimensionalidad}{58}{section*.34}
+\contentsline {subsubsection}{An\IeC {\'a}lisis de correlaci\IeC {\'o}n}{58}{section*.35}
+\contentsline {subsubsection}{Mutual information}{58}{section*.36}
+\contentsline {subsubsection}{An\IeC {\'a}lisis espaciales de caracter\IeC {\'\i }sticas}{58}{section*.37}
+\contentsline {subsubsection}{M\IeC {\'e}todos de reducci\IeC {\'o}n de dimensionalidad lineales}{58}{section*.38}
+\contentsline {paragraph}{An\IeC {\'a}lisis de Componentes Principales (PCA)\\\\}{59}{section*.39}
+\contentsline {subparagraph}{Definici\IeC {\'o}n\\\\}{59}{section*.40}
+\contentsline {subparagraph}{Propiedades\\\\}{60}{section*.41}
+\contentsline {subsubsection}{M\IeC {\'e}todos de reducci\IeC {\'o}n de dimensionalidad no lineales}{61}{section*.42}
+\contentsline {subsection}{\numberline {3.1.5}Codificaci\IeC {\'o}n de residuos con adici\IeC {\'o}n de informaci\IeC {\'o}n de su entorno}{61}{subsection.3.1.5}
+\contentsline {section}{\numberline {3.2}Transformaciones de Fourier}{63}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Uso de Transformadas de Fourier en digitalizaci\IeC {\'o}n de propiedades fisicoqu\IeC {\'\i }micas}{63}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Hip\IeC {\'o}tesis}{63}{section.3.3}
+\contentsline {section}{\numberline {3.4}Objetivos}{63}{section.3.4}
+\contentsline {section}{\numberline {3.5}Metodolog\IeC {\'\i }a}{63}{section.3.5}
+\contentsline {chapter}{\numberline {4}Filogen\IeC {\'e}tica, propiedades fisicoqu\IeC {\'\i }micas y miner\IeC {\'\i }a de datos aplicadas al dise\IeC {\~n}o de mutaciones en secuencias de prote\IeC {\'\i }nas}{65}{chapter.4}
+\contentsline {chapter}{\numberline {5}Planificaci\IeC {\'o}n y estado de avance.}{67}{chapter.5}
+\contentsline {chapter}{Referencias}{69}{chapter*.43}

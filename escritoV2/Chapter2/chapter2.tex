@@ -11,7 +11,7 @@
     \graphicspath{{Chapter2/Figs/Vector/}{Chapter2/Figs/}}
 \fi
 
-El análisis del efecto de mutaciones puntuales en proteínas, es una de las problemáticas más estudiadas en los últimos años. Los estudios se enfocan principalmente, en la evaluación de cambios en la estabilidad de la proteína mediante la variación de energía libre que la mutación provoca \cite{Schymkowitz2005,Pandurangan2017,rohl2004protein,Parthiban2006}. 
+El análisis del efecto de mutaciones puntuales en proteínas, es una de las problemáticas más estudiadas en los últimos años. Las investigaciones se enfocan principalmente, en la evaluación de cambios en la estabilidad de la proteína mediante la variación de energía libre que la mutación provoca \cite{Schymkowitz2005,Pandurangan2017,rohl2004protein,Parthiban2006}. 
 
 Diferentes modelos predictivos han sido desarrollados para poder predecir cambios de energía libre, en base a algoritmos de aprendizaje supervisado o mediante técnicas de minería de datos, y así, determinar el efecto de la mutación en set de proteínas de interés \cite{Quan2016,Capriotti2008,Broom2017,Khan2010,vaisman,Getov2016,Capriotti2005}. No obstante, en casos más específicos, se han desarrollado modelos para proteínas independientes, con el fin de asociar la mutación a un rasgo clínico, particularmente, enfocado a casos de cáncer \cite{article, Forbes2010}, cambios en termo estabilidad \cite{Tian2010}, propiedades geométricas \cite{Barenboim2008}, entre las principales.
 
@@ -19,16 +19,18 @@ Sin importar el uso o la respuesta de los modelos, es necesario construir set de
 
 Dado a los modelos existentes y en vista a la necesidad de generar nuevos sistemas de predicción para mutaciones puntuales en proteínas, en respuesta al aumento considerable de reportes en los últimos años, se propone una nueva metodología para el diseño e implementación de modelos predictivos en mutaciones puntuales de proteínas.
 
-Las mutaciones son descritas desde los puntos de vista estructural, termodinámico y filogenético. El desarrollo de los predictores es inspirados en el concepto de Meta Learning y es apoyado con técnicas estadísticas, tanto para la selección de modelos como para la evaluación de medidas de desempeño, entregando como resultado, un conjunto de modelos para las mutaciones puntuales reportadas unificados en un único meta modelo.
+Las mutaciones son descritas desde los puntos de vista estructural, termodinámico y filogenético. El desarrollo de los predictores es inspirado en el concepto de Meta Learning y es apoyado con técnicas estadísticas, tanto para la selección de modelos como para la evaluación de medidas de desempeño, entregando como resultado, un conjunto de modelos para las mutaciones puntuales reportadas, unificados en un único meta modelo.
 
-Esta metodología será aplicada para generar estimadores en diferentes proteínas con mutaciones reportadas con respuesta conocida, como por ejemplo: evaluando las diferencias de energía libre que provoca la mutación y clasificaciones para evaluar si la sustitución de residuos aumenta o disminuye la estabilidad. A su vez, se implementarán modelos de clasificación para determinar la propensión clínica en un conjunto de mutaciones conocidas relacionados con el gen \textit{p}VHL, responsable de la enfermedad von Hippel Lindau, con el fin de exponer la versatilidad de la metodología.
+Esta metodología será aplicada para generar estimadores en diferentes proteínas con mutaciones reportadas con respuesta conocida, como por ejemplo: evaluando las diferencias de energía libre que provoca la mutación y clasificaciones para evaluar si la sustitución de residuos aumenta o disminuye la estabilidad. A su vez, se implementarán modelos de clasificación para determinar la propensión clínica en un conjunto de mutaciones conocidas relacionados con el gen \textit{p}VHL, responsable de la enfermedad von Hippel Lindau, con el fin de exponer la versatilidad de la metodología y los problemas relevantes a set de datos altamente no-lineales.
 
 A continuación, se describen los principales conceptos relacionados a minería de datos y aprendizaje supervisado, seguido de algunas herramientas computacionales para el análisis de mutaciones y su relevancia en la de estabilidad de una proteína, continuando con la metodología propuesta, la caracterización de los diferentes set de datos a utilizar y resultados parciales obtenidos al aplicar esta metodología.
 
 \section{Minería de datos}
 
 
-Minería de datos es el proceso de descubrimiento de patrones en set de datos, involucrando métodos asociados a Machine Learning, Estadísticas y sistemas de bases de datos. \cite{hand2006data}. La minería de datos es un subcampo interdisciplinario de la informática, el cual tiene por objetivo general extraer información (a través de métodos inteligentes) de un conjunto de datos y transformar la información en una estructura comprensible para su uso posterior. \cite{fayyad1996knowledge, dunham2006data}. La minería de datos es el paso de análisis del proceso de \textit{descubrimiento de conocimiento en bases de datos}, o KDD. \cite{fayyad1996kdd}. Además del análisis en bruto de los datos, también incluye aspectos de manipulación de bases de datos y pre procesamiento de datos, evaluaciones de modelo e inferencia, métricas de interés, consideraciones de complejidad, post procesamiento de estructuras descubiertas, visualización y actualización de la información \cite{berry2004data}.
+Minería de datos es el proceso de descubrimiento de patrones en set de datos, involucrando métodos asociados a Machine Learning \cite{michie1994machine}, Estadísticas y sistemas de bases de datos. \cite{hand2006data}. La minería de datos es un subcampo interdisciplinario de la informática, el cual tiene por objetivo general extraer información (a través de métodos inteligentes) de un conjunto de datos y transformar la información en una estructura comprensible para su uso posterior. \cite{fayyad1996knowledge, dunham2006data}. 
+
+La minería de datos es el paso de análisis del proceso de \textit{descubrimiento de conocimiento en bases de datos}, o KDD. \cite{fayyad1996kdd}. Además, del análisis en bruto de los datos, también incluye aspectos de manipulación de bases de datos y pre procesamiento de estos, evaluaciones de modelo e inferencia, métricas de interés, consideraciones de complejidad, post procesamiento de estructuras descubiertas, visualización y actualización de la información \cite{berry2004data}.
 
 En la Figura \ref{intro1}, se exponen las principales ramas que componen la minería de datos y los diferentes procesos que se asocian a dichas ramas.
 
@@ -36,13 +38,13 @@ En la Figura \ref{intro1}, se exponen las principales ramas que componen la mine
 	
 	\centering
 	\includegraphics[scale=.4]{dataMining.jpg}
-	\caption{Componentes en la minería de datos}
+	\caption{Componentes principales de la minería de datos}
 	\label{intro1}
 \end{figure}
 
 Son tres las principales áreas que abarca la minería de datos: Estadística, Inteligencia Artificial y Manipulación de sistemas de información. Por otro lado, son distintos procesos los que interactúan entre estas ramas, tales como: Modelamiento Matemático, reconocimiento de patrones, Sistemas de almacenamiento persistente y machine learning \cite{hand2006data}.
 
-Cada área en particular tiene un objetivo general y diversos objetivos específicos. Sin embargo, estas áreas interactúan entre sí, con el fin de poder extraer patrones de información que generen conocimientos a partir de la data de procesada \cite{berry2004data}.
+Cada área en particular, tiene un objetivo general y diversos objetivos específicos. Sin embargo, estas áreas interactúan entre sí, con el fin de poder extraer patrones de información que generen conocimientos a partir de la data de procesada \cite{berry2004data}.
 
 La minería de datos se utiliza en diferentes campos, tales como: genética y genómica \cite{Lee2008, Rebhan1998}, ingeniería de proteínas \cite{han2009research, 4548625, li2008fast}, comercio y negocios \cite{hofmann2013rapidminer}, sistemas de tránsito \cite{Ma2013}, optimizaciones en procesos industriales \cite{Chien2008, 8051033, 983448}, reconocimiento de patrones \cite{jain1988algorithms, fayyad1996data}, rasgos cuantificables en enfermedades \cite{Yoo2012, obenshain2004, LDuan} y más recientemente en áreas de dinámicas moleculares \cite{Chen2017, Yang:2005:GFM:1081870.1081962} y parámetros para la generación de pipe lines automatizados de simulaciones cuánticas en sistemas químicos \cite{MAO2004787, PhysRevLett.91.135503, Ramakrishnan2015}.
 
@@ -71,7 +73,7 @@ Cada uno de estos algoritmos es descrito a continuación, enfocándose tanto en 
 
 \subsection{Métodos basados en regresiones lineales}
 
-Regresión lineal, es uno de los métodos más simples en cuanto a predicción de variables continuas, además de uno de los más limitantes debido al sobreajuste que éste puede generar. No obstante, permite evaluar de manera simple y sencilla conjuntos de datos. 
+Regresión lineal, es uno de los métodos más simples en cuanto a predicción de variables continuas, además de uno de los más limitantes debido al sobreajuste que éste puede generar. No obstante, permite evaluar de manera simple y sencilla conjuntos de datos \cite{graybill1976theory}. 
 
 Matemáticamente, se espera que el conjunto de respuesta sea el resultado de una combinación lineal de parámetros, es decir. Sea $\hat{y}$ el vector de predicciones, se tiene que:
 
@@ -95,13 +97,13 @@ A modo de ejemplo, en la Tabla \ref{tab:tab-regression} se exponen distintas for
 	%
 	\endhead
 	%
-	\begin{tabular}[c]{@{}l@{}}Ordinary\\ Least\\ Squares\end{tabular}                         & $\min_{w} || X w - y||_2^2$                & \begin{tabular}[c]{@{}l@{}}Método más simple,\\ no implica parámetros\\ externos.\end{tabular}                                                                              \\ \hline
-	\begin{tabular}[c]{@{}l@{}}Ridge\\ Regression\end{tabular}                                 &   $\min_{w} || X w - y||_2^2 + \alpha ||w||_2^2$                                         & \begin{tabular}[c]{@{}l@{}}Adición de penalización\\ $\alpha$.\end{tabular}                                                                                                 \\ \hline
-	Lasso                                                                                      &  $\min_{w} { \frac{1}{2n_{\text{samples}}} ||X w - y||_2 ^ 2 + \alpha ||w||_1}$                                          & \begin{tabular}[c]{@{}l@{}}Reduce el número de\\ características bajo las\\ cuales depende la\\ solución final.\end{tabular}                                                \\ \hline
-	Elastic-Net                                                                                & $\min_{w} { \frac{1}{2n_{\text{samples}}} ||X w - y||_2 ^ 2 + \alpha \rho ||w||_1 +
+	\begin{tabular}[c]{@{}l@{}}Ordinary\\ Least\\ Squares \cite{golub1980analysis} \end{tabular}                         & $\min_{w} || X w - y||_2^2$                & \begin{tabular}[c]{@{}l@{}}Método más simple,\\ no implica parámetros\\ externos.\end{tabular}                                                                              \\ \hline
+	\begin{tabular}[c]{@{}l@{}}Ridge\\ Regression \cite{hoerl1970ridge}\end{tabular}                                 &   $\min_{w} || X w - y||_2^2 + \alpha ||w||_2^2$                                         & \begin{tabular}[c]{@{}l@{}}Adición de penalización\\ $\alpha$.\end{tabular}                                                                                                 \\ \hline
+	Lasso  \cite{hans2009bayesian}                                                                                    &  $\min_{w} { \frac{1}{2n_{\text{samples}}} ||X w - y||_2 ^ 2 + \alpha ||w||_1}$                                          & \begin{tabular}[c]{@{}l@{}}Reduce el número de\\ características bajo las\\ cuales depende la\\ solución final.\end{tabular}                                                \\ \hline
+	Elastic-Net  \cite{zou2005regularization}                                                                              & $\min_{w} { \frac{1}{2n_{\text{samples}}} ||X w - y||_2 ^ 2 + \alpha \rho ||w||_1 +
 		\frac{\alpha(1-\rho)}{2} ||w||_2 ^ 2} $                                           & \begin{tabular}[c]{@{}l@{}}Usado principalmente\\ en caso de atributos\\ con alta correlación.\end{tabular}                                                                 \\ \hline
-	\begin{tabular}[c]{@{}l@{}}Orthogonal\\ Matching\\ Pursuit\\ (OMP)\end{tabular}            &   $\underset{\gamma}{\operatorname{arg\,min\,}}  ||y - X\gamma||_2^2 \text{ subject to } ||\gamma||_0 \leq n_{\text{nonzero\_coefs}}$                                         & \begin{tabular}[c]{@{}l@{}}Permite fijar el número\\ de coeficientes no nulos.\end{tabular}                                                                                 \\ \hline
-	\begin{tabular}[c]{@{}l@{}}Bayesian\\ Regression\end{tabular}                              &  $p(y|X,w,\alpha) = \mathcal{N}(y|X w,\alpha)$                                          & \begin{tabular}[c]{@{}l@{}}Se adapta a de manera\\ eficiente a los datos de\\ entrenamiento y permite\\ incluir penalizaciones \\ asociadas a los coeficientes\end{tabular} \\ \hline
+	\begin{tabular}[c]{@{}l@{}}Orthogonal\\ Matching\\ Pursuit\\ (OMP) \cite{pati1993orthogonal}\end{tabular}            &   $\underset{\gamma}{\operatorname{arg\,min\,}}  ||y - X\gamma||_2^2 \text{ subject to } ||\gamma||_0 \leq n_{\text{nonzero\_coefs}}$                                         & \begin{tabular}[c]{@{}l@{}}Permite fijar el número\\ de coeficientes no nulos.\end{tabular}                                                                                 \\ \hline
+	\begin{tabular}[c]{@{}l@{}}Bayesian\\ Regression \cite{castillo2015bayesian}\end{tabular}                              &  $p(y|X,w,\alpha) = \mathcal{N}(y|X w,\alpha)$                                          & \begin{tabular}[c]{@{}l@{}}Se adapta a de manera\\ eficiente a los datos de\\ entrenamiento y permite\\ incluir penalizaciones \\ asociadas a los coeficientes\end{tabular} \\ \hline
 	\caption{Tipos de regresión con su función de minimización y descripciones correspondientes a las características que estos poseen.
 	}
 	\label{tab:tab-regression}\\
@@ -113,7 +115,7 @@ Pese a su simplicidad, los métodos basados en regresiones lineales han sido amp
 
 Algoritmo de aprendizaje supervisado, el cual tiene por objetivo asociar un elemento a una clase en particular, dada la información de ejemplos de entrada que tengan asociadas características particulares, que puedan declararse como \textit{vecinos} del nuevo ejemplo a clasificar, siendo \textbf{k} el número de vecinos que se está dispuesto a utilizar para aplicar la clasificación \cite{6313426}. La mejor elección de \textbf{k} depende fundamentalmente de los datos; generalmente, valores grandes de \textbf{k} reducen el efecto de ruido en la clasificación, pero crean límites entre clases parecidas.
 
-Con el fin de evaluar la cercanía de los ejemplos existentes contra el nuevo ejemplo a clasificar es necesario asociar ciertas medidas de distancia que permitan cuantificar esta cartacterística, para así poder comparar esta distancia y evaluar la cercanía para asociarle una clase a este nuevo ejemplo \cite{5408784}. La distancia a emplear para evaluar la cercanía puede ser: Euclidiana \cite{DANIELSSON1980227}, Manhattan \cite{PERLIBAKAS2004711}, coseno \cite{LIAO20155328}, Mahalanobis \cite{DEMAESSCHALCK20001}, entre las principales, las cuales son expuestas de manera general en la Tabla \ref{tab:tab-form-distance}.
+Con el fin de evaluar la cercanía de los ejemplos existentes contra el nuevo ejemplo a clasificar, es necesario asociar ciertas medidas de distancia que permitan cuantificar esta característica, para así poder comparar esta distancia y evaluar la cercanía para asociarle una clase a este nuevo ejemplo \cite{5408784}. La distancia a emplear para evaluar la cercanía puede ser: Euclidiana \cite{DANIELSSON1980227}, Manhattan \cite{PERLIBAKAS2004711}, coseno \cite{LIAO20155328} o Mahalanobis \cite{DEMAESSCHALCK20001}, entre las principales, las cuales son expuestas de manera general en la Tabla \ref{tab:tab-form-distance}.
 
 % Please add the following required packages to your document preamble:
 % \usepackage{longtable}
@@ -137,9 +139,9 @@ Con el fin de evaluar la cercanía de los ejemplos existentes contra el nuevo ej
 
 K-Nearest Neighbors (KNN por su descripción en inglés), presenta algunos problemas, tales como: posibles errores al existir más de un elemento de distinta clase cercano al nuevo ejemplo a clasificar. Sin embargo, dicho error estimado es reducido \cite{6313426}.
 
-Existen dos variaciones para la aplicación de KNN: aplicación basada en las distancias y aplicación basada en radios con respecto a puntos, la primera es mayormente usada. No obstante, en el caso de que los puntos no se encuentren uniformemente distribuidos es una mejor opción usar la segunda alternativa, siendo muy eficaz en problemas conocidos como \textit{la maldición de la dimensionalidad}. 
+Existen dos variaciones para la aplicación de KNN: aplicación basada en las distancias y aplicación basada en radios con respecto a puntos, la primera es mayormente usada. No obstante, en el caso de que los puntos no se encuentren uniformemente distribuidos es una mejor opción usar la segunda alternativa, siendo muy eficaz en problemas conocidos como \textit{la maldición de la dimensionalidad}\footnote{Para más detalles ver sección \ref{problemas}}. 
 
-KNN utiliza el componente de peso \cite{TAN2005667}, es decir, valores asignados a puntos específicos para determinar si un elemento a clasificar es de una clase o no, normalmente se utilizan pesos uniformes, sin embargo, es posible asignar valores de tal manera que al momento de realizar la votación puntos más cercanos en base a distancias presenten más peso que otros.
+KNN utiliza el componente de peso \cite{TAN2005667}, es decir, valores asignados a puntos específicos para determinar si un elemento a clasificar es de una clase o no, normalmente se utilizan pesos uniformes. Sin embargo, es posible asignar valores de tal manera que al momento de realizar la votación puntos más cercanos en base a distancias presenten más peso que otros.
 
 Se han implementando diversos algoritmos a la hora de aplicar la técnica de KNN, los cuales tienen relación con el coste computacional que presentan, dentro de estos se encuentran: Brute Force, K-D Tree y Ball Tree \cite{pedregosa2011scikit}.
 
@@ -819,11 +821,39 @@ Cada uno entrega distintas ventajas y desventajas, las cuales se basan principal
 
 \subsection{Herramientas necesarias para la caracterización de los set de datos}
 
-Adicional a las herramientas expuestas, se hace una descripción breve de SDM \cite{Pandurangan2017} y MOSST \cite{Olivera-Nappa2011}, las cuales serán utilizadas a lo largo de la metodología con el fin de poder caracterizar las mutaciones desde los puntos de vista termodinámico (aplicando SDM) y filogenético (por medio de MOSST).
+Adicional a las herramientas expuestas, se hace una descripción breve de SDM \cite{Pandurangan2017} y MOSST \cite{Olivera-Nappa2011}, las cuales serán utilizadas a lo largo de la metodología con el fin de poder caracterizar las mutaciones desde los puntos de vista termodinámico, aplicando SDM y filogenético, por medio de MOSST.
 
 \subsubsection{SDM}
 
+Site Directed Mutator (SDM) \cite{Pandurangan2017}, es una de las herramientas más utilizadas a la hora de evaluar mutaciones puntuales en una proteína de interés y cuyo objetivo principal, es estudiar el efecto sobre la estabiliadd de la proteína que provoca el cambio del residuo.
+
+Se basa en potenciales estadísticos de funciones de energía, para obtener una cuantificación del efecto de una sustitución de un residuo. Este valor se representa por la diferencia de energía libre de Gibbs ($\Delta  \Delta G$). Para estimar el efecto, utiliza ambientes específicos de frecuencias de sustituciones de aminoácidos, sin la utilización de familias de proteínas homólogas. 
+
+
+Para realizar la estimación, SDM recibe un archivo PDB en el cual se describe la estructura de la proteína inicial, seguido además de la mutación, la cual se describe mediante \textit{"W-Pos-M"}, los cuales corresponden a: Wilde residue, posición en la que se encuentra y mutate residue, respectivamente.
+
+Sus medidas de desempeño en cuanto a la correlación entre los elementos predichos y los reales alcanza un 0.8, calculada a partir del testeo de la herramienta con mutaciones en la proteína Barnasa y staphylococcal nuclease. Este desempeño, lo convierte en una herramienta bastante precisa a la hora de estudiar nuevas predicciones.
+
+Una de las principales razones de utilizar SDM y no otras herramientas computacionales, como las expuestas en la Tabla \ref{tab:tab-summary-tools}, es el hecho de basarse en potenciales estadísticos. Si bien, esta metodología no es tan precisa como el uso de potenciales físicos de funciones de energía, el hecho de utilizar simulaciones basadas en mecanismos de Monte Carlo, conlleva un gran costo computacional en horas de cálculo y recursos. No obstante, es mucho más eficiente que los métodos basados en Machine Learning, dado a que estos, normalmente, tienden a ajustarse y se requiere una gran cantidad de datos para entrenar estos modelos. Además, ya que estos se basan principalmente en métodos asociados a Support Vector Machine (SVM) o Redes Neuronales. Los primeros, no son capaces de adaptarse a espacios altamente no lineales. Mientras que los basados en redes neuronales, no permiten aprender de los atributos empleados, debido a la forma en cómo estos trabajan.
+
+Además, SDM entrega resultados adicionales que permiten comprender el ambiente bajo el cual se produce la mutación y cómo, propiedades termodinámicas se ven afectadas ante la sustitución de residuos.
+
 \subsubsection{MOSST}
+
+Mutagenesis Objetive Search and Selection Tool (MOSST) \cite{Olivera-Nappa2011}, es una herramienta que permite analizar una proteína de interés, con respecto a un conjunto de proteínas con relación filogenética, representadas en un alineamiento múltiple de secuencias. Esto con el fin, de poder detectar posiciones en la proteína de interés o target, que podrían ser mutadas para alterar o no las características de la misma.
+
+Por otro lado , permite estimar mutagénesis relacionadas con la posibilidad de si un cambio de aminoácido dado tendría efectos perjudiciales sobre la proteína. 
+
+Además, como un uso alternativo, es factible la identificación de nsSNPs cuyos fenotipos son relevantes en una familia de genes, permitiendo separar, a aquellas sustituciones que no tienen implicaciones a nivel de funcionalidad.
+
+
+MOSST aplica técnicas estadísticas para el análisis de las posiciones y se centran en comprender los efectos de las sustituciones desde el punto de vista filogenético. Esto es relevante, ya que como input, sólo necesita secuencias lineales de proteínas, es decir, no es necesario el uso de estructuras en formato PDB, lo cual permite abarcar un mayor número de proteínas de estudio.
+
+Actualmente MOSST se encuentra disponible vía ejecución local, implementado bajo lenguaje de programación Matlab. No obstante, posee una versión online para su uso, facilitando el acceso a la herramienta a diferentes estratos de público.
+
+Utilizar la herramienta MOSST como generación de descriptores basados en propiedades filogenéticas, radica en las ventajas que ésta presenta. Por un lado, permite evaluar la propensión de la mutación y cómo ésta afecta a las características de la proteína en estudio y su familia. Además, permite entender conceptos relacionados a mutaciones, que no son considerados al utilizar propiedades termodinámicas y estructurales. Ya que, estos últimos, sólo evalúan el ambiente bajo el cual ocurre la mutación, mientras que MOSST, evalúa la propensión al cambio. 
+
+El uso de las herramientas MOSST y SDM permitirán describir las mutaciones desde los puntos de vista filogenético y termodinámico-estructural, de tal manera, las falencias de cada método, se complementan, facilitando la generación de descriptores relevantes para las mutaciones.
 
 \section{Hipótesis}
 
