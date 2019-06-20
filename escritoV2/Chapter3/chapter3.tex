@@ -13,15 +13,13 @@
 
 Desarrollar modelos predictivos basados en algoritmos de aprendizaje supervisado, o, la identificación de patrones aplicando técnicas de clustering, son tareas muy relevantes a la hora de trabajar con secuencias de proteínas, ya sea para identificar grupos con características comunes o entrenar modelos predictivos de respuestas de interés. En ambos casos, se requiere el uso de conjuntos de datos altamente informativos y con características numéricas para poder utilizar los métodos implementados en las librerías actuales \cite{pedregosa2011scikit}.
 
-Diferentes metodologías se han implementado, para manipular las variables categóricas en set de datos y lograr su codificación numérica. Enfoques basados en adición de columnas según las categorías o simple transformación empleando representaciones en conjuntos naturales suelen ser utilizados. No obstante, generan bastante discusión sobre las nuevas representaciones y a su vez, el hecho de aumentar el número de columnas, conlleva a incrementar las dimensiones del conjunto de datos, provocando efectos en los desempeños de los algoritmos. 
+Diferentes metodologías se han implementado, para manipular las variables categóricas en set de datos y lograr su codificación numérica. Enfoques basados en adición de columnas según las categorías o simple transformación empleando representaciones en conjuntos naturales, suelen ser utilizados. No obstante, generan bastante discusión sobre las nuevas representaciones. y a su vez, el hecho de aumentar el número de columnas, conlleva a incrementar las dimensiones del conjunto de datos, provocando efectos en los desempeños de los algoritmos. 
 
-Particularmente, en secuencias de proteínas, se han utilizado las frecuencias de los residuos para codificarlos, la cual, pese a su simplicidad, ha resultado ser efectiva en diferentes casos de uso. No obstante, este tipo de codificación, no permite explorar el ambiente bajo el cual se encuentran los residuos y tampoco considera el efecto de propiedades fisicoquímicas ni termodinámicas.
+Particularmente, en secuencias de proteínas, se han utilizado las frecuencias de incidencia de los residuos para codificarlos, la cual, pese a su simplicidad, ha resultado ser efectiva en diferentes casos de uso. No obstante, este tipo de codificación, no permite explorar el ambiente bajo el cual se encuentran los residuos y tampoco considera el efecto de propiedades fisicoquímicas ni termodinámicas.
 
-En diferentes estudios, los residuos se describen a partir de sus propiedades fisicoquímicas y adicional a ello, se emplea información que permite describir el ambiente del residuo a caracterizar, empleando binarizaciones que describen los residuos cercanos, ya sea por medio del uso de un rango espacial, utilizando modelos o estructuras tridimensionales en donde se representan las coordenadas espaciales de los residuos, o empleando un rango lineal en secuencias lineales.
+En diferentes estudios, los residuos se describen a partir de sus propiedades fisicoquímicas y adicional a ello, se emplea información que permite describir el ambiente del residuo a caracterizar, empleando binarizaciones para describir los residuos cercanos, ya sea por medio del uso de un rango espacial, utilizando modelos o estructuras tridimensionales en donde se representan las coordenadas espaciales de los residuos, o empleando un rango lineal en secuencias lineales de proteínas.
 
-Otros estudios, se han basado en adicionar información filogenética a las descripciones de los residuos. Sin embargo, estos, sólo se basan en el análisis de mutaciones y permiten evaluar la propensión de que dicho cambio ocurra. No obstante, su uso ha permitido obtener resultados satisfactorios a la hora de entrenar modelos predictivos.
-
-Un enfoque basado en las propiedades fisicoquímicas en combinación con la aplicación de transformaciones de Fourier, ha permitido demostrar que ciertos residuos permiten entregar las características asociadas a la propiedad en estudio, además, facilita comprender el aporte del ambiente sobre estos y representa una forma de estudio novedosa para el uso de información de secuencias lineales. Siendo una metodología ampliamente utilizada para identificar residuos que aporten a la propiedad, por medio de peacks de frecuencias de señales.
+Un enfoque basado en las propiedades fisicoquímicas en combinación con la aplicación de transformaciones de Fourier, ha permitido demostrar que ciertos residuos permiten entregar las características asociadas a la propiedad en estudio, además, facilita comprender el aporte del ambiente sobre estos y representa una forma de estudio novedosa para el uso de información de secuencias lineales. Siendo una metodología ampliamente utilizada para identificar residuos que aporten a la propiedad, por medio de la representación de señales asociadas al espacio de frecuencias.
 
 A pesar de ser una metodología interesante a la hora de estudiar secuencias lineales, exhiben problemas notorios sobre la selección de las propiedades relevantes a analizar, ya que, existe un número considerablemente alto de propiedades posibles a utilizar y es factible que diferentes familias de proteínas exhiban comportamientos notoriamente no similares y diverjan en cuanto a las propiedades que puedan ser representativas, inclusive, a la hora de estudiar mutaciones en una misma proteína puede que no sólo una propiedad permita su caracterización, si no, que un conjunto pequeño de éstas.
 
@@ -29,7 +27,7 @@ En el presente capítulo, se exponen en detalle, diferentes formas de representa
 
 \section{Metodologías asociadas a la codificación de variables categóricas}
 
-Diferentes metodologías existen para poder codificar variables categóricas, a su vez, para set de datos de proteínas con secuencias lineales, es factible utilizar sus propiedades fisicoquímicas o frecuencias de residuos. Cada una de estas metodologías se expone a continuación.
+Diferentes metodologías existen para poder codificar variables categóricas, a su vez, para set de datos de proteínas con secuencias lineales, es factible utilizar sus propiedades fisicoquímicas o frecuencias de residuos. Las principales metodologías usadas a la fecha se expone a continuación.
 
 \subsection{One Hot encoder}
 
@@ -51,31 +49,33 @@ Su codificación mediante One Hot Encoder corresponde a
 \vdots\\
 0 & 0 & 0 & \cdots & 1 \end{array} \right) \] 
 
-Esta metodología, si bien es altamente usada, implica que, a medida que aumentan la cantidad de categorías incrementan el número de columnas a agregar en el set de datos, es decir, si se tienen $m$ categorías se adicionan $m$ columnas. Esto último puede provocar que los set de datos se afecten por problemas relacionados con la \textit{maldición de dimensionalidad}, ya que, a medida que aumentan los descriptores, aumenta la probabilidad de que estos no sean informativos, provocando una adición de información innecesaria y que perjudicaría el rendimiento de los algoritmos de aprendizajes supervisado y no supervisado.
+Esta metodología, si bien es altamente usada, implica que, a medida que aumentan la cantidad de categorías incrementan el número de columnas a agregar en el set de datos, es decir, si se tienen $m$ categorías se adicionan $m$ columnas. Esto último, puede provocar que los set de datos se afecten por problemas relacionados con la \textit{maldición de dimensionalidad} \footnote{Ver sección \ref{problemas}}, ya que, a medida que aumentan los descriptores, aumenta la probabilidad de que estos no sean informativos, provocando una adición de información innecesaria y que perjudicaría el rendimiento de los algoritmos de aprendizajes supervisado y no supervisado.
 
 \subsection{Ordinal encoder}
 
-Ordinal encoder es una simplicación de One Hot encoder, ya que simplemente codifica las categorías con números en el conjunto $[0, m-1]$. Es decir, sea el vector $x$ de tamaño $n$ con $m$ categorías y sea $M$ el espacio de las posibles categorías con $M = [m_{1}, \cdots, m_{m}]$, y cuya codificación implica el vector $M' = [0, \cdots, m-1]$. $\forall $ elemento que $\in$ a $x$ se obtiene su codificación a partir del elemento $M'(M(m_{i}))$ que corresponde a la codificación de la categoría en el espacio $M$.
+Ordinal encoder, es una simplicación de One Hot encoder, ya que, simplemente codifica las categorías con números en el conjunto $[0, m-1]$. Es decir, sea el vector $x$ de tamaño $n$ con $m$ categorías y sea $M$ el espacio de las posibles categorías con $M = [m_{1}, \cdots, m_{m}]$, y cuya codificación implica el vector $M' = [0, \cdots, m-1]$. $\forall $ elemento que $\in$ a $x$ se obtiene su codificación a partir del elemento $M'(M(m_{i}))$ que corresponde a la codificación de la categoría en el espacio $M$.
 
-Si bien, esta es una técnica ampliamente utilizada, es cuestionable con respecto al orden en que trata las categorías, la representación de la información y el mantenimiento del significado de la data. Razón por la cual, se usa sólo en los casos en que la adición de múltiples descriptores empleando One Hot Encoder sea perjudicial a la hora de implementar modelos de clasificación o regresión, e inclusive, en la búsqueda de patrones.
+Es posible cuestionar esta metodología con respecto al orden en que trata las categorías, la representación de la información y el mantenimiento del significado de la data. Razón por la cual, se usa sólo en los casos en que la adición de múltiples descriptores empleando One Hot Encoder sea perjudicial a la hora de implementar modelos de clasificación o regresión, e inclusive, en la búsqueda de patrones.
 
 \subsection{Frecuencias de residuos}
 
-Una secuencia lineal de proteína, corresponde a un vector $v$ de tamaño $n$ donde cada elemento corresponde a un residuo que pertenece a la secuencia. El uso de esta información para alimentar modelos de clasificación o regresión conlleva la codificación de sus elementos. Sin embargo, a la hora de utilizar las codificaciones basadas en One Hot Encoder, el conjunto de datos no queda estándar en cuanto a sus dimensiones, ya que el largo de las secuencias puede variar y a su vez, el número de columnas a agregar corresponde a $nx20$ dado a que son $n$ residuos y el espacio muestral $M$ es de tamaño 20 lo que genera un aumento considerable en la cantidad de dimensiones.
+Una secuencia lineal de proteína, corresponde a un vector $v$ de tamaño $n$ donde cada elemento corresponde a un residuo que pertenece a la secuencia. El uso de esta información para alimentar modelos de clasificación o regresión conlleva la codificación de sus elementos. Sin embargo, a la hora de utilizar las codificaciones basadas en One Hot Encoder, el conjunto de datos no queda estándar en cuanto a sus dimensiones, ya que, el largo de las secuencias puede variar y a su vez, el número de columnas a agregar corresponde a $nx20$ dado a que son $n$ residuos y el espacio muestral $M$ es de tamaño 20 lo que genera un aumento considerable en la cantidad de dimensiones.
 
-Con el fin de poder representar las secuencias lineales de proteínas, se idearon metodologías que consideran la frecuencia de aparición de los residuos en la secuencia, de tal manera de poder codificarla en un vector de tamaño 20, donde cada elemento representa el número de incidencias del residuo dividido por el largo del vector. Así, cada elemento se encuentra en un rango $[0,1]$ donde 0 indica no incidencia del residuo y 1, incidencia total.
+Con el fin de poder representar las secuencias lineales de proteínas, se idearon metodologías que consideran la frecuencia de aparición de los residuos en la secuencia, de tal manera, de poder codificarla en un vector de tamaño 20, donde cada elemento representa el número de incidencias del residuo dividido por el largo del vector. Así, cada elemento se encuentra en un rango $[0,1]$ donde 0 indica no incidencia del residuo y 1, incidencia total.
 
 Expresado de forma matemática, sea $s$ una secuencia lineal de proteínas con $r$ residuos, su codificación se basa en la frecuencia de aparición del residuo en $s$, tal que, sea $R$ el espacio de los posibles residuos $r$ en $s$, se estima para cada $r_{j} \in\ R$ su frecuencia:
 
 \begin{center}
-	$f(r_{j}) = \dfrac{cont(r_{j})\ if\  (r_{i}==r_{j})}{n}$
+	$frec(r_{j}) = \dfrac{cont(r_{j})\ if\  (r_{i}==r_{j})}{n}$
 \end{center}
 
-Finalmente, se tiene que cada residuo $r_{i}$ se representa en su valor de frecuencia $f(r_{i})$, generando un set de datos de tamaños $sx20$ con $s$ secuencias representadas por un vector de tamaño 20.
+Finalmente, se tiene que cada residuo $r_{i}$ se representa en su valor de frecuencia $frec(r_{i})$, generando un set de datos de tamaños $sx20$ con $s$ secuencias representadas por un vector de tamaño 20.
 
 Esta es una de las representaciones más utilizadas y más simples a la hora de codificar secuencias lineales de proteínas. Sin embargo, presenta diferentes problemas tales como:
 
 \begin{itemize}
+	
+	\item Si los residuos se encuentran en proporciones similares, se generarán conjuntos de datos con atributos no informativos, ya que, disminuirá la varianza existente para dicho atributo, provocando una redundancia de datos.
 	
 	\item No considera información sobre los residuos asociados a propiedades fisicoquímicas, esto complica el hecho de representar un set de datos de secuencias o mutaciones, ya que no representa la realidad y sólo expone el comportamiento de las frecuencias de residuos, favoreciendo a aquellos con una mayor incidencia en sus elementos.
 	
@@ -88,7 +88,7 @@ El uso de las frecuencias de residuos, es una de las primeras aproximaciones a l
 
 \subsection{Uso de propiedades fisicoquímicas}
 
-El uso de propiedades fisicoquímicas para describir un residuo es ampliamente empleado en la generación de descriptores para conjuntos de datos en ingeniería de proteínas. Diversos enfoques y modelos han sido construidos o entrenados, contemplando información asociada a componentes termodinámicos del residuo, en particular, a la hora de describir residuos para evaluar cambios en la energía libre, relacionados a efectos en la estabilidad de una proteína.
+El uso de propiedades fisicoquímicas para describir un residuo, es ampliamente empleado en la generación de descriptores para conjuntos de datos en ingeniería de proteínas. Diversos enfoques y modelos han sido construidos o entrenados, contemplando información asociada a componentes termodinámicos del residuo, en particular, a la hora de describir residuos para evaluar cambios en la energía libre, relacionados a efectos en la estabilidad de una proteína.
 
 Se han reportado cerca de 570 propiedades fisicoquímicas que pueden ser utilizadas para describir un residuo en una secuencia lineal de proteínas. A su vez, es posible caracterizar estos residuos empleando un conjunto de propiedades estructurales, termodinámicas e inclusive filogenéticas. Es decir, diferentes puntos de vista que permitan describir los residuos pertenecientes a una secuencia. Sin embargo, el hecho de seleccionar qué descriptores son relevantes y cuáles no, radica en un problema de evaluación de características, el cual es común, en el área de la minería de datos. 
 
@@ -96,7 +96,7 @@ Dado al gran conjunto de propiedades existentes y a la diversidad de descriptore
 
 Contemplando esta problemática, técnicas de reducción de dimensionalidad o análisis de características son las más utilizadas a la hora de seleccionar los descriptores más informativos para un conjunto de datos. No obstante, en ocasiones, el conocimiento sobre el problema es un factor relevante a considerar. 
 
-Dada la relevancia de la selección de descriptores correctos para poder caracterizar y codificar secuencias lineales a partir de propiedades, se describen a continuación algunas técnicas de reducción de dimensionalidad y análisis de características que pueden ser empleadas para dar solución a esta problemática.
+Dada la relevancia de la selección de descriptores correctos para poder caracterizar y codificar secuencias lineales a partir de propiedades, se describen a continuación, algunas técnicas de reducción de dimensionalidad y análisis de características que pueden ser empleadas para dar solución a esta problemática.
 
 \subsubsection{Técnicas de reducción de dimensionalidad}
 
@@ -109,6 +109,84 @@ Diferentes técnicas para el análisis de características y reducción de dimen
 \subsubsection{Análisis espaciales de características}
 
 \subsubsection{Métodos de reducción de dimensionalidad lineales}
+
+Reducción de dimensionalidad, como su nombre lo sugiere, implica remover características o atributos del set de datos, con el objetivo de disminuir el número de dimensiones del conjunto de elementos. Esto permite descartar los atributos menos informativos o con menor relevancia, ya sea en términos de aporte a la varianza o relaciones con el resto de descriptores.
+
+Dentro de las principales técnicas de reducción lineales, se encuentran el Análisis de componentes principales (PCA) y sus variantes, tales como: Incremental PCA o Kernel PCA. Además de la aplicación de valores singulares, Factor Analysis, Análisis de Componentes Independientes (ICA) y Factorización de Matrices no Negativas, dentro de las principales.
+
+Cada una de estas técnicas, se describe brevemente a continuación.
+
+\paragraph{Análisis de Componentes Principales (PCA)\\\\}
+
+Análisis de Componentes Principales (PCA por sus iniciales en inglés), es una técnica estadística que permite la conversión de un conjunto de variables posiblemente correlacionadas a un conjunto de variables no correlacionadas linealmente, los cuales se denominan componentes principales, siendo la cantidad menor o igual que las variables originales, donde la principal característica de los componentes principales es que son ordenados en base a la varianza que entregan a los datos, así el primer componente principal aporta una mayor varianza que el segundo y así sucesivamente, basándose principalmente en el uso de vectores propios.
+
+PCA se utiliza principalmente como una herramienta en el análisis de la exploración de datos los cuales tienen como objetivo generar modelos de predicción y sus resultados normalmente se exponen en puntuaciones que tienen estrecha relación con el aporte de varianza que estos entregan  
+
+Intuitivamente, es posible pensar el PCA como un elipsoide n-dimensional de datos, donde cada eje del elipsoide representa un componente principal, esto implica, que si algún eje del elipsoide es pequeño, la varianza correspondiente a lo largo de éste también lo es, por lo que omitir dicho eje no implica una pérdida importante de información, esto último es denotado como la reducción de la dimensionalidad en base a los aportes a las varianzas que denotan cada componente.
+
+\subparagraph{Definición\\\\}
+
+Matemáticamente, es posible definir PCA como una transformación lineal ortogonal que transforma los datos a un nuevo sistema de coordenadas tal que la mayor varianza por alguna proyección de los datos pasa a situarse en la primera coordenada (llamado el primer componente principal), la segunda mayor varianza en la segunda coordenada, y así sucesivamente.
+
+Se considera un conjunto de datos, \textbf{X}, con una media empírica 0, donde cada una de las filas (\textbf{n}) representan ejemplos y las columnas características o atributos (\textbf{p}).
+
+La transformación está definida por un set de vectores de dimensión \textbf{p} que poseen pesos denotados por $ w_{(k)} = (w_{1},...,w_{p})_{(k)}$, los cuales para cada vector $x_{i}$ en $X$ se operan para dar un vector con los componentes principales $ t_{(i)} = (t_{1},...,t_{k})_{(i)}$ el cual viene dado por $ t_{k(i)} = x_{i}  w_{k}$
+
+De tal manera que las variables individuales de \textbf{t} considerado sobre el conjunto de datos sucesivamente heredan la varianza máxima posible de \textbf{x}, con cada carga del vector \textbf{w}.
+
+El primer componente $ w_{{1}} $ tiene que satisfacer las siguientes características:
+
+\begin{itemize}
+	
+	\item $w_{(1)} = \arg \max_{||w||=1} \{\sum_{i}(t_{(1)})^{2}_{i}\} = \arg \max_{||w||=1} \{\sum_{i}(x_{(i)}*w)^{2}\}$
+	
+	\item $w_{(1)} = \arg \max_{||w||=1} \{||Xw||^{2}\} = \arg \max_{||w||=1} \{w^{T}X^{T}Xw\}$
+	
+	\item $w_{(1)} = \arg \max \{\frac{w^{T}X^{T}Xw}{w^{T}w}\}$
+	
+\end{itemize}
+
+Los \textit{k} restantes componentes son encontrados efectuando la extracción de los primeros \textit{k-1} componentes principales desde \textbf{x}:
+
+$\hat{x}_{k} = x - \sum_{\delta=1}^{k-1}Xw_{(\delta)}w^{T}_{(\delta)}$
+
+A su vez, para encontrar el vector de carga, es necesario extraer la varianza máxima del nuevo set de datos, tal que:
+
+$w_{(k)} = \arg \max_{||w||=1} \{||\hat{x}_{k}w||^{2}\} = \arg \max \{\frac{w^{T}X^{T}\hat{X}^{T}_{k}\hat{x}_{k}w}{w^{T}w}\}$
+
+La matriz de covarianza juega un rol fundamental en este análisis, cuyo valor entre dos componentes principales viene dado por:
+\begin{flushleft}
+	$Q(PC_{j}, PC_{k}) \infty (Xw_{(j)})^{T} * (Xw_{(k)})$\\
+	$Q(PC_{j}, PC_{k}) = w_{(j)}^{T}X^{T}Xw_{(k)}$\\
+	$Q(PC_{j}, PC_{k}) = w_{(j)}^{T}\lambda_{(k)}w_{(k)}$\\
+	$Q(PC_{j}, PC_{k}) = \lambda_{(k)}w_{(j)}^{T}w_{(k)}$	
+\end{flushleft}
+
+
+La principal característica que define al PCA es que es una técnica comúnmente utilizada para la reducción de la dimensionalidad, esto viene dado por la transformación que se genera, $ T = xw $ donde cada vector $ x_{(i)} $ existente en un espacio de coordenadas de variables p, es representado por un nuevo espacio en el cual las variables no se encuentran correlacionadas, sin embargo, si se utilizan $ L $ componentes principales para así utilizar los primeros $ L $ vectores de carga se obtiene una transformación truncada $ T_{L} = XW_{L} $, de tal manera que la matriz $ T_{L} $ posee los n ejemplos originales. Sin embargo sólo posee $ L $ características que definen el set de datos, de tal manera que dicha transformación es posible expresarla como:
+
+$ t = W^{T}x$, donde $ x \in R^{p}, t \in R^{L}$, para las cuales las columnas $ p x L $ de la matriz $ W $ forman una base ortogonal de las $ L $ características, de esta manera, al basarse en la construcción con sólo $ L $ columnas se maximiza la varianza original de los datos y se minimiza el error cuadrático tal que: 
+
+$|| TW^{T} - T_{L}W_{L}^{T}||^{2}_{2} = ||X - X_{L}||_{2}^{2}$
+
+Normalmente esta reducción es usada para el manejo de set de datos de alta dimensionalidad.
+
+\subparagraph{Propiedades\\\\}
+
+Existen tres propiedades claras que facilitan la comprensión y la utilidad del PCA como medio de manejo de dimensionalidades, y transformación de datos a espacios con coordenadas similares no correlacionados linealmente, éstas son:
+
+\begin{itemize}
+	
+	\item Para cualquier entero $ q, 1\leq q \leq p $, se considera la transformación lineal $y = B'x$, donde $y$ es un elemento del vector $q$ y $B$ es una matriz de (q x p) y la matriz de covarianza para $y$ se puede denotar por $\sum_{y} = B'\sum B$, entonces la traza de $\sum_{y}$ es maximizada tomando $B=A_{q}$ donde $A_{q}$ es la primera columna $ q $ de $ A $.
+	
+	\item Considerando la transformación ortogonal $y=B'x$, la traza de $\sum_{y}$ es minimizada tomando $B=A_{q}^{*}$ donde $A_{q}^{*}$ es la última columna $ q $ de $ A $.
+	
+	\item Sea la descomposición espectral de $\sum = \lambda_{1}\alpha_{1}\alpha_{1}'+...+\lambda_{p}\alpha_{p}\alpha_{p}'$, se tiene que $Var(x_{j}) = \sum_{k=1}^{p}\lambda_{k}\alpha^{2}_{kj}$. 
+\end{itemize}
+
+En resumen, es posible denotar que todas las operaciones de los datos son centradas en cero, tal que $ \frac{1}{N} \sum_{i=1}^{N}x_{i}=0$, para lo cual se realizan tratamientos sobre la matriz de covarianza, la cual se puede exponer como: $C = \frac{1}{N}\sum_{i=1}^{N}x_{i}x_{i}^{T}$, con el fin de obtener los vectores propios, denotados como \textbf{eigen descomposition}: $\lambda v = Cv$, los cuales pueden ser reescritos como $\lambda x^{T}_{i} = x_{i}^{T}Cv\ \forall i \in [1,N]$, lo cual genera la transformación lineal en vectores con menor dimensionalidad expuestos por sus aportes de varianzas en los datos, existentes en espacios con coordenadas similares, sin correlación lineal entre ellos.
+
+
 
 \subsubsection{Métodos de reducción de dimensionalidad no lineales}
 

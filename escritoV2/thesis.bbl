@@ -1,11 +1,5 @@
 \begin{thebibliography}{}
 
-\bibitem[Abagyan and Totrov, 1994]{abagyan1994biased}
-Abagyan, R. and Totrov, M. (1994).
-\newblock Biased probability monte carlo conformational searches and
-  electrostatic calculations for peptides and proteins.
-\newblock {\em Journal of molecular biology}, 235(3):983--1002.
-
 \bibitem[Abdelaziz et~al., 2018]{ABDELAZIZ2018117}
 Abdelaziz, A., Elhoseny, M., Salama, A.~S., and Riad, A. (2018).
 \newblock A machine learning model for improving healthcare services on cloud
@@ -22,13 +16,6 @@ Alexov, E., Zhang, J., Wang, L., Zhenirovskyy, M., Gao, Y., and Zhang, Z.
   (2012).
 \newblock Predicting folding free energy changes upon single point mutations.
 \newblock {\em Bioinformatics}, 28(5):664--671.
-
-\bibitem[Alib{\'e}s et~al., 2010]{Alibes2010}
-Alib{\'e}s, A., Nadra, A.~D., De~Masi, F., Bulyk, M.~L., Serrano, L., and
-  Stricher, F. (2010).
-\newblock Using protein design algorithms to understand the molecular basis of
-  disease caused by protein-dna interactions: the pax6 example.
-\newblock {\em Nucleic Acids Research}, 38(21):7422--7431.
 
 \bibitem[Alm et~al., 2005]{alm2005emotions}
 Alm, C.~O., Roth, D., and Sproat, R. (2005).
@@ -74,12 +61,6 @@ Battiti, R. (1992).
 \newblock First-and second-order methods for learning: between steepest descent
   and newton's method.
 \newblock {\em Neural computation}, 4(2):141--166.
-
-\bibitem[Bava et~al., 2004]{Bava2004}
-Bava, K.~A., Gromiha, M.~M., Uedaira, H., Kitajima, K., and Sarai, A. (2004).
-\newblock Protherm, version 4.0: thermodynamic database for proteins and
-  mutants.
-\newblock {\em Nucleic Acids Research}, 32(suppl\_1):D120--D121.
 
 \bibitem[Bengio, 2009]{MAL-006}
 Bengio, Y. (2009).
@@ -163,32 +144,13 @@ Broom, A., Jacobi, Z., Trainor, K., and Meiering, E.~M. (2017b).
   solubility tradeoff.
 \newblock {\em Journal of Biological Chemistry}, 292(35):14349--14361.
 
-\bibitem[Bu{\ss} et~al., 2018]{Bu2018}
-Bu{\ss}, O., Muller, D., Jager, S., Rudat, J., and Rabe, K.~S. (2018).
-\newblock Improvement in the thermostability of a b-amino acid converting
-  o-transaminase by using foldx.
-\newblock {\em ChemBioChem}, 19(4):379--387.
-
-\bibitem[Buß et~al., 2018]{BU201825}
-Buß, O., Rudat, J., and Ochsenreither, K. (2018).
-\newblock Foldx as protein engineering tool: Better than random based
-  approaches?
-\newblock {\em Computational and Structural Biotechnology Journal}, 16:25 --
-  33.
-
 \bibitem[CAO et~al., 2013]{CAO2013745}
 CAO, Y., MIAO, Q.-G., LIU, J.-C., and GAO, L. (2013).
 \newblock Advance and prospects of adaboost algorithm.
 \newblock {\em Acta Automatica Sinica}, 39(6):745 -- 758.
 
-\bibitem[Capriotti et~al., 2005a]{capriotti2005mutant2}
-Capriotti, E., Fariselli, P., and Casadio, R. (2005a).
-\newblock I-mutant2. 0: predicting stability changes upon mutation from the
-  protein sequence or structure.
-\newblock {\em Nucleic acids research}, 33(suppl\_2):W306--W310.
-
-\bibitem[Capriotti et~al., 2005b]{Capriotti2005}
-Capriotti, E., Fariselli, P., and Casadio, R. (2005b).
+\bibitem[Capriotti et~al., 2005]{Capriotti2005}
+Capriotti, E., Fariselli, P., and Casadio, R. (2005).
 \newblock I-mutant2.0: predicting stability changes upon mutation from the
   protein sequence or structure.
 \newblock {\em Nucleic Acids Res}, 33(Web Server issue):W306--W310.
@@ -406,12 +368,6 @@ HECHT-NIELSEN, R. (1992).
 \newblock In Wechsler, H., editor, {\em Neural Networks for Perception}, pages
   65 -- 93. Academic Press.
 
-\bibitem[Heselpoth et~al., 2015]{10.1093/protein/gzv004}
-Heselpoth, R.~D., Yin, Y., Moult, J., and Nelson, D.~C. (2015).
-\newblock {Increasing the stability of the bacteriophage endolysin PlyC using
-  rationale-based FoldX computational modeling}.
-\newblock {\em Protein Engineering, Design and Selection}, 28(4):85--92.
-
 \bibitem[Hofmann and Klinkenberg, 2013]{hofmann2013rapidminer}
 Hofmann, M. and Klinkenberg, R. (2013).
 \newblock {\em RapidMiner: Data mining use cases and business analytics
@@ -540,6 +496,12 @@ Masso, M. and Vaisman, I.~I. (2008).
   combining machine learning with structure based computational mutagenesis.
 \newblock {\em Bioinformatics}, 24(18):2002--2009.
 
+\bibitem[Masso and Vaisman, 2010]{Masso2010}
+Masso, M. and Vaisman, I.~I. (2010).
+\newblock Auto-mute: web-based tools for predicting stability changes in
+  proteins due to single amino acid replacements.
+\newblock {\em Protein Engineering, Design and Selection}, 23(8):683--687.
+
 \bibitem[Metsis et~al., 2006]{metsis2006spam}
 Metsis, V., Androutsopoulos, I., and Paliouras, G. (2006).
 \newblock Spam filtering with naive bayes-which naive bayes?
@@ -549,24 +511,6 @@ Metsis, V., Androutsopoulos, I., and Paliouras, G. (2006).
 Michie, D., Spiegelhalter, D.~J., Taylor, C., et~al. (1994).
 \newblock Machine learning.
 \newblock {\em Neural and Statistical Classification}, 13.
-
-\bibitem[Mu{\~n}oz et~al., 1995]{munoz1995hydrophobic}
-Mu{\~n}oz, V., Blanco, F.~J., and Serrano, L. (1995).
-\newblock The hydrophobic-staple motif and a role for loop-residues in
-  $\alpha$-helix stability and protein folding.
-\newblock {\em Nature structural biology}, 2(5):380.
-
-\bibitem[Mu{\~n}oz and Serrano, 1996]{munoz1996local}
-Mu{\~n}oz, V. and Serrano, L. (1996).
-\newblock Local versus nonlocal interactions in protein folding and
-  stability--an experimentalist's point of view.
-\newblock {\em Folding and Design}, 1(4):R71--R77.
-
-\bibitem[Nadra et~al., 2011]{NADRA20113}
-Nadra, A.~D., Serrano, L., and Alibés, A. (2011).
-\newblock Chapter one - dna-binding specificity prediction with foldx.
-\newblock In Voigt, C., editor, {\em Synthetic Biology, Part B}, volume 498 of
-  {\em Methods in Enzymology}, pages 3 -- 18. Academic Press.
 
 \bibitem[Netzer et~al., 2011]{netzer2011reading}
 Netzer, Y., Wang, T., Coates, A., Bissacco, A., Wu, B., and Ng, A.~Y. (2011).
@@ -614,11 +558,6 @@ Petukh, M., Dai, L., and Alexov, E. (2016).
   by amino acids mutations.
 \newblock {\em International journal of molecular sciences}, 17(4):547.
 
-\bibitem[Petukhov et~al., 1999]{petukhov1999local}
-Petukhov, M., Cregut, D., Soares, C.~M., and Serrano, L. (1999).
-\newblock Local water bridges and protein conformational stability.
-\newblock {\em Protein Science}, 8(10):1982--1989.
-
 \bibitem[Potapov et~al., 2009]{1gzp030}
 Potapov, V., Cohen, M., and Schreiber, G. (2009).
 \newblock {Assessing computational methods for predicting protein stability
@@ -661,13 +600,6 @@ Rohl, C.~A., Strauss, C.~E., Misura, K.~M., and Baker, D. (2004).
 \newblock The multilayer perceptron as an approximation to a bayes optimal
   discriminant function.
 \newblock {\em IEEE Transactions on Neural Networks}, 1(4):296--298.
-
-\bibitem[S{\'a}nchez et~al., 2008]{Sanchez2008}
-S{\'a}nchez, I.~E., Beltrao, P., Stricher, F., Schymkowitz, J.,
-  Ferkinghoff-Borg, J., Rousseau, F., and Serrano, L. (2008).
-\newblock Genome-wide prediction of sh2 domain targets using structural
-  information and the foldx algorithm.
-\newblock {\em PLOS Computational Biology}, 4(4):e1000052.
 
 \bibitem[Sarwar et~al., 2000]{sarwar2000application}
 Sarwar, B., Karypis, G., Konstan, J., and Riedl, J. (2000).
@@ -728,13 +660,6 @@ Vehtari, A., Gelman, A., and Gabry, J. (2017).
   cross-validation and waic.
 \newblock {\em Statistics and Computing}, 27(5):1413--1432.
 
-\bibitem[Vijayakumar et~al., 1998]{vijayakumar1998electrostatic}
-Vijayakumar, M., Wong, K.-Y., Schreiber, G., Fersht, A.~R., Szabo, A., and
-  Zhou, H.-X. (1998).
-\newblock Electrostatic enhancement of diffusion-controlled protein-protein
-  association: comparison of theory and experiment on barnase and barstar.
-\newblock {\em Journal of molecular biology}, 278(5):1015--1024.
-
 \bibitem[Wainreb et~al., 2011]{Wainreb2011}
 Wainreb, G., Ashkenazy, H., Wolf, L., Ben-Tal, N., and Dehouck, Y. (2011).
 \newblock Protein stability: a single recorded mutation aids in predicting the
@@ -771,5 +696,12 @@ Yoo, I., Alafaireet, P., Marinov, M., Pena-Hernandez, K., Gopidi, R., Chang,
 Zhang, H. (2004).
 \newblock The optimality of naive bayes.
 \newblock {\em AA}, 1(2):3.
+
+\bibitem[Zhou and Zhou, 2004]{Zhou2004}
+Zhou, H. and Zhou, Y. (2004).
+\newblock Quantifying the effect of burial of amino acid residues on protein
+  stability.
+\newblock {\em Proteins: Structure, Function, and Bioinformatics},
+  54(2):315--322.
 
 \end{thebibliography}

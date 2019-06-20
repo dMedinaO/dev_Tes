@@ -714,7 +714,7 @@ Las mediciones expuestas previamente, se utilizan para medir el desempeño de mo
 		
 \end{itemize}
 
-\subsection{Problemas asociados a los modelos de aprendizaje supervisado}
+\subsection{Problemas asociados a los modelos de aprendizaje supervisado \label{problemas}}
 
 Dentro de los principales problemas que pueden presentar los modelos de aprendizaje supervisado, se encuentran las situaciones en las que la cantidad de atributos que puede contener un set de datos es mucho mayor con respecto a la cantidad de ejemplos que se posee, conocido también como \textit{"Maldición de la dimensionalidad"} \cite{indyk1998approximate}.
 
@@ -790,71 +790,31 @@ Este tipo de validación, provoca disminuciones en las medidas de desempeño, ya
 
 Las herramientas computacionales asociadas a la evaluación de mutaciones puntuales se centran principalmente en el análisis de cómo ésta afecta a la estabilidad o la predicción de energía libre asociada a los residuos involucrados en la mutación. Sin embargo, a pesar de que el objetivo es el mismo, se enfocan en diferentes puntos de vista para abordar la problemática, tanto a nivel de entrenamiento de modelos, cómo manipulación de set de datos, así como las técnicas utilizadas para la predicción de los cambios de energía libre.
 
-En la Tabla XXX se exponen las principales herramientas existentes para la evaluación de la estabilidad de proteínas evaluando mutaciones puntuales, presentando las características, tipos de datos de entrada, resultados, estado de la herramienta y cuáles son las limitantes asociadas
+En la Tabla \ref{tab:tab-summary-tools} se exponen las principales herramientas existentes para la evaluación de la estabilidad de proteínas evaluando mutaciones puntuales, presentando las características, tipos de datos de entrada, resultados, estado de la herramienta y cuáles son las limitantes asociadas
 
-\subsection{FoldX}
+% Please add the following required packages to your document preamble:
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+\begin{longtable}[c]{|l|l|l|l|l|}
+	\hline
+	\multicolumn{1}{|c|}{\textbf{Herr.}}                 & \multicolumn{1}{c|}{\textbf{Características}}                                                                                                                                                                                                                                                                                                                               & \multicolumn{1}{c|}{\textbf{Entradas}}                                                                                                                           & \multicolumn{1}{c|}{\textbf{Salidas}}                                                                                                                                                                                                                         & \multicolumn{1}{c|}{\textbf{Disp.}}                                                  \\ \hline
+	\endfirsthead
+	%
+	\endhead
+	%
+	Foldx                                                & \begin{tabular}[c]{@{}l@{}}Predice el valor del\\ DDG a través del uso\\ de funciones de energía\\ derivados de términos\\ fisicoquímicos, \\ estadísticos e\\ información estructural\end{tabular}                                                                                                                                                                          & \begin{tabular}[c]{@{}l@{}}Estructura en\\ formato PDB\\ e información\\ sobre la mutación\end{tabular}                                                          & \begin{tabular}[c]{@{}l@{}}Estimación de\\ la diferenciade\\ energía libre\end{tabular}                                                                                                                                                                       & \begin{tabular}[c]{@{}l@{}}Disponible\\ mediante\\ licencia\\ académica\end{tabular} \\ \hline
+	I-Mutant                                             & \begin{tabular}[c]{@{}l@{}}Método basado en SVM\\ para la predicción de\\ DDG y la clasificación\\ de la estabilidad de una\\ proteína ante mutaciones\\ puntuales. La mutación es\\ caracterizada a través de\\ propiedades estructurales\\ y la información del\\ ambiente.  Permite la\\ manipulación tanto de\\ secuencias lineales\\ como estructuras PDB\end{tabular} & \begin{tabular}[c]{@{}l@{}}Secuencia lineal\\ proteína, posición\\ y mutación, en\\ caso de existir\\ estructura 3D, se\\ requiere el archivo\\ PDB\end{tabular} & \begin{tabular}[c]{@{}l@{}}Predicción del\\ DDG asociado \\ a la mutación o\\ clasificación\\ de la mutación \\ en estable o\\ desestabilizante\end{tabular}                                                                                                  & \begin{tabular}[c]{@{}l@{}}Disponible\\ para\\ ejecución\\ local\end{tabular}        \\ \hline
+	CUPSAT                                               & \begin{tabular}[c]{@{}l@{}}Predice el DDG usando\\ información estructural\\ y del ambiente asociado\\ a la mutación, además\\ utiliza diferentes\\ propiedades estructurales\\ para estimar el valor de\\ energía libre. Este es un\\ método sólo basado en\\ estimaciones utilizando\\ técnicas de\\ bioinformática\\ estructural.\end{tabular}                           & \begin{tabular}[c]{@{}l@{}}Estructura en\\ formato PDB\\ y la posición\\ del residuo a mutar\end{tabular}                                                        & \begin{tabular}[c]{@{}l@{}}Información sobre\\ las 19 posibles\\ sustituciones a\\ realizar, referidas\\ a términos como:\\ ángulos de torsión,\\ accesibilidad\\ al solvente, tipo de\\ estructura\\ secundaria,\\ dentro de las\\ principales.\end{tabular} & No disponible                                                                        \\ \hline
+	Dmutant                                              & \begin{tabular}[c]{@{}l@{}}Se basa en el uso de\\ potenciales energéticos\\ para entrenar modelos,\\ utiliza distancias para\\ describir el ambiente y\\ estima el DDG asociado\\ a la mutación\end{tabular}                                                                                                                                                                & \begin{tabular}[c]{@{}l@{}}Estructura en\\ formato PDB\end{tabular}                                                                                              & \begin{tabular}[c]{@{}l@{}}Predicción del\\ DDG asociado\\ a la mutación\end{tabular}                                                                                                                                                                         & No disponible                                                                        \\ \hline
+	\begin{tabular}[c]{@{}l@{}}AUTO-\\ MUTE\end{tabular} & \begin{tabular}[c]{@{}l@{}}Manipula las coordenadas\\ de los residuos y aplica\\ triangulación de Delaunay\\ para forma geometrías,\\ así permite describir el\\ ambiente bajo el cual se\\ encuentra el residuo.\\ Los clasificadores se\\ construyen entrenando\\ con Random Forest y\\ los predictores a\\ través de árbolesde\\ decisión.\end{tabular}                  & \begin{tabular}[c]{@{}l@{}}ID-PDB,\\ cadena y\\ mutación\end{tabular}                                                                                            & \begin{tabular}[c]{@{}l@{}}Predicción DDG\\ o clasificación\\ estabilidad,\\ además de\\ información\\ relacionada al\\ sector donde\\ ocurre la\\ mutación\end{tabular}                                                                                      & \begin{tabular}[c]{@{}l@{}}Descargable\\ para\\ ejecución\\ local\end{tabular}       \\ \hline
+	\caption{Principales herramientas computacionales enfocadas a la evaluación de la estabilidad o predicción de cambios en la energía libre, asociado a mutaciones puntuales en proteína.
+	}
+	\label{tab:tab-summary-tools}\\
+\end{longtable}
 
-FoldX es una herramienta computacional, que implementa un campo de fuerza empírico, desarrollado para la evaluación eficiente del efecto de las mutaciones sobre la estabilidad, el plegamiento y la dinámica de las proteínas y los ácidos nucleicos \cite{Schymkowitz2005}. Se basa principalmente en el cálculo de energía libre a partir de estructuras 3D de macromoléculas. Sin embargo, permite además, estimar las posiciones de los protones y los puentes de hidrógeno. 
+Diferentes son los puntos de vista que pueden ser considerados a la hora de evaluar el efecto que provoca la sustitución de residuos en la estabilidad de una proteína. Ya sea por medio de la estimación utilizando funciones de energía o potenciales energéticos (FoldX \cite{Schymkowitz2005}, Dmutant \cite{Zhou2004}, CUPSAT \cite{Parthiban2006}). Por otro lado, se encuentran métodos basados en algoritmos de apredizaje supervisado. No obstante, estos pueden ser diferenciados con respecto al algoritmo de entrenamiento utilizado o a la forma de describir la mutación. Por ejemplo, I-Mutant \cite{Capriotti2005}, utiliza SVM para predecir o clasificar el efecto de la mutación. Mientras que, AUTO-MUTE \cite{Masso2010} utiliza Random Forest para la clasificación del efecto y Árboles de decisión como algoritmo de regresión.
 
-La energía libre, es calculada utilizando la siguiente expresión matemática de aportes energéticos:
-
-
-$\Delta G=Wvdw \cdot \Delta Gvdw+WsolvH \cdot \Delta GsolvH+WsolvP \cdot \Delta GsolvP+ \Delta Gwb+ \Delta Ghbond+ \Delta Gel+ \Delta GKon+Wmc \cdot T \cdot \Delta Smc+Wsc \cdot T \cdot \Delta Ssc$
-
-Los componentes se definen a continuación.
-
-\begin{itemize}
-	
-	\item $\Delta Gvdw$ es la suma de las contribuciones de van der Waals de todos los átomo con respecto a la interacción con el solvente.
-	
-	\item $\Delta GsolvH$ y $\Delta GsolvP$ son las diferencias en energía de solvatación para grupos apolares y polares respectivamente, cuando estos cambian desde el estado no plegado a plegado.
-	
-	\item $\Delta Ghbond$ es la diferencia de energía libre entre la formación de un enlace de hidrógeno intra-molecular y uno inter-molecular.
-	
-	\item $\Delta Gwb$ es la energía libre de estabilización adicional proporcionada por una molécula de agua que hace más de un enlace de hidrógeno a la proteína que no se puede tener en cuenta con aproximaciones de solventes no explícitas \cite{petukhov1999local}. 
-	
-	\item $\Delta Gel$ es la contribución electrostática de los grupos cargados, incluyendo las hélices dipolo. 
-	
-	\item $\Delta Smc$ es el costo de la entropía de fijar el back-bone en el estado plegado; este término depende de la tendencia intrínseca de un aminoácido particular a adoptar ciertos ángulos diedros \cite{munoz1996local, munoz1995hydrophobic}. 
-	
-	\item $\Delta Ssc$ es el costo de entropía de fijar una cadena lateral en una conformación particular \cite{abagyan1994biased}. 
-	
-	\item Si la estimación se desarrolla sobre proteínas oligoméricas o complejos de proteína, se adicionan dos términos a la contribución energética: $\Delta Gkon$ que refleja el efecto de las interacciones electrostáticas en la constante de asociación $kon$ (esto se aplica solo a las energías de enlace de la subunidad) \cite{vijayakumar1998electrostatic} y $\Delta Str$ que es la pérdida de entropía traslacional y rotacional que se deriva de la formación del complejo. Este último término se cancela cuando observamos el efecto de mutaciones puntuales en complejos. 
-	
-	\item Los valores de energía de $\Delta Gvdw$, $\Delta GsolvH$, $\Delta GsolvP$ y $\Delta Ghbond$ atribuidos a cada tipo de átomo se han derivado de un conjunto de datos experimentales, y $\Delta Smc$ y $\Delta Smc$ han sido considerados desde estimaciones teóricas. 
-	
-	\item Los términos $Wvdw$, $WsolvH$, $WsolvP$, $Wmc$ y $Wsc$ corresponden a los factores de ponderación aplicados a los términos de energía bruta. Todos son 1, excepto por la contribución de van der Waals que es de 0.33 (las contribuciones de van der Waals se derivan de la transferencia de energía de vapor a agua, mientras que en la proteína vamos de solvente a proteína).
-	
-\end{itemize}
-
-Como entrada principal, recibe una estructura PDB\footnote{Protein Data Bank. Formato para la exposición de macromoléculas u estructuras en torno a coordenadas espaciales, obtenidas desde una cristalografía de rayos X, resnonancia magnética nuclear, o a través de modelos computacionales.} y dentro de los resultados más relevantes, se encuentran los cálculos de energía libre.
-
-Ha sido usada en diferentes investigaciones, incluyendo el análisis de mutaciones puntuales aplicados a ingeniería de proteínas \cite{BU201825, Alibes2010}, evaluación de mutaciones en genomas \cite{Sanchez2008}, análisis de termoestabilidad \cite{Bu2018, 10.1093/protein/gzv004}, interacciones proteínas-DNA \cite{NADRA20113}, entre las principales, razón por la cual, es considerada como una herramienta común a la hora de la evaluación de mutaciones y un referente para comparar resultados de nuevas herramientas o métodos computacionales.
-
-\subsection{I-Mutant}
-
-I-Mutant, es una familia de software basados en algoritmos de aprendizaje supervisado para la predicción automática de estabilidad de proteínas ante cambios de residuos o sustituciones expresadas en mutaciones puntuales \cite{capriotti2005mutant2}, las cuales se reflejan en los cambios de energía libre. Emplea como algoritmo para entrenamiento de modelos, Support Vector Machine (SVM), permitiendo la evaluación de las mutaciones desde la secuencia lineal de proteína o a su vez desde la estructura 3D en formato PDB.
-
-El método fue entrenado y testeado desde la base de datos ProTherm \cite{Bava2004}, la cual representa el mayor repositorio de experimentos termodinámicos con respuestas en energía libre basados en cambios de estabilidad de la proteína para mutaciones, en diferentes condiciones. 
-
-Actualmente  I-Mutant permite la clasificación de la estabilidad de la mutación y a su vez facilita la predicción de los cambios de energía libre $\Delta \Delta G$. Las medidas de desempeño se diferencian dependiendo del uso de I-Mutant y del tipo de set de datos. Si se trabaja con datos de secuencias lineales presenta una accuracy de un 77\% y un coeficiente de relación de un 0.62 con un error asociado de 1.45 kcal/mol. Para el caso en que los datos procedan de información estructural, los desempeños mejoran de manera no significativa, obteniendo una accuracy de un 80\% y un coeficiente de relación de un 0.71 con un error asociado de 1.30 kcal/mol.
-
-Si bien, es uno de los métodos más utilizados, el hecho de utilizar Support Vector Machine como algoritmo de aprendizaje supervisado para el entrenamiento de modelos, es un punto limitante a la hora de utilizar set de datos altamente no lineales, dado a que el algoritmo sólo traza hiperplanos y transforma los elementos aplicando funciones de kernel, con el fin de maximizar la varianza. Esto podría provocar sobre ajuste o generar bajos desempeños.
-
-\subsection{CUPSAT}
-
-CUPSAT (Cologne University Protein Stability Analysis Tool) es una herramienta web para analizar y predecir la estabilidad de la proteína frente a cambios o sustituciones puntuales de residuos. La herramienta utiliza información estructural específica de los átomos participantes en la mutación, tales como: ángulos de torsión y potenciales de energía, con el fin de predecir los cambios en diferencia de energía que representa la sustitución, expresados en forma de $\Delta \Delta G$ \cite{Parthiban2006}. 
-
-Como requisitos para su uso, es necesario la estructura en formato PDB y la posición del residuo a ser mutado. Como resultado, entrega información sobre el sitio de la mutación, principalmente accesibilidad al solvente, estructura secundaria y ángulos de torsión. Además, entrega información detallada sobre las 19 posibles mutaciones para el residuo objetivo.
-
-La herramienta fue testeada utilizado 1538 mutaciones desde denaturaciones térmicas y 1603 denaturaciones aplicando técnicas químicas. Presentado un desempeño mayor al 80\% de accuracy.
-
-Esta herramienta no aplica algoritmos de aprendizaje supervisado y se basa principalmente en el uso de técnicas asociadas a bioinformática estructural, para poder evaluar los cambios producidos por las sustituciones, además, permite analizar un espectro amplio de elementos dado a que, facilita el análisis de las 19 posibilidades de residuos, permitiendo hacer una evaluación de cuáles podrían ser sustituciones favorables y cuales no. El desempeño se obtiene al comparar los valores estimados por la herramienta contra resultados reportados en base de datos ProTherm \cite{Bava2004}.
-
-\subsection{Auto-Mate}
-
-
-\subsection{MultiMutate}
+Cada uno entrega distintas ventajas y desventajas, las cuales se basan principalmente, en la precisión del método y en el tiempo de cómputo relacionado al procedimiento. No obstante, también influye la disponibilidad de estos y si permiten descargas de código fuente para ejecuciones locales o simplemente disponen de versiones web. 
 
 
 \subsection{Herramientas necesarias para la caracterización de los set de datos}
@@ -879,7 +839,7 @@ Además de la hipótesis central surgen interrogantes como.
 	
 	\item Es posible utilizar estos nuevos modelos como herramientas para diagnóstico médico?
 	\item Cómo se evalúan la robustez y la generalización de estos modelos, serán capaces de adaptarse a nuevos ejemplos?
-	\item Es factible el desarrollo de una herramienta computacional que permita entrenar diferentes set de datos y que facilite la clasificación de nuevos ejemplos?
+	\item Es factible el desarrollo de una herramienta computacional que permita entrenar diferentes set de datos y que facilite la predicción de nuevos ejemplos?
 	
 \end{itemize}
 
@@ -889,7 +849,7 @@ En base a la hipótesis planteada y a las preguntas adicionales expuestas, se ex
 
 \subsection{Objetivo general}
 
-Diseñar e implementar estrategias inspiradas en Meta Learning para la implementación de modelos de clasificación y regresión asociado a mutaciones puntuales en proteínas de interés basados en descriptores termodinámicos, estructurales y filogenéticos.
+Diseñar e implementar estrategias inspiradas en Meta Learning para la implementación de modelos de clasificación y regresión asociado, a mutaciones puntuales en proteínas de interés basados en descriptores termodinámicos, estructurales y filogenéticos.
 
 \subsection{Objetivos específicos}
 
@@ -911,7 +871,7 @@ Dentro de los objetivos específicos se encuentran los siguientes.
 
 \section{Metodología propuesta}
 
-Con el fin de poder responder a la hipótesis planteada y dar solución a los objetivos impuestos, se propone una metodología general, en la cual se consideran diferentes estrategias, implementaciones y evaluación de modelos. A continuación se explica la metodología propuesta y los componentes principales de ésta.
+Con el fin de poder responder a la hipótesis planteada y dar solución a los objetivos impuestos, se propone una metodología general, en la cual, se consideran diferentes estrategias, implementaciones y evaluación de modelos. A continuación se explica la metodología propuesta y los componentes principales de ésta.
 
 \subsection{Preparación de set de datos}
 
@@ -924,29 +884,31 @@ La preparación del set de datos consiste en obtener data para poder entrenar lo
 	\label{C2:M1}
 \end{figure}
 
-Tal como se expone en la Figura \ref{C2:M1}, los set de datos se buscan en la bibliografía, a partir de modelos desarrollados previamente, bases de datos en la literatura, etc. El objetivo fundamental, es encontrar proteínas con mutaciones puntuales cuyo efecto sea conocido, dicha respuesta puede ser categórica, es decir, asociada al diseño e implementación de modelos de clasificación o continua y se aplica para modelos de regresión. 
+Tal como se expone en la Figura \ref{C2:M1}, los set de datos se buscan en la bibliografía, a partir de modelos desarrollados previamente, bases de datos, en la literatura, etc. El objetivo fundamental, es encontrar proteínas con mutaciones puntuales cuyo efecto sea conocido, dicha respuesta puede ser categórica, es decir, asociada al diseño e implementación de modelos de clasificación o continua y se aplica para modelos de regresión. 
 
-En una segunda instancia, a partir de la data recolectada ésta se procesa con el fin de poder obtener set de datos de proteínas individuales con una cantidad de ejemplos considerables que permitan el diseño de modelos válidos, para ello, fueron implementados scripts bajo el lenguaje de programación Python con el fin de recuperar las proteínas, obtener la información y generar la data de manera individual, además, eliminar ejemplos ambiguos. Es decir, filas con los mismos valores pero cuya columna de respuesta fuese diferente. 
+En una segunda instancia, a partir de la data recolectada, ésta se procesa con el fin de poder obtener set de datos de proteínas individuales con una cantidad de ejemplos considerables que permitan el diseño de modelos válidos, para ello, fueron implementados scripts bajo el lenguaje de programación Python con el fin de recuperar las proteínas, obtener la información y generar la data de manera individual, además, eliminar ejemplos ambiguos. Es decir, filas con los mismos valores pero cuya columna de respuesta fuese diferente. 
 
-A partir de esto se forman $n$ set de datos asociados a $n$ proteínas, cada uno con $m$ ejemplos y cuyos descriptores consisten en el residuo original, posición en proteína, residuo mutado y la respuesta asociada. El desbalance de clases se analiza con respecto a las posibles categorías existentes en la respuesta y el porcentaje de representatividad que éstas poseen en la muestra. Se considera que el set de datos exhibe este comportamiento cuando presentan las características expuestas en la sección \textbf{CITAR PARTE ANTERIOR}. En este caso, los ejemplos se tratan con SMOTE (Synthetic Minority Oversampling Technique) \cite{chawla2002smote}
+A partir de esto, se forman $n$ set de datos asociados a $n$ proteínas, cada uno con $m$ ejemplos y cuyos descriptores consisten en el residuo original, posición en proteína, residuo mutado y la respuesta asociada. El desbalance de clases se analiza con respecto a las posibles categorías existentes en la respuesta y el porcentaje de representatividad que éstas poseen en la muestra. Se considera que el set de datos exhibe este comportamiento cuando presentan las características expuestas en la sección \ref{problemas}. En el caso de detectar esta problemática, el conjunto de datos será tratado empleando el método SMOTE (Synthetic Minority Oversampling Technique) \cite{chawla2002smote}.
 
-Posteriormente se aplican las herramientas SDM \cite{Pandurangan2017} y MOSST \cite{Olivera-Nappa2011} con el fin de obtener los descriptores asociados a las propiedades termodinámicas y filogenéticas. Para ello, scripts Python son desarrollados para consumir los servicios de dichas herramientas y registrar los resultados obtenidos, formando así, set de datos con los descriptores planteados en los objetivos iniciales. Un punto importante a destacar, es que el uso de SDM implica que las proteínas a trabajar, deben presentar una estructura 3D reportada en el Protein Data Bank \cite{berman2000protein} o al menos poseer un modelo representativo y validado. Esto es debido a que se utilizan informaciones de coordenadas para la estimación del efecto de la mutación, minimizaciones energéticas y estabilización de la mutante.
+Posteriormente, se aplican las herramientas SDM \cite{Pandurangan2017} y MOSST \cite{Olivera-Nappa2011} con el fin de obtener los descriptores asociados a las propiedades termodinámicas y filogenéticas, respectivamente. Para ello, scripts implementados en lenguaje de programación Python, son desarrollados para consumir los servicios de dichas herramientas y registrar los resultados obtenidos, formando así, set de datos con los descriptores planteados en los objetivos iniciales. Un punto importante a destacar, es que el uso de SDM implica que las proteínas a trabajar, deben presentar una estructura 3D reportada en el Protein Data Bank \cite{berman2000protein} o al menos poseer un modelo representativo y validado. Esto es debido a que se utilizan informaciones de coordenadas para la estimación del efecto de la mutación, minimizaciones energéticas y estabilización de la mutante.
 
-Ya con los descriptores formados, las características asociadas a variables categóricas son codificadas. Si la totalidad de posibles categorías supera el 20\% del total de características en el set de datos, se aplica Ordinal Encoder, en caso contrario, One Hot Encoder \cite{pedregosa2011scikit}. Ordinal Encoder consiste en la transformación de variables categóricas en arreglos de números enteros con valores desde $0,...,n-1$ para $n$ posibles categorías. Por otro lado, One Hot Encoder, consiste en agregar tantas columnas como posibles categorías existan en el set de datos completadas mediante binarización de elementos (0 si la característica no se presencia, 1 en caso contrario).
+Ya con los descriptores formados, las características asociadas a variables categóricas son codificadas. Si la totalidad de posibles categorías supera el 20\% del total de características en el set de datos, se aplica Ordinal Encoder, en caso contrario, One Hot Encoder \cite{pedregosa2011scikit}. Ordinal Encoder consiste en la transformación de variables categóricas en arreglos de números enteros con valores desde $0,...,n-1$ para $n$ posibles categorías. Por otro lado, One Hot Encoder, consiste en agregar tantas columnas como posibles categorías existan en el set de datos completadas mediante binarización de elementos (0 si la característica no se presencia, 1 en caso contrario)\footnote{Más detalles sobre la codificación de variables categóricas y secuencias lineales de proteínas serán tratadas en el capítulo \ref{cap3}.}.
 
-Es importante mencionar que las respuestas asociadas a las mutaciones pueden ser del tipo continuo o categórico, lo cual implica que tanto los modelos como las métricas varían. No obstante, se aplica la metodología indistintamente, con el fin de demostrar la robustez del método y la eficacia de éste sin importar el tipo de modelo que se éste entrenando.
+Es importante mencionar, que las respuestas asociadas a las mutaciones pueden ser del tipo continuo o categórico, lo cual implica que tanto los modelos como las métricas varían. No obstante, se aplica la metodología indistintamente, con el fin de demostrar la robustez del método y la eficacia de éste sin importar el tipo de modelo que se éste entrenando.
 
 \subsection{Implementación de meta modelos de clasificación/regresión}
 
 La implementación de meta modelos consiste en la obtención de un grupo de estimadores que en conjunto, permiten clasificar o predecir nuevos ejemplos. Para ello, se diseña e implementa una metodología inspirada en Sistemas de Meta Learning y aplicando técnicas estadísticas para la evaluación del desempeño y el uso del meta modelo con nuevos ejemplos.
 
-En la Figura \ref{C2:M2}, se exponen las etapas asociadas a la implementación de meta modelos, contemplando desde la fase de entrenamiento de los modelos hasta la unión en meta clasificadores (Paper en redacción). Cada una de las etapas contempla un conjunto de scripts implementados en lenguaje de programación Python y empleando la librería Scikit-Learn para el entrenamiento y evaluación de los clasificadores o predictores \cite{pedregosa2011scikit}, así como Numpy para el uso de módulos estadísticos \cite{doi:10.1109/MCSE.2011.37}.
+En la Figura \ref{C2:M2}, se exponen las etapas asociadas a la implementación de meta modelos, contemplando desde la fase de entrenamiento de los modelos hasta la unión en meta clasificadores, lo cual se reporta en la herramienta MLSTools (Paper en redacción). 
+
+Cada una de las etapas, contempla un conjunto de scripts implementados en lenguaje de programación Python y empleando la librería Scikit-Learn para el entrenamiento y evaluación de los clasificadores o predictores \cite{pedregosa2011scikit}, así como Numpy para el uso de módulos estadísticos \cite{doi:10.1109/MCSE.2011.37}.
 
 
 \begin{figure}[!h]
 	\centering
 	\includegraphics[scale=.4]{m2.png}
-	\caption{Esquema representativo asociado al proceso de creación de meta modelos utilizando Meta Learning System Tools.}
+	\caption{Esquema representativo asociado al proceso de creación de meta modelos utilizando la metodología reportada para la herramienta MLSTools (Paper en redacción).}
 	\label{C2:M2}
 \end{figure}
 
@@ -981,7 +943,7 @@ La exploración de modelos o estimadores, se basa en la aplicación de diferente
 
 Como se observa en la Tabla \ref{cap2:tab1}, son sobre 720 modelos los que se generan y a partir de ellos se obtiene distribuciones de medidas de desempeño que permiten evaluarlos. En el caso de modelos de regresión se utilizan los coeficientes de Pearson, Spearman, Kendall $\tau$ y $R^{2}$, mientras que para modelos de clasificación, se consideran la Precisión, Exactitud, Recall y F1.
 
-Finalmente, esta etapa entrega set de modelos entrenados y evaluados según las métricas de interés, se destaca que cada modelo es validado a través del proceso de validación cruzada, con el fin de poder disminuir posibles sobreajustes. El valor de $k$ asociado a las subdivisiones a realizar varía con respecto a la cantidad de ejemplos que presente el set de datos, es decir, sea $n$ la cantidad de ejemplos en la muestra, si $n<=20$ se tiene que $k=n$ implicando el uso de Leave one out, si $n>20$ y $n<=50$ se considera un valor de $k=3$, si $n>50$ y $n<=100$ $k=5$, por último, si $n>100$ se tiene un valor de $k=10$.
+Finalmente, esta etapa, entrega set de modelos entrenados y evaluados según las métricas de interés. Se destaca que cada modelo es validado a través del proceso de validación cruzada, con el fin de poder disminuir posibles sobreajustes. El valor de $k$ asociado a las subdivisiones a realizar varía con respecto a la cantidad de ejemplos que presente el set de datos, es decir, sea $n$ la cantidad de ejemplos en la muestra, si $n<=20$ se tiene que $k=n$ implicando el uso de Leave one out, si $n>20$ y $n<=50$ se considera un valor de $k=3$, si $n>50$ y $n<=100$ $k=5$, por último, si $n>100$ se tiene un valor de $k=10$.
 
 \subsubsection{Selección de modelos}
 
@@ -1036,9 +998,9 @@ Es importante mencionar, que cada distribución puede permitir la selección de 
 
 \subsubsection{Generación y evaluación de meta modelos}
 
-A partir del conjunto de modelos $M'$, el cual representa los estimadores seleccionados cuyas medidas de desempeño son las más altas en sus distribuciones correspondientes, se generan meta modelos, es decir, estimadores compuestos de diversas unidades, los cuales en conjunto entregan una respuesta, ya sea por ponderación o votación. El proceso general para la generación de los meta modelos, es descrito a continuación.
+A partir del conjunto de modelos $M'$, el cual representa los estimadores seleccionados, cuyas medidas de desempeño son las más altas en sus distribuciones correspondientes, se generan meta modelos, es decir, estimadores compuestos de diversas unidades, los cuales en conjunto entregan una respuesta, ya sea por ponderación o votación. El proceso general para la generación de los meta modelos, es descrito a continuación.
 
-En una primera instancia, los modelos son nuevamente entrenados y se comparan las nuevas medidas de desempeño con las obtenidas previamente, en caso de que exista una diferencia mayor al 20\%, en cualquiera de sus métricas, el modelo se remueve del conjunto $M'$. La razón fundamental de esto, es debido a que se espera desarrollar modelos robustos cuyas evaluaciones no presenten variaciones significativas y que realmente no alteren sus predicciones ante nuevos ejemplos, razón por la cual, se aplica nuevamente validación cruzada para validar los modelos.
+En una primera instancia, los modelos son nuevamente entrenados y se comparan las nuevas medidas de desempeño con las obtenidas previamente. En caso de que exista una diferencia mayor al 20\%, en cualquiera de sus métricas, el modelo se remueve del conjunto $M'$. La razón fundamental de esto, es debido a que se espera desarrollar modelos robustos cuyas evaluaciones no presenten variaciones significativas y que realmente no alteren sus predicciones ante nuevos ejemplos, razón por la cual, se aplica nuevamente validación cruzada para validar los modelos.
 
 Con el fin de evaluar el desempeño de los meta modelos, nuevas medidas se generan a partir de la información resultante de los modelos individuales. No obstante, la forma en la que se obtienen varían dependiendo del tipo de respuesta que se debe entregar.
 
@@ -1065,11 +1027,17 @@ Un flujo general del uso de la herramienta, se expone en la Figura \ref{C2:M3}.
 	\label{C2:M3}
 \end{figure}
 
-La idea general, consiste en que usuarios de la herramienta, puedan entrenar sus propios modelos de clasificación o regresión, basados en la metodología expuesta en los pasos anteriores mediante el uso de Meta Learning Sytem Tools (Paper en Redacción). Para ello, los usuarios deben entregar sus set de datos con la información necesaria para ser procesada: cadena, residuo original, posición, residuo mutado y respuesta o efecto de la mutación, además del archivo PDB a ser procesado. La herramienta, aplica los pasos expuestos en la metodología de este capítulo generando un meta modelo basado en algoritmos de aprendizaje supervisado y las medidas de desempeño que permiten evaluar el modelo obtenido. Si el usuario acepta la metodología y por medio de un consentimiento informado, permite la publicación de los datos, el sistema habilita el acceso tanto a los meta modelos como a los set de datos y los agrega a la lista de procesos de modelos auto entrenables. Esto último, implica que ante la adición de nuevos ejemplos al set de datos, el sistema actualiza los modelos y las medidas de desempeño, aplicando la metodología expuesta, así, constantemente mantiene la actualización de la información y permite mantener en constante crecimiento los datos que contemplan el desarrollo de los modelos.
+La idea general, consiste en que usuarios de la herramienta, puedan entrenar sus propios modelos de clasificación o regresión, basados en la metodología expuesta en los pasos anteriores mediante el uso de Meta Learning Sytem Tools (Paper en Redacción). Para ello, los usuarios deben entregar sus set de datos con la información necesaria para ser procesada: cadena, residuo original, posición, residuo mutado y respuesta o efecto de la mutación, además del archivo PDB a ser procesado. 
+
+La herramienta, aplica los pasos expuestos en la metodología de este capítulo generando un meta modelo basado en algoritmos de aprendizaje supervisado y las medidas de desempeño que permiten evaluar el modelo obtenido. 
+
+Si el usuario acepta la metodología y permite la publicación de los datos, el sistema habilita el acceso tanto a los meta modelos como a los set de datos y los agrega a la lista de procesos de modelos auto entrenables.
+
+Esto último, implica que ante la adición de nuevos ejemplos al set de datos, el sistema actualiza los modelos y las medidas de desempeño, aplicando la metodología expuesta, así, constantemente mantiene la actualización de la información y permite mantener en constante crecimiento los datos que contemplan el desarrollo de los modelos.
 
 \section{Análisis y evaluación de los set de datos a utilizar}
 
-A continuación, se exponen los resultados obtenidos hasta el momento y discusiones a cerca del proceso generado, contemplando desde la etapa inicial asociada a la búsqueda de set de datos de mutaciones en proteínas, la preparación de estos para la aplicación de la metodología desarrollada y la evaluación del funcionamiento de estos con el fin de generar meta modelos asociados a sistemas de mutaciones en proteínas y permitir el desarrollo de herramientas computacionales que faciliten dichas acciones. Adicional a esto, se expone un caso de estudio donde se emplea esta metodología para el desarrollo de modelos de clasificación de relevancia clínica de mutaciones asociadas a la enfermedad de von Hippel-Lindau, exponiendo las necesidades de adición de información en set de datos altamente no lineales.
+A continuación, se exponen los resultados obtenidos hasta el momento, presentando principalmente, los set de datos a utilizar, las características que estos poseen y qué representan, con el fin de contextualizar la data a manipular y los modelos a generar.
 
 \subsection{Set de datos utilizados}
 
@@ -1177,7 +1145,9 @@ El desbalance de clases se evaluó en aquellos set de datos con respuesta categ�
 	\label{fig:desbalance}
 \end{figure}
 
-En las 8 proteínas en estudio para modelos de clasificación, la distribución de las categorías es similar a lo expuesta en la Figura \ref{fig:desbalance} para todas ellas, donde cerca del 50\% corresponden a mutaciones que afectan positivamente a la estabilidad, mientras que mutaciones que provocan cambios negativos o no generan diferencias, se encuentran en proporciones similares, ambas cercanas al 25\%. Si bien las proporciones son dispares, para este caso, se considera un desbalance como un elemento que representa menos de un 5\% del total de la muestra, además, dado a que la cantidad de ejemplos son elevadas, un 20\% o un 25\% implica cerca de 200 mutaciones, en promedio, que cumplen dicha característica. Además, el hecho de que exista una cantidad inferior de mutaciones no benéficas a la estabilidad viene dada a la dificultad de encontrar y reportar mutaciones que afecten negativamente a la para una proteína dado a la propensión filogenética \cite{Olivera-Nappa2011} que estos ocurran, lo cual se ve reflejado en las diferencias asociadas a cambios positivos dentro del set de mutaciones. No obstante, si bien el hecho de que la propensión filogenética indique que el cambio tiende a mejorar estabilidad, diseñar mutantes con mejoras en propiedades de interés, es un problema latente en la actualidad, de alto costo económico y computacional y con una gran demanda desde diferentes áreas del conocimiento.|
+En las 8 proteínas en estudio para modelos de clasificación, la distribución de las categorías es similar a lo expuesta en la Figura \ref{fig:desbalance} para todas ellas, donde cerca del 50\% corresponden a mutaciones que afectan positivamente a la estabilidad, mientras que mutaciones que provocan cambios negativos o no generan diferencias, se encuentran en proporciones similares, ambas cercanas al 25\%. 
+
+Si bien las proporciones son dispares, para este caso, se considera un desbalance como un elemento que representa menos de un 5\% del total de la muestra, además, dado a que la cantidad de ejemplos son elevadas, un 20\% o un 25\% implica cerca de 200 mutaciones, en promedio, que cumplen dicha característica. También, el hecho de que exista una cantidad inferior de mutaciones no benéficas a la estabilidad viene dada a la dificultad de encontrar y reportar mutaciones que afecten negativamente a para una proteína, es debido a la propensión filogenética \cite{Olivera-Nappa2011} que estos ocurran, lo cual se ve reflejado en las diferencias asociadas a cambios positivos dentro del set de mutaciones. No obstante, si bien el hecho de que la propensión filogenética indique que el cambio tiende a mejorar estabilidad, diseñar mutantes con mejoras en propiedades de interés, es un problema latente en la actualidad, de alto costo económico y computacional y con una gran demanda desde diferentes áreas del conocimiento.
 
 En los set de datos para el desarrollo de modelos de regresión, se evaluó la distribución de la respuesta, en este caso, valores de $\Delta\Delta\ G$ asociado a diferencias de energía libre producidas entre el residuo mutado y el original, tal que: $\Delta\ Res_{mut}\ - \Delta\ Res_{wild}\ = \Delta\Delta\ G$. 
 
