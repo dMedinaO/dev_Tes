@@ -1,19 +1,19 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Componentes principales de la miner\IeC {\'\i }a de datos\relax }}{5}{figure.caption.5}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Estructura de \IeC {\'a}rbol para modelo de clasificaci\IeC {\'o}n de set de datos iris.\relax }}{11}{figure.caption.6}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Muestra de desbalance de clases en SVM.\relax }}{17}{figure.caption.8}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Esquema de hiperplanos en SVM.\relax }}{18}{figure.caption.10}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Esquema representativo de algoritmo Random Forest.\relax }}{21}{figure.caption.13}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Representaci\IeC {\'o}n esquem\IeC {\'a}tica de una Red Neuronal\relax }}{24}{figure.caption.16}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Esquema representativo de validaci\IeC {\'o}n cruzada.\relax }}{30}{figure.caption.18}
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Esquema representativo de Leave One.\relax }}{31}{figure.caption.20}
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Esquema representativo asociado al proceso de generaci\IeC {\'o}n de set de datos de mutaciones puntuales en prote\IeC {\'\i }nas.\relax }}{38}{figure.caption.23}
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Esquema representativo asociado al proceso de creaci\IeC {\'o}n de meta modelos utilizando la metodolog\IeC {\'\i }a reportada para la herramienta MLSTools (Paper en redacci\IeC {\'o}n).\relax }}{40}{figure.caption.24}
-\contentsline {figure}{\numberline {2.11}{\ignorespaces Esquema representativo de flujo asociado a la herramienta de generaci\IeC {\'o}n de meta modelos para mutaciones puntuales en prote\IeC {\'\i }nas de inter\IeC {\'e}s.\relax }}{45}{figure.caption.28}
-\contentsline {figure}{\numberline {2.12}{\ignorespaces Representaci\IeC {\'o}n de estructuras de prote\IeC {\'\i }nas ejemplos utilizadas para el desarrollo de meta modelos de clasificaci\IeC {\'o}n.\relax }}{49}{figure.caption.30}
-\contentsline {figure}{\numberline {2.13}{\ignorespaces Evaluaci\IeC {\'o}n del desbalance de clases en prote\IeC {\'\i }nas ejemplo.\relax }}{51}{figure.caption.32}
-\contentsline {figure}{\numberline {2.14}{\ignorespaces Evaluaci\IeC {\'o}n de la distribuci\IeC {\'o}n de respuesta continua en set de datos de prote\IeC {\'\i }nas.\relax }}{52}{figure.caption.33}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Componentes principales de la miner\IeC {\'\i }a de datos\relax }}{5}{figure.caption.4}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Estructura de \IeC {\'a}rbol para modelo de clasificaci\IeC {\'o}n de set de datos iris.\relax }}{11}{figure.caption.5}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Muestra de desbalance de clases en SVM.\relax }}{17}{figure.caption.7}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Esquema de hiperplanos en SVM.\relax }}{18}{figure.caption.9}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Esquema representativo de algoritmo Random Forest.\relax }}{21}{figure.caption.12}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Representaci\IeC {\'o}n esquem\IeC {\'a}tica de una Red Neuronal\relax }}{24}{figure.caption.15}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Esquema representativo de validaci\IeC {\'o}n cruzada.\relax }}{30}{figure.caption.17}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Esquema representativo de Leave One.\relax }}{31}{figure.caption.19}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Esquema representativo asociado al proceso de generaci\IeC {\'o}n de set de datos de mutaciones puntuales en prote\IeC {\'\i }nas.\relax }}{38}{figure.caption.22}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Esquema representativo asociado al proceso de creaci\IeC {\'o}n de meta modelos utilizando la metodolog\IeC {\'\i }a reportada para la herramienta MLSTools (Paper en redacci\IeC {\'o}n).\relax }}{40}{figure.caption.23}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Esquema representativo de flujo asociado a la herramienta de generaci\IeC {\'o}n de meta modelos para mutaciones puntuales en prote\IeC {\'\i }nas de inter\IeC {\'e}s.\relax }}{45}{figure.caption.27}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Representaci\IeC {\'o}n de estructuras de prote\IeC {\'\i }nas ejemplos utilizadas para el desarrollo de meta modelos de clasificaci\IeC {\'o}n.\relax }}{49}{figure.caption.29}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Evaluaci\IeC {\'o}n del desbalance de clases en prote\IeC {\'\i }nas ejemplo.\relax }}{51}{figure.caption.31}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Evaluaci\IeC {\'o}n de la distribuci\IeC {\'o}n de respuesta continua en set de datos de prote\IeC {\'\i }nas.\relax }}{52}{figure.caption.32}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
