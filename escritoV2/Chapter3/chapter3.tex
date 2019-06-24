@@ -100,70 +100,112 @@ Dada la relevancia de la selección de descriptores correctos para poder caracte
 
 \subsubsection{Técnicas de reducción de dimensionalidad}
 
-Diferentes técnicas para el análisis de características y reducción de dimensionalidad han sido implementadas en el campo de minería de datos, con el fin de poder permitir la selección de descriptores informativos y sin contemplar conjuntos de datos altamente dimensionales. Dentro de las principales destacan: Análisis de correlación, mutual information, evaluaciones espaciales con respecto al entrenamiento de modelos empleando Random Forest, Análisis de componentes principales (PCA) y sus variantes como métodos lineales y reducción de dimensionalidad empleando métodos no lineales. 
+Diferentes técnicas para el análisis de características y reducción de dimensionalidad han sido implementadas en el campo de minería de datos, con el fin de poder permitir la selección de descriptores informativos y sin contemplar conjuntos de datos altamente dimensionales. Dentro de las principales destacan: Análisis de correlación, mutual information, evaluaciones de características con respecto al entrenamiento de modelos empleando Random Forest, Análisis de componentes principales (PCA) y sus variantes como métodos lineales y reducción de dimensionalidad empleando métodos no lineales. 
 
 \subsubsection{Análisis de correlación}
 
+La correlación entre elementos, es posible definirla como una relación estadística entre dos variables aleatorias, asociado principalmente, a relacionales lineales entre ellas. Existen diferentes coeficientes de correlación, dentro de los cuales, el más conocido es Pearson. No obstante, se encuentran además: Spearman rank, kendall $\tau$. La formulación matemática de estos, fue expuesta en la sección \ref{desempeno}, en el apartado de análisis de desempeño de modelos de regresión.
+
+De manera general, la correlación se relaciona con la covarianza entre las variables aleatorias, esto es Sean $X$ e $Y$ variables aleatorias, el coeficiente de correlación $\rho$ entre ellas se define como:
+
+\begin{center}
+	$\rho X,Y = corr(X,Y) = \dfrac{cov(X,Y)}{\sigma_{Y}\sigma_{Y}} = \dfrac{E[(X - \mu_{X})(Y - \mu_{Y})]}{\sigma_{Y}\sigma_{Y}}$
+\end{center}
+
+$\rho \in [-1, 1]$ de tal forma que -1 indica una correlación inversa entre los elementos y 1 una relación positiva. En efectos prácticos, ambos valores denotan una dependencia entre los elementos, por lo que no son informativos y es posible eliminar uno de ellos, dada la redundancia de información. Valores cercanos a 0, indican que las variables no se encuentran correlacionadas.
+
+Estos estudios se realizan para todas las variables en un conjunto de datos, expresándose en matrices de correlación, las cuales, pueden ser visualizadas mediante Heat Map en donde se expone la dependencia entre los atributos. Siendo una de las técnicas más utilizadas para la reducción de dimensionalidad, debido a su simpleza y a las ventajas que posee con respecto a la información que entrega sobre los atributos.
+
 \subsubsection{Mutual information}
 
+Es una medida de dependencia mutua entre dos variables aleatorias, permitiendo cuantificar la cantidad de información obtenida alrededor de una variable aleatoria vista desde otra. Representa un concepto más general que el análisis de correlación y se basa en la comparación de la similitud entre las distribuciones del conjunto de las variables independientes, con respecto al producto de éstas.
+
+Sean dos variables aleatorias $X$ e $Y$ con valores en el espacio $X \times Y$ y sea el conjunto $P_{(X,Y)}$ y las distribuciones marginales son $P_X$ y $P_Y$, respectivamente. El mutual information score para las variables $X$ e $Y$ es:
+
+\begin{center}
+	$I(X,Y) = D_{KL}(P_{(X,Y)} || P_X \otimes P_Y)$
+\end{center}
+
+Esto puede variar con respecto al tipo de variable a utilizar. En el caso de que pertenezcan a una distribución discreta el $I(X,Y)$ corresponde a:
+
+\begin{center}
+	$I(X,Y) = \sum_{y_{i} \in Y} \sum_{x \in X} P_{(x,y)} (x,y) \log (\dfrac{P_{(x,y)}(x,y)}{P_{x}(x)P_{y}(y)})$ 
+\end{center}
+
+Mientras que para el caso de variables con distribución continua se tiene:
+
+\begin{center}
+	$I(X,Y) = \int_{y} \int_{x} P_{(x,y)} (x,y) \log (\dfrac{P_{(x,y)}(x,y)}{P_{x}(x)P_{y}(y)})$
+\end{center}
+
+Como interpretación, se tiene que presenta un rango de valores no negativos, donde un valor 0 indica que no existe información mutua entre ambas características y a mayor valor más relación existe entre ambos elementos.
+
 \subsubsection{Análisis espaciales de características}
+
+En la sección \ref{rf}, se describió Random Forest como un algoritmo de aprendizaje supervisado, que permite entrenar modelos utilizando árboles de decisión para manipular las características, generando $n$ iteraciones, en donde se construyen $n$ árboles, con diferentes atributos y ejemplos. Esto permite estabilizar las medidas de desempeño y generar modelos robustos y con probabilidades menores de sobreajuste.
+
+Sin embargo, este método puede ser utilizado con el fin de evaluar las características, ya sea en torno a cuáles son las frecuencias con las que permite dividir de manera inicial el conjunto de datos o cuáles son las que permiten generar la clasificación o la asignación a un intervalo en términos de regresión. 
+
+A partir de lo anterior, la profundidad de una característica utilizada como nodo de decisión en un árbol puede usarse para evaluar la importancia relativa de esa característica con respecto a la predictibilidad de la variable objetivo. Las características utilizadas en la parte superior del árbol contribuyen a la decisión de predicción final de una fracción mayor de las muestras de entrada. La fracción esperada de las muestras a las que contribuyen puede, por lo tanto, usarse como una estimación de la importancia relativa de las características. 
+
+Es posible, la fracción de muestras a las que contribuye una característica se combina con la disminución de la impureza al dividirlas para crear una estimación normalizada del poder predictivo de esa característica.
 
 \subsubsection{Métodos de reducción de dimensionalidad lineales}
 
 Reducción de dimensionalidad, como su nombre lo sugiere, implica remover características o atributos del set de datos, con el objetivo de disminuir el número de dimensiones del conjunto de elementos. Esto permite descartar los atributos menos informativos o con menor relevancia, ya sea en términos de aporte a la varianza o relaciones con el resto de descriptores.
 
-Dentro de las principales técnicas de reducción lineales, se encuentran el Análisis de componentes principales (PCA) y sus variantes, tales como: Incremental PCA o Kernel PCA. Además de la aplicación de valores singulares, Factor Analysis, Análisis de Componentes Independientes (ICA) y Factorización de Matrices no Negativas, dentro de las principales.
+Dentro de las principales técnicas de reducción lineales, se encuentran el Análisis de componentes principales (PCA) y sus variantes, tales como: Incremental PCA. 
 
-Cada una de estas técnicas, se describe brevemente a continuación.
+Análisis de Componentes Principales (PCA, por sus iniciales en inglés), es una técnica estadística que permite la conversión de un conjunto de variables posiblemente correlacionadas a un conjunto de variables no correlacionadas linealmente. Estos elementos se denominan componentes principales. Su principal característica es que son ordenados de mayor a menor, según la varianza que entregan a los datos.
 
-\paragraph{Análisis de Componentes Principales (PCA)\\\\}
+Intuitivamente, es posible pensar el PCA como un elipsoide n-dimensional de datos, donde cada eje del elipsoide representa un componente principal. Esto implica, que si algún eje del elipsoide es pequeño, la varianza correspondiente a lo largo de éste también lo es, por lo que omitir dicho eje no implica una pérdida importante de información, lo cual es denotado como la reducción de la dimensionalidad en base a los aportes a las varianzas que denotan cada componente.
 
-Análisis de Componentes Principales (PCA por sus iniciales en inglés), es una técnica estadística que permite la conversión de un conjunto de variables posiblemente correlacionadas a un conjunto de variables no correlacionadas linealmente, los cuales se denominan componentes principales, siendo la cantidad menor o igual que las variables originales, donde la principal característica de los componentes principales es que son ordenados en base a la varianza que entregan a los datos, así el primer componente principal aporta una mayor varianza que el segundo y así sucesivamente, basándose principalmente en el uso de vectores propios.
+\paragraph{Definición\\\\}
 
-PCA se utiliza principalmente como una herramienta en el análisis de la exploración de datos los cuales tienen como objetivo generar modelos de predicción y sus resultados normalmente se exponen en puntuaciones que tienen estrecha relación con el aporte de varianza que estos entregan  
+Matemáticamente, es posible definir PCA como una transformación lineal ortogonal de los datos a un nuevo sistema de coordenadas, tal que la mayor varianza por alguna proyección de los datos pasa a situarse en la primera coordenada (llamado el primer componente principal), la segunda mayor varianza en la segunda coordenada, y así sucesivamente.
 
-Intuitivamente, es posible pensar el PCA como un elipsoide n-dimensional de datos, donde cada eje del elipsoide representa un componente principal, esto implica, que si algún eje del elipsoide es pequeño, la varianza correspondiente a lo largo de éste también lo es, por lo que omitir dicho eje no implica una pérdida importante de información, esto último es denotado como la reducción de la dimensionalidad en base a los aportes a las varianzas que denotan cada componente.
-
-\subparagraph{Definición\\\\}
-
-Matemáticamente, es posible definir PCA como una transformación lineal ortogonal que transforma los datos a un nuevo sistema de coordenadas tal que la mayor varianza por alguna proyección de los datos pasa a situarse en la primera coordenada (llamado el primer componente principal), la segunda mayor varianza en la segunda coordenada, y así sucesivamente.
-
-Se considera un conjunto de datos, \textbf{X}, con una media empírica 0, donde cada una de las filas (\textbf{n}) representan ejemplos y las columnas características o atributos (\textbf{p}).
+Se considera un conjunto de datos, \textbf{X}, con una media empírica 0, donde cada una de las filas (\textbf{n}) representan ejemplos y las columnas características o atributos \textbf{p}.
 
 La transformación está definida por un set de vectores de dimensión \textbf{p} que poseen pesos denotados por $ w_{(k)} = (w_{1},...,w_{p})_{(k)}$, los cuales para cada vector $x_{i}$ en $X$ se operan para dar un vector con los componentes principales $ t_{(i)} = (t_{1},...,t_{k})_{(i)}$ el cual viene dado por $ t_{k(i)} = x_{i}  w_{k}$
 
-De tal manera que las variables individuales de \textbf{t} considerado sobre el conjunto de datos sucesivamente heredan la varianza máxima posible de \textbf{x}, con cada carga del vector \textbf{w}.
+De tal manera que las variables individuales de \textbf{t} considerado sobre el conjunto de datos, sucesivamente heredan la varianza máxima posible de \textbf{x}, con cada carga del vector \textbf{w}.
 
-El primer componente $ w_{{1}} $ tiene que satisfacer las siguientes características:
+El primer componente $ w_{{1}} $ debe satisfacer las siguientes características:
 
 \begin{itemize}
 	
-	\item $w_{(1)} = \arg \max_{||w||=1} \{\sum_{i}(t_{(1)})^{2}_{i}\} = \arg \max_{||w||=1} \{\sum_{i}(x_{(i)}*w)^{2}\}$
+	\item $w_{1} = \arg \max_{||w||=1} \{\sum_{i}(t_{(1)})^{2}_{i}\} = \arg \max_{||w||=1} \{\sum_{i}(x_{(i)}*w)^{2}\}$
 	
-	\item $w_{(1)} = \arg \max_{||w||=1} \{||Xw||^{2}\} = \arg \max_{||w||=1} \{w^{T}X^{T}Xw\}$
+	\item $w_{1} = \arg \max_{||w||=1} \{||Xw||^{2}\} = \arg \max_{||w||=1} \{w^{T}X^{T}Xw\}$
 	
-	\item $w_{(1)} = \arg \max \{\frac{w^{T}X^{T}Xw}{w^{T}w}\}$
+	\item $w_{1} = \arg \max \{\frac{w^{T}X^{T}Xw}{w^{T}w}\}$
 	
 \end{itemize}
 
 Los \textit{k} restantes componentes son encontrados efectuando la extracción de los primeros \textit{k-1} componentes principales desde \textbf{x}:
 
-$\hat{x}_{k} = x - \sum_{\delta=1}^{k-1}Xw_{(\delta)}w^{T}_{(\delta)}$
+\begin{center}
+	$\hat{x}_{k} = x - \sum_{\delta=1}^{k-1}Xw_{(\delta)}w^{T}_{(\delta)}$
+\end{center}
 
 A su vez, para encontrar el vector de carga, es necesario extraer la varianza máxima del nuevo set de datos, tal que:
 
-$w_{(k)} = \arg \max_{||w||=1} \{||\hat{x}_{k}w||^{2}\} = \arg \max \{\frac{w^{T}X^{T}\hat{X}^{T}_{k}\hat{x}_{k}w}{w^{T}w}\}$
+\begin{center}
+	$w_{(k)} = \arg \max_{||w||=1} \{||\hat{x}_{k}w||^{2}\} = \arg \max \{\frac{w^{T}X^{T}\hat{X}^{T}_{k}\hat{x}_{k}w}{w^{T}w}\}$
+\end{center}
 
 La matriz de covarianza juega un rol fundamental en este análisis, cuyo valor entre dos componentes principales viene dado por:
-\begin{flushleft}
+\begin{center}
 	$Q(PC_{j}, PC_{k}) \infty (Xw_{(j)})^{T} * (Xw_{(k)})$\\
 	$Q(PC_{j}, PC_{k}) = w_{(j)}^{T}X^{T}Xw_{(k)}$\\
 	$Q(PC_{j}, PC_{k}) = w_{(j)}^{T}\lambda_{(k)}w_{(k)}$\\
 	$Q(PC_{j}, PC_{k}) = \lambda_{(k)}w_{(j)}^{T}w_{(k)}$	
-\end{flushleft}
+\end{center}
 
 
-La principal característica que define al PCA es que es una técnica comúnmente utilizada para la reducción de la dimensionalidad, esto viene dado por la transformación que se genera, $ T = xw $ donde cada vector $ x_{(i)} $ existente en un espacio de coordenadas de variables p, es representado por un nuevo espacio en el cual las variables no se encuentran correlacionadas, sin embargo, si se utilizan $ L $ componentes principales para así utilizar los primeros $ L $ vectores de carga se obtiene una transformación truncada $ T_{L} = XW_{L} $, de tal manera que la matriz $ T_{L} $ posee los n ejemplos originales. Sin embargo sólo posee $ L $ características que definen el set de datos, de tal manera que dicha transformación es posible expresarla como:
+La principal característica que define al PCA es que es una técnica comúnmente utilizada para la reducción de la dimensionalidad, esto viene dado por la transformación que se genera, $ T = xw $ donde cada vector $ x_{(i)} $ existente en un espacio de coordenadas de variables p, es representado por un nuevo espacio en el cual las variables no se encuentran correlacionadas. Sin embargo, si se utilizan $ L $ componentes principales para así utilizar los primeros $ L $ vectores de carga se obtiene una transformación truncada $ T_{L} = XW_{L} $, de tal manera que la matriz $ T_{L} $ posee los n ejemplos originales. 
+
+No obstante, sólo posee $ L $ características que definen el set de datos, de tal manera que dicha transformación es posible expresarla como:
 
 $ t = W^{T}x$, donde $ x \in R^{p}, t \in R^{L}$, para las cuales las columnas $ p x L $ de la matriz $ W $ forman una base ortogonal de las $ L $ características, de esta manera, al basarse en la construcción con sólo $ L $ columnas se maximiza la varianza original de los datos y se minimiza el error cuadrático tal que: 
 
@@ -171,24 +213,11 @@ $|| TW^{T} - T_{L}W_{L}^{T}||^{2}_{2} = ||X - X_{L}||_{2}^{2}$
 
 Normalmente esta reducción es usada para el manejo de set de datos de alta dimensionalidad.
 
-\subparagraph{Propiedades\\\\}
-
-Existen tres propiedades claras que facilitan la comprensión y la utilidad del PCA como medio de manejo de dimensionalidades, y transformación de datos a espacios con coordenadas similares no correlacionados linealmente, éstas son:
-
-\begin{itemize}
-	
-	\item Para cualquier entero $ q, 1\leq q \leq p $, se considera la transformación lineal $y = B'x$, donde $y$ es un elemento del vector $q$ y $B$ es una matriz de (q x p) y la matriz de covarianza para $y$ se puede denotar por $\sum_{y} = B'\sum B$, entonces la traza de $\sum_{y}$ es maximizada tomando $B=A_{q}$ donde $A_{q}$ es la primera columna $ q $ de $ A $.
-	
-	\item Considerando la transformación ortogonal $y=B'x$, la traza de $\sum_{y}$ es minimizada tomando $B=A_{q}^{*}$ donde $A_{q}^{*}$ es la última columna $ q $ de $ A $.
-	
-	\item Sea la descomposición espectral de $\sum = \lambda_{1}\alpha_{1}\alpha_{1}'+...+\lambda_{p}\alpha_{p}\alpha_{p}'$, se tiene que $Var(x_{j}) = \sum_{k=1}^{p}\lambda_{k}\alpha^{2}_{kj}$. 
-\end{itemize}
-
-En resumen, es posible denotar que todas las operaciones de los datos son centradas en cero, tal que $ \frac{1}{N} \sum_{i=1}^{N}x_{i}=0$, para lo cual se realizan tratamientos sobre la matriz de covarianza, la cual se puede exponer como: $C = \frac{1}{N}\sum_{i=1}^{N}x_{i}x_{i}^{T}$, con el fin de obtener los vectores propios, denotados como \textbf{eigen descomposition}: $\lambda v = Cv$, los cuales pueden ser reescritos como $\lambda x^{T}_{i} = x_{i}^{T}Cv\ \forall i \in [1,N]$, lo cual genera la transformación lineal en vectores con menor dimensionalidad expuestos por sus aportes de varianzas en los datos, existentes en espacios con coordenadas similares, sin correlación lineal entre ellos.
-
+PCA presenta algunas variaciones en sus definiciones o en el uso de los datos, tales como: Incremental PCA. Este método, representa una ventaja computacional en cuanto al coste de memoria y a la manipulación de set de datos altamente dimensionales.
 
 
 \subsubsection{Métodos de reducción de dimensionalidad no lineales}
+
 
 \subsection{Codificación de residuos con adición de información de su entorno}
 

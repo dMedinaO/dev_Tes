@@ -240,7 +240,7 @@ Para cada división, es necesario el uso de una función que entregue una medida
 
 La selección de los atributos se basa en qué atributo, al momento de clasificar, genera nodos más puros. Para ello, se utiliza una función de ganancia de información, la cual representa la ganancia  obtenida a partir de una división de los ejemplos de entrenamiento \cite{breiman2017classification}. 
 
-Existen diferentes tipos de algoritmos bajo los cuales son implementados las ideologías de los árboles de decisión, cada uno presenta características particulares. Sin embargo, cumplen con el mismo objetivo. A modo general, en la Tabla \ref{tab:summary-alg-trees} se exponen algunos de los algoritmos existentes.
+Existen diferentes tipos de algoritmos bajo los cuales son implementados las ideologías de los árboles de decisión, cada uno presenta características particulares. Sin embargo, cumplen con el mismo objetivo. A modo general, en la Tabla \ref{tab:summary-alg-trees} se exponen algunos de los algoritmos existentes \cite{hssina2014comparative}.
 
 % Please add the following required packages to your document preamble:
 % \usepackage{longtable}
@@ -544,7 +544,7 @@ Existen diferentes formas de generar los subconjuntos aleatorios de entrenamient
 	
 \end{itemize}
 
-\subsubsection{Random Forest}
+\subsubsection{Random Forest \label{rf}}
 
 Random Forest es un método de ensamble ponderado basado en árboles de decisión aleatorios. Conjuntos de diversos clasificadores son creados basados en efectos aleatorios tanto de la extracción de características como de ejemplos, formando subconjuntos de elementos, cada uno de estos aporta con un valor de estimación, el cual es ponderado con los restantes, obteniendo así, la medida general \cite{breiman1998}.
 
@@ -667,7 +667,7 @@ Este problema es debido a que, los sistemas de redes neuronales trabajan en torn
 Lo anterior, no ocurre con métodos basados en estimaciones de distancia como KNN, uso de hiperplanos y funciones de kernel para la transformación espacial de los atributos como SVM, reglas de decisión que permiten representar estructuras de árbol que facilitan la comprensión de cómo distribuyen los atributos, rangos preferibles etc., como lo hacen los algoritmos basados en árboles de decisión e inclusive los métodos de ensamble. Es decir, diferentes algoritmos vislumbran cómo manipulan la información para llegar al resultado, no siendo el caso de las redes neuronales. Por lo tanto, dado a que se requiere de algoritmos que permitan la comprensión del problema y que posibiliten generar aprendizaje de los atributos, se descartan a priori el uso de métodos basados en redes neuronales y el uso de Deep Learning.
 
 
-\subsection{Medidas de desempeño}
+\subsection{Medidas de desempeño \label{desempeno}}
 
 Medir el desempeño del modelo predictivo es importante a la hora de evaluar qué tan efectivo es el entrenamiento o la clasificación que se genera, existen medidas que sólo se basan en la cantidad de aciertos o errores que comete el clasificador, otras que implican la eficiencia del modelo y otras que se basan en la precisión.
 
@@ -861,7 +861,7 @@ En base a las herramientas existentes y en vista del aumento considerable de dat
 
 Dado esto se propone la siguiente hipótesis.\\
 
-\textit{Es posible utilizar técnicas de Meta Learning y algoritmos de aprendizaje supervisado para la generación de modelos de clasificación o regresión de mutaciones puntuales descritas a partir de sus propiedades termodinámicas y filogenéticas?}\\
+\textit{El uso de propiedades filogenéticas, termodinámicas y estructurales como descriptores de mutaciones permite el desarrollo de modelos predictivos inspirados en sistemas de meta-learning?}\\
 
 Además de la hipótesis central surgen interrogantes como.
 
@@ -879,7 +879,7 @@ En base a la hipótesis planteada y a las preguntas adicionales expuestas, se ex
 
 \subsection{Objetivo general}
 
-Diseñar e implementar estrategias inspiradas en Meta Learning para la implementación de modelos de clasificación y regresión asociado, a mutaciones puntuales en proteínas de interés basados en descriptores termodinámicos, estructurales y filogenéticos.
+Diseñar e implementar estrategias inspiradas en Meta Learning para la implementación de modelos de clasificación y regresión, asociados a mutaciones puntuales en proteínas de interés basados en descriptores termodinámicos, estructurales y filogenéticos.
 
 \subsection{Objetivos específicos}
 
@@ -887,7 +887,7 @@ Dentro de los objetivos específicos se encuentran los siguientes.
 
 \begin{enumerate}
 	
-	\item Preparar y describir, por medio de propiedades termodinámicas, estructurales y filogenéticas, set de datos de mutaciones puntuales de proteínas con respuesta conocida expuestos en bibliografía o bases de datos reconocidas.
+	\item Preparar y describir, por medio de propiedades termodinámicas, estructurales y filogenéticas, set de datos de mutaciones puntuales de proteínas con respuesta conocida expuestos en bibliografía o bases de datos públicas.
 	
 	\item Implementar y evaluar metodología de meta learning para el diseño de meta modelos de clasificación y regresión de mutaciones puntuales aplicados a set de datos de proteínas generadas.
 	

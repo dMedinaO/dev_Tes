@@ -15,11 +15,11 @@
 \contentsline {subsubsection}{Formulaci\IeC {\'o}n matem\IeC {\'a}tica}{17}{section*.9}
 \contentsline {subsection}{\numberline {2.2.7}M\IeC {\'e}todos de ensamble}{19}{subsection.2.2.7}
 \contentsline {subsubsection}{Bagging}{20}{section*.11}
-\contentsline {subsubsection}{Random Forest}{20}{section*.12}
+\contentsline {subsubsection}{Random Forest }{20}{section*.12}
 \contentsline {subsubsection}{AdaBoost}{21}{section*.14}
 \contentsline {subsubsection}{Gradient Tree Boosting}{22}{section*.15}
 \contentsline {subsection}{\numberline {2.2.8}Redes Neuronales y Deep Learning}{23}{subsection.2.2.8}
-\contentsline {subsection}{\numberline {2.2.9}Medidas de desempe\IeC {\~n}o}{25}{subsection.2.2.9}
+\contentsline {subsection}{\numberline {2.2.9}Medidas de desempe\IeC {\~n}o }{25}{subsection.2.2.9}
 \contentsline {subsection}{\numberline {2.2.10}Problemas asociados a los modelos de aprendizaje supervisado }{27}{subsection.2.2.10}
 \contentsline {subsection}{\numberline {2.2.11}Validaci\IeC {\'o}n de modelos}{29}{subsection.2.2.11}
 \contentsline {subsubsection}{Validaci\IeC {\'o}n Cruzada}{29}{section*.17}
@@ -52,19 +52,17 @@
 \contentsline {subsection}{\numberline {3.1.4}Uso de propiedades fisicoqu\IeC {\'\i }micas}{57}{subsection.3.1.4}
 \contentsline {subsubsection}{T\IeC {\'e}cnicas de reducci\IeC {\'o}n de dimensionalidad}{58}{section*.34}
 \contentsline {subsubsection}{An\IeC {\'a}lisis de correlaci\IeC {\'o}n}{58}{section*.35}
-\contentsline {subsubsection}{Mutual information}{58}{section*.36}
-\contentsline {subsubsection}{An\IeC {\'a}lisis espaciales de caracter\IeC {\'\i }sticas}{58}{section*.37}
-\contentsline {subsubsection}{M\IeC {\'e}todos de reducci\IeC {\'o}n de dimensionalidad lineales}{58}{section*.38}
-\contentsline {paragraph}{An\IeC {\'a}lisis de Componentes Principales (PCA)\\\\}{59}{section*.39}
-\contentsline {subparagraph}{Definici\IeC {\'o}n\\\\}{59}{section*.40}
-\contentsline {subparagraph}{Propiedades\\\\}{60}{section*.41}
-\contentsline {subsubsection}{M\IeC {\'e}todos de reducci\IeC {\'o}n de dimensionalidad no lineales}{61}{section*.42}
-\contentsline {subsection}{\numberline {3.1.5}Codificaci\IeC {\'o}n de residuos con adici\IeC {\'o}n de informaci\IeC {\'o}n de su entorno}{61}{subsection.3.1.5}
-\contentsline {section}{\numberline {3.2}Transformaciones de Fourier}{63}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Uso de Transformadas de Fourier en digitalizaci\IeC {\'o}n de propiedades fisicoqu\IeC {\'\i }micas}{63}{subsection.3.2.1}
-\contentsline {section}{\numberline {3.3}Hip\IeC {\'o}tesis}{63}{section.3.3}
-\contentsline {section}{\numberline {3.4}Objetivos}{63}{section.3.4}
-\contentsline {section}{\numberline {3.5}Metodolog\IeC {\'\i }a}{63}{section.3.5}
+\contentsline {subsubsection}{Mutual information}{59}{section*.36}
+\contentsline {subsubsection}{An\IeC {\'a}lisis espaciales de caracter\IeC {\'\i }sticas}{59}{section*.37}
+\contentsline {subsubsection}{M\IeC {\'e}todos de reducci\IeC {\'o}n de dimensionalidad lineales}{60}{section*.38}
+\contentsline {paragraph}{Definici\IeC {\'o}n\\\\}{61}{section*.39}
+\contentsline {subsubsection}{M\IeC {\'e}todos de reducci\IeC {\'o}n de dimensionalidad no lineales}{62}{section*.40}
+\contentsline {subsection}{\numberline {3.1.5}Codificaci\IeC {\'o}n de residuos con adici\IeC {\'o}n de informaci\IeC {\'o}n de su entorno}{62}{subsection.3.1.5}
+\contentsline {section}{\numberline {3.2}Transformaciones de Fourier}{64}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Uso de Transformadas de Fourier en digitalizaci\IeC {\'o}n de propiedades fisicoqu\IeC {\'\i }micas}{64}{subsection.3.2.1}
+\contentsline {section}{\numberline {3.3}Hip\IeC {\'o}tesis}{64}{section.3.3}
+\contentsline {section}{\numberline {3.4}Objetivos}{64}{section.3.4}
+\contentsline {section}{\numberline {3.5}Metodolog\IeC {\'\i }a}{64}{section.3.5}
 \contentsline {chapter}{\numberline {4}Filogen\IeC {\'e}tica, propiedades fisicoqu\IeC {\'\i }micas y miner\IeC {\'\i }a de datos aplicadas al dise\IeC {\~n}o de mutaciones en secuencias de prote\IeC {\'\i }nas}{65}{chapter.4}
 \contentsline {chapter}{\numberline {5}Planificaci\IeC {\'o}n y estado de avance.}{67}{chapter.5}
-\contentsline {chapter}{Referencias}{69}{chapter*.43}
+\contentsline {chapter}{Referencias}{69}{chapter*.41}
