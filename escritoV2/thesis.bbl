@@ -43,6 +43,11 @@ Arel, I., Rose, D.~C., Karnowski, T.~P., et~al. (2010).
   research.
 \newblock {\em IEEE computational intelligence magazine}, 5(4):13--18.
 
+\bibitem[Arnold, 1998]{arnold1998design}
+Arnold, F.~H. (1998).
+\newblock Design by directed evolution.
+\newblock {\em Accounts of chemical research}, 31(3):125--131.
+
 \bibitem[Barandiaran, 1998]{barandiaran1998random}
 Barandiaran, I. (1998).
 \newblock The random subspace method for constructing decision forests.
@@ -167,6 +172,12 @@ Capriotti, E., Fariselli, P., Rossi, I., and Casadio, R. (2008b).
 \newblock A three-state prediction of single point mutations on protein
   stability changes.
 \newblock {\em BMC bioinformatics}, 9(2):S6.
+
+\bibitem[Carpenter et~al., 1997]{carpenter1997rational}
+Carpenter, J.~F., Pikal, M.~J., Chang, B.~S., and Randolph, T.~W. (1997).
+\newblock Rational design of stable lyophilized protein formulations: some
+  practical advice.
+\newblock {\em Pharmaceutical research}, 14(8):969--975.
 
 \bibitem[Castillo et~al., 2015]{castillo2015bayesian}
 Castillo, I., Schmidt-Hieber, J., Van~der Vaart, A., et~al. (2015).
@@ -305,6 +316,13 @@ Friedman, J.~H. (2002).
 \newblock {\em Computational Statistics AND Data Analysis}, 38(4):367 -- 378.
 \newblock Nonlinear Methods and Data Mining.
 
+\bibitem[Gallou et~al., 1998]{softwareVHL}
+Gallou, C., Junien, C., Joly, D., Staroz, F., Orfanelli, M.~T., and Béroud, C.
+  (1998).
+\newblock {Software and database for the analysis of mutations in the VHL
+  gene}.
+\newblock {\em Nucleic Acids Research}, 26(1):256--258.
+
 \bibitem[{Ge} et~al., 2017]{8051033}
 {Ge}, Z., {Song}, Z., {Ding}, S.~X., and {Huang}, B. (2017).
 \newblock Data mining and analytics in the process industry: The role of
@@ -428,6 +446,11 @@ John, G.~H. and Langley, P. (1995).
 \newblock In {\em Proceedings of the Eleventh conference on Uncertainty in
   artificial intelligence}, pages 338--345. Morgan Kaufmann Publishers Inc.
 
+\bibitem[Kawashima and Kanehisa, 2000]{Kawashima2000}
+Kawashima, S. and Kanehisa, M. (2000).
+\newblock Aaindex: Amino acid index database.
+\newblock {\em Nucleic Acids Research}, 28(1):374--374.
+
 \bibitem[{Keller} et~al., 1985]{6313426}
 {Keller}, J.~M., {Gray}, M.~R., and {Givens}, J.~A. (1985).
 \newblock A fuzzy k-nearest neighbor algorithm.
@@ -450,6 +473,12 @@ Kotsiantis, S.~B., Zaharakis, I., and Pintelas, P. (2007).
 \newblock Supervised machine learning: A review of classification techniques.
 \newblock {\em Emerging artificial intelligence applications in computer
   engineering}, 160:3--24.
+
+\bibitem[Krasner et~al., 1988]{krasner1988description}
+Krasner, G.~E., Pope, S.~T., et~al. (1988).
+\newblock A description of the model-view-controller user interface paradigm in
+  the smalltalk-80 system.
+\newblock {\em Journal of object oriented programming}, 1(3):26--49.
 
 \bibitem[Larra{\~n}aga et~al., 2006]{juanito}
 Larra{\~n}aga, P., Calvo, B., Santana, R., Bielza, C., Galdiano, J., Inza, I.,
@@ -498,6 +527,11 @@ Louppe, G. and Geurts, P. (2012).
 \newblock In Flach, P.~A., De~Bie, T., and Cristianini, N., editors, {\em
   Machine Learning and Knowledge Discovery in Databases}, pages 346--361,
   Berlin, Heidelberg. Springer Berlin Heidelberg.
+
+\bibitem[Lutz et~al., 2009]{lutz2009protein}
+Lutz, S., Bornscheuer, U.~T., et~al. (2009).
+\newblock {\em Protein engineering handbook}, volume~1.
+\newblock Wiley Online Library.
 
 \bibitem[Ma et~al., 2013]{Ma2013}
 Ma, X., Wu, Y.-J., Wang, Y., Chen, F., and Liu, J. (2013).
@@ -627,6 +661,11 @@ Rebhan, M., Chalifa-Caspi, V., Prilusky, J., and Lancet, D. (1998).
   mining and query reformulation support.
 \newblock {\em Bioinformatics}, 14(8):656--664.
 
+\bibitem[Reetz et~al., 2008]{Reetz2008}
+Reetz, M.~T., Kahakeaw, D., and Lohmer, R. (2008).
+\newblock Addressing the numbers problem in directed evolution.
+\newblock {\em ChemBioChem}, 9(11):1797--1804.
+
 \bibitem[Rohl et~al., 2004]{rohl2004protein}
 Rohl, C.~A., Strauss, C.~E., Misura, K.~M., and Baker, D. (2004).
 \newblock Protein structure prediction using rosetta.
@@ -708,6 +747,11 @@ Wainreb, G., Ashkenazy, H., Wolf, L., Ben-Tal, N., and Dehouck, Y. (2011).
 Walt, S. v.~d., Colbert, S.~C., and Varoquaux, G. (2011).
 \newblock The numpy array: A structure for efficient numerical computation.
 \newblock {\em Computing in Science \& Engineering}, 13(2):22--30.
+
+\bibitem[Wegner, 1990]{wegner1990concepts}
+Wegner, P. (1990).
+\newblock Concepts and paradigms of object-oriented programming.
+\newblock {\em ACM Sigplan Oops Messenger}, 1(1):7--87.
 
 \bibitem[Wu et~al., 2004]{wu2004probability}
 Wu, T.-F., Lin, C.-J., and Weng, R.~C. (2004).

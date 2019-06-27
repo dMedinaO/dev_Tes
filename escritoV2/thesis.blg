@@ -1,7 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
-A level-1 auxiliary file: Abstract/abstract.aux
 A level-1 auxiliary file: Chapter1/chapter1.aux
 A level-1 auxiliary file: Chapter2/chapter2.aux
 A level-1 auxiliary file: Chapter3/chapter3.aux
@@ -79,45 +78,45 @@ Warning--empty year in prot20185
 Warning--there's a number but no series in graybill1976theory
 Warning--can't use both volume and number fields in kohavi1995study
 Warning--empty journal in netzer2011reading
-You've used 126 entries,
+You've used 134 entries,
             1935 wiz_defined-function locations,
-            1256 strings with 26880 characters,
-and the built_in function-call counts, 55156 in all, are:
-= -- 5386
-> -- 2340
-< -- 82
-+ -- 848
-- -- 790
-* -- 4894
-:= -- 9417
-add.period$ -- 402
-call.type$ -- 126
-change.case$ -- 1006
-chr.to.int$ -- 120
-cite$ -- 130
-duplicate$ -- 1996
-empty$ -- 3869
-format.name$ -- 967
-if$ -- 10913
+            1294 strings with 28073 characters,
+and the built_in function-call counts, 58419 in all, are:
+= -- 5703
+> -- 2477
+< -- 86
++ -- 896
+- -- 836
+* -- 5195
+:= -- 9987
+add.period$ -- 426
+call.type$ -- 134
+change.case$ -- 1066
+chr.to.int$ -- 128
+cite$ -- 138
+duplicate$ -- 2108
+empty$ -- 4099
+format.name$ -- 1023
+if$ -- 11543
 int.to.chr$ -- 7
 int.to.str$ -- 0
-missing$ -- 132
-newline$ -- 641
-num.names$ -- 386
-pop$ -- 831
+missing$ -- 141
+newline$ -- 681
+num.names$ -- 410
+pop$ -- 877
 preamble$ -- 1
-purify$ -- 1012
+purify$ -- 1073
 quote$ -- 0
-skip$ -- 1509
+skip$ -- 1594
 stack$ -- 0
-substring$ -- 4161
-swap$ -- 296
-text.length$ -- 31
+substring$ -- 4413
+swap$ -- 305
+text.length$ -- 32
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 742
+type$ -- 788
 warning$ -- 4
-while$ -- 440
+while$ -- 467
 width$ -- 0
-write$ -- 1677
+write$ -- 1781
 (There were 10 error messages)
