@@ -136,6 +136,11 @@ Breiman, L. (2017).
 \newblock {\em Classification and regression trees}.
 \newblock Routledge.
 
+\bibitem[Brigham and Brigham, 1988]{brigham1988fast}
+Brigham, E.~O. and Brigham, E.~O. (1988).
+\newblock {\em The fast Fourier transform and its applications}, volume 448.
+\newblock prentice Hall Englewood Cliffs, NJ.
+
 \bibitem[Broom et~al., 2017a]{Broom2017}
 Broom, A., Jacobi, Z., Trainor, K., and Meiering, E.~M. (2017a).
 \newblock Computational tools help improve protein stability but with a
@@ -567,6 +572,12 @@ Masso, M. and Vaisman, I.~I. (2010).
   proteins due to single amino acid replacements.
 \newblock {\em Protein Engineering, Design and Selection}, 23(8):683--687.
 
+\bibitem[McKinney et~al., 2010]{mckinney2010data}
+McKinney, W. et~al. (2010).
+\newblock Data structures for statistical computing in python.
+\newblock In {\em Proceedings of the 9th Python in Science Conference}, volume
+  445, pages 51--56. Austin, TX.
+
 \bibitem[Metsis et~al., 2006]{metsis2006spam}
 Metsis, V., Androutsopoulos, I., and Paliouras, G. (2006).
 \newblock Spam filtering with naive bayes-which naive bayes?
@@ -585,6 +596,11 @@ Netzer, Y., Wang, T., Coates, A., Bissacco, A., Wu, B., and Ng, A.~Y. (2011).
 Obenshain, M.~K. (2004).
 \newblock Application of data mining techniques to healthcare data.
 \newblock {\em Infection Control \&; Hospital Epidemiology}, 25(8):690–695.
+
+\bibitem[Oliphant, 2007]{oliphant2007python}
+Oliphant, T.~E. (2007).
+\newblock Python for scientific computing.
+\newblock {\em Computing in Science \& Engineering}, 9(3):10--20.
 
 \bibitem[Olivera-Nappa et~al., 2011]{Olivera-Nappa2011}
 Olivera-Nappa, A., Andrews, B.~A., and Asenjo, J.~A. (2011).
@@ -730,6 +746,11 @@ Vaisman, I.~I. and Masso, M. (2008).
 Van Der~Maaten, L., Postma, E., and Van~den Herik, J. (2009).
 \newblock Dimensionality reduction: a comparative.
 \newblock {\em J Mach Learn Res}, 10(66-71):13.
+
+\bibitem[Van Der~Walt et~al., 2011]{van2011numpy}
+Van Der~Walt, S., Colbert, S.~C., and Varoquaux, G. (2011).
+\newblock The numpy array: a structure for efficient numerical computation.
+\newblock {\em Computing in Science \& Engineering}, 13(2):22.
 
 \bibitem[Vehtari et~al., 2017]{vehtari2017practical}
 Vehtari, A., Gelman, A., and Gabry, J. (2017).
