@@ -126,7 +126,61 @@ La gran diferencia entre ambos, radica en el hecho de dónde se ejecutan, el pri
 
 La vista, es el componente de visualización de la herramienta, es decir, es el componente en el cual el usuario puede interactuar, levantar solicitudes y exponer los resultados o respuestas que entregue el controlador y es conocido como "front-end".
 
-Con el fin de poder representar las secciones principales que tendrá la herramienta, a continuación se exponen un conjunto de mockup (maqueta de diseño), en los cuales se exponen cuáles serán las principales funcionalidades y cómo se verán los resultados.
+Con el fin de poder representar las secciones principales que tendrá la herramienta, a continuación se exponen un conjunto de mockups (maqueta de diseño), en los cuales se exponen cuáles serán las principales funcionalidades y cómo se verán los resultados.
+
+\subparagraph{Generador de jobs\\\\}
+
+Los jobs, son los eventos generados asociados a un usuario y la carga de un conjunto de datos, los cuales deben ser codificados y entrenados los modelos, con el fin de evaluar las mutaciones posibles. Un esquema representativo del formulario asociado a la generación de jobs se aprecia en la Figura \ref{cap4:fig2}.
+
+\begin{figure}[!h]
+	
+	\centering
+	\includegraphics[scale=.4]{fig2.png}
+	\caption{Esquema representativo interfaz de creación de jobs.}
+	\label{cap4:fig2}
+\end{figure}
+
+En una primera instancia, el usuario deberá subir los archivos necesarios para entrenar los modelos, estos corresponden al conjunto de secuencias, el archivo de respuestas y la estructura 3D en formato *.pdb. Una vez suba los archivos, deberá ingresar el correo electrónico y el nombre del trabajo, esto para que él pueda identificarlo en el sistema. Cuando el usuario pulse el botón "create job", el sistema procesa la data y genera un ID asociado al identificador único del Job, posterior a ello, lo agrega al sistema de colas en el cual será procesado una vez le corresponda. Visualmente, el sistema retorna dicho ID, mostrándose en la interfaz y se notifica vía correo electrónico el estado del job, así como las notificaciones correspondientes del mismo.
+
+\subparagraph{Buscador de jobs\\\\}
+
+Adicional a la sección de crear jobs, la herramienta computacional permite buscar los trabajos generados, estos pueden encontrarse en 4 estados:
+
+\begin{itemize}
+	
+	\item \textbf{Creado}: se refiere al estado en el que el usuario sube la data y se ancla al sistema de colas.
+	\item \textbf{En ejecución}: el job está siendo ejecutado por la herramienta computacional. 
+	\item \textbf{Finalizado}: el job fue ejecutado y es posible ver los resultados obtenidos.
+	\item \textbf{Cancelado}: el job fue cancelado por el usuario.
+\end{itemize}
+
+Los jobs, pueden ser buscados en la interfaz del buscador de la herramienta web, mediante el ID o el nombre, ambos, son notificados vía correo electrónico, ya sea ante cambios de estado que éste sufra, o, al momento de crearse. Finalmente, una representación general del buscador, se observa en la Figura \ref{cap4:fig3}.
+
+\begin{figure}[!h]
+	
+	\centering
+	\includegraphics[scale=.4]{fig3.png}
+	\caption{Esquema representativo interfaz de búsqueda de jobs.}
+	\label{cap4:fig3}
+\end{figure}
+
+\subparagraph{Visualizador de resultados\\\\}
+
+Una de las visualizaciones más relevantes, corresponde a los resultados involucrados en todo el proceso, estos, abarcan desde las propiedades fisicoquímicas estudiadas, los espectros de frecuencia y los residuos relevantes, los entrenamientos de los modelos y el listado de mutaciones favorables a evaluar. Un resumen generar de los resultados esperados y la muestra de estos, es listada a continuación.
+
+\begin{itemize}
+	
+	\item \textbf{Descripción general}: Se genera una visualización del conjunto de secuencias y la distribución o frecuencia de la variable respuesta, se expone un resumen del conjunto de datos y se muestran patrones relacionados a alineamientos múltiples de secuencia. Además de una visualización de la proteína de interés, en su estructura 3D y las sustituciones que exhiben cada variante.
+	
+	\item \textbf{Propiedades fisicoquímicas}: Una representación de las propiedades fisicoquímicas abarca cuáles fueron las seleccionadas y las definiciones de éstas, por otro lado se expone el aporte a la varianza que éstas presentan y cómo varían por cada secuencia.
+	
+	\item \textbf{Espectros de frecuencia}: Se exponen el conjunto de digitalizaciones de las propiedades fisicoquímicas, asociados a los residuos que brindan la mayor caracterización y cómo estos inciden en el espectro.
+	
+	\item \textbf{Entrenamiento de Modelos}: Los modelos se exponen asociados a las medidas de desempeño obtenidas y los miembros participantes en el conjunto de modelos. Esto es debido a que se utilizará la estrategia expuesta en el capítulo \ref{cap2}, por lo que se obtiene un sistema de meta-modelos. 
+	
+	\item \textbf{Mutaciones propuestas}: Para el conjunto de datos, se proponen diferentes mutaciones, evaluadas con respecto a la respuesta y factibilidad de éstas, a su vez, se exponen estadísticas asociadas a qué residuos son más factibles de mutar en base a las posiciones de estos.
+	
+\end{itemize}
 
 
 \subsection{Consideraciones generales}
@@ -135,6 +189,6 @@ Como consideraciones generales, se tiene que el conjunto de secuencias o variant
 
 Por otro lado, la secuencia original, debe presentar su estructura en formato *.pdb, ya que, se requiere para el uso de SDM, la cual es la herramienta de filtro asociada a la estabilidad de la proteína con respecto a los cambios o sustituciones propuestas.
 
-Un punto importante a destacar, es que, todos los pasos relacionados a la generación de modelos, implicando desde la codificación y posterior digitalización de las secuencias hasta la fase de evaluación del desempeño, serán ejecutadas en torno a \textbf{Jobs} que cree el usuario y serán procesadas internamente en servidor en un gestor de colas, con el fin de optimizar los procesos de ejecución. Esto es debido, a que el tiempo de entrenamiento puede ser elevado si existen muchas variantes en el conjunto de datos, razón por la cual, una vez que el job finalice, se notificará vía email al usuario, en donde, él podrá acceder al sistema y revisar los resultados obtenidos.
+Un punto importante a destacar, es que, todos los pasos relacionados a la generación de modelos, implicando desde la codificación y posterior digitalización de las secuencias hasta la fase de evaluación del desempeño, serán ejecutadas en torno a Jobs que cree el usuario y serán procesadas internamente en servidor en un gestor de colas, con el fin de optimizar los procesos de ejecución. Esto es debido, a que el tiempo de entrenamiento puede ser elevado si existen muchas variantes en el conjunto de datos, razón por la cual, una vez que el job finalice, se notificará vía email al usuario, en donde, él podrá acceder al sistema y revisar los resultados obtenidos.
 
 Se propone esta herramienta como un servicio de exploración, en el cual, se evalúan un conjunto de mutaciones y se sugieren nuevos elementos, de tal manera, que el usuario pueda tener un poco más claro el panorama. No obstante, las mutaciones son proposiciones basados en los filtros y en los modelos aplicados. Por lo que, está condicionado por el conjunto de datos inicial y las medidas de desempeño obtenidas. 

@@ -84,6 +84,11 @@
 \contentsline {subsubsection}{Modelo}{75}{section*.42}
 \contentsline {subsubsection}{Controlador}{75}{section*.43}
 \contentsline {subsubsection}{Vista}{75}{section*.44}
-\contentsline {subsection}{\numberline {4.3.6}Consideraciones generales}{76}{subsection.4.3.6}
-\contentsline {chapter}{\numberline {5}Planificaci\IeC {\'o}n y estado de avance.}{77}{chapter.5}
-\contentsline {chapter}{Referencias}{79}{chapter*.46}
+\contentsline {subparagraph}{Generador de jobs\\\\}{76}{section*.45}
+\contentsline {subparagraph}{Buscador de jobs\\\\}{77}{section*.47}
+\contentsline {subparagraph}{Visualizador de resultados\\\\}{77}{section*.49}
+\contentsline {subsection}{\numberline {4.3.6}Consideraciones generales}{78}{subsection.4.3.6}
+\contentsline {chapter}{\numberline {5}Planificaci\IeC {\'o}n y estado de avance.}{81}{chapter.5}
+\contentsline {section}{\numberline {5.1}Planificaci\IeC {\'o}n}{82}{section.5.1}
+\contentsline {section}{\numberline {5.2}Estado de avance}{83}{section.5.2}
+\contentsline {chapter}{Referencias}{85}{chapter*.51}
