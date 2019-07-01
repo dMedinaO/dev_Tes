@@ -60,6 +60,12 @@ Arnold, F.~H. (1998).
 \newblock Design by directed evolution.
 \newblock {\em Accounts of chemical research}, 31(3):125--131.
 
+\bibitem[Artac et~al., 2002]{artac2002incremental}
+Artac, M., Jogan, M., and Leonardis, A. (2002).
+\newblock Incremental pca for on-line visual learning and recognition.
+\newblock In {\em Object recognition supported by user interaction for service
+  robots}, volume~3, pages 781--784. IEEE.
+
 \bibitem[Barandiaran, 1998]{barandiaran1998random}
 Barandiaran, I. (1998).
 \newblock The random subspace method for constructing decision forests.
@@ -180,6 +186,17 @@ Broom, A., Jacobi, Z., Trainor, K., and Meiering, E.~M. (2017b).
   solubility tradeoff.
 \newblock {\em Journal of Biological Chemistry}, 292(35):14349--14361.
 
+\bibitem[Brownlee, 2017]{brownlee2017one}
+Brownlee, J. (2017).
+\newblock Why one-hot encode data in machine learning.
+
+\bibitem[Cadet et~al., 2018]{cadet2018application}
+Cadet, F., Fontaine, N., Vetrivel, I., Chong, M. N.~F., Savriama, O., Cadet,
+  X., and Charton, P. (2018).
+\newblock Application of fourier transform and proteochemometrics principles to
+  protein engineering.
+\newblock {\em BMC bioinformatics}, 19(1):382.
+
 \bibitem[Canutescu et~al., 2003]{canutescu2003graph}
 Canutescu, A.~A., Shelenkov, A.~A., and Dunbrack~Jr, R.~L. (2003).
 \newblock A graph-theory algorithm for rapid protein side-chain prediction.
@@ -267,10 +284,22 @@ Chien, C.-F. and Chen, L.-F. (2008).
   A case study in high-technology industry.
 \newblock {\em Expert Systems with Applications}, 34(1):280--290.
 
+\bibitem[Cohen et~al., 2014]{cohen2014applied}
+Cohen, P., West, S.~G., and Aiken, L.~S. (2014).
+\newblock {\em Applied multiple regression/correlation analysis for the
+  behavioral sciences}.
+\newblock Psychology Press.
+
 \bibitem[Cooley et~al., 1997]{cooley1997web}
 Cooley, R., Mobasher, B., Srivastava, J., et~al. (1997).
 \newblock Web mining: Information and pattern discovery on the world wide web.
 \newblock In {\em ictai}, volume~97, pages 558--567.
+
+\bibitem[Cosic et~al., 2016]{cosic2016analysis}
+Cosic, I., Cosic, D., and Lazar, K. (2016).
+\newblock Analysis of tumor necrosis factor function using the resonant
+  recognition model.
+\newblock {\em Cell biochemistry and biophysics}, 74(2):175--180.
 
 \bibitem[Curtarolo et~al., 2003]{PhysRevLett.91.135503}
 Curtarolo, S., Morgan, D., Persson, K., Rodgers, J., and Ceder, G. (2003).
@@ -420,6 +449,12 @@ Gossage, L., Pires, D., Olivera-Nappa, A., A.~Asenjo, J., Bycroft, M.,
   mutations according to risk of clear cell renal carcinoma.
 \newblock {\em Human molecular genetics}, 23.
 
+\bibitem[Granitto et~al., 2006]{granitto2006recursive}
+Granitto, P.~M., Furlanello, C., Biasioli, F., and Gasperi, F. (2006).
+\newblock Recursive feature elimination with random forest for ptr-ms analysis
+  of agroindustrial products.
+\newblock {\em Chemometrics and Intelligent Laboratory Systems}, 83(2):83--90.
+
 \bibitem[Graybill, 1976]{graybill1976theory}
 Graybill, F.~A. (1976).
 \newblock {\em Theory and application of the linear model}.
@@ -471,6 +506,11 @@ HECHT-NIELSEN, R. (1992).
   1989 ieee.
 \newblock In Wechsler, H., editor, {\em Neural Networks for Perception}, pages
   65 -- 93. Academic Press.
+
+\bibitem[Hinton and Salakhutdinov, 2006]{hinton2006reducing}
+Hinton, G.~E. and Salakhutdinov, R.~R. (2006).
+\newblock Reducing the dimensionality of data with neural networks.
+\newblock {\em science}, 313(5786):504--507.
 
 \bibitem[Hochreiter et~al., 2001]{hochreiter2001learning}
 Hochreiter, S., Younger, A.~S., and Conwell, P.~R. (2001).
@@ -529,6 +569,11 @@ John, G.~H. and Langley, P. (1995).
 \newblock Estimating continuous distributions in bayesian classifiers.
 \newblock In {\em Proceedings of the Eleventh conference on Uncertainty in
   artificial intelligence}, pages 338--345. Morgan Kaufmann Publishers Inc.
+
+\bibitem[Jolliffe, 2011]{jolliffe2011principal}
+Jolliffe, I. (2011).
+\newblock {\em Principal component analysis}.
+\newblock Springer.
 
 \bibitem[Kawashima and Kanehisa, 2000]{Kawashima2000}
 Kawashima, S. and Kanehisa, M. (2000).
@@ -779,6 +824,13 @@ Pedregosa, F., Varoquaux, G., Gramfort, A., Michel, V., Thirion, B., Grisel,
 \newblock Scikit-learn: Machine learning in python.
 \newblock {\em Journal of machine learning research}, 12(Oct):2825--2830.
 
+\bibitem[Peng et~al., 2005]{peng2005feature}
+Peng, H., Long, F., and Ding, C. (2005).
+\newblock Feature selection based on mutual information: criteria of
+  max-dependency, max-relevance, and min-redundancy.
+\newblock {\em IEEE Transactions on Pattern Analysis \& Machine Intelligence},
+  (8):1226--1238.
+
 \bibitem[Perlibakas, 2004]{PERLIBAKAS2004711}
 Perlibakas, V. (2004).
 \newblock Distance measures for pca-based face recognition.
@@ -848,6 +900,12 @@ Rohl, C.~A., Strauss, C.~E., Misura, K.~M., and Baker, D. (2004).
 \newblock The multilayer perceptron as an approximation to a bayes optimal
   discriminant function.
 \newblock {\em IEEE Transactions on Neural Networks}, 1(4):296--298.
+
+\bibitem[Saeys et~al., 2008]{saeys2008robust}
+Saeys, Y., Abeel, T., and Van~de Peer, Y. (2008).
+\newblock Robust feature selection using ensemble feature selection techniques.
+\newblock In {\em Joint European Conference on Machine Learning and Knowledge
+  Discovery in Databases}, pages 313--325. Springer.
 
 \bibitem[Saha and Raghava, 2008]{saha2008abcpred}
 Saha, S. and Raghava, G. (2008).
@@ -962,6 +1020,12 @@ Vehtari, A., Gelman, A., and Gabry, J. (2017).
   cross-validation and waic.
 \newblock {\em Statistics and Computing}, 27(5):1413--1432.
 
+\bibitem[Veljkovic et~al., 1985]{veljkovic1985possible}
+Veljkovic, V., Cosic, I., Lalovic, D., et~al. (1985).
+\newblock Is it possible to analyze dna and protein sequences by the methods of
+  digital signal processing?
+\newblock {\em IEEE Transactions on Biomedical Engineering}, (5):337--341.
+
 \bibitem[Vishveshwara et~al., 2002]{vishveshwara2002protein}
 Vishveshwara, S., Brinda, K., and Kannan, N. (2002).
 \newblock Protein structure: insights from graph theory.
@@ -991,6 +1055,11 @@ Wang, G., Zhao, Y., and Wang, D. (2008).
 Wegner, P. (1990).
 \newblock Concepts and paradigms of object-oriented programming.
 \newblock {\em ACM Sigplan Oops Messenger}, 1(1):7--87.
+
+\bibitem[Wold et~al., 1987]{wold1987principal}
+Wold, S., Esbensen, K., and Geladi, P. (1987).
+\newblock Principal component analysis.
+\newblock {\em Chemometrics and intelligent laboratory systems}, 2(1-3):37--52.
 
 \bibitem[Wu et~al., 2004]{wu2004probability}
 Wu, T.-F., Lin, C.-J., and Weng, R.~C. (2004).
