@@ -17,9 +17,9 @@ En la sección \ref{cap1:sec1}, se mencionó que existen dos puntos de vista a l
 
 A pesar de la existencia de dichos métodos, para aquellos basados en potenciales de energía y en simulaciones Monte Carlo, el tiempo computacional necesario para explorar la totalidad de mutaciones en una proteína en particular, escala a nivel cuadrático, siendo elevado y de limitado acceso para usuarios en general.
 
-Una alternativa a los métodos computacionales basados en estrategias de potenciales de energía, son aquellos que emplean técnicas de minerías de datos y algoritmos de aprendizaje. Sin embargo, estos, principalmente se enfocan en el estudio de la estabilidad de la proteína ante sustituciones de aminoácidos. No obstante, los principales enfoques en cuanto a caracterización de residuos, se centran en propiedades termodinámicas y el ambiente, no siendo considerados conceptos filogenéticos ni propensión a cambios. 
+Una alternativa a los métodos computacionales basados en estrategias de potenciales de energía, son aquellos que emplean técnicas de minerías de datos y algoritmos de aprendizaje. Sin embargo, estos, principalmente se enfocan en el estudio de la estabilidad de la proteína ante sustituciones de aminoácidos. Por otro lado, los principales enfoques en cuanto a caracterización de residuos, se centran en propiedades termodinámicas y el ambiente, no siendo considerados conceptos filogenéticos ni propensión a cambios. 
 
-Tal como se expuso en el capítulo \ref{cap3}, la codificación de secuencias lineales puede ser realizada a través del uso de propiedades fisicoquímicas y posterior digitalización de éstas, aplicando transformadas de Fourier, esto último, permite caracterizar el ambiente y el aporte hacia las características que brindan los residuos. 
+Tal como se expuso en el capítulo \ref{cap3}, la codificación de secuencias lineales puede ser realizada a través del uso de propiedades fisicoquímicas y posterior digitalización de éstas, aplicando transformadas de Fourier, esto último, permite caracterizar el ambiente y el aporte hacia las características que brindan los residuos, debido a las propiedades del espacio de frecuencias y el espectro como tal. 
 
 Apoyados en dicha codificación y centrados en la utilización de algoritmos de aprendizaje supervisado para el entrenamiento de modelos de clasificación o regresión, y utilizando la metodología expuesta a lo largo del capítulo \ref{cap2}, además del uso de herramientas computacionales como filtros de diseño. Se propone durante este capítulo el diseño e implementación de una herramienta computacional, basada en técnicas de minería de datos y aprendizaje de máquinas, que permita el diseño de mutaciones en variantes con características deseadas.
 
@@ -52,9 +52,10 @@ Del objetivo general, nacen los siguientes objetivos específicos.
 
 \section{Métodología propuesta}
 
-Dado la hipótesis planteada y los objetivos propuestos, se diseña una metodología que contemple tanto la generación de la herramienta computacional, como el desarrollo de los modelos y su entrenamiento.
+Dada la hipótesis planteada y los objetivos propuestos, se diseña una metodología que contemple tanto la generación de la herramienta computacional, como el desarrollo de los modelos y su entrenamiento.
 
-Un esquema representativo de los componentes principales de la metodología y cómo estos interactúan se expone en la Figura \ref{cap4:fig1}, Se contempla un conjunto inicial de datos, el cual es sometido a la etapa de digitalización, posterior a ello, se entrenan los modelos considerando como descriptores los espectros de frecuencia, para luego evaluar su desempeño. Finalmente, nuevas mutaciones son propuestas y evaluadas en una etapa de filtro, aplicando criterios de estabilidad y propensión filogenética.
+Un esquema representativo de los componentes principales de la metodología y cómo estos interactúan se expone en la Figura \ref{cap4:fig1}. El proceso general, se puede dividir en dos etapas: Generación de los modelos y Evaluación de nuevas mutaciones. En la primera etapa, se contempla un conjunto de datos, el cual es sometido a la etapa de digitalización, posterior a ello, se entrenan los modelos considerando como descriptores los espectros de frecuencia, para luego evaluar su desempeño. En la segunda etapa, nuevas mutaciones son propuestas y evaluadas en una etapa de filtro, aplicando criterios de estabilidad y propensión filogenética, para luego, someterse a los modelos predictivos generados y así evaluar si la mutación tendrá el efecto deseado o no.
+
 
 \begin{figure}[!h]
 	
@@ -64,13 +65,15 @@ Un esquema representativo de los componentes principales de la metodología y c�
 	\label{cap4:fig1}
 \end{figure}
 
+Un punto importante a evaluar, consiste en el hecho que el conjunto inicial de datos debe ser lo suficientemente representativo en cuanto a la diversidad de ejemplos, es decir, si se evalúa la presencia o ausencia de una característica, no debe existir un desbalance entre ellas, ya que provocaría un sobreajuste en el modelo, tendiendo a predecir sobre la característica de mayor proporción.
+
 A continuación, se describe el conjunto de datos inicial, seguido de las etapas que componen la metodología y finalizando con la estrategia para el diseño e implementación de la herramienta computacional.
 
 \subsection{Conjunto de datos}
 
 El conjunto de datos corresponde a un grupo de variantes de una misma proteína, ordenados en un archivo en formato *.fasta\footnote{Formato de texto plano para la representación de secuencias.}, siendo la primera secuencia la proteína original, y el resto de secuencias las variantes con mutaciones reportadas. Además del conjunto de secuencias, es necesario un archivo en formato *.csv con la variable respuesta asociada a la variante, es decir, el valor de la propiedad fisicoquímica, característica, funcionalidad, etc., que provoca la mutación. Esto con el fin, de poder asignárselo a la secuencia y entrenar los correspondientes modelos. 
 
-Adicional a ambos inputs, se requiere de un archivo *.pdb el cual contenga la estructura de la proteína original, o en su defecto, el código PDB de la misma, esto debido a que la etapa de filtro, utiliza SDM como método de análisis de estabilidad de la proteína ante sustituciones de residuos.
+Adicional a ambos inputs, se requiere de un archivo *.pdb el cual contenga la estructura de la proteína original, o en su defecto, el código PDB de la misma, esto debido a que la etapa de filtro, utiliza SDM como método de análisis de estabilidad de la proteína ante sustituciones de residuos, siendo un input para ésta, la estructura 3D.
 
 \subsection{Digitalización de secuencias lineales}
 
@@ -112,7 +115,7 @@ Con respecto al patrón de diseño, se  expone  a continuación, cuáles serán 
 
 El modelo corresponde al conjunto de scripts y módulos que contienen toda la lógica de la herramienta y las funcionalidades principales, se hace alusión a que forma parte del "back-end" de la aplicación. 
 
-En este caso, se compondrá de los módulos de codificación, procesamiento de datos, entrenamiento de modelos, diseño de mutaciones y uso de servicios para la ejecución de MOSST y SDM, así como también los módulos de gestor de usuarios, notificaciones vía email, etc. Será implementado bajo el lenguaje de programación Python y utilizará algunas rutinas desarrolladas en Matlab. A su vez, Cada módulo y sus componentes serán diseñados bajo el paradigma de Programación Orientada a Objetos y se utilizarán librerías externas como Pandas \cite{mckinney2010data} para la manipulación del conjunto de datos, Numpy \cite{van2011numpy} y Scipy \cite{oliphant2007python} para los análisis estadísticos y Scikit-Learn \cite{pedregosa2011scikit} para el entrenamiento de modelos.
+En este caso, se compondrá de los módulos de codificación, procesamiento de datos, entrenamiento de modelos, diseño de mutaciones y uso de servicios para la ejecución de MOSST y SDM, así como también los módulos de gestor de usuarios, notificaciones vía email, etc. Será implementado bajo el lenguaje de programación Python y utilizará algunas rutinas desarrolladas en Matlab. A su vez, cada módulo y sus componentes serán diseñados bajo el paradigma de Programación Orientada a Objetos y se utilizarán librerías externas como Pandas \cite{mckinney2010data} para la manipulación del conjunto de datos, Numpy \cite{van2011numpy} y Scipy \cite{oliphant2007python} para los análisis estadísticos y Scikit-Learn \cite{pedregosa2011scikit} para el entrenamiento de modelos.
 
 \subsubsection{Controlador}
 
@@ -166,17 +169,50 @@ Los jobs, pueden ser buscados en la interfaz del buscador de la herramienta web,
 
 \subparagraph{Visualizador de resultados\\\\}
 
-Una de las visualizaciones más relevantes, corresponde a los resultados involucrados en todo el proceso, estos, abarcan desde las propiedades fisicoquímicas estudiadas, los espectros de frecuencia y los residuos relevantes, los entrenamientos de los modelos y el listado de mutaciones favorables a evaluar. Un resumen generar de los resultados esperados y la muestra de estos, es listada a continuación.
+Una de las visualizaciones más relevantes, corresponde a los resultados involucrados en todo el proceso, estos, abarcan las propiedades fisicoquímicas estudiadas, los espectros de frecuencia y los residuos relevantes, los entrenamientos de los modelos y el listado de mutaciones favorables a evaluar. Un resumen general de los resultados esperados y la muestra de estos, es listada a continuación.
 
 \begin{itemize}
 	
-	\item \textbf{Descripción general}: Se genera una visualización del conjunto de secuencias y la distribución o frecuencia de la variable respuesta, se expone un resumen del conjunto de datos y se muestran patrones relacionados a alineamientos múltiples de secuencia. Además de una visualización de la proteína de interés, en su estructura 3D y las sustituciones que exhiben cada variante.
+	\item \textbf{Descripción general}: Se genera una visualización del conjunto de secuencias y la distribución o frecuencia de la variable respuesta, se expone un resumen del conjunto de datos y se muestran patrones relacionados a alineamientos múltiples de secuencia. Además de una visualización de la proteína de interés, en su estructura 3D y las sustituciones que exhiben cada variante. Esto puede observarse en la Figura \ref{cap4:fig4}.
 	
-	\item \textbf{Propiedades fisicoquímicas}: Una representación de las propiedades fisicoquímicas abarca cuáles fueron las seleccionadas y las definiciones de éstas, por otro lado se expone el aporte a la varianza que éstas presentan y cómo varían por cada secuencia.
+	\begin{figure}[!h]
+		
+		\centering
+		\includegraphics[scale=.5]{fig4.png}
+		\caption{Esquema representativo interfaz de descripción general del conjunto de datos.}
+		\label{cap4:fig4}
+	\end{figure}
 	
-	\item \textbf{Espectros de frecuencia}: Se exponen el conjunto de digitalizaciones de las propiedades fisicoquímicas, asociados a los residuos que brindan la mayor caracterización y cómo estos inciden en el espectro.
 	
-	\item \textbf{Entrenamiento de Modelos}: Los modelos se exponen asociados a las medidas de desempeño obtenidas y los miembros participantes en el conjunto de modelos. Esto es debido a que se utilizará la estrategia expuesta en el capítulo \ref{cap2}, por lo que se obtiene un sistema de meta-modelos. 
+	\item \textbf{Propiedades fisicoquímicas}: Una representación de las propiedades fisicoquímicas abarca cuáles fueron las seleccionadas y las definiciones de éstas, por otro lado se expone el aporte a la varianza que éstas presentan y cómo varían por cada secuencia. Un esquema representativo de diseño de la interfaz, puede observarse en la Figura \ref{cap4:fig5}.
+	
+	\begin{figure}[!h]
+		
+		\centering
+		\includegraphics[scale=.5]{fig5.png}
+		\caption{Esquema representativo interfaz de visualización de propiedades fisicoquímicas.}
+		\label{cap4:fig5}
+	\end{figure}
+	
+	\item \textbf{Espectros de frecuencia}: Se exponen el conjunto de digitalizaciones de las propiedades fisicoquímicas, asociados a los residuos que brindan la mayor caracterización y cómo estos inciden en el espectro. En la Figura \ref{cap4:fig6}, se expone un esquema de la visualización de los espectros, junto a los residuos relevantes.
+	
+	\begin{figure}[!h]
+		
+		\centering
+		\includegraphics[scale=.5]{fig6.png}
+		\caption{Esquema representativo interfaz de visualización de espectros de frecuencias y residuos relevantes.}
+		\label{cap4:fig6}
+	\end{figure}
+	
+	\item \textbf{Entrenamiento de Modelos}: Los modelos se exponen asociados a las medidas de desempeño obtenidas y los miembros participantes en el conjunto de modelos. Esto es debido a que se utilizará la estrategia expuesta en el capítulo \ref{cap2}, por lo que se obtiene un sistema de meta-modelos, cuyo esquema representativo de visualización se observa en la Figura \ref{cap4:fig7}. 
+	
+	\begin{figure}[!h]
+		
+		\centering
+		\includegraphics[scale=.5]{fig7.png}
+		\caption{Esquema representativo interfaz de visualización de los meta modelos y sus medidas de desempeño.}
+		\label{cap4:fig7}
+	\end{figure}
 	
 	\item \textbf{Mutaciones propuestas}: Para el conjunto de datos, se proponen diferentes mutaciones, evaluadas con respecto a la respuesta y factibilidad de éstas, a su vez, se exponen estadísticas asociadas a qué residuos son más factibles de mutar en base a las posiciones de estos.
 	

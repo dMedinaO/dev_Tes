@@ -25,6 +25,11 @@ Alm, C.~O., Roth, D., and Sproat, R. (2005).
   and empirical methods in natural language processing}, pages 579--586.
   Association for Computational Linguistics.
 
+\bibitem[Altschul et~al., 1990]{altschul1990basic}
+Altschul, S.~F., Gish, W., Miller, W., Myers, E.~W., and Lipman, D.~J. (1990).
+\newblock Basic local alignment search tool.
+\newblock {\em Journal of molecular biology}, 215(3):403--410.
+
 \bibitem[Amari and Wu, 1999]{amari1999improving}
 Amari, S.-i. and Wu, S. (1999).
 \newblock Improving support vector machine classifiers by modifying kernel
@@ -36,6 +41,13 @@ Ancien, F., Pucci, F., Godfroid, M., and Rooman, M. (2018).
 \newblock Prediction and interpretation of deleterious coding variants in terms
   of protein structural stability.
 \newblock {\em Scientific reports}, 8(1):4480.
+
+\bibitem[Andrychowicz et~al., 2016]{andrychowicz2016learning}
+Andrychowicz, M., Denil, M., Gomez, S., Hoffman, M.~W., Pfau, D., Schaul, T.,
+  Shillingford, B., and De~Freitas, N. (2016).
+\newblock Learning to learn by gradient descent by gradient descent.
+\newblock In {\em Advances in Neural Information Processing Systems}, pages
+  3981--3989.
 
 \bibitem[Arel et~al., 2010]{arel2010deep}
 Arel, I., Rose, D.~C., Karnowski, T.~P., et~al. (2010).
@@ -67,6 +79,12 @@ Battiti, R. (1992).
   and newton's method.
 \newblock {\em Neural computation}, 4(2):141--166.
 
+\bibitem[Bedbrook et~al., 2019]{bedbrook2019machine}
+Bedbrook, C.~N., Yang, K.~K., Robinson, J.~E., Gradinaru, V., and Arnold, F.~H.
+  (2019).
+\newblock Machine learning-guided channelrhodopsin engineering enables
+  minimally-invasive optogenetics.
+
 \bibitem[Bengio, 2009]{MAL-006}
 Bengio, Y. (2009).
 \newblock Learning deep architectures for ai.
@@ -95,6 +113,14 @@ Bhargava, N., Sharma, G., Bhargava, R., and Mathuria, M. (2013).
 \newblock Decision tree analysis on j48 algorithm for data mining.
 \newblock {\em Proceedings of International Journal of Advanced Research in
   Computer Science and Software Engineering}, 3(6).
+
+\bibitem[Boeckmann et~al., 2003]{boeckmann2003swiss}
+Boeckmann, B., Bairoch, A., Apweiler, R., Blatter, M.-C., Estreicher, A.,
+  Gasteiger, E., Martin, M.~J., Michoud, K., O'donovan, C., Phan, I., et~al.
+  (2003).
+\newblock The swiss-prot protein knowledgebase and its supplement trembl in
+  2003.
+\newblock {\em Nucleic acids research}, 31(1):365--370.
 
 \bibitem[Bordner and Abagyan, ]{prot20185}
 Bordner, A.~J. and Abagyan, R.~A.
@@ -154,35 +180,52 @@ Broom, A., Jacobi, Z., Trainor, K., and Meiering, E.~M. (2017b).
   solubility tradeoff.
 \newblock {\em Journal of Biological Chemistry}, 292(35):14349--14361.
 
+\bibitem[Canutescu et~al., 2003]{canutescu2003graph}
+Canutescu, A.~A., Shelenkov, A.~A., and Dunbrack~Jr, R.~L. (2003).
+\newblock A graph-theory algorithm for rapid protein side-chain prediction.
+\newblock {\em Protein science}, 12(9):2001--2014.
+
 \bibitem[CAO et~al., 2013]{CAO2013745}
 CAO, Y., MIAO, Q.-G., LIU, J.-C., and GAO, L. (2013).
 \newblock Advance and prospects of adaboost algorithm.
 \newblock {\em Acta Automatica Sinica}, 39(6):745 -- 758.
 
-\bibitem[Capriotti et~al., 2005]{Capriotti2005}
-Capriotti, E., Fariselli, P., and Casadio, R. (2005).
+\bibitem[Capriotti et~al., 2005a]{capriotti2005mutant2}
+Capriotti, E., Fariselli, P., and Casadio, R. (2005a).
+\newblock I-mutant2. 0: predicting stability changes upon mutation from the
+  protein sequence or structure.
+\newblock {\em Nucleic acids research}, 33(suppl\_2):W306--W310.
+
+\bibitem[Capriotti et~al., 2005b]{Capriotti2005}
+Capriotti, E., Fariselli, P., and Casadio, R. (2005b).
 \newblock I-mutant2.0: predicting stability changes upon mutation from the
   protein sequence or structure.
 \newblock {\em Nucleic Acids Res}, 33(Web Server issue):W306--W310.
 \newblock 15980478[pmid].
 
-\bibitem[Capriotti et~al., 2008a]{Capriotti2008}
+\bibitem[Capriotti et~al., 2008a]{capriotti2008three}
 Capriotti, E., Fariselli, P., Rossi, I., and Casadio, R. (2008a).
 \newblock A three-state prediction of single point mutations on protein
   stability changes.
-\newblock {\em BMC Bioinformatics}, 9(2):S6.
+\newblock {\em BMC bioinformatics}, 9(2):S6.
 
-\bibitem[Capriotti et~al., 2008b]{capriotti2008three}
+\bibitem[Capriotti et~al., 2008b]{Capriotti2008}
 Capriotti, E., Fariselli, P., Rossi, I., and Casadio, R. (2008b).
 \newblock A three-state prediction of single point mutations on protein
   stability changes.
-\newblock {\em BMC bioinformatics}, 9(2):S6.
+\newblock {\em BMC Bioinformatics}, 9(2):S6.
 
 \bibitem[Carpenter et~al., 1997]{carpenter1997rational}
 Carpenter, J.~F., Pikal, M.~J., Chang, B.~S., and Randolph, T.~W. (1997).
 \newblock Rational design of stable lyophilized protein formulations: some
   practical advice.
 \newblock {\em Pharmaceutical research}, 14(8):969--975.
+
+\bibitem[Case et~al., 2005]{case2005amber}
+Case, D.~A., Cheatham~III, T.~E., Darden, T., Gohlke, H., Luo, R., Merz~Jr,
+  K.~M., Onufriev, A., Simmerling, C., Wang, B., and Woods, R.~J. (2005).
+\newblock The amber biomolecular simulation programs.
+\newblock {\em Journal of computational chemistry}, 26(16):1668--1688.
 
 \bibitem[Castillo et~al., 2015]{castillo2015bayesian}
 Castillo, I., Schmidt-Hieber, J., Van~der Vaart, A., et~al. (2015).
@@ -277,6 +320,12 @@ Duygulu, P., Barnard, K., de~Freitas, J. F.~G., and Forsyth, D.~A. (2002).
   {\em Computer Vision --- ECCV 2002}, pages 97--112, Berlin, Heidelberg.
   Springer Berlin Heidelberg.
 
+\bibitem[Eswar et~al., 2006]{eswar2006comparative}
+Eswar, N., Webb, B., Marti-Renom, M.~A., Madhusudhan, M., Eramian, D., Shen,
+  M.-y., Pieper, U., and Sali, A. (2006).
+\newblock Comparative protein structure modeling using modeller.
+\newblock {\em Current protocols in bioinformatics}, 15(1):5--6.
+
 \bibitem[Fayyad et~al., 1996a]{fayyad1996data}
 Fayyad, U., Piatetsky-Shapiro, G., and Smyth, P. (1996a).
 \newblock From data mining to knowledge discovery in databases.
@@ -291,6 +340,12 @@ Fayyad, U., Piatetsky-Shapiro, G., and Smyth, P. (1996b).
 Fayyad, U.~M., Piatetsky-Shapiro, G., Smyth, P., et~al. (1996c).
 \newblock Knowledge discovery and data mining: Towards a unifying framework.
 \newblock In {\em KDD}, volume~96, pages 82--88.
+
+\bibitem[Finn et~al., 2017]{finn2017model}
+Finn, C., Abbeel, P., and Levine, S. (2017).
+\newblock Model-agnostic meta-learning for fast adaptation of deep networks.
+\newblock In {\em Proceedings of the 34th International Conference on Machine
+  Learning-Volume 70}, pages 1126--1135. JMLR. org.
 
 \bibitem[Fisher, 1936]{fisher1936use}
 Fisher, R.~A. (1936).
@@ -370,6 +425,12 @@ Graybill, F.~A. (1976).
 \newblock {\em Theory and application of the linear model}.
 \newblock Number QA279. G72 1976. Duxbury press North Scituate, MA.
 
+\bibitem[Guex and Peitsch, 1997]{Guex1997}
+Guex, N. and Peitsch, M.~C. (1997).
+\newblock Swiss-model and the swiss-pdb viewer: An environment for comparative
+  protein modeling.
+\newblock {\em ELECTROPHORESIS}, 18(15):2714--2723.
+
 \bibitem[Guyon et~al., 1993]{guyon1993automatic}
 Guyon, I., Boser, B., and Vapnik, V. (1993).
 \newblock Automatic capacity tuning of very large vc-dimension classifiers.
@@ -411,6 +472,12 @@ HECHT-NIELSEN, R. (1992).
 \newblock In Wechsler, H., editor, {\em Neural Networks for Perception}, pages
   65 -- 93. Academic Press.
 
+\bibitem[Hochreiter et~al., 2001]{hochreiter2001learning}
+Hochreiter, S., Younger, A.~S., and Conwell, P.~R. (2001).
+\newblock Learning to learn using gradient descent.
+\newblock In {\em International Conference on Artificial Neural Networks},
+  pages 87--94. Springer.
+
 \bibitem[Hoerl and Kennard, 1970]{hoerl1970ridge}
 Hoerl, A.~E. and Kennard, R.~W. (1970).
 \newblock Ridge regression: Biased estimation for nonorthogonal problems.
@@ -427,6 +494,12 @@ Hssina, B., Merbouha, A., Ezzikouri, H., and Erritali, M. (2014).
 \newblock A comparative study of decision tree id3 and c4. 5.
 \newblock {\em International Journal of Advanced Computer Science and
   Applications}, 4(2):0--0.
+
+\bibitem[Hua and Sun, 2001]{hua2001novel}
+Hua, S. and Sun, Z. (2001).
+\newblock A novel method of protein secondary structure prediction with high
+  segment overlap measure: support vector machine approach.
+\newblock {\em Journal of molecular biology}, 308(2):397--407.
 
 \bibitem[Indyk and Motwani, 1998]{indyk1998approximate}
 Indyk, P. and Motwani, R. (1998).
@@ -445,6 +518,12 @@ Japkowicz, N. and Stephen, S. (2002).
 \newblock The class imbalance problem: A systematic study.
 \newblock {\em Intelligent data analysis}, 6(5):429--449.
 
+\bibitem[Jespersen et~al., 2017]{jespersen2017bepipred}
+Jespersen, M.~C., Peters, B., Nielsen, M., and Marcatili, P. (2017).
+\newblock Bepipred-2.0: improving sequence-based b-cell epitope prediction
+  using conformational epitopes.
+\newblock {\em Nucleic acids research}, 45(W1):W24--W29.
+
 \bibitem[John and Langley, 1995]{john1995estimating}
 John, G.~H. and Langley, P. (1995).
 \newblock Estimating continuous distributions in bayesian classifiers.
@@ -461,6 +540,11 @@ Kawashima, S. and Kanehisa, M. (2000).
 \newblock A fuzzy k-nearest neighbor algorithm.
 \newblock {\em IEEE Transactions on Systems, Man, and Cybernetics},
   SMC-15(4):580--585.
+
+\bibitem[Kent, 2002]{kent2002blat}
+Kent, W.~J. (2002).
+\newblock Blat—the blast-like alignment tool.
+\newblock {\em Genome research}, 12(4):656--664.
 
 \bibitem[Khan and Vihinen, 2010]{Khan2010}
 Khan, S. and Vihinen, M. (2010).
@@ -491,6 +575,13 @@ Larra{\~n}aga, P., Calvo, B., Santana, R., Bielza, C., Galdiano, J., Inza, I.,
   Robles, V. (2006).
 \newblock Machine learning in bioinformatics.
 \newblock {\em Briefings in Bioinformatics}, 7(1):86--112.
+
+\bibitem[Leaver-Fay et~al., 2011]{leaver2011rosetta3}
+Leaver-Fay, A., Tyka, M., Lewis, S.~M., Lange, O.~F., Thompson, J., Jacak, R.,
+  Kaufman, K.~W., Renfrew, P.~D., Smith, C.~A., Sheffler, W., et~al. (2011).
+\newblock Rosetta3: an object-oriented software suite for the simulation and
+  design of macromolecules.
+\newblock In {\em Methods in enzymology}, volume 487, pages 545--574. Elsevier.
 
 \bibitem[Lee et~al., 2008]{Lee2008}
 Lee, J.~K., Williams, P.~D., and Cheon, S. (2008).
@@ -526,6 +617,11 @@ Liao, H. and Xu, Z. (2015).
   in qualitative decision making.
 \newblock {\em Expert Systems with Applications}, 42(12):5328 -- 5336.
 
+\bibitem[Liszewski, 2015]{liszewski2015speeding}
+Liszewski, K. (2015).
+\newblock Speeding up the protein assembly line.
+\newblock {\em Genetic Engineering \& Biotechnology News}, 35(04):1--10.
+
 \bibitem[Louppe and Geurts, 2012]{ref10.1007/978-3-642-33460-3_28}
 Louppe, G. and Geurts, P. (2012).
 \newblock Ensembles on random patches.
@@ -533,10 +629,21 @@ Louppe, G. and Geurts, P. (2012).
   Machine Learning and Knowledge Discovery in Databases}, pages 346--361,
   Berlin, Heidelberg. Springer Berlin Heidelberg.
 
+\bibitem[Lutz, 2010]{lutz2010beyond}
+Lutz, S. (2010).
+\newblock Beyond directed evolution—semi-rational protein engineering and
+  design.
+\newblock {\em Current opinion in biotechnology}, 21(6):734--743.
+
 \bibitem[Lutz et~al., 2009]{lutz2009protein}
 Lutz, S., Bornscheuer, U.~T., et~al. (2009).
 \newblock {\em Protein engineering handbook}, volume~1.
 \newblock Wiley Online Library.
+
+\bibitem[Lyskov and Gray, 2008]{lyskov2008rosettadock}
+Lyskov, S. and Gray, J.~J. (2008).
+\newblock The rosettadock server for local protein--protein docking.
+\newblock {\em Nucleic acids research}, 36(suppl\_2):W233--W238.
 
 \bibitem[Ma et~al., 2013]{Ma2013}
 Ma, X., Wu, Y.-J., Wang, Y., Chen, F., and Liu, J. (2013).
@@ -560,6 +667,13 @@ Mao, L., Wang, Y., Liu, Y., and Hu, X. (2004).
   quantum chemical analysis.
 \newblock {\em Journal of Molecular Biology}, 336(3):787 -- 807.
 
+\bibitem[Martin et~al., 2017]{martin2017loto}
+Martin, A.~J., Contreras-Riquelme, S., Dominguez, C., and Perez-Acle, T.
+  (2017).
+\newblock Loto: a graphlet based method for the comparison of local topology
+  between gene regulatory networks.
+\newblock {\em PeerJ}, 5:e3052.
+
 \bibitem[Masso and Vaisman, 2008]{masso2008accurate}
 Masso, M. and Vaisman, I.~I. (2008).
 \newblock Accurate prediction of stability changes in protein mutants by
@@ -571,6 +685,13 @@ Masso, M. and Vaisman, I.~I. (2010).
 \newblock Auto-mute: web-based tools for predicting stability changes in
   proteins due to single amino acid replacements.
 \newblock {\em Protein Engineering, Design and Selection}, 23(8):683--687.
+
+\bibitem[McGuffin et~al., 2015]{mcguffin2015intfold}
+McGuffin, L.~J., Atkins, J.~D., Salehe, B.~R., Shuid, A.~N., and Roche, D.~B.
+  (2015).
+\newblock Intfold: an integrated server for modelling protein structures and
+  functions from amino acid sequences.
+\newblock {\em Nucleic acids research}, 43(W1):W169--W173.
 
 \bibitem[McKinney et~al., 2010]{mckinney2010data}
 McKinney, W. et~al. (2010).
@@ -588,6 +709,12 @@ Michie, D., Spiegelhalter, D.~J., Taylor, C., et~al. (1994).
 \newblock Machine learning.
 \newblock {\em Neural and Statistical Classification}, 13.
 
+\bibitem[Muggleton et~al., 1992]{Muggleton1992}
+Muggleton, S., King, R.~D., and Stenberg, M. J.~E. (1992).
+\newblock Protein secondary structure prediction using logic-based machine
+  learning.
+\newblock {\em Protein Engineering, Design and Selection}, 5(7):647--657.
+
 \bibitem[Netzer et~al., 2011]{netzer2011reading}
 Netzer, Y., Wang, T., Coates, A., Bissacco, A., Wu, B., and Ng, A.~Y. (2011).
 \newblock Reading digits in natural images with unsupervised feature learning.
@@ -596,6 +723,12 @@ Netzer, Y., Wang, T., Coates, A., Bissacco, A., Wu, B., and Ng, A.~Y. (2011).
 Obenshain, M.~K. (2004).
 \newblock Application of data mining techniques to healthcare data.
 \newblock {\em Infection Control \&; Hospital Epidemiology}, 25(8):690–695.
+
+\bibitem[Odorico and Pellequer, 2003]{odorico2003bepitope}
+Odorico, M. and Pellequer, J.-L. (2003).
+\newblock Bepitope: predicting the location of continuous epitopes and patterns
+  in proteins.
+\newblock {\em Journal of Molecular Recognition}, 16(1):20--22.
 
 \bibitem[Oliphant, 2007]{oliphant2007python}
 Oliphant, T.~E. (2007).
@@ -607,6 +740,17 @@ Olivera-Nappa, A., Andrews, B.~A., and Asenjo, J.~A. (2011).
 \newblock Mutagenesis objective search and selection tool (mosst): an algorithm
   to predict structure-function related mutations in proteins.
 \newblock {\em BMC Bioinformatics}, 12(1):122.
+
+\bibitem[Orengo et~al., 1997]{orengo1997cath}
+Orengo, C.~A., Michie, A.~D., Jones, S., Jones, D.~T., Swindells, M.~B., and
+  Thornton, J.~M. (1997).
+\newblock Cath--a hierarchic classification of protein domain structures.
+\newblock {\em Structure}, 5(8):1093--1109.
+
+\bibitem[Ozbudak and Dokur, 2014]{ozbudak2014protein}
+Ozbudak, O. and Dokur, Z. (2014).
+\newblock Protein fold classification using kohonen's self-organizing map.
+\newblock In {\em IWBBIO}, pages 903--911.
 
 \bibitem[Pandurangan et~al., 2017]{Pandurangan2017}
 Pandurangan, A.~P., Ochoa-Monta{\~n}o, B., Ascher, D.~B., and Blundell, T.~L.
@@ -646,6 +790,12 @@ Petukh, M., Dai, L., and Alexov, E. (2016).
   by amino acids mutations.
 \newblock {\em International journal of molecular sciences}, 17(4):547.
 
+\bibitem[Phillips et~al., 2005]{phillips2005scalable}
+Phillips, J.~C., Braun, R., Wang, W., Gumbart, J., Tajkhorshid, E., Villa, E.,
+  Chipot, C., Skeel, R.~D., Kale, L., and Schulten, K. (2005).
+\newblock Scalable molecular dynamics with namd.
+\newblock {\em Journal of computational chemistry}, 26(16):1781--1802.
+
 \bibitem[Potapov et~al., 2009]{1gzp030}
 Potapov, V., Cohen, M., and Schreiber, G. (2009).
 \newblock {Assessing computational methods for predicting protein stability
@@ -682,6 +832,11 @@ Reetz, M.~T., Kahakeaw, D., and Lohmer, R. (2008).
 \newblock Addressing the numbers problem in directed evolution.
 \newblock {\em ChemBioChem}, 9(11):1797--1804.
 
+\bibitem[Release, 2016]{release20161}
+Release, S. (2016).
+\newblock 1: Maestro.
+\newblock {\em Schr{\"o}dinger, LLC, New York, NY, USA}.
+
 \bibitem[Rohl et~al., 2004]{rohl2004protein}
 Rohl, C.~A., Strauss, C.~E., Misura, K.~M., and Baker, D. (2004).
 \newblock Protein structure prediction using rosetta.
@@ -694,6 +849,10 @@ Rohl, C.~A., Strauss, C.~E., Misura, K.~M., and Baker, D. (2004).
   discriminant function.
 \newblock {\em IEEE Transactions on Neural Networks}, 1(4):296--298.
 
+\bibitem[Saha and Raghava, 2008]{saha2008abcpred}
+Saha, S. and Raghava, G. (2008).
+\newblock Abcpred benchmarking datasets. 2006a.
+
 \bibitem[Sarwar et~al., 2000]{sarwar2000application}
 Sarwar, B., Karypis, G., Konstan, J., and Riedl, J. (2000).
 \newblock Application of dimensionality reduction in recommender system-a case
@@ -701,11 +860,27 @@ Sarwar, B., Karypis, G., Konstan, J., and Riedl, J. (2000).
 \newblock Technical report, Minnesota Univ Minneapolis Dept of Computer
   Science.
 
+\bibitem[Schmidhuber, 1987]{schmidhuber1987evolutionary}
+Schmidhuber, J. (1987).
+\newblock {\em Evolutionary principles in self-referential learning, or on
+  learning how to learn: the meta-meta-... hook}.
+\newblock PhD thesis, Technische Universit{\"a}t M{\"u}nchen.
+
+\bibitem[Schmidhuber, 1995]{schmidhuber1995learning}
+Schmidhuber, J. (1995).
+\newblock On learning how to learn learning strategies.
+
 \bibitem[Scholkopf and Smola, 2001]{scholkopf2001learning}
 Scholkopf, B. and Smola, A.~J. (2001).
 \newblock {\em Learning with kernels: support vector machines, regularization,
   optimization, and beyond}.
 \newblock MIT press.
+
+\bibitem[Schueler-Furman and Baker, 2003]{schueler2003conserved}
+Schueler-Furman, O. and Baker, D. (2003).
+\newblock Conserved residue clustering and protein structure prediction.
+\newblock {\em Proteins: Structure, Function, and Bioinformatics},
+  52(2):225--235.
 
 \bibitem[Schymkowitz et~al., 2005]{Schymkowitz2005}
 Schymkowitz, J., Borg, J., Stricher, F., Nys, R., Rousseau, F., and Serrano, L.
@@ -725,16 +900,45 @@ Sun, L., Li, L., Peng, Y., Jia, Z., and Alexov, E. (2017).
   mutations using modified mm/pbsa approach: Sampdi webserver.
 \newblock {\em Bioinformatics}, 34(5):779--786.
 
+\bibitem[Tamura et~al., 2013]{mst197}
+Tamura, K., Stecher, G., Peterson, D., Filipski, A., and Kumar, S. (2013).
+\newblock {MEGA6: Molecular Evolutionary Genetics Analysis Version 6.0}.
+\newblock {\em Molecular Biology and Evolution}, 30(12):2725--2729.
+
 \bibitem[Tan, 2005]{TAN2005667}
 Tan, S. (2005).
 \newblock Neighbor-weighted k-nearest neighbor for unbalanced text corpus.
 \newblock {\em Expert Systems with Applications}, 28(4):667 -- 671.
+
+\bibitem[Thompson et~al., 1997]{Thompson1997}
+Thompson, J.~D., Gibson, T.~J., Plewniak, F., Jeanmougin, F., and Higgins,
+  D.~G. (1997).
+\newblock The clustal\_x windows interface: Flexible strategies for multiple
+  sequence alignment aided by quality analysis tools.
+\newblock {\em Nucleic Acids Research}, 25(24):4876--4882.
 
 \bibitem[Tian et~al., 2010]{Tian2010}
 Tian, J., Wu, N., Chu, X., and Fan, Y. (2010).
 \newblock Predicting changes in protein thermostability brought about by
   single- or multi-site mutations.
 \newblock {\em BMC Bioinformatics}, 11(1):370.
+
+\bibitem[Tovchigrechko and Vakser, 2006]{tovchigrechko2006gramm}
+Tovchigrechko, A. and Vakser, I.~A. (2006).
+\newblock Gramm-x public web server for protein--protein docking.
+\newblock {\em Nucleic acids research}, 34(suppl\_2):W310--W314.
+
+\bibitem[Trott and Olson, 2010]{trott2010autodock}
+Trott, O. and Olson, A.~J. (2010).
+\newblock Autodock vina: improving the speed and accuracy of docking with a new
+  scoring function, efficient optimization, and multithreading.
+\newblock {\em Journal of computational chemistry}, 31(2):455--461.
+
+\bibitem[Utgoff, 1986]{utgoff1986shift}
+Utgoff, P.~E. (1986).
+\newblock Shift of bias for inductive concept learning.
+\newblock {\em Machine learning: An artificial intelligence approach},
+  2:107--148.
 
 \bibitem[Vaisman and Masso, 2008]{vaisman}
 Vaisman, I.~I. and Masso, M. (2008).
@@ -758,6 +962,12 @@ Vehtari, A., Gelman, A., and Gabry, J. (2017).
   cross-validation and waic.
 \newblock {\em Statistics and Computing}, 27(5):1413--1432.
 
+\bibitem[Vishveshwara et~al., 2002]{vishveshwara2002protein}
+Vishveshwara, S., Brinda, K., and Kannan, N. (2002).
+\newblock Protein structure: insights from graph theory.
+\newblock {\em Journal of Theoretical and Computational Chemistry},
+  1(01):187--211.
+
 \bibitem[Wainreb et~al., 2011]{Wainreb2011}
 Wainreb, G., Ashkenazy, H., Wolf, L., Ben-Tal, N., and Dehouck, Y. (2011).
 \newblock Protein stability: a single recorded mutation aids in predicting the
@@ -768,6 +978,14 @@ Wainreb, G., Ashkenazy, H., Wolf, L., Ben-Tal, N., and Dehouck, Y. (2011).
 Walt, S. v.~d., Colbert, S.~C., and Varoquaux, G. (2011).
 \newblock The numpy array: A structure for efficient numerical computation.
 \newblock {\em Computing in Science \& Engineering}, 13(2):22--30.
+
+\bibitem[Wang et~al., 2008]{WANG2008262}
+Wang, G., Zhao, Y., and Wang, D. (2008).
+\newblock A protein secondary structure prediction framework based on the
+  extreme learning machine.
+\newblock {\em Neurocomputing}, 72(1):262 -- 268.
+\newblock Machine Learning for Signal Processing (MLSP 2006) / Life System
+  Modelling, Simulation, and Bio-inspired Computing (LSMS 2007).
 
 \bibitem[Wegner, 1990]{wegner1990concepts}
 Wegner, P. (1990).
@@ -780,6 +998,12 @@ Wu, T.-F., Lin, C.-J., and Weng, R.~C. (2004).
   coupling.
 \newblock {\em Journal of Machine Learning Research}, 5(Aug):975--1005.
 
+\bibitem[Wu et~al., 2019]{wu2019machine}
+Wu, Z., Kan, S., Lewis, R.~D., Wittmann, B.~J., and Arnold, F.~H. (2019).
+\newblock Machine-learning-assisted directed protein evolution with
+  combinatorial libraries.
+\newblock {\em arXiv preprint arXiv:1902.07231}.
+
 \bibitem[Yang et~al., 2005]{Yang:2005:GFM:1081870.1081962}
 Yang, H., Parthasarathy, S., and Mehta, S. (2005).
 \newblock A generalized framework for mining spatio-temporal patterns in
@@ -787,6 +1011,11 @@ Yang, H., Parthasarathy, S., and Mehta, S. (2005).
 \newblock In {\em Proceedings of the Eleventh ACM SIGKDD International
   Conference on Knowledge Discovery in Data Mining}, KDD '05, pages 716--721,
   New York, NY, USA. ACM.
+
+\bibitem[Yang et~al., 2018]{yang2018machine}
+Yang, K.~K., Wu, Z., and Arnold, F.~H. (2018).
+\newblock Machine learning in protein engineering.
+\newblock {\em arXiv preprint arXiv:1811.10775}.
 
 \bibitem[Yoo et~al., 2012]{Yoo2012}
 Yoo, I., Alafaireet, P., Marinov, M., Pena-Hernandez, K., Gopidi, R., Chang,

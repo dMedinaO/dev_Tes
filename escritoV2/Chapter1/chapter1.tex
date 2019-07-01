@@ -25,14 +25,15 @@ No obstante, dado el gran volumen de datos existente en la actualidad ¿cómo es
 
 Dado lo anterior, durante el presente capítulo, se expone el concepto de ingeniería de proteínas y cuáles son las principales técnicas experimentales involucradas en el diseño de mutaciones. Además se introduce el concepto de Minería de datos y se exponen diversas metodologías computacionales que han sido desarrolladas, enfocadas en este campo de investigación. Por último, se presentan diferentes problemas que dan el punto de partida a cada una de las propuestas metodológicas de esta tesis doctoral y que denotan la evidente necesidad de ser desarrolladas o que exponen cambios en los puntos de vista actuales asociados al desarrollo de modelos y las convierten en un aporte significativo a los estudios actuales de mutaciones y el diseño de proteínas. 
 
+Adicional a ello, se exponen una hipótesis y objetivos generales que se relacionan estrechamente con cada capítulo siguiente en este proyecto y que permiten visualizar los diferentes puntos de vista y utilidades asociadas a las metodologías a proponer durante este trabajo de tesis doctoral.
+
 \section{Ingeniería de proteínas \label{cap1:sec1}}
 
-Por definición, la ingeniería de proteínas, es un campo de investigación centrado en el diseño y creación de proteínas útiles o con propiedades fisicoquímicas relevantes, con un enfoque relevante en la comprensión del plegamiento de proteínas.
+Por definición, la ingeniería de proteínas, es un campo de investigación centrado en el diseño y creación de proteínas útiles o con propiedades fisicoquímicas relevantes, con un enfoque relevante en la comprensión del plegamiento de proteínas \cite{liszewski2015speeding}.
 
-Actualmente, la ingeniería de proteínas, cuenta con dos estrategias principales para la construcción de mutaciones. Siendo éstas la evolución dirigida y el diseño racional. Sin embargo, a pesar de su existencia, normalmente no son excluyentes, por lo que es común utilizar ambas metodologías. No obstante, un estudio completo de residuos y una evaluación detallada de las sustituciones es una limitante importante para estas dos técnicas, debido tanto a recursos económicos como humanos.
+Actualmente, la ingeniería de proteínas, cuenta con dos estrategias principales para la construcción de mutaciones. Siendo éstas la evolución dirigida y el diseño racional. Sin embargo, a pesar de su existencia, normalmente no son excluyentes, por lo que es común utilizar ambas metodologías. No obstante, un estudio completo de residuos y una evaluación detallada de las sustituciones es una limitante importante para estas dos técnicas, debido tanto a recursos económicos como humanos \cite{liszewski2015speeding}.
 
-La evolución dirigida imita el proceso de selección natural, permitiendo direccionar la evolución hacia objetivos definidos, reflejados en cuanto a funciones o propiedades fisicoquímicas deseables. Una representación del proceso, se observa en la Figura \ref{ed}. 
-
+La evolución dirigida imita el proceso de selección natural, permitiendo direccionar la evolución hacia objetivos definidos, reflejados en cuanto a funciones o propiedades fisicoquímicas deseables \cite{lutz2010beyond, arnold1998design}. Una representación del proceso, se observa en la Figura \ref{ed}. 
 
 \begin{figure}[!h]
 	
@@ -42,20 +43,64 @@ La evolución dirigida imita el proceso de selección natural, permitiendo direc
 	\label{ed}
 \end{figure}
 
-El proceso, de manera general, consiste en someter un gen de interés a rondas iterativas de mutagénesis, con el fin de crear una biblioteca de variantes. A partir de dicho conjunto de elementos, se seleccionan las variantes con la función deseada. Finalmente, se aíslan y se amplifican para forman una plantilla para la siguiente iteración. Así el proceso sigue iterando y estadísticamente, se seleccionan las más favorables y aquellas que tendieron a la evolución debido a la supervivencia en el proceso.
+El proceso, de manera general, consiste en someter un gen de interés a rondas iterativas de mutagénesis, con el fin de crear una biblioteca de variantes. A partir de dicho conjunto de elementos, se seleccionan las variantes con la función deseada. Finalmente, se aíslan y se amplifican para forman una plantilla para la siguiente iteración. Así el proceso sigue iterando y estadísticamente, se seleccionan las más favorables y aquellas que tendieron a la evolución debido a la supervivencia en el proceso \cite{arnold1998design}.
 
-Con respecto al diseño racional de proteínas. Ésta, es una técnica ampliamente utilizada y al igual que la evolución dirigida, presenta el objetivo general de generar variantes con alguna función de interés o características particulares. No obstante, presenta una diferencia relevante, la cual se centra en la información que debe existir sobre la estructura, mecanismos, plegamiento o secuencia lineal de la proteína de interés.
+Con respecto al diseño racional de proteínas. Ésta, es una técnica ampliamente utilizada y al igual que la evolución dirigida, presenta el objetivo general de generar variantes con alguna función de interés o características particulares. No obstante, presenta una diferencia relevante, la cual se centra en la información que debe existir sobre la estructura, mecanismos, plegamiento o secuencia lineal de la proteína de interés \cite{carpenter1997rational}.
 
 \section{Métodos computacionales aplicados en ingeniería de proteínas}
 
-Diferentes métodos computacionales han sido desarrollados para distintos análisis, con el fin de poder 
+Diferentes métodos computacionales han sido desarrollados para distintos análisis, con el fin de poder de poder responder diferentes interrogantes planteadas desde enfoques distintos, ya sea, para estudiar secuencias lineales, filogenia y motivos conservados, análisis de estructuras, modelamiento, estudio de mutaciones, etc. A continuación, se listan algunos de los principales enfoques y qué herramientas existen para su desarrollo.
+
+\subsection{Métodos de análisis filogenéticos} 
+
+Los análisis filogenéticos se centran en el estudio de secuencias lineales de proteínas o genes, con el fin de identificar parentesco, motivos conservados o identificación de dominios. Las principales metodologías se basan en realizar alineamientos de secuencia con el fin de identificar o reconocer identidades de la secuencia estudio con respecto a información reportada previamente. 
+
+Una de las herramientas más conocidas para el desarrollo de alineamientos es Blast \cite{kent2002blat}, el cual permite hacer múltiples comparaciones de secuencias versus bases de datos con genes o proteínas, empleando algoritmos de alineamiento local \cite{altschul1990basic}. 
+
+Por otro lado, se encuentran los alineamientos múltiples, los cuales son utilizados en la comparación de secuencias lineales con el fin de encontrar patrones o motivos conservados, o, la identificación de parentesco \cite{Thompson1997}. Esto último, es muy utilizado cuando se analizan secuencias de organismos no secuenciados y cuya función se trata de aclarar. Una de las herramientas más utilizadas en esta área es el software Mega \cite{mst197}.
+
+A su vez, el uso de los conceptos filogenéticos, ha sido utilizado para el estudio de propensiones de sustituciones aminoacídicas y cómo éstas afectan a la función de la proteína o con respecto a sus propiedades fisicoquímicas. Considerando esto, herramientas como MOSST \cite{Olivera-Nappa2011}, han permitido comprender la propensión de residuos y posiciones relevantes en secuencias, sólo estudiando conjuntos de elementos sin la necesidad de conocer estructuras tridimensionales de las proteínas.
+
+Estos estudios, generan las bases para el análisis de secuencias y se basan en que sólo se necesita la secuencia lineal a estudiar y a partir de ella, es factible comprender un panorama relacionado a patrones de conservación, tendencias, relaciones evolutivas o inclusive, propensiones y posiciones relevantes. No obstante, no son los únicos, ya que existen herramientas computacionales que facilitan la predicción de la estructura secundaria, funcionalidad, etc., siendo una de las principales herramientas Swiss-Prot \cite{boeckmann2003swiss}.
+
+\subsection{Métodos de análisis de estructuras}
+
+Los métodos de análisis de estructuras, tienen el objetivo de comprender patrones de interacción, efectos de energía y estudiar diferentes propiedades fisicoquímicas y termodinámicas, a partir de la estructura tridimensional de una proteína, la cual puede ser obtenida por cristalografía de rayos X o por medio de resonancia magnética nuclear.
+
+No obstante, también, es factible el desarrollo de modelos de proteínas a partir de secuencias lineales, técnica conocida como Modelamiento por homología. Diferentes software, permiten la implementación de esta técnica, dentro de los cuales se encuentran SWISS-MODEL \cite{Guex1997}, IntFOLD \cite{mcguffin2015intfold}, ROSETTA \cite{leaver2011rosetta3}, MODELLER \cite{eswar2006comparative}, entre los principales. 
+
+Por otro lado, existen diferentes métodos computacionales que permiten el estudio de interacción entre proteína y una molécula o proteína-proteína, los cuales, principalmente se enfocan en el uso de técnicas como docking o dinámicas moleculares, con el fin de estudiar los posibles residuos que participan en la interacción, evaluándose a nivel energético y midiendo el desempeño en términos de error. A su vez, técnicas basadas en simulaciones moleculares, permiten comprender la interacción en sí, y, simular el comportamiento entre la molécula de interés y la proteína. Además, métodos computacionales basados en la química cuántica, han sido utilizados para comprender fenómenos de interacción a una escala mucho más precisa. No obstante, estos, son ampliamente más costosos y su uso es limitado al estudio de un número pequeño de átomos. 
+
+Existen diferentes herramientas que permiten hacer dinámicas moleculares, tales como: NAMD \cite{phillips2005scalable}, AMBER \cite{case2005amber}. etc., mientras que para la interacción entre moléculas, o docking, existen AutoDock \cite{trott2010autodock}, RosettaDock \cite{lyskov2008rosettadock}, GRAMM-X \cite{tovchigrechko2006gramm}. Además de la suite Maestro Shr\"odinger \cite{release20161}, la cual abarca funcionalidades para las diferentes acciones propuestas. 
+
+Distintos son los enfoques pueden ser considerados en el estudio de proteínas y en el análisis de su estructura. Sin embargo, los nombrados son los principales.
+ 
+\subsection{Métodos de estudio de mutaciones}
+
+De modo general, los estudios de mutaciones se basan principalmente en el análisis de la estructura ante los cambios de residuos o la adición o eliminación de estos, evaluando los cambios mediante diferencias de energía libre, entre la proteína inicial y la mutada. Herramientas como FoldX \cite{Schymkowitz2005}, SDM \cite{Pandurangan2017}, Auto-Mute \cite{Masso2010}, etc., permiten analizar cómo afecta una mutación en términos energéticos, basándose para ello, en el uso de funciones de energía potencial y dinámicas moleculares asociadas a dicha sustitución. Sin embargo, el uso de este tipo de herramientas, conlleva un gran costo computacional debido a los diferentes cálculos que son requeridos. Durante el capítulo \ref{cap2} se ahondarán más en estas herramientas. No obstante, en la Tabla \ref{tab:tab-summary-tools} se resumen algunas de las principales herramientas utilizadas para este tipo de análisis.
+
+\subsection{Métodos basados en minería de datos y aprendizaje supervisado}
+
+La minería de datos y el aprendizaje de máquinas, han sido utilizados en diferentes áreas del estudio de proteínas, ya sea para predicción de estructura secundaria \cite{hua2001novel, Muggleton1992, WANG2008262}, análisis del efecto de mutaciones \cite{capriotti2005mutant2, capriotti2008three, vaisman}, identificador de patrones mediante métodos de clustering \cite{schueler2003conserved, orengo1997cath}, entre los principales ejemplos.
+
+Diferentes enfoques han sido aplicados para obtener resultados relevantes, por un lado, se encuentra la utilización de algoritmos de aprendizaje supervisados clásicos como métodos de clasificación o predicción. por otro, el uso de métodos de clustering para identificación de patrones basados en entornos no supervisados. Actualmente, se ha empleado el uso de redes neuronales y deep learning para manipulación de sistemas de datos complejos y se han enfocado principalmente en el estudio de predicción de interacciones y evaluación de estructura secundaria de una secuencia lineal.
+
+A pesar de los diferentes objetivos, es necesario el desarrollo de conjuntos de datos que sean descritos mediante atributos, los cuales permitan alimentar estos modelos, para generar el aprendizaje. Distintas técnicas han sido utilizadas para caracterizar los ejemplos. dentro de las cuales, principalmente se encuentran la codificación mediante One hot encoder \cite{pedregosa2011scikit}, el uso de frecuencias de residuos \cite{ozbudak2014protein} y la descripción empleando propiedades fisicoquímicas en conjunto con la caracterización del ambiente \cite{capriotti2005mutant2, capriotti2008three}.
+
+Actualmente, la minería de datos y el aprendizaje automático, son una de las áreas de desarrollo de mayor interés, ya que, generan una disminución en cuanto al tiempo de cómputo y maximiza los espacios de búsqueda, los cuales, por medio de técnicas experimentales, es muy complejo analizarlas y empleando métodos computacionales para evaluar las interacciones, demandan un alto costo computacional.
+
+Otro tipo de enfoque, se basan en el modelamiento matemático de proteínas, empleando estructuras de grafos \cite{canutescu2003graph, vishveshwara2002protein}, con el fin de aprovechar las características y ventajas que entrega este análisis, para poder descubrir patrones o estudiar interacciones por medio de la formación de aristas entre los diferentes nodos \cite{martin2017loto}.
+
+Enfoques particulares se han desarrollado con el fin estudiar estructuras específicas o regiones de interés, ejemplos como la identificación de epítopes en secuencias lineales de antígenos, son una de las problemáticas más relevantes y de mayor impacto en los últimos años \cite{jespersen2017bepipred, odorico2003bepitope, saha2008abcpred}. Sin embargo, la complejidad es alta, dada, la basta cantidad de información existente y a que las regiones con las que pueden interactuar, presentan un espacio muestral del orden del $10^9$.
+
+Los resultados satisfactorios obtenidos mediante la aplicación de técnicas de minería de datos y aprendizaje de máquinas, demuestran el poder de éstas en las diferentes áreas de estudio asociadas a la ingeniería de proteínas, convirtiéndola en una de las temáticas de mayor impacto en el último tiempo. Inclusive, permite ser un complemento relevante para investigaciones de alto impacto, tal es el caso de investigadores como Frances H. Arnold, quien en el último tiempo, ha enfocado su análisis de evoluciones dirigidas hacia un enfoque de aprendizaje de máquinas, empleando diferentes técnicas asociadas al reconocimiento de patrones y la clasificación de estos \cite{bedbrook2019machine, wu2019machine, yang2018machine}.
 
 \section{Minería de datos}
 
 
-Minería de datos es el proceso de descubrimiento de patrones en set de datos, involucrando métodos asociados a Machine Learning \cite{michie1994machine}, Estadísticas y sistemas de bases de datos. \cite{hand2006data}. La minería de datos es un subcampo interdisciplinario de la informática, el cual tiene por objetivo general extraer información (a través de métodos inteligentes) de un conjunto de datos y transformar la información en una estructura comprensible para su uso posterior. \cite{fayyad1996knowledge, dunham2006data}. 
+Minería de datos es el proceso de descubrimiento de patrones en set de datos, involucrando métodos asociados a Machine Learning \cite{michie1994machine}, estadísticas y sistemas de bases de datos \cite{hand2006data}. Se define como un subcampo interdisciplinario de la informática, el cual tiene por objetivo general extraer información (a través de métodos inteligentes) de un conjunto de datos y transformar la información en una estructura comprensible para su uso posterior \cite{fayyad1996knowledge, dunham2006data}. 
 
-La minería de datos es el paso de análisis del proceso de \textit{descubrimiento de conocimiento en bases de datos}, o KDD. \cite{fayyad1996kdd}. Además, del análisis en bruto de los datos, también incluye aspectos de manipulación de bases de datos y pre procesamiento de estos, evaluaciones de modelo e inferencia, métricas de interés, consideraciones de complejidad, post procesamiento de estructuras descubiertas, visualización y actualización de la información \cite{berry2004data}.
+La minería de datos es el paso de análisis del proceso de \textit{descubrimiento de conocimiento en bases de datos}, o KDD \cite{fayyad1996kdd}. Además del análisis en bruto de los datos, también incluye aspectos de manipulación de bases de datos y pre procesamiento de estos, evaluaciones de modelo e inferencia, métricas de interés, consideraciones de complejidad, post procesamiento de estructuras descubiertas, visualización y actualización de la información \cite{berry2004data}.
 
 En la Figura \ref{intro1}, se exponen las principales ramas que componen la minería de datos y los diferentes procesos que se asocian a dichas ramas.
 
@@ -76,21 +121,21 @@ La minería de datos se utiliza en diferentes campos, tales como: genética y ge
 
 \section{Principales problemáticas en la ingeniería de datos}
 
-Diferentes son las problemáticas que pueden existir en el campo de la ingeniería de proteínas, ya sea, desde la generación de herramientas computacionales para estudiar mutaciones y su efecto de manera masiva, hasta diseño de mutaciones basados en secuencias lineales de proteínas. A continuación se presentan diferentes problemáticas existentes en el área, algunas de las cuales son motivos de estudio y desafíos a cumplir durante el presente trabajo de título.
+Diferentes son las problemáticas que pueden existir en el campo de la ingeniería de proteínas, ya sea, desde la generación de herramientas computacionales para estudiar mutaciones y su efecto de manera masiva, hasta diseño de mutaciones basados en secuencias lineales de proteínas. A continuación se presentan diferentes problemáticas existentes en el área, algunas de las cuales serán motivos de estudio y desafíos a cumplir durante el presente trabajo.
 
 \subsection{Diferentes respuestas, una misma solución}
 
 El desarrollo de modelos de clasificación y/o regresión, es uno de los temas más recurrentes en el campo de la minería de datos y el aprendizaje de máquinas. Sin embargo, el hecho de asociar mutaciones a una respuesta, conlleva al problema de cómo caracterizarla, con el fin de alimentar a los algoritmos para ser entrenados. 
 
-A raíz de esto, cuáles son los mejores descriptores para una mutación?, desde qué puntos de vista se puede hacer una caracterización? y cuáles son más relevantes?, son interrogantes que se presentan a la hora de abordar su representación, siendo problemas que han sido tratados desde un largo tiempo, sin lograr generar un consenso o una forma general de diseñar al representación. 
+A raíz de esto, cuáles son los mejores descriptores para una mutación?, desde qué puntos de vista se puede hacer una caracterización? y cuáles son más relevantes?, son interrogantes que se presentan a la hora de abordar su representación, siendo problemas que han sido tratados desde un largo tiempo, sin lograr generar un consenso o una forma general de diseñar tal representación. 
 
-En un gran número de trabajos, en los cuales se ha evaluado la estabilidad de proteínas en torno a la mutación, se han utilizado descriptores termodinámicos y de ambiente para poder representar el elemento. A pesar de que los desempeños de los estimadores han sido aceptables y relativamente altos. Esta caracterización podrá ser utilizada para mutaciones asociadas a riesgo clínico? Existirá una correlación entre la respuesta y las variables de interés? Cómo afecta al desempeño del modelo la existencia de diferentes ejemplos asociados a distintas proteínas en un único conjunto de datos?, etc., son interrogantes que nacen a la hora de plantearse la situación.
+En un gran número de trabajos, en los cuales se ha evaluado la estabilidad de proteínas en torno a la mutación, se han utilizado descriptores termodinámicos y de ambiente para poder representar el elemento \cite{capriotti2005mutant2, capriotti2008three}. A pesar de que los desempeños de los estimadores han sido aceptables y relativamente altos. Esta caracterización ¿podrá ser utilizada para mutaciones asociadas a riesgo clínico?, ¿Existirá una correlación entre la respuesta y las variables de interés?, ¿Cómo afecta al desempeño del modelo la existencia de diferentes ejemplos asociados a distintas proteínas en un único conjunto de datos?, etc., son interrogantes que nacen a la hora de plantearse la situación.
 
 Dado a lo anterior, y con el objetivo de generar un aporte significativo al desarrollo de estimadores basados en aprendizaje de máquinas, se ha propuesto adicionar el concepto de filogenia a la descripción de mutaciones y disgregar los conjuntos de elementos para ser tratados por proteínas independientes, esto con el fin de generar modelos de clasificación y/o regresión proteína-específicos, los cuales puedan ser aplicados a diferentes respuestas de interés ya sea: efectos en mutaciones, estabilidad, actividad, productividad, etc., siendo éste, el tema central a abordar en el capítulo \ref{cap2}.
  
 \subsection{Codificaciones, cuáles es la mejor alternativa?}
 
-A menudo, el uso de secuencias lineales de proteínas se relaciona a la identificación de patrones o evaluación de variantes para una misma proteína. Actuales herramientas bioinformáticas permiten el uso de la secuencia de manera directa y por medio de alineamientos de secuencias o modelamiento a través del uso de Cadenas de Markov permiten el reconocimiento de patrones o la evaluación de mutaciones. No obstante, para la aplicación de métodos basados en minería de datos, ya sea la identificación de clusters o el entrenamiento de modelos, se requiere codificar la secuencia.
+A menudo, el uso de secuencias lineales de proteínas se relaciona a la identificación de patrones o evaluación de variantes para una misma proteína. Actuales herramientas bioinformáticas permiten el uso de la secuencia de manera directa y por medio de alineamientos de secuencias o modelamiento a través del uso de Cadenas de Markov facilitan el reconocimiento de patrones o la evaluación de mutaciones. No obstante, para la aplicación de métodos basados en minería de datos, ya sea la identificación de clusters o el entrenamiento de modelos, se requiere codificar la secuencia.
 
 Existen diferentes codificaciones posibles, ya sea, para representar la secuencia o para la caracterización de mutaciones. A pesar de ello, no existe un consenso asociado a qué técnica utilizar. Cada una presenta sus pros y contra. No obstante, la cantidad de información involucrada varía entre ellas. Sin embargo, a mayor información, incrementa el número de dimensiones a tratar, aumentando la complejidad del problema. Esto implica, utilizar técnicas de reducción de dimensionalidad para seleccionar las dimensiones con mayor variabilidad en el conjunto de datos.
 
@@ -102,7 +147,9 @@ En vista de las necesidades de desarrollo de modelos de clasificación/regresió
 
 Diseñar mutaciones de manera eficiente, con una identificación adecuada de la propiedad en estudio o funcionalidad a adicionar, sin incurrir en grandes costos económicos y de recursos, es uno de los \textit{Santos griales} de la ingeniería de proteínas. Como se nombró previamente, son dos enfoques los que utilizan actualmente: Evolución dirigida y diseño racional de proteínas.
 
-Ambas técnicas tienen sus ventajas y desventajas. No obstante, poseen en común una demanda en tiempo elevada y se requiere de conocimientos elevados sobre la estructura para poder diseñar las mutaciones, al menos, para el caso de diseño racional. Enfoques computacionales han sido propuestos, con el fin de minimizar los costos económicos, contemplando evaluaciones energéticas asociadas a los residuos y cómo estos afectan a la estabilidad. No obstante, no pueden ser utilizados en secuencias lineales. Además, dejan del lado el concepto filogenético en el estudio, resultado un gap entre ambos puntos de vista. Por otro lado, métodos basados en la minería de datos, sólo se han centrado en identificación de residuos o el entrenamiento de modelos para predecir estabilidad.
+Ambas técnicas tienen sus ventajas y desventajas. No obstante, poseen en común una demanda en tiempo elevada y se requiere de conocimientos elevados sobre la estructura para poder diseñar las mutaciones, al menos, para el caso de diseño racional. 
+
+Enfoques computacionales han sido propuestos, con el fin de minimizar los costos económicos, contemplando evaluaciones energéticas asociadas a los residuos y cómo estos afectan a la estabilidad. No obstante, no pueden ser utilizados en secuencias lineales. Además, dejan de lado el concepto filogenético en el estudio, resultado un gap entre ambos puntos de vista. Por otro lado, métodos basados en la minería de datos, sólo se han centrado en identificación de residuos o el entrenamiento de modelos para predecir estabilidad.
 
 A partir de lo anterior, y con el fin de generar un aporte significativo en el área de diseño, se ha considerado esta problemática como un foco central y culminante para el desarrollo de este trabajo de título, proponiendo así, la implementación de una herramienta computacional, basada en técnicas de minería de datos y aprendizaje de máquinas, que permita proponer mutaciones a un conjunto de variantes con respuesta conocida. Generando la codificación de la secuencia por medio del uso de propiedades fisicoquímicas y su respectiva digitalización a través de transformadas de Fourier, seleccionando las propiedades más relevantes por medio de la aplicación de técnicas de reducción de dimensionalidad, para así, entrenar modelos de clasificación o regresión y posterior a ello, proponer mutaciones enfocadas en un filtro, aplicando herramientas de análisis de estabilidad y propensión. Toda esta problemática, el planteamiento de la metodología y qué se utilizará para llevar a cabo, se abordará en el capítulo \ref{cap4}.
 
@@ -117,3 +164,38 @@ Como se puede comprender, este fenómeno no ha sido explotado desde el punto de 
 
 A pesar de que esta problemática, no se considera dentro de los temas de estudio en sí, se plantea la discusión y se propone como un problema a ser tratado en el corto plazo, debido a las grandes implicatorias que esto puede conllevar y a las expectativas que se pueden generar al respecto, siendo de utilidad a la hora de proponer nuevas mutaciones y generar un aporte significativo en el área de ingeniería de proteínas.
  
+\section{Hipótesis}
+
+En base a las herramientas computacionales existentes y a los problemas expuestos previamente, además, tomando en consideración los avances en minería de datos y aprendizaje de máquinas. Se propone la siguiente hipótesis.
+
+\begin{center}
+	\textit{Es factible el uso de técnicas de minería de datos y reconocimiento de patrones para el estudio y diseño de mutaciones in-silico?, considerando tanto desarrollo de modelos de evaluación cómo herramientas computacionales que permitan proponer variantes dada la información existente.}
+\end{center}
+
+Se plantea una hipótesis general, la cual abarca los diferentes o considera los planteamientos de problemáticas expuestos. Además, se menciona que la estructura de este proyecto es un conjunto de metodologías independientes. Es decir, cada capítulo en sí (2, 3 y 4) son herramientas computacionales independientes y tratan de resolver una problemática de las planteadas, por lo que, cada uno presenta en sí, su hipótesis y objetivos correspondientes. No obstante, a pesar de su independencia, tienen relación profunda con el abordaje de las soluciones a partir de técnicas de minería de datos, además, que es posible combinarlas, para desarrollar una suite de librerías de apoyo a la ingeniería de proteínas.
+
+\section{Objetivos}
+
+Continuando con la lógica expuesta previamente, es decir, cada uno de los siguientes capítulos resuelve una de las problemáticas planteadas, y contempla en sí, una herramienta computacional por sí sola. Se plantea a continuación el objetivo general.
+
+\subsection{Objetivo general}
+
+Diseñar e implementar suite de herramienta computacional basada en técnicas de minería de datos, aprendizaje de máquinas y reconocimiento de patrones, enfocada en el estudio de mutaciones, que permita ser un aporte sustancial en el campo de ingeniería de proteínas.
+
+\subsection{Objetivos específicos}
+
+Como se expuso previamente, cada siguiente capítulo corresponde a una herramienta en sí, que formará parte de esta gran suite computacional de apoyo al estudio de mutaciones \textit{in-silico}. Dado esto, se plantean los siguientes objetivos específicos.
+
+\begin{enumerate}
+	
+	\item Diseñar, implementar y testear, herramienta computacional, inspirada en la estrategia de Meta-learning, para la evaluación de mutaciones puntuales el proteínas específicas, considerando como descriptores, propiedades termodinámicas, estructurales y conceptos filogenéticos. 
+	
+	\item Modelar, implementar y evaluar, herramienta computacional para la codificación de secuencias lineales de proteínas, empleando digitalización de propiedades fisicoquímicas, por medio de transformadas de Fourier, la cual permita la identificación de residuos claves y la aplicación de algoritmos de aprendizaje supervisado y clustering, para el entrenamiento de modelos y el reconocimiento de patrones.
+	
+	\item Diseñar, implementar y testear, herramienta computacional para el diseño de mutaciones \textit{in-silico}, basadas en técnicas de minería de datos y reconocimiento de patrones, enfocadas en secuencias lineales y modelos de aprendizaje supervisado, cuyos descriptores sean espectros de frecuencia basados en transformadas de Fourier y se constituya por herramientas de filtro, que aseguren estabilidad a la proteína y propensión al cambio en base a conceptos filogenéticos.
+	
+\end{enumerate}
+
+Tal como se puede observar, los aprendizajes y competencias adquiridas al cumplir el objetivo 1 y 2, se utilizan en el desarrollo del objetivo 3. Lo cual denota una especie de dependencia entre las metodologías a plantear. Sin embargo, cada uno de los objetivos, corresponde a una herramienta computacional independiente, la cual podrá ser utilizada para los fines que el usuario estime conveniente. El conjunto de éstas, se asocia al desarrollo de la suite computacional de estudio de mutaciones empleando técnicas de minería de datos, reconocimiento de patrones y aprendizaje de máquinas.
+
+Cada uno de los siguientes capítulos, presenta su propio marco teórico, además de hipótesis y objetivos, asociados a una metodología que trata de cumplirlos. No obstante, todos enfocados en un mismo punto: desarrollo de herramientas de apoyo para el estudio de mutaciones.

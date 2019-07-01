@@ -643,6 +643,15 @@ Este problema es debido a que, los sistemas de redes neuronales trabajan en torn
 
 Lo anterior, no ocurre con métodos basados en estimaciones de distancia como KNN, uso de hiperplanos y funciones de kernel para la transformación espacial de los atributos como SVM, reglas de decisión que permiten representar estructuras de árbol que facilitan la comprensión de cómo distribuyen los atributos, rangos preferibles etc., como lo hacen los algoritmos basados en árboles de decisión e inclusive los métodos de ensamble. Es decir, diferentes algoritmos vislumbran cómo manipulan la información para llegar al resultado, no siendo el caso de las redes neuronales. Por lo tanto, dado a que se requiere de algoritmos que permitan la comprensión del problema y que posibiliten generar aprendizaje de los atributos, se descartan a priori el uso de métodos basados en redes neuronales y el uso de Deep Learning.
 
+\subsection{Meta-Learning}
+
+El Meta-Learning, es un campo relacionado a aprendizaje supervisado, inspirado en el concepto \textit{"aprender a aprender"} \cite{schmidhuber1987evolutionary}, se basa en el uso de meta datos y presenta el objetivo de mejorar las medidas de desempeño de un clasificador, guiándolo entorno al aprendizaje. Por otro lados, estos elementos, son utilizados con el fin de comprender la flexibilidad del aprendizaje automático \cite{utgoff1986shift}.
+
+Uno de los puntos más relevantes en el aprendizaje automático, es la flexibilidad, esto es debido, a que algoritmos de aprendizaje supervisado, pueden diferir en el espacio o dominio bajo el cual funcionan, provocando que un conjunto de datos se adapte a un algoritmo y no suceda lo mismo con otro. Debido al uso de diferentes algoritmos, meta-learning permite mejorar la medida de desempeño y aumentar la robustez del modelo. No obstante, la selección de los algoritmos puede influenciar negativamente en el desempeño \cite{hochreiter2001learning}.
+
+Al utilizar diferentes tipos de metadatos, es posible aprender, seleccionar, alterar o combinar diferentes algoritmos de aprendizaje para resolver efectivamente un problema determinado \cite{schmidhuber1987evolutionary}. 
+
+Existen diferentes enfoques asociados al Meta-Learning y distintas formas de uso, los ejemplos más conocidos se basan en el uso de redes neuronales recurrentes \cite{andrychowicz2016learning}, el aprendizaje reforzado \cite{schmidhuber1995learning} y los métodos de ensamble. En los diferentes casos planteados, se construyen modelos y se mejoran con respecto a elementos previos, generando diferentes iteraciones del proceso, aumentando la medida de desempeño y adquiriendo características que previamente no se consideraban \cite{finn2017model}.
 
 \subsection{Medidas de desempeño \label{desempeno}}
 
