@@ -239,13 +239,497 @@ Actualmente, el uso de codificaciones mediante propiedades fisicoquímicas y el 
 
 \subsection{Uso de Transformadas de Fourier en digitalización de propiedades fisicoquímicas}
 
+\section{Clustering}
+
+Clustering se define como un método de aprendizaje no supervisado, en el cual se cuenta con un conjunto de datos que representan a una muestra y en base a ésta, se trata de obtener grupos de objetos, denominados clusters.
+
+Los clusters deben cumplir con dos características fundamentales:
+
+\begin{itemize}
+	\item Los objetos que pertenezcan a un mismo clúster deben ser bastante homogéneos entre ellos.
+	\item Entre los clústers debe existir un alto grado de heterogeneidad.
+\end{itemize}
+
+Los métodos de clustering se tratan, fundamentalmente, de resolver el siguiente problema: Dado un conjunto de $N$ individuos, caracterizados por la información de $n$ variables $X_{j}$ con $j$ entre $1,..,n$, se plantea el reto de ser capaces de agruparlos de manera que los individuos pertenecientes a un grupo (cluster), dada la información disponible, sean tan similares entre sí como sea posible, siendo los distintos grupos entre ellos tan disimilares como sea posible.
+
+Básicamente, el análisis constará de un algoritmo de clusterización que permitirá la obtención de una o varias particiones, de acuerdo con los criterios establecidos.
+
+\subsection{Criterios de Similitud}
+
+Tal como se ha mencionado anteriormente, el hecho de tener elementos pertenecientes a un mismo grupo bastante similares entre ellos y divergentes entre distintos clúster, es la característica primordial a tratar, esto último radica en la importancia de las variables que componen a un elemento en particular y en los valores que tomen éstas.
+
+Por lo tanto se debe determinar que tan similares o diferentes son los valores que tomen las variables con respecto al elemento al cual pertenece.
+
+Para medir lo similar o disimilar que son los individuos existe una enorme cantidad de índices de similaridad y de disimilaridad o divergencia. Todos ellos tienen propiedades y utilidades distintas y habrá que ser consciente de ellas para su correcta aplicación al momento de hacer uso de una de ellas.
+
+Los índices expuestos normalmente pueden ser clasificados tal como sigue:
+
+\begin{enumerate}
+	
+	\item  Indicadores basados en la distancia, para lo cual se considera a los individuos como vectores en el espacio de las variables, en este sentido un elevado valor de la distancia entre dos individuos indicará un alto grado de disimilaridad entre ellos.
+	
+	\item Indicadores basados en coeficientes de correlación; la correlación permite indicar cuál es la fuerza y la dirección de una relación lineal entre dos variables. Se considera que dos variables cuantitativas están correlacionadas cuando los valores de una de ellas varían sistemáticamente con respecto a los valores de la otra, esto es: si se tiene dos variables (A y B) existe correlación si al aumentar los valores de A lo hacen también los de B y viceversa.
+	
+	\item Indicadores basados en tablas de datos de posesión o no de una serie de atributos, es decir, teniendo dos vectores A y B que representan a dos individuos de una población se hace una comparación de los elementos existentes en A y no en B, los elementos existentes en B y no en A además de la intersección entre ellos, es decir, los elementos existentes en A y en B. 
+	
+\end{enumerate}
+
+\subsection{Algoritmos de Clustering}
+
+Existen diversos algoritmos de clustering, cada uno con características que los diferencian, los cuales, pueden ser aplicados a diversos casos, dependiendo de las características de los datos de entrada, es decir, de la geometría de estos datos. Sin embargo, esta representación se basa principalmente en el uso de matrices, donde cada fila representa un ejemplo y cada columna el valor de un atributo o rasgo cualitativo para dicho ejemplo.
+
+A continuación, se resumen algunos de los algoritmos de clustering más utilizados, explicando sus propiedades y sus características.
+
+\subsubsection{\textit{k}-Means}
+
+El algoritmo \textit{k}-Means, trata la separación de muestras en $ n $ grupos de igual varianza, minimizando el criterio conocido como inercia, lo que se traduce en la suma de los cuadrados dentro de los clúster.
+
+La principal característica y deficiencia a la vez, es que se requiere que el número de grupos sea entregado, es decir, se debe entregar el valor de $k$, así, si se selecciona un valor de $k = 3$, serán tres grupos los que se encontrarán. 
+
+Este algoritmo divide un set de $N$ ejemplos $X$ en $K$ particiones distintas denominadas clúster $C$, cada uno de ellos descrito por la media $\mu_{j}$ de las muestras en el clúster. Esta media es llamada centroide, por lo que en general, \textit{k}-means  elige sus centroides de tal manera que el principio de inercia sea reducido al mínimo, es decir, que la suma de los cuadrados de los integrantes de un mismo grupo sea mínima, a través de:
+
+\begin{center}
+	$\sum_{i=0}^{n} \min_{\mu_{j} \in C} (|| x_{j}-\mu_{i}||^{2})$
+\end{center}
+
+Sin embargo, el principio de inercia, o la suma de los cuadrados mínimos entre los integrantes de los clustering, puede sufrir varios inconvenientes:
+
+\begin{itemize}
+	\item Se hace la suposición de que las agrupaciones son convexas e isotrópicas, lo cual no se da siempre, razón por la que responde mal ante a clusters que posean forma alargadas o con formas irregulares.
+	
+	\item No es una métrica normalizada, es decir, se sabe que los valores más bajos son mejores y el cero es óptimo. Sin embargo, en espacios de muy de alta dimensionalidad, las distancias euclidianas tienden a ser infladas, lo que se conoce como  "la maldición de la dimensionalidad", razón por la cual, son utilizados algoritmos de reducción de la dimensionalidad, tal como PCA.
+	
+\end{itemize}
+
+Ambos puntos, son posibles observarlos en la Figura  \ref{kerror}, en la cual se exponen, problemas con varianzas distintas, diferencias asociadas al tamaño de los clúster, anisotropía\footnote{Las variables varían en base a las direcciones en las que se examinan} de los datos, etc.
+
+\begin{figure}[!h]
+	
+	\centering
+	\includegraphics[scale = .4]{kmeansError.png}
+	\caption{Posibles inconvenientes con los datos, donde k-medias  no funciona correctamente}
+	\label{kerror}
+\end{figure}
+
+
+En términos básicos, el algoritmo tiene tres pasos. El primer paso consiste en elegir los centroides iniciales, con el método más básico para elegir $k$ muestras del conjunto de datos $X$. Después de la inicialización, \textit{k}-means  consta de un bucle entre los otros siguientes dos pasos. 
+
+En una primera instancia, asigna cada muestra a su centroide más cercano. Posterior a ello, se crean nuevos centroides tomando el valor medio de todas las muestras asignadas a cada centroide anterior. La diferencia entre la media anterior y la actual (diferencia entre centroides) se calcula y se itera estas acciones hasta que este valor sea inferior a un umbral. En otras palabras, se repite hasta que los centroides no se mueven de manera significativa.
+
+\subparagraph{Clustering Jerarquizado\\\\}
+
+Clustering jerárquico o HCA (por sus siglas en inglés) es un método de análisis de conglomerados, que busca construir una jerarquía de agrupaciones. Las estrategias para la agrupación son posible dividirlas en dos:
+
+\begin{itemize}
+	
+	\item \textbf{Aglomerativa}: consiste en un enfoque de "abajo hacia arriba": cada observación se inicia en su propio clúster, y pares de grupos se fusionan a medida que se asciende en la jerarquía. 
+	
+	\item \textbf{Divisiva}: consiste en un enfoque "de arriba hacia abajo": todas las observaciones se inician en un único clúster, y las divisiones se realizan de forma recursiva conforme se desciende en la jerarquía.
+	
+\end{itemize}
+
+Siendo generalmente expuestos los resultados en forma de dendrograma, por otro lado, la complejidad del algoritmo, en el caso general es $\displaystyle O(n^{2}\log(n))$, lo cual presenta problemas para set de datos extensos.
+
+Con el fin de decidir qué grupos se deben combinar (por aglomeración), o cuando un grupo se debe dividir (por división), se requiere una medida de disimilitud entre los conjuntos de observaciones. En la mayoría de los métodos de agrupación jerárquica, esto se logra mediante el uso de una métrica apropiada (una medida de la distancia entre pares de observaciones), y un criterio de vinculación que especifica la disimilitud de conjuntos como una función de las distancias por pares de observaciones en los conjuntos.
+
+Las métricas asociadas pueden son las mismas utilizadas en el algoritmo $k$-means y las aplicadas en el método KNN de aprendizaje supervisado.
+
+
+El criterio de linkage determina la distancia entre conjuntos de observaciones como una función de las distancias por pares entre observaciones.
+
+Algunos criterios de linkage de uso común entre los dos conjuntos de observaciones $A$ y $B$ son expuestos en la tabla \ref{tab:summary-linkage}.
+
+% Please add the following required packages to your document preamble:
+% \usepackage{longtable}
+% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
+\begin{longtable}[c]{|l|l|}
+	\hline
+	\multicolumn{2}{|c|}{\textbf{Criterios de linkage comunes en métodos HCA}} \\ \hline
+	\endfirsthead
+	%
+	\endhead
+	%
+	\textbf{Complete linkage clustering} & $ \max \,\{\,d(a,b):a\in A,\,b\in B\,\}.$ \\ \hline
+	\textbf{Single-linkage clustering} & $ \min \,\{\,d(a,b):a\in A,\,b\in B\,\}.$ \\ \hline
+	\textbf{Average linkage clustering} & $ {\frac {1}{||A||B||}}\sum _{{a\in A}}\sum _{{b\in B}}d(a,b).$ \\ \hline
+	\textbf{Centroid linkage clustering} & ${\displaystyle \|c_{s}-c_{t}\|}$ con ${\displaystyle c_{s}}$ y $c_{t}$ centroides \\ \hline
+	\textbf{Minimum energy clustering} & $ {\frac {2}{nm}}\sum _{{i,j=1}}^{{n,m}}\|a_{i}-b_{j}\|_{2}-{\frac {1}{n^{2}}}\sum _{{i,j=1}}^{{n}}\|a_{i}-a_{j}\|_{2}-{\frac {1}{m^{2}}}\sum _{{i,j=1}}^{{m}}\|b_{i}-b_{j}\|_{2}.$ \\ \hline
+	\caption{Resumen de linkages comunes utilizados en métodos de clustering jerárquicos.}
+	\label{tab:summary-linkage}\\
+\end{longtable}
+
+Un aspecto interesante de este algoritmo es que pueden ser añadidas las limitaciones de conectividad, es decir, sólo grupos adyacentes pueden fusionarse entre sí, esto es, a través de una matriz de conectividad que define para cada muestra, las muestras de vecinos después de una estructura dada de los datos. Estas restricciones son útiles para imponer una cierta estructura local, así como para hacer que el algoritmo sea más rápido, especialmente cuando el número de las muestras es alta.
+
+\subsubsection{Affinity Propagation}
+
+AffinityPropagation crea grupos mediante el envío de mensajes entre pares de muestras hasta la convergencia. Un conjunto de datos es descrito por el uso de un pequeño número de ejemplares, que se identifican como las más representativas de otras muestras. Los mensajes enviados entre pares representan la idoneidad para una muestra a ser el ejemplo de la otra, la cual se actualiza en respuesta a los valores de otros pares. Esta actualización ocurre de forma iterativa hasta la convergencia, momento en el que se eligen los ejemplares finales, y por lo tanto se da el agrupamiento final.
+
+Se elige el número de grupos en base a los datos proporcionados. Para este propósito, los dos parámetros importantes son la preferencia, que controla el número de ejemplares que se utilizan, y el factor de amortiguamiento.
+
+El principal inconveniente que presenta este algoritmo viene dado por la complejidad que posee, el cual se representa por $O(N^{2}T)$, donde $N$ es el número de muestras y $T$ es el número de operaciones necesarias para converger, razón por la cual, el uso de este algoritmo es para set de datos con pequeña cantidad de ejemplos.
+
+Con respecto a la descripción del algoritmo, es posible mencionar que los mensajes enviados a los grupos, pertenecen a dos categorías, la primera es la responsabilidad $r(i,k)$ la cual consiste en la evidencia acumulada que denota que la muestra $k$ podría ser un ejemplar para la muestra $i$. La segunda es la disponibilidad $a(i,k)$, la cual se define como la evidencia existente para que la muestra $i$ pueda escoger a la muestra $k$ para ser su ejemplar, además considera todos los valores de las otras muestras de $k$ que podrían ser ejemplares. De esta manera, los ejemplares son escogidos por las muestras si:
+
+\begin{itemize}
+	
+	\item Existe una similaridad bastante alta con respecto a las muestras.
+	
+	\item Si es elegido por muchas muestras y resulta ser representativo de sí mismos.
+\end{itemize}
+
+En forma matemática es posible definir la responsabilidad como:
+
+\begin{center}
+	
+	$r(i, k) \leftarrow s(i, k) - max [ a(i, \acute{k}) + s(i, \acute{k}) \forall \acute{k} \neq k ]$
+\end{center}
+
+Donde $s(i,k)$ es la similaridad entre las muestras $i$ y $k$. 
+
+A su vez, la disponibilidad, es posible definirla como:
+
+\begin{center}
+	
+	$a(i, k) \leftarrow min [0, r(k, k) + \sum_{\acute{i}~s.t.~\acute{i} \notin \{i, k\}}{r(\acute{i}, k)}]$
+	
+\end{center}
+
+\subsubsection{Mean Shift}
+
+El algoritmo de Mean Shift tiene como objetivo descubrir manchas (blobs) en una densidad uniforme de las muestras. Es un algoritmo basado en centroides, que funciona mediante la actualización de los candidatos para centroides para ser la media de los puntos dentro de una región determinada. Estos candidatos se filtran en una etapa de post-procesamiento para eliminar duplicados y así formar el conjunto final de centroides.
+
+Dado un candidato $x_{i}$ para la iteración $t$, el candidato a centroide es actualizado en base a la ecuación:
+
+\begin{center}
+	
+	$x_i^{t+1} = x_i^t + m(x_i^t)$
+\end{center}
+
+Donde $N (x_i)$ es la vecindad de las muestras dentro de una distancia dada alrededor $x_i$ y $m$ es el vector de desplazamiento medio, que se calcula para cada centroide que apunta hacia una región del aumento máximo en la densidad de puntos. Ésta se calcula utilizando la siguiente ecuación, en la que la actualización de manera efectiva denota a un centroide ser la media de las muestras dentro de su vecindad:
+
+\begin{center}
+	
+	
+	$m(x_i) = \frac{\sum_{x_j \in N(x_i)}K(x_j - x_i)x_j}{\sum_{x_j \in N(x_i)}K(x_j - x_i)}$
+	
+\end{center}
+
+Algunas de las características de Mean Shift, son
+
+\begin{itemize}
+	
+	\item Ajusta automáticamente el número de grupos, dependiendo de un parámetro bandwidth, el cual se asocia al tamaño de la región en la que se debe buscar los centroides. 
+	
+	\item No es altamente escalable, ya que requiere múltiples búsquedas de vecinos más cercanos durante la ejecución del algoritmo. 
+	
+	\item Garantiza convergencia, deteniendo la iteración cuando el cambio en centroides es pequeño.
+		
+\end{itemize}
+
+\subsubsection{DBSCAN}
+
+El algoritmo DBSCAN ve agrupaciones como áreas de alta densidad separadas por zonas de baja densidad. Debido a esta visión bastante genérica, las agrupaciones que se encuentran pueden ser de cualquier forma, en lugar de \textit{k}-means  que supone que los grupos tienen la forma convexa.
+
+El componente central de DBSCAN es el concepto de muestras de núcleo, las cuales son las muestras que se encuentran en áreas de alta densidad. Por lo tanto, un clúster es un conjunto de muestras de núcleos, cada uno cerca del otro (medido por alguna medida de distancia) y un conjunto de muestras no básicas que se encuentran cerca de una muestra básica. Hay dos parámetros necesarios para el algoritmo, min samples y EPS, los cuales definen formalmente la densidad deseada.
+
+
+Más formalmente, se define una muestra del núcleo como una muestra del conjunto de datos de tal manera que existe una cantidad de muestra mínimas y a su vez otras muestras dentro de una distancia de EPS, que se definen como vecinos de la muestra del núcleo. Esto dice que la muestra de núcleo se encuentra en un área densa del espacio vectorial. Un clúster es un conjunto de muestras de núcleo que se puede construir mediante la adopción de forma recursiva de una muestra básica, la búsqueda de todos sus vecinos que son muestras de la base, la búsqueda de la totalidad de sus vecinos que son muestras de núcleo, y así sucesivamente. Un cluster también tiene un conjunto de muestras no básicas, que son las muestras que son vecinos de una muestra básica de la agrupación, pero no son en sí mismos muestras de núcleos. Intuitivamente, estas muestras están al margen de un clúster.
+
+
+Cualquier muestra de núcleo es parte de un clúster, por definición. Cualquier muestra que no es una muestra del núcleo, y está al menos una distanca eps de cualquier muestra del núcleo, se considera un valor atípico por el algoritmo.
+
+Normalmente, los resultados del algoritmo, pueden representarse tal como se expone en la Figura  \ref{dbscanE}, el color indica la pertenencia al clúster, con grandes círculos que indican muestras de núcleos encontrados por el algoritmo, círculos más pequeños son muestras no básicas que todavía son parte de un clúster. Por otra parte, los valores atípicos se indican con puntos negros.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[scale=.4]{DBSCANexampl.png}
+	\caption{Representación de resultados al aplicar la clusterización por DBSCAN}
+	\label{dbscanE}
+\end{figure}
+
+\subsubsection{Birch}
+
+Birch construye un árbol llamado Characteristic Feature Tree (CFT) de los datos correspondientes. Los datos están esencialmente con pérdida de información, comprimidos en un conjunto de nodos de rasgo característico denominados CF nodos. Estos tienen una serie de subgrupos llamados subclusters de rasgo característico, ubicados en los nodos CF no terminales los cuales pueden tener CF nodos como hijos.
+
+Los subgrupos CF pueden contener la información necesaria para la agrupación que evite la necesidad de mantener los datos de entrada enteros en la memoria. Esta información incluye:
+
+\begin{itemize}
+	
+	
+	\item Número de muestras en un subgrupo.
+	\item Suma lineal, representada por un vector n-dimensional que sostiene la suma de todas las muestras.
+	\item Suma al cuadrado, representada por la suma cuadrática de la norma L2 de todas las muestras.
+	\item Centroides, para evitar un nuevo cálculo de sumas lineales con respecto al número de muestras.
+	\item Norma al cuadrado de los centroides.
+	
+\end{itemize}
+
+El algoritmo de Birch tiene dos parámetros, el umbral y el factor de branching. El factor de branching limita el número de subgrupos en un nodo y el umbral limita la distancia entre la muestra de entrada y los subclusters existentes.
+
+Este algoritmo puede ser visto como un método de instancia o reducción de datos, ya que reduce los datos de entrada a un conjunto de subclusters que se obtienen directamente de las hojas de la CFT. Estos datos reducidos pueden ser procesados por la alimentación en un clúster global. Este clúster global puede ser establecido por $n$ clusters. Si este parámetro se establece como valor 0 o ninguno, los subgrupos de las hojas se leen directamente, de lo contrario un paso global de la agrupación etiqueta estos subgrupos en grupos globales y las muestras se asignan a la etiqueta global del subgrupo más cercano.
+
+Una descripción del algoritmo, es posible realizarla en los siguientes puntos:
+
+\begin{itemize}
+	
+	\item Una nueva muestra se inserta en la raíz del árbol CF que es un nodo CF. A continuación, se fusiona con el subgrupo de la raíz, el que tiene el radio más pequeño después de la fusión, limitada por el umbral de ramificación y condiciones de los factores. Si el subcluster tiene algún nodo hijo, entonces esto se realiza repetidamente hasta que llega a una hoja. Después de encontrar el subcluster más cercano en la hoja, las propiedades de este subgrupo y los subclusters padres se actualizan de forma recursiva.
+	
+	\item Si el radio del subcluster obtenido mediante la fusión de la nueva muestra y el subgrupo más cercano es mayor que el cuadrado del umbral y si el número de subclusters es mayor que el factor de ramificación, a continuación, un espacio se asigna temporalmente a esta nueva muestra. Los dos subgrupos más lejanos se toman y de los subgrupos se dividen en dos grupos sobre la base de la distancia entre estos subgrupos.
+	
+	\item Si este nodo de división tiene un subgrupo de los padres y no hay espacio para un nuevo subgrupo, entonces el padre se divide en dos. Si no hay espacio, entonces este nodo se divide de nuevo en dos y el proceso se continúa de forma recursiva, hasta que llega a la raíz
+	
+\end{itemize}
+
+\subsubsection{Mixture Model}
+
+Los métodos de clustering basado en modelos tratan de optimizar el conjunto de datos a un modelo
+matemático. En general estos métodos se basan en la suposición que los datos han sido generados por una mezcla de distribuciones de probabilidad. Dentro de los más utilizados se encuentran \textbf{Gaussian Mixture} y \textbf{Expectation-Maximization}.
+
+Expectation Maximization, supone que los datos emergen de una mecla de distribuciones, donde cada distribución se denomina como \textit{component distribution}, razón por la cual, los datos pueden agruparse usando un modelo de mezcla de densidades de $k$ distribuciones de probabilidades. Sin embargo, el problema reside en estimar los parámetros de estas distribuciones para proveer del mejor ajuste posible a los datos. 
+
+El algoritmo Expectation Maximization (EM) puede ser considerado como una extensión de \textit{k}-means, esto es debido a que: Si \textit{k}-means asigna cada objeto a un clúster en función de su media, EM asigna cada objeto a un clúster en función de un peso que representa la probabilidad de pertenencia al clúster. Esto requiere que se defina una distribución de probabilidad para los clusters.
+
+Por otro lado, un modelo de mezcla gaussiano como Gaussian Mixture Model (GMM) es una función de densidad de probabilidad representada por una suma de componentes gausianas, GMMs son usadas como modelos paramétricos de la distribución de probabilidad de medidas continuas, donde los parámetros de GMM son estimados usando iterativamente el algoritmo Expectation-Maximization.
+
+Un GMM es una suma con pesos de densidades gaussianas:
+
+\begin{center}
+	
+	$p(\vec{x}) = \sum_{i=1}^{M} w_i \times N(\vec{x}|\mu_i, \sum_{i})$ 
+\end{center}
+
+Donde $\vec{x}$ es un vector D-dimensional de datos, $w_i$ son los pesos con $\sum_{i=1}^{M} w_i = 1$, y $N(\vec{x}|\mu_i, \sum_{i})$ es la densidad gaussiana, por lo tanto, la caracterización se completa con la media, la matríz de covarianza y el peso de cada componente gaussiana.
+
+Una de las limitantes es que el número de componentes gausianos tiene que ser fijado al principio
+del algoritmo.
+
+El GMM consta de los siguientes pasos:
+
+\begin{enumerate}
+	
+	\item \textbf{Iniziacilización}: para cada clase, un vector compuesto de la media y la matriz de covarianza es construido. Este vector representa las características de la distribución gaussiana usada para caracterizar las entidades del conjunto de datos. Inicialmente estos valores son generados aleatoreamente, posteriormente el algoritmo EM trata de aproximar los valores del vector de la distribución real de los datos. 
+	
+	\item Se estima la probabilidad de cada elemento de pertenecer a un clúster.
+	
+	\item Se estiman los parámetros de la distribución de probabilidad para el próximo ciclo, primero se calcula la media de la clase a través de la media de todos los puntos en función del grado de relevancia de cada punto, continuando con el cálculo de la matriz de covarianza.
+	
+	\item \textbf{Convergencia}: Después de cada ciclo se ejecuta un test de convergencia para verificar cuánto ha cambiado el vector de parámetros y si la diferencia es menor que un umbral de tolerancia el algoritmo se detiene, no obstante es posible detener el algoritmo debido al alcance de un número máximo de ciclos.
+	
+\end{enumerate}
+
+Una representación visual del modelo es posible observarla en la Figura  \ref{esquemaR}, en ella se aprecia cómo a medida que se va iterando el algoritmo se generan los cambios y las \textit{separaciones} en grupos de clúster definidos.
+
+\begin{figure}[!h]
+	
+	\centering
+	\includegraphics[scale=.4]{pasosGMM.png}
+	\caption{Esquema representativo de cambios durante las iteraciones en GMM}
+	\label{esquemaR}
+\end{figure}
+
+\subsubsection{Cuadro Resumen}
+
+En la Tabla \ref{cuadroResumen} se expone un resumen de las características de cada algoritmo expuesto, la escalabilidad que poseen, las distancias que ocupan, los casos de uso y los parámetros que poseen.
+
+\begin{table}[]
+	\centering
+	\begin{tabular}{|l|l|l|l|l|}
+		\hline
+		\multicolumn{5}{|c|}{\textbf{Tabla resumen de Algoritmos de Aprendiza No Supervisado}}                                                                                                                                                                                                                                                                                                                                                                                                                                          \\ \hline
+		\textbf{Algoritmo}                                                                  & \textbf{Parámetros}                                                                       & \textbf{Escalabilidad}                                                                                  & \textbf{Usos}                                                                                                                                 & \textbf{Métrica usada}                                                              \\ \hline
+		\textbf{K-Means}                                                                    & \begin{tabular}[c]{@{}l@{}}Número de \\ clúster\end{tabular}                              & \begin{tabular}[c]{@{}l@{}}Muchas muestras, \\ mediana cantidad\\ de clúster.\end{tabular}              & \begin{tabular}[c]{@{}l@{}}De propósito\\ general, la \\ geometría plana, \\ no demasiados \\ grupos\end{tabular}                             & \begin{tabular}[c]{@{}l@{}}Distancia entre\\ puntos\end{tabular}                    \\ \hline
+		\textbf{\begin{tabular}[c]{@{}l@{}}Affinity \\ propagation\end{tabular}}            & preferencia                                                                               & \begin{tabular}[c]{@{}l@{}}No escalable con \\ n ejemplos\end{tabular}                                  & \begin{tabular}[c]{@{}l@{}}Muchos clúster, \\ tamañode clúster \\ desigual, \\ geometría no \\ plana\end{tabular}                             & \begin{tabular}[c]{@{}l@{}}Distancia\\ gráfica\end{tabular}                         \\ \hline
+		\textbf{Mean-shift}                                                                 & bandwidth                                                                                 & \begin{tabular}[c]{@{}l@{}}No escalable con \\ n ejemplos\end{tabular}                                  & \begin{tabular}[c]{@{}l@{}}Muchos clúster, \\ tamañode clúster \\ desigual, geometría \\ no plana\end{tabular}                                & \begin{tabular}[c]{@{}l@{}}Distancia entre\\ puntos\end{tabular}                    \\ \hline
+		\textbf{\begin{tabular}[c]{@{}l@{}}Ward \\ hierarchical \\ clustering\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Número de \\ clúster\end{tabular}                              & \begin{tabular}[c]{@{}l@{}}Mucha cantidad \\ de ejemplos y de \\ clusters\end{tabular}                  & \begin{tabular}[c]{@{}l@{}}Cualquier clúster, \\ es posible \\ conección de \\ constraints\end{tabular}                                       & \begin{tabular}[c]{@{}l@{}}Distantia entre\\ puntos\end{tabular}                    \\ \hline
+		\textbf{\begin{tabular}[c]{@{}l@{}}Agglomerative \\ clustering\end{tabular}}        & \begin{tabular}[c]{@{}l@{}}Número de \\ clúster, tipo de \\ unión, distancia\end{tabular} & \begin{tabular}[c]{@{}l@{}}Mucha cantidad\\ de ejemplos y de\\ clusters\end{tabular}                    & \begin{tabular}[c]{@{}l@{}}Muchos clusters, \\ posiblemente \\ restricciones de \\ conectividad, \\ distancias \\ no euclidianas\end{tabular} & \begin{tabular}[c]{@{}l@{}}Cualquier \\ distancia pairwise\end{tabular}             \\ \hline
+		\textbf{DBSCAN}                                                                     & tamaño vecino                                                                             & \begin{tabular}[c]{@{}l@{}}Mucha cantidad \\ de ejemplos, \\ mediana\\ cantidad de clúster\end{tabular} & \begin{tabular}[c]{@{}l@{}}Geometría no plana, \\ tamaños de clusters \\ distintos\end{tabular}                                               & \begin{tabular}[c]{@{}l@{}}Distancia entre\\ puntos vecinos\end{tabular}            \\ \hline
+		\textbf{\begin{tabular}[c]{@{}l@{}}Gaussian \\ mixtures\end{tabular}}               & variado                                                                                   & No escalable                                                                                            & \begin{tabular}[c]{@{}l@{}}Geometría plana, \\ bueno para la \\ estimación de la \\ densidad\end{tabular}                                     & \begin{tabular}[c]{@{}l@{}}Distancia \\ Mahalanobis para\\ los centros\end{tabular} \\ \hline
+		\textbf{Birch}                                                                      & \begin{tabular}[c]{@{}l@{}}branching, \\ umbral\end{tabular}                              & \begin{tabular}[c]{@{}l@{}}Alto número de\\ clúster y ejemplos\end{tabular}                             & \begin{tabular}[c]{@{}l@{}}Largo set de datos, \\ eliminación valores \\ atípicos, \\ reducción de datos\end{tabular}                         & \begin{tabular}[c]{@{}l@{}}distancia \\ euclidiana\\ entre puntos\end{tabular}      \\ \hline
+	\end{tabular}
+	
+	
+	\caption{Cuadro resumen de algoritmos de aprendizaje supervizado}
+	\label{cuadroResumen}
+\end{table}
+
+\subsubsection{Evaluación del desempeño de un clustering}\label{evaluacion}
+
+Evaluar el desempeño de un algoritmo de clustering no es tan trivial como contar el número de errores o la precisión y la recuperación de un algoritmo de clasificación supervisada. En particular, cualquier métrica de evaluación no debe tomar los valores absolutos de las etiquetas de clúster en cuenta, sino más bien si estas agrupaciones definen separaciones de los datos, de tal manera que los miembros que pertenecen a la misma clase son más similares que los miembros de diferentes clases de acuerdo con alguna similitud métrica.
+
+Existen diversas medidas de similitud con el fin de evaluar el clustering, las cuales se explican a continuación:
+
+\subparagraph{Índice Rand ajustado (Adjusted Rand index)\\\\}
+
+Dado el conocimiento de las clases asignadas como verdaderas (etiquetas verdaderas) y las etiquetas obtenidas por el algoritmo de clustering (etiquetas predichas) el adjuster rand index es una función que mide la similaridad de las dos asignaciones, ignorando permutaciones, posee valores entre -1 y 1, siendo 1 el valor perfecto. Sin embargo, es imperante para evaluar el desempeño, conocer las etiquetas verdaderas de los datos.
+
+Matemáticamente es posible definirlo como:
+
+Sea $C$ una asignación de clase real y dada la agrupación $K$, se define $a$ y $b$ como:
+
+\begin{itemize}
+	
+	\item $a$, el número de pares de elementos que estan en el mismo set en $C$ y en el mismo set en $K$.
+	\item $b$, el número de pares de elementos que estan en diferentes set en $C$ y en diferentes set en $K$.
+\end{itemize}
+
+El valor del rand index no ajustado viene dado por:
+
+\begin{center}
+	$RI = \frac{a + b}{C_2^{n_{samples}}}$
+\end{center}
+
+Donde $C_2^{n_{samples}}$ es el número total de posibles pares en el set de datos.
+
+Sin embargo, la puntuación de RI no garantiza que las asignaciones de etiquetas al azar conseguirán un valor cercano a cero, para contrarrestar este efecto se puede descartar la esperanza RI $E[RI]$ de etiquetas al azar mediante la definición del adjusted rand index:
+
+\begin{center}
+	$ARI = \frac{RI - E[RI]}{\max(RI) - E[RI]}$
+	
+\end{center}
+
+\subparagraph{Información mutua basada en scores\\\\}
+
+Dado el conocimiento de las etiquetas de las clases reales y las asignaciones obtenidas de algoritmos de agrupación de las mismas muestras, el mutual information es una función que mide el \textit{acuerdo} de las dos asignaciones, ignorando las permutaciones. Existen dos versiones normalizadas diferentes de esta medida:
+
+Normalized Mutual Information, NMI (Información mutua normalizada) y Adjusted Mutual Information, AMI (Información mutua ajustada). NMI es a menudo usado en la literatura mientras que AMI fue porpuesto más recientemente.
+
+Matemáticamente, es posible definir esta forma de evaluación tal que: se asume dos etiquetas asignadas (de los mismos $N$ objetos), $U$ y $V$, su entropía es la cantidad de incertidumbre para un conjunto de particiones definido por:
+
+\begin{center}
+	$H(U) = \sum_{i=1}^{|U|}P(i)\log(P(i))$
+\end{center}
+
+donde $P(i) = |U_i| / N$ es la probabilidad que un objecto seleccionado aleatoriamente de la clase $U$ sea asignado a la clase $U_i$, de igual manera para $V$:
+\begin{center}
+	
+	$H(V) = \sum_{j=1}^{|V|}P'(j)\log(P'(j))$
+\end{center}
+
+Con $P'(j) = |V_j| / N$ el mutual information (MI) entre $U$ y $V$ es calculado por:
+
+\begin{center}
+	
+	$MI(U, V) = \sum_{i=1}^{|U|}\sum_{j=1}^{|V|}P(i, j)\log(\frac{P(i,j)}{P(i)P'(j)})$
+\end{center}
+
+donde $P(i, j) = |U_i \cap V_j| /N$ es la probabilidad de que un objeto seleccionado aleatoriamente sea asignado a ambas clases $U_i$ y $V_j$.
+
+El valor normalizado del mutual information es definido como:
+
+\begin{center}
+	
+	$NMI(U, V) = \frac{MI(U, V)}{\sqrt{H(U)H(V)}}$
+	
+\end{center}
+Este valor del mutual information y también la variante normalizada no se ajusta al azar y tiende a aumentar a medida que aumenta el número de diferentes etiquetas (clusters), independientemente de la cantidad real de \textit{mutual information} entre las asignaciones de etiquetas.
+
+El valor esperado para el mutual information puede ser calculado usando la ecuación descrita por  Vinh, Epps, and Bailey, (2009). En esta ecuación, $a_i = |U_i|$ (el número de elementos en $U_i$) y $b_j = |V_j|$ (el número de elementos en $V_j$).
+\begin{center}
+	
+	$E[MI(U,V)]=\sum_{i=1}^|U| \sum_{j=1}^|V| \sum_{n_{ij}=(a_i+b_j-N)^+ }^{\min(a_i, b_j)} \frac{n_{ij}}{N}\log ( \frac{ N.n_{ij}}{a_i b_j}) \frac{a_i!b_j!(N-a_i)!(N-b_j)!}{N!n_{ij}!(a_i-n_{ij})!(b_j-n_{ij})! (N-a_i-b_j+n_{ij})!}
+	$
+\end{center}
+
+Usando el valor esperado, el adjusted mutual information puede ser calculado usando una forma similar al ARI:
+
+\begin{center}
+	
+	$AMI = \frac{MI - E[MI]}{\max(H(U), H(V)) - E[MI]}$
+\end{center}
+\subparagraph{Homogeneidad, Completación y medida V (V-measure) \\\\}
+
+Para el caso en el que se conozca a ciencia cierta las etiquetas reales de las clases, es posible definir medidas de evaluación basándose en la entropía existente. En particular Rosenberg y Hirschberg (2007) \cite{sesentaiocho} definen los siguientes dos objetivos deseables para cualquier asignación de clusters:
+
+\begin{itemize}
+	
+	\item \textbf{homogeneidad}: cada clúster contiene sólo miembros de una única clase.
+	
+	\item \textbf{Totalidad (completeness)}: todos los miembros de una clase son asignados a un mismo clúster.
+	
+\end{itemize}
+
+Los valores de estos score abarcan los rangos entre 0 y 1, siendo 1 el score perfecto.
+
+Es posible definir la homogeneidad y el completeness como:
+
+\begin{center}
+	
+	$h = 1 - \frac{H(C|K)}{H(C)}$\\
+	$c = 1 - \frac{H(K|C)}{H(K)}$
+\end{center}
+
+donde $H(C|K)$ es la entropía condicional de las clases dada la asignación del clúster y es definida por:
+
+\begin{center}
+	
+	$H(C|K) = - \sum_{c=1}^{|C|} \sum_{k=1}^{|K|} \frac{n_{c,k}}{n} \cdot \log(\frac{n_{c,k}}{n_k})$
+	
+\end{center}
+
+y $H(C)$ es la entropía de la clase y cuyo valor viene dado por:
+
+\begin{center}
+	
+	$H(C) = - \sum_{c=1}^{|C|} \frac{n_c}{n} \cdot \log(\frac{n_c}{n})$
+\end{center}
+
+con $n$ siendo el número total de muestras, $n_c$ y $n_k$ el número de muestras respectivamente pertenecientes a la clase $c$ y al clúster $k$, y finalmente $n_{c,k}$ el número de muestra de la clase $c$ asignados al clúster $k$.
+
+Rosenberg y Hirschberg también definieron un \textbf{V-measure} como el score medio de la homogeneidad y completeness:
+
+\begin{center}
+	
+	$v = 2 \cdot \frac{h \cdot c}{h + c}$
+\end{center}
+\subparagraph{Coeficiente de silueta (Silhouette Coefficient)\\\\}
+
+Este coeficiente es posible utilizarlo cuando se desconocen las reales etiquetas de los ejemplos, una puntuación alta (por sobre 0.75) denota un modelo con grupos bien definidos. Este coeficiente se define para cada muestra y posee dos score:
+
+\begin{itemize}
+	
+	\item \textbf{a}: la distancia media entre un ejemplo y todos los otros puntos en la misma clase.
+	
+	\item \textbf{b}: la distancia media entre un ejemplo y todos los otros puntos en el siguiente clúster vecino.
+\end{itemize}
+
+El coeficiente para una única muestra, viene dado por:
+
+\begin{center}
+	
+	$s = \frac{b - a}{max(a, b)}$
+\end{center}
+
+
+\subparagraph{ Calinski-Harabaz Index\\\\}
+
+Este índice es utilizado cuando las etiquetas son desconocidas, donde un mayor valor de éste implica un modelo mejor definido.
+
+Para $k$ clusters, el Calinski-Harabaz index $s$ se da como la razón de la dispersión entre clusters y la dispersión dentro del grupo:
+
+\begin{center}
+	$s(k) = \frac{Tr(B_k)}{Tr(W_k)}  \frac{N - k}{k - 1}$
+\end{center}
+
+
+Donde $B_{K}$ es la matriz de dispersión entre grupos y $W_{K}$ es la matriz de dispersión dentro del clúster definida por:
+
+\begin{center}
+	
+	$W_k = \sum_{q=1}^k \sum_{x \in C_q} (x - c_q) (x - c_q)^T$\\
+	$B_k = \sum_q n_q (c_q - c) (c_q - c)^T$
+\end{center}
+
+Con $N$ como el de puntos en el set de datos, $C_{q}$ el set de puntos en el cluster $q$, $c_{q}$ el centro del clúster $q$, $c$ el centro de $E$, $n_{q}$ el número de puntos en el clúster $q$.
+
 \section{Hipótesis}
 
 Dada la problemática existente sobre cómo representar conjuntos de secuencias lineales con el fin de poder desarrollar modelos de clasificación/regresión o identificación de patrones asociados a residuos claves que brindan la propiedad fisicoquímica. Y, en consideración de los diferentes usos que entrega las transformadas de Fourier, se plantea la hipótesis de este capítulo.
 
-La codificación de secuencias lineales empleando espectros de frecuencia, basados en las propiedades fisicoquímicas de los residuos pertenecientes, permite generar descriptores que faciliten el aprendizaje de predictores de variantes enfocados a diferentes respuestas de interés? A su vez, los patrones de frecuencia, pueden ser asociados a residuos claves en familias de variantes?
-
-Si bien, en el planteamiento de la hipótesis se exponen dos interrogantes, la interrogante en sí, se centra a los posibles usos que pueda tener el uso de los espectros de frecuencia en el estudio de variantes, identificación de patrones, residuos relevantes, etc.
+\begin{center}
+	\textit{La codificación de secuencias lineales empleando espectros de frecuencia, basados en las propiedades fisicoquímicas de los residuos pertenecientes, permite generar descriptores que faciliten el aprendizaje de predictores de variantes enfocados a diferentes respuestas de interés? A su vez, los patrones de frecuencia, pueden ser asociados a residuos claves en familias de variantes?
+}
+\end{center}
+Si bien, en el planteamiento de la hipótesis se exponen dos preguntas, la interrogante en sí, se centra a los posibles usos que pueda tener los espectros de frecuencia en el estudio de variantes, identificación de patrones, residuos relevantes, etc.
 
 \section{Objetivos}
 
@@ -281,13 +765,22 @@ A continuación de exponen las diferentes etapas asociadas al proceso.
 
 La codificación de secuencias lineales, se basa en el uso de propiedades fisicoquímicas representativas de la secuencia, las cuales se obtienen a partir de la base de datos AAindex \cite{Kawashima2000}.
 
-Un esquema representativo del proceso, se observa en la Figura XXX, en la cual, se detallan los diferentes pasos a seguir para generar la codificación correspondiente y obtener los espectros de frecuencias asociados a cada propiedad fisicoquímica.
+Un esquema representativo del proceso, se observa en la Figura \ref{cap3:fig1}, en la cual, se detallan los diferentes pasos a seguir para generar la codificación correspondiente y obtener los espectros de frecuencias asociados a cada propiedad fisicoquímica.
+
+\begin{figure}[!h]
+	
+	\centering
+	\includegraphics[scale=.4]{fig1.png}
+	\caption{Esquema representativo, metodología de digitalización de secuencias.}
+	\label{cap3:fig1}
+\end{figure}
 
 En una primera instancia, se toma la secuencia y por cada residuo se crea un vector de tamaño $n$ el cual representa el número de propiedades fisicoquímicas descritas en la base de datos AAindex. De esta forma, se crea una matriz de tamaño $r \times n$ donde $r$ representa la cantidad de residuos en la secuencia.
 
-A partir de dicha matriz, técnicas de reducción de dimensionalidad y selección de características son implementadas, utilizando lenguaje de programación Python y la librería scikit-learn \cite{pedregosa2011scikit} con el fin de seleccionar cuáles son las propiedades más representativas y qué porcentaje de la varianza permiten explicar.
 
-Dado el conjunto de propiedades seleccionadas, se implementan rutinas basadas en lenguaje de programación Matlab, las cuales reciben el conjunto inicial de datos, en una primera instancia, aplica "zero-padding" con el fin generar vectores de tamaño 1024. A partir de esto, cada columna en el conjunto de elementos, se digitaliza por medio del uso de la transformada rápida de Fourier (FFT) y se obtienen los espectros de frecuencias para cada propiedad fisicoquímica seleccionada previamente.
+A partir de dicha matriz, técnicas de reducción de dimensionalidad y selección de características son implementadas, utilizando lenguaje de programación Python y la librería scikit-learn \cite{pedregosa2011scikit}, con el fin de seleccionar cuáles son las propiedades más representativas y qué porcentaje de la varianza permiten explicar.
+
+Dado el conjunto de propiedades seleccionadas, se implementarán rutinas basadas en lenguaje de programación Matlab, las cuales reciben el conjunto inicial de datos, en una primera instancia, aplica "zero-padding" con el fin generar vectores de tamaño 1024, requisito para la aplicación de FFT. A partir de esto, cada columna en el conjunto de elementos, se digitaliza por medio del uso de la transformada rápida de Fourier (FFT) y se obtienen los espectros de frecuencias para cada propiedad fisicoquímica seleccionada previamente.
 
 De esta forma, por cada secuencia, se obtiene un conjunto de espectros de frecuencia, asociados a la digitalización de las propiedades fisicoquímicas seleccionadas mediante técnicas selección de características.
 
@@ -295,11 +788,11 @@ De esta forma, por cada secuencia, se obtiene un conjunto de espectros de frecue
 
 Uno de los objetivos de la codificación de secuencias lineales, es evaluar si el conjunto de espectros de frecuencia para un grupo de variantes, puede ser utilizado como características para generar set de datos y entrenar modelos a partir de estos.
 
-Con esto en mente y apoyados en los conjuntos de datos utilizados para la generación de descriptores basados en propiedades termodinámicas y filogenéticas, expuestos en el capítulo \ref{cap2}, se consideran la secuencia original de la proteína y se generan las variantes con respecto a la mutación reportada. De esta forma se crea un conjunto de datos basados en una variante y la respuesta asociada, lo cual corresponde a las diferencias de energía libre que provoca la sustitución del residuo.
+Con esto en mente y apoyados en los conjuntos de datos utilizados para la generación de descriptores basados en propiedades termodinámicas y filogenéticas, expuestos en el capítulo \ref{cap2}, se considerarán la secuencia original de la proteína y serán generadas las variantes con respecto a la mutación reportada. De esta forma se creará un conjunto de datos basados en una variante y la respuesta asociada, lo cual corresponde a las diferencias de energía libre que provoca la sustitución del residuo.
 
-Al conjunto de secuencias generado, se aplica la codificación y digitalización de las propiedades fisicoquímicas, descritas en el punto anterior. La selección de las características se basa en un consenso con respecto a las incidencias de cada propiedad en cada secuencia.
+Al conjunto de secuencias generado, se aplicará la codificación y digitalización de las propiedades fisicoquímicas, descritas en el punto anterior. La selección de las características se basa en un consenso con respecto a las incidencias de cada propiedad en cada secuencia.
 
-Una vez se tenga el conjunto de espectros, modelos predictivos son entrenados aplicando algoritmos de aprendizaje supervisado al set de datos de espectros de frecuencia. Se utilizan las medidas de desempeño expuestas en el capítulo anterior. Los modelos son validados mediante validación cruzada con un valor de $k=10$, con el fin de evaluar el sobreajuste. 
+Una vez se tenga el conjunto de espectros, modelos predictivos serán entrenados aplicando algoritmos de aprendizaje supervisado al set de datos de espectros de frecuencia. Se utilizarán las medidas de desempeño expuestas en el capítulo anterior. Los modelos serán validados mediante validación cruzada con un valor de $k=10$, con el fin de evaluar el sobreajuste. 
 
 Los modelos serán comparados con los obtenidos en la fase de exploración de la metodología expuesta en el capítulo 2 y con los resultados finales a obtener. Esto con el fin de determinar, qué metodología o caracterización de datos, permite entregar un modelo con mejor desempeño o características deseables.
 

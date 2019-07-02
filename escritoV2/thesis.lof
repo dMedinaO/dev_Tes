@@ -16,13 +16,17 @@
 \contentsline {figure}{\numberline {2.12}{\ignorespaces Evaluaci\IeC {\'o}n del desbalance de clases en prote\IeC {\'\i }nas ejemplo.\relax }}{62}{figure.caption.32}
 \contentsline {figure}{\numberline {2.13}{\ignorespaces Evaluaci\IeC {\'o}n de la distribuci\IeC {\'o}n de respuesta continua en set de datos de prote\IeC {\'\i }nas.\relax }}{63}{figure.caption.33}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Posibles inconvenientes con los datos, donde k-medias no funciona correctamente\relax }}{79}{figure.caption.42}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Representaci\IeC {\'o}n de resultados al aplicar la clusterizaci\IeC {\'o}n por DBSCAN\relax }}{83}{figure.caption.47}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Esquema representativo de cambios durante las iteraciones en GMM\relax }}{86}{figure.caption.50}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Esquema representativo, metodolog\IeC {\'\i }a de digitalizaci\IeC {\'o}n de secuencias.\relax }}{93}{figure.caption.59}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Esquema representativo de la metodolog\IeC {\'\i }a propuesta para el dise\IeC {\~n}o de mutaciones aplicando herramienta computacional a desarrollar\relax }}{84}{figure.caption.41}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Esquema representativo interfaz de creaci\IeC {\'o}n de jobs.\relax }}{88}{figure.caption.46}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Esquema representativo interfaz de b\IeC {\'u}squeda de jobs.\relax }}{89}{figure.caption.48}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Esquema representativo interfaz de descripci\IeC {\'o}n general del conjunto de datos.\relax }}{90}{figure.caption.50}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Esquema representativo interfaz de visualizaci\IeC {\'o}n de propiedades fisicoqu\IeC {\'\i }micas.\relax }}{91}{figure.caption.51}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Esquema representativo interfaz de visualizaci\IeC {\'o}n de espectros de frecuencias y residuos relevantes.\relax }}{91}{figure.caption.52}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Esquema representativo interfaz de visualizaci\IeC {\'o}n de los meta modelos y sus medidas de desempe\IeC {\~n}o.\relax }}{92}{figure.caption.53}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Esquema representativo de la metodolog\IeC {\'\i }a propuesta para el dise\IeC {\~n}o de mutaciones aplicando herramienta computacional a desarrollar\relax }}{98}{figure.caption.60}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Esquema representativo interfaz de creaci\IeC {\'o}n de jobs.\relax }}{102}{figure.caption.65}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Esquema representativo interfaz de b\IeC {\'u}squeda de jobs.\relax }}{103}{figure.caption.67}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Esquema representativo interfaz de descripci\IeC {\'o}n general del conjunto de datos.\relax }}{104}{figure.caption.69}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Esquema representativo interfaz de visualizaci\IeC {\'o}n de propiedades fisicoqu\IeC {\'\i }micas.\relax }}{105}{figure.caption.70}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Esquema representativo interfaz de visualizaci\IeC {\'o}n de espectros de frecuencias y residuos relevantes.\relax }}{105}{figure.caption.71}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Esquema representativo interfaz de visualizaci\IeC {\'o}n de los meta modelos y sus medidas de desempe\IeC {\~n}o.\relax }}{106}{figure.caption.72}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Esquema representativo de objetivos generales involucrados en el desarrollo del proyecto.\relax }}{95}{figure.caption.54}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Esquema representativo de objetivos generales involucrados en el desarrollo del proyecto.\relax }}{109}{figure.caption.73}

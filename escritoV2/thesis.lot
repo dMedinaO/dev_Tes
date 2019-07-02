@@ -10,9 +10,11 @@
 \contentsline {table}{\numberline {2.8}{\ignorespaces Tabla resumen, algoritmos implementados, par\IeC {\'a}metros utilizados e iteraciones involucradas por cada algoritmo.\relax }}{52}{table.2.8}
 \contentsline {table}{\numberline {2.9}{\ignorespaces Resumen de prote\IeC {\'\i }nas utilizadas para el desarrollo de meta modelos basados en metodolog\IeC {\'\i }a Meta Learning System propuesta durante este cap\IeC {\'\i }tulo.\relax }}{59}{table.2.9}
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Resumen de linkages comunes utilizados en m\IeC {\'e}todos de clustering jer\IeC {\'a}rquicos.\relax }}{80}{table.3.1}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Cuadro resumen de algoritmos de aprendizaje supervizado\relax }}{87}{table.caption.52}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Resumen de actividades principales a desarrollar, enfocadas el desarrollo de modelos predictivos para mutaciones puntuales en prote\IeC {\'\i }nas.\relax }}{97}{table.5.1}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Resumen de actividades asociadas a la codificaci\IeC {\'o}n y digitalizaci\IeC {\'o}n de propiedades fisicoqu\IeC {\'\i }micas\relax }}{98}{table.5.2}
-\contentsline {table}{\numberline {5.3}{\ignorespaces Resumen de actividades asociadas al desarrollo de herramienta computacional web para dise\IeC {\~n}o de mutaciones\relax }}{98}{table.5.3}
-\contentsline {table}{\numberline {5.4}{\ignorespaces Resumen y estado de actividades principales asociadas al desarrollo de modelos de clasificaci\IeC {\'o}n en mutaciones puntuales.\relax }}{99}{table.5.4}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Resumen de actividades principales a desarrollar, enfocadas el desarrollo de modelos predictivos para mutaciones puntuales en prote\IeC {\'\i }nas.\relax }}{111}{table.5.1}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Resumen de actividades asociadas a la codificaci\IeC {\'o}n y digitalizaci\IeC {\'o}n de propiedades fisicoqu\IeC {\'\i }micas\relax }}{112}{table.5.2}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Resumen de actividades asociadas al desarrollo de herramienta computacional web para dise\IeC {\~n}o de mutaciones\relax }}{112}{table.5.3}
+\contentsline {table}{\numberline {5.4}{\ignorespaces Resumen y estado de actividades principales asociadas al desarrollo de modelos de clasificaci\IeC {\'o}n en mutaciones puntuales.\relax }}{113}{table.5.4}

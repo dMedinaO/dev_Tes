@@ -77,34 +77,51 @@
 \contentsline {section}{\numberline {3.2}Transformaciones de Fourier}{76}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Transformada r\IeC {\'a}pida de Fourier (FFT)}{76}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Uso de Transformadas de Fourier en digitalizaci\IeC {\'o}n de propiedades fisicoqu\IeC {\'\i }micas}{76}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Hip\IeC {\'o}tesis}{76}{section.3.3}
-\contentsline {section}{\numberline {3.4}Objetivos}{76}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Objetivo general}{76}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Objetivos espec\IeC {\'\i }ficos}{77}{subsection.3.4.2}
-\contentsline {section}{\numberline {3.5}Metodolog\IeC {\'\i }a}{77}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Codificaci\IeC {\'o}n de secuencias lineales}{77}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Implementaci\IeC {\'o}n de modelos de clasificaci\IeC {\'o}n/regresi\IeC {\'o}n para an\IeC {\'a}lisis de variantes}{78}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Identificaci\IeC {\'o}n de residuos claves en espectros de frecuencia}{79}{subsection.3.5.3}
-\contentsline {subsection}{\numberline {3.5.4}Aplicaci\IeC {\'o}n de t\IeC {\'e}cnicas de clustering, para categorizaci\IeC {\'o}n de espectros de frecuencia}{79}{subsection.3.5.4}
-\contentsline {chapter}{\numberline {4}Filogen\IeC {\'e}tica, propiedades fisicoqu\IeC {\'\i }micas y miner\IeC {\'\i }a de datos aplicados al dise\IeC {\~n}o de mutaciones en secuencias de prote\IeC {\'\i }nas }{81}{chapter.4}
-\contentsline {section}{\numberline {4.1}Hip\IeC {\'o}tesis}{82}{section.4.1}
-\contentsline {section}{\numberline {4.2}Objetivos}{82}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Objetivo general}{82}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Objetivos espec\IeC {\'\i }ficos}{83}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}M\IeC {\'e}todolog\IeC {\'\i }a propuesta}{83}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Conjunto de datos}{84}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Digitalizaci\IeC {\'o}n de secuencias lineales}{85}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Entrenamiento de modelos}{85}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Dise\IeC {\~n}o de mutaciones}{86}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Implementaci\IeC {\'o}n herramienta computacional}{87}{subsection.4.3.5}
-\contentsline {subsubsection}{Modelo}{87}{section*.42}
-\contentsline {subsubsection}{Controlador}{87}{section*.43}
-\contentsline {subsubsection}{Vista}{88}{section*.44}
-\contentsline {subparagraph}{Generador de jobs\\\\}{88}{section*.45}
-\contentsline {subparagraph}{Buscador de jobs\\\\}{89}{section*.47}
-\contentsline {subparagraph}{Visualizador de resultados\\\\}{90}{section*.49}
-\contentsline {subsection}{\numberline {4.3.6}Consideraciones generales}{92}{subsection.4.3.6}
-\contentsline {chapter}{\numberline {5}Planificaci\IeC {\'o}n y estado de avance.}{95}{chapter.5}
-\contentsline {section}{\numberline {5.1}Planificaci\IeC {\'o}n}{96}{section.5.1}
-\contentsline {section}{\numberline {5.2}Estado de avance}{99}{section.5.2}
-\contentsline {chapter}{Referencias}{101}{chapter*.55}
+\contentsline {section}{\numberline {3.3}Clustering}{76}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Criterios de Similitud}{76}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Algoritmos de Clustering}{77}{subsection.3.3.2}
+\contentsline {subsubsection}{\textit {k}-Means}{77}{section*.41}
+\contentsline {subparagraph}{Clustering Jerarquizado\\\\}{78}{section*.43}
+\contentsline {subsubsection}{Affinity Propagation}{80}{section*.44}
+\contentsline {subsubsection}{Mean Shift}{81}{section*.45}
+\contentsline {subsubsection}{DBSCAN}{82}{section*.46}
+\contentsline {subsubsection}{Birch}{83}{section*.48}
+\contentsline {subsubsection}{Mixture Model}{84}{section*.49}
+\contentsline {subsubsection}{Cuadro Resumen}{86}{section*.51}
+\contentsline {subsubsection}{Evaluaci\IeC {\'o}n del desempe\IeC {\~n}o de un clustering}{86}{section*.53}
+\contentsline {subparagraph}{\IeC {\'I}ndice Rand ajustado (Adjusted Rand index)\\\\}{88}{section*.54}
+\contentsline {subparagraph}{Informaci\IeC {\'o}n mutua basada en scores\\\\}{88}{section*.55}
+\contentsline {subparagraph}{Homogeneidad, Completaci\IeC {\'o}n y medida V (V-measure) \\\\}{90}{section*.56}
+\contentsline {subparagraph}{Coeficiente de silueta (Silhouette Coefficient)\\\\}{91}{section*.57}
+\contentsline {subparagraph}{ Calinski-Harabaz Index\\\\}{91}{section*.58}
+\contentsline {section}{\numberline {3.4}Hip\IeC {\'o}tesis}{91}{section.3.4}
+\contentsline {section}{\numberline {3.5}Objetivos}{92}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Objetivo general}{92}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Objetivos espec\IeC {\'\i }ficos}{92}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}Metodolog\IeC {\'\i }a}{93}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Codificaci\IeC {\'o}n de secuencias lineales}{93}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Implementaci\IeC {\'o}n de modelos de clasificaci\IeC {\'o}n/regresi\IeC {\'o}n para an\IeC {\'a}lisis de variantes}{94}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Identificaci\IeC {\'o}n de residuos claves en espectros de frecuencia}{94}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}Aplicaci\IeC {\'o}n de t\IeC {\'e}cnicas de clustering, para categorizaci\IeC {\'o}n de espectros de frecuencia}{94}{subsection.3.6.4}
+\contentsline {chapter}{\numberline {4}Filogen\IeC {\'e}tica, propiedades fisicoqu\IeC {\'\i }micas y miner\IeC {\'\i }a de datos aplicados al dise\IeC {\~n}o de mutaciones en secuencias de prote\IeC {\'\i }nas }{95}{chapter.4}
+\contentsline {section}{\numberline {4.1}Hip\IeC {\'o}tesis}{96}{section.4.1}
+\contentsline {section}{\numberline {4.2}Objetivos}{96}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Objetivo general}{96}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Objetivos espec\IeC {\'\i }ficos}{97}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}M\IeC {\'e}todolog\IeC {\'\i }a propuesta}{97}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Conjunto de datos}{98}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Digitalizaci\IeC {\'o}n de secuencias lineales}{99}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Entrenamiento de modelos}{99}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Dise\IeC {\~n}o de mutaciones}{100}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Implementaci\IeC {\'o}n herramienta computacional}{101}{subsection.4.3.5}
+\contentsline {subsubsection}{Modelo}{101}{section*.61}
+\contentsline {subsubsection}{Controlador}{101}{section*.62}
+\contentsline {subsubsection}{Vista}{102}{section*.63}
+\contentsline {subparagraph}{Generador de jobs\\\\}{102}{section*.64}
+\contentsline {subparagraph}{Buscador de jobs\\\\}{103}{section*.66}
+\contentsline {subparagraph}{Visualizador de resultados\\\\}{104}{section*.68}
+\contentsline {subsection}{\numberline {4.3.6}Consideraciones generales}{106}{subsection.4.3.6}
+\contentsline {chapter}{\numberline {5}Planificaci\IeC {\'o}n y estado de avance.}{109}{chapter.5}
+\contentsline {section}{\numberline {5.1}Planificaci\IeC {\'o}n}{110}{section.5.1}
+\contentsline {section}{\numberline {5.2}Estado de avance}{113}{section.5.2}
+\contentsline {chapter}{Referencias}{115}{chapter*.74}
