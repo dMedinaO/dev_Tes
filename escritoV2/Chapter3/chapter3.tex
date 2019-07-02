@@ -259,8 +259,54 @@ Diseñar e implementar metodología de codificación y digitalización de propie
 
 A partir del objetivo general, nacen los siguientes objetivos específicos.
 
-\subsection{Preparar, manipu}
+\begin{enumerate}
+	
+	\item Preparar y manipular base de datos de propiedades fisicoquímicas asociadas a la base de datos AAindex \cite{Kawashima2000}.
+	
+	\item Diseñar e implementar, metodología de codificación de propiedades fisicoquímicas y selección de las más representativas, por medio de técnicas de reducción de dimensionalidad y selección de features y descritas a través de espectros de frecuencia.
+	
+	\item Implementar y validar modelos de clasificación para evaluación de análisis de estabilidad de variantes según descriptores basados en espectros de frecuencia de propiedades fisicoquímicas.
+	
+	\item Diseñar, implementar y validar metodología para identificación de patrones asociados a residuos y la generación de clustering de espectros de frecuencia.
+	
+\end{enumerate}
+
 \section{Metodología}
+
+Con el fin de poder cumplir con el objetivo general planteado y los objetivos específicos, se expone a continuación la metodología diseñada. Se consideran diferentes etapas dentro de las cuales se destaca la codificación, entrenamiento de modelos, aplicación de clustering e identificación de residuos como patrones de señales dentro del espectro de frecuencia.
+
+A continuación de exponen las diferentes etapas asociadas al proceso.
+
+\subsection{Codificación de secuencias lineales}
+
+La codificación de secuencias lineales, se basa en el uso de propiedades fisicoquímicas representativas de la secuencia, las cuales se obtienen a partir de la base de datos AAindex \cite{Kawashima2000}.
+
+Un esquema representativo del proceso, se observa en la Figura XXX, en la cual, se detallan los diferentes pasos a seguir para generar la codificación correspondiente y obtener los espectros de frecuencias asociados a cada propiedad fisicoquímica.
+
+En una primera instancia, se toma la secuencia y por cada residuo se crea un vector de tamaño $n$ el cual representa el número de propiedades fisicoquímicas descritas en la base de datos AAindex. De esta forma, se crea una matriz de tamaño $r \times n$ donde $r$ representa la cantidad de residuos en la secuencia.
+
+A partir de dicha matriz, técnicas de reducción de dimensionalidad y selección de características son implementadas, utilizando lenguaje de programación Python y la librería scikit-learn \cite{pedregosa2011scikit} con el fin de seleccionar cuáles son las propiedades más representativas y qué porcentaje de la varianza permiten explicar.
+
+Dado el conjunto de propiedades seleccionadas, se implementan rutinas basadas en lenguaje de programación Matlab, las cuales reciben el conjunto inicial de datos, en una primera instancia, aplica "zero-padding" con el fin generar vectores de tamaño 1024. A partir de esto, cada columna en el conjunto de elementos, se digitaliza por medio del uso de la transformada rápida de Fourier (FFT) y se obtienen los espectros de frecuencias para cada propiedad fisicoquímica seleccionada previamente.
+
+De esta forma, por cada secuencia, se obtiene un conjunto de espectros de frecuencia, asociados a la digitalización de las propiedades fisicoquímicas seleccionadas mediante técnicas selección de características.
+
+\subsection{Implementación de modelos de clasificación/regresión para análisis de variantes}
+
+Uno de los objetivos de la codificación de secuencias lineales, es evaluar si el conjunto de espectros de frecuencia para un grupo de variantes, puede ser utilizado como características para generar set de datos y entrenar modelos a partir de estos.
+
+Con esto en mente y apoyados en los conjuntos de datos utilizados para la generación de descriptores basados en propiedades termodinámicas y filogenéticas, expuestos en el capítulo \ref{cap2}, se consideran la secuencia original de la proteína y se generan las variantes con respecto a la mutación reportada. De esta forma se crea un conjunto de datos basados en una variante y la respuesta asociada, lo cual corresponde a las diferencias de energía libre que provoca la sustitución del residuo.
+
+Al conjunto de secuencias generado, se aplica la codificación y digitalización de las propiedades fisicoquímicas, descritas en el punto anterior. La selección de las características se basa en un consenso con respecto a las incidencias de cada propiedad en cada secuencia.
+
+Una vez se tenga el conjunto de espectros, modelos predictivos son entrenados aplicando algoritmos de aprendizaje supervisado al set de datos de espectros de frecuencia. Se utilizan las medidas de desempeño expuestas en el capítulo anterior. Los modelos son validados mediante validación cruzada con un valor de $k=10$, con el fin de evaluar el sobreajuste. 
+
+Los modelos serán comparados con los obtenidos en la fase de exploración de la metodología expuesta en el capítulo 2 y con los resultados finales a obtener. Esto con el fin de determinar, qué metodología o caracterización de datos, permite entregar un modelo con mejor desempeño o características deseables.
+
+\subsection{Identificación de residuos claves en espectros de frecuencia}
+
+
+\subsection{Aplicación de técnicas de clustering, para categorización de espectros de frecuencia}
 
 
  

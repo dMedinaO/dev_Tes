@@ -82,25 +82,29 @@
 \contentsline {subsection}{\numberline {3.4.1}Objetivo general}{76}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Objetivos espec\IeC {\'\i }ficos}{77}{subsection.3.4.2}
 \contentsline {section}{\numberline {3.5}Metodolog\IeC {\'\i }a}{77}{section.3.5}
-\contentsline {chapter}{\numberline {4}Filogen\IeC {\'e}tica, propiedades fisicoqu\IeC {\'\i }micas y miner\IeC {\'\i }a de datos aplicados al dise\IeC {\~n}o de mutaciones en secuencias de prote\IeC {\'\i }nas }{79}{chapter.4}
-\contentsline {section}{\numberline {4.1}Hip\IeC {\'o}tesis}{80}{section.4.1}
-\contentsline {section}{\numberline {4.2}Objetivos}{80}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Objetivo general}{80}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Objetivos espec\IeC {\'\i }ficos}{81}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}M\IeC {\'e}todolog\IeC {\'\i }a propuesta}{81}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Conjunto de datos}{82}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Digitalizaci\IeC {\'o}n de secuencias lineales}{83}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Entrenamiento de modelos}{83}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Dise\IeC {\~n}o de mutaciones}{84}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Implementaci\IeC {\'o}n herramienta computacional}{85}{subsection.4.3.5}
-\contentsline {subsubsection}{Modelo}{85}{section*.42}
-\contentsline {subsubsection}{Controlador}{85}{section*.43}
-\contentsline {subsubsection}{Vista}{86}{section*.44}
-\contentsline {subparagraph}{Generador de jobs\\\\}{86}{section*.45}
-\contentsline {subparagraph}{Buscador de jobs\\\\}{87}{section*.47}
-\contentsline {subparagraph}{Visualizador de resultados\\\\}{88}{section*.49}
-\contentsline {subsection}{\numberline {4.3.6}Consideraciones generales}{90}{subsection.4.3.6}
-\contentsline {chapter}{\numberline {5}Planificaci\IeC {\'o}n y estado de avance.}{93}{chapter.5}
-\contentsline {section}{\numberline {5.1}Planificaci\IeC {\'o}n}{94}{section.5.1}
-\contentsline {section}{\numberline {5.2}Estado de avance}{97}{section.5.2}
-\contentsline {chapter}{Referencias}{99}{chapter*.55}
+\contentsline {subsection}{\numberline {3.5.1}Codificaci\IeC {\'o}n de secuencias lineales}{77}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Implementaci\IeC {\'o}n de modelos de clasificaci\IeC {\'o}n/regresi\IeC {\'o}n para an\IeC {\'a}lisis de variantes}{78}{subsection.3.5.2}
+\contentsline {subsection}{\numberline {3.5.3}Identificaci\IeC {\'o}n de residuos claves en espectros de frecuencia}{79}{subsection.3.5.3}
+\contentsline {subsection}{\numberline {3.5.4}Aplicaci\IeC {\'o}n de t\IeC {\'e}cnicas de clustering, para categorizaci\IeC {\'o}n de espectros de frecuencia}{79}{subsection.3.5.4}
+\contentsline {chapter}{\numberline {4}Filogen\IeC {\'e}tica, propiedades fisicoqu\IeC {\'\i }micas y miner\IeC {\'\i }a de datos aplicados al dise\IeC {\~n}o de mutaciones en secuencias de prote\IeC {\'\i }nas }{81}{chapter.4}
+\contentsline {section}{\numberline {4.1}Hip\IeC {\'o}tesis}{82}{section.4.1}
+\contentsline {section}{\numberline {4.2}Objetivos}{82}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Objetivo general}{82}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Objetivos espec\IeC {\'\i }ficos}{83}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}M\IeC {\'e}todolog\IeC {\'\i }a propuesta}{83}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Conjunto de datos}{84}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Digitalizaci\IeC {\'o}n de secuencias lineales}{85}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Entrenamiento de modelos}{85}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Dise\IeC {\~n}o de mutaciones}{86}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Implementaci\IeC {\'o}n herramienta computacional}{87}{subsection.4.3.5}
+\contentsline {subsubsection}{Modelo}{87}{section*.42}
+\contentsline {subsubsection}{Controlador}{87}{section*.43}
+\contentsline {subsubsection}{Vista}{88}{section*.44}
+\contentsline {subparagraph}{Generador de jobs\\\\}{88}{section*.45}
+\contentsline {subparagraph}{Buscador de jobs\\\\}{89}{section*.47}
+\contentsline {subparagraph}{Visualizador de resultados\\\\}{90}{section*.49}
+\contentsline {subsection}{\numberline {4.3.6}Consideraciones generales}{92}{subsection.4.3.6}
+\contentsline {chapter}{\numberline {5}Planificaci\IeC {\'o}n y estado de avance.}{95}{chapter.5}
+\contentsline {section}{\numberline {5.1}Planificaci\IeC {\'o}n}{96}{section.5.1}
+\contentsline {section}{\numberline {5.2}Estado de avance}{99}{section.5.2}
+\contentsline {chapter}{Referencias}{101}{chapter*.55}
