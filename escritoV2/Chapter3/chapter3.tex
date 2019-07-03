@@ -154,7 +154,7 @@ La fracción de muestras a las que contribuye una característica se combina con
 
 Reducción de dimensionalidad, como su nombre lo sugiere, implica remover características o atributos del set de datos, con el objetivo de disminuir el número de dimensiones del conjunto de elementos. Esto permite descartar los atributos menos informativos o con menor relevancia, ya sea en términos de aporte a la varianza o relaciones con el resto de descriptores \cite{hinton2006reducing}.
 
-Dentro de las principales técnicas de reducción lineales, se encuentran el Análisis de componentes principales (PCA) y sus variantes, tales como: Incremental PCA \cite{jolliffe2011principal}. 
+Dentro de las principales técnicas de reducción lineales, se encuentran el Análisis de componentes principales (PCA) y sus variantes, tales como: Incremental PCA \cite{jolliffe2011principal}, Non-negative matrix factorization (NMF), Linear discriminant analysis (LDA), dentro de los principales, siendo el más utilizado PCA, razón por la cual se exponen de manera breve sus características y definiciones a continuación. 
 
 Análisis de Componentes Principales (PCA, por sus iniciales en inglés), es una técnica estadística que permite la conversión de un conjunto de variables posiblemente correlacionadas a un conjunto de variables no correlacionadas linealmente. Estos elementos se denominan componentes principales. Su principal característica es que son ordenados de mayor a menor, según la varianza que entregan a los datos \cite{jolliffe2011principal}.
 
@@ -220,6 +220,9 @@ PCA presenta algunas variaciones en sus definiciones o en el uso de los datos, t
 
 \subsubsection{Métodos de reducción de dimensionalidad no lineales}
 
+A diferencia de los métodos de reducción lineales, como su nombre lo indica, permiten trabajar en espacios no lineales. Diferentes algoritmos o metodologías existen para la manipulación de este tipo de datos, siendo las principales expuestas en la Tabla
+
+
 
 \subsection{Codificación de residuos con adición de información de su entorno}
 
@@ -238,6 +241,18 @@ Actualmente, el uso de codificaciones mediante propiedades fisicoquímicas y el 
 \subsection{Transformada rápida de Fourier (FFT)}
 
 \subsection{Uso de Transformadas de Fourier en digitalización de propiedades fisicoquímicas}
+
+Diferentes enfoques han sido evaluados mediante el empleo del uso de las transformadas de Fourier en el estudio de secuencias lineales de proteínas y DNA, en particular, para el estudio de propiedades fisicoquímicas y la identificación de residuos claves asociados a peacks visuales en el espectro de frecuencia \cite{veljkovic1985possible, cosic1987prediction}. 
+
+El uso frecuente de la digitalización, se centra principalmente en la codificación de una secuencia lineal de proteínas, en muchos casos, ha sido utilizado el potencial de interacción con electrones (PEII), ya que se han expuesto correlaciones con propensiones de moléculas orgánicas, relacionadas con toxicidad, actividad de antibióticos, carcinogenecidad, etc. \cite{veljkovic1985possible, cosic1994macromolecular, cosic1987prediction} y a partir de dicha codificación, digitalizarla para el posterior estudio de la análisis de señales.
+
+Dichos estudios de frecuencia de señales, son componentes de modelos asociados al reconocimiento de resonancias (RRM por sus siglas en inglés), los cuales han sido estudiados en diferentes problemas del área médica, reconocimiento de Hot-spots, etc., y, en particular, enfocados en el estudio de mutaciones en proteínas \cite{cosic1994macromolecular, cosic2016analysis, cosic1987prediction}. 
+
+Un enfoque común, asociado al estudio de señales y modelos RRM, consiste en, a partir de la secuencia lineal de residuos, emplear PEII para codificarla, a partir de su codificación, se aplica FFT como método de digitalización, para así, obtener el espectro de frecuencia y hacer los análisis de señales correspondientes \cite{veljkovic1985possible, cosic1994macromolecular, cosic2016analysis, cosic1987prediction}.
+
+No obstante, existen otros enfoques, en donde se ha utilizado la digitalización de las propiedades fisicoquímicas como método de generación de atributos para set de datos, los cuales son sometidos a entrenamiento de predicciones, entregando medidas de desempeño satisfactorias, según los autores \cite{cadet2018application}. Sin embargo, la selección de las propiedades fisicoquímicas es arbitraria y sólo se considera la propiedad más informativa, no considerando el uso de combinaciones lineales o correlaciones entre las propiedades existentes.
+
+Uno de los puntos relevantes, es que a partir de un conjunto de espectros de frecuencia, es posible generar un consenso y a su vez, identificar residuos relevantes al espectro y que contribuyen de manera significativa en los peaks.
 
 \section{Clustering}
 
@@ -558,7 +573,7 @@ Evaluar el desempeño de un algoritmo de clustering no es tan trivial como conta
 
 Existen diversas medidas de similitud con el fin de evaluar el clustering, las cuales se explican a continuación:
 
-\subparagraph{Índice Rand ajustado (Adjusted Rand index)\\\\}
+\subparagraph{Adjusted Rand index\\\\}
 
 Dado el conocimiento de las clases asignadas como verdaderas (etiquetas verdaderas) y las etiquetas obtenidas por el algoritmo de clustering (etiquetas predichas) el adjuster rand index es una función que mide la similaridad de las dos asignaciones, ignorando permutaciones, posee valores entre -1 y 1, siendo 1 el valor perfecto. Sin embargo, es imperante para evaluar el desempeño, conocer las etiquetas verdaderas de los datos.
 
@@ -636,7 +651,7 @@ Usando el valor esperado, el adjusted mutual information puede ser calculado usa
 	
 	$AMI = \frac{MI - E[MI]}{\max(H(U), H(V)) - E[MI]}$
 \end{center}
-\subparagraph{Homogeneidad, Completación y medida V (V-measure) \\\\}
+\subparagraph{Homogeneidad, Completación y V-measure \\\\}
 
 Para el caso en el que se conozca a ciencia cierta las etiquetas reales de las clases, es posible definir medidas de evaluación basándose en la entropía existente. En particular Rosenberg y Hirschberg (2007) \cite{sesentaiocho} definen los siguientes dos objetivos deseables para cualquier asignación de clusters:
 
@@ -681,7 +696,7 @@ Rosenberg y Hirschberg también definieron un \textbf{V-measure} como el score m
 	
 	$v = 2 \cdot \frac{h \cdot c}{h + c}$
 \end{center}
-\subparagraph{Coeficiente de silueta (Silhouette Coefficient)\\\\}
+\subparagraph{Silhouette Coefficient\\\\}
 
 Este coeficiente es posible utilizarlo cuando se desconocen las reales etiquetas de los ejemplos, una puntuación alta (por sobre 0.75) denota un modelo con grupos bien definidos. Este coeficiente se define para cada muestra y posee dos score:
 
@@ -700,7 +715,7 @@ El coeficiente para una única muestra, viene dado por:
 \end{center}
 
 
-\subparagraph{ Calinski-Harabaz Index\\\\}
+\subparagraph{Calinski-Harabaz Index\\\\}
 
 Este índice es utilizado cuando las etiquetas son desconocidas, donde un mayor valor de éste implica un modelo mejor definido.
 

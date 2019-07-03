@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.8.11)  2 JUL 2019 09:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.9.28)  2 JUL 2019 18:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2048,120 +2048,113 @@ Package Fancyhdr Warning: \headheight is too small (14.5pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[74]
-Overfull \hbox (6.38571pt too wide) in paragraph at lines 240--240
+[74] [75]
+Overfull \hbox (6.38571pt too wide) in paragraph at lines 243--243
 []\T1/ptm/b/n/14.4 Uso de Trans-for-madas de Fourier en dig-i-tal-ización de pr
 opiedades
  []
 
-[75]
 
 Package Fancyhdr Warning: \headheight is too small (14.5pt): 
  Make it at least 26.98592pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[76]
+[76] [77]
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 283.
- [77] <Chapter3/Figs/Raster/kmeansError.png, id=1495, 867.24pt x 867.24pt>
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 298.
+
+
+Package Fancyhdr Warning: \headheight is too small (14.5pt): 
+ Make it at least 26.98592pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[78] <Chapter3/Figs/Raster/kmeansError.png, id=1512, 867.24pt x 867.24pt>
 File: Chapter3/Figs/Raster/kmeansError.png Graphic file (type png)
 
 <use Chapter3/Figs/Raster/kmeansError.png>
 Package pdftex.def Info: Chapter3/Figs/Raster/kmeansError.png used on input lin
-e 309.
+e 324.
 (pdftex.def)             Requested size: 346.88986pt x 346.88986pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 321--322
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
 
  []
 
+[79]
 
 Package Fancyhdr Warning: \headheight is too small (14.5pt): 
  Make it at least 26.98592pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[78] [79 <./Chapter3/Figs/Raster/kmeansError.png>]
-Overfull \hbox (41.4683pt too wide) in alignment at lines 345--348
+[80 <./Chapter3/Figs/Raster/kmeansError.png>]
+Overfull \hbox (41.4683pt too wide) in alignment at lines 360--363
  [] [] 
  []
 
 
-Overfull \hbox (41.4683pt too wide) in alignment at lines 348--350
+Overfull \hbox (41.4683pt too wide) in alignment at lines 363--365
  [] [] 
  []
 
 
-Overfull \hbox (41.4683pt too wide) in alignment at lines 350--359
+Overfull \hbox (41.4683pt too wide) in alignment at lines 365--374
  [] [] 
  []
 
+[81]
 
 Package Fancyhdr Warning: \headheight is too small (14.5pt): 
  Make it at least 26.98592pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[80] [81]
-
-Package Fancyhdr Warning: \headheight is too small (14.5pt): 
- Make it at least 26.98592pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[82] <Chapter3/Figs/Raster/DBSCANexampl.png, id=1525, 578.16pt x 433.62pt>
+[82] [83]
+<Chapter3/Figs/Raster/DBSCANexampl.png, id=1542, 578.16pt x 433.62pt>
 File: Chapter3/Figs/Raster/DBSCANexampl.png Graphic file (type png)
 
 <use Chapter3/Figs/Raster/DBSCANexampl.png>
 Package pdftex.def Info: Chapter3/Figs/Raster/DBSCANexampl.png used on input li
-ne 445.
+ne 460.
 (pdftex.def)             Requested size: 231.2599pt x 173.44492pt.
- [83 <./Chapter3/Figs/Raster/DBSCANexampl.png>]
+
 
 Package Fancyhdr Warning: \headheight is too small (14.5pt): 
  Make it at least 26.98592pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[84] [85]
-<Chapter3/Figs/Raster/pasosGMM.png, id=1545, 796.47563pt x 597.73312pt>
+[84 <./Chapter3/Figs/Raster/DBSCANexampl.png>] [85]
+
+Package Fancyhdr Warning: \headheight is too small (14.5pt): 
+ Make it at least 26.98592pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[86] <Chapter3/Figs/Raster/pasosGMM.png, id=1562, 796.47563pt x 597.73312pt>
 File: Chapter3/Figs/Raster/pasosGMM.png Graphic file (type png)
 
 <use Chapter3/Figs/Raster/pasosGMM.png>
 Package pdftex.def Info: Chapter3/Figs/Raster/pasosGMM.png used on input line 5
-25.
+40.
 (pdftex.def)             Requested size: 318.58461pt x 239.089pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 534.
+               Default added (so using `tbp') on input line 549.
 
 
-Overfull \hbox (49.93823pt too wide) in paragraph at lines 536--549
+Overfull \hbox (49.93823pt too wide) in paragraph at lines 551--564
  [][] 
  []
 
-
-Package Fancyhdr Warning: \headheight is too small (14.5pt): 
- Make it at least 26.98592pt.
- We now make it that large for the rest of the document.
- This may cause the page layout to be inconsistent, however.
-
-[86 <./Chapter3/Figs/Raster/pasosGMM.png>] [87]
-Underfull \hbox (badness 10000) in paragraph at lines 563--564
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 592--593
-
- []
-
+[87 <./Chapter3/Figs/Raster/pasosGMM.png>]
 
 Package Fancyhdr Warning: \headheight is too small (14.5pt): 
  Make it at least 26.98592pt.
@@ -2169,17 +2162,22 @@ Package Fancyhdr Warning: \headheight is too small (14.5pt):
  This may cause the page layout to be inconsistent, however.
 
 [88]
+Underfull \hbox (badness 10000) in paragraph at lines 578--579
 
-Package natbib Warning: Citation `sesentaiocho' on page 89 undefined on input l
-ine 641.
+ []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 641--642
+Underfull \hbox (badness 10000) in paragraph at lines 607--608
 
  []
 
 [89]
-Underfull \hbox (badness 10000) in paragraph at lines 686--687
+
+Package natbib Warning: Citation `sesentaiocho' on page 90 undefined on input l
+ine 656.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 656--657
 
  []
 
@@ -2190,40 +2188,44 @@ Package Fancyhdr Warning: \headheight is too small (14.5pt):
  This may cause the page layout to be inconsistent, however.
 
 [90]
-Underfull \hbox (badness 10000) in paragraph at lines 705--706
+Underfull \hbox (badness 10000) in paragraph at lines 701--702
 
  []
 
 [91]
+Underfull \hbox (badness 10000) in paragraph at lines 720--721
+
+ []
+
 
 Package Fancyhdr Warning: \headheight is too small (14.5pt): 
  Make it at least 26.98592pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[92] <Chapter3/Figs/Raster/fig1.png, id=1593, 730.73pt x 264.99pt>
+[92] [93] <Chapter3/Figs/Raster/fig1.png, id=1611, 730.73pt x 264.99pt>
 File: Chapter3/Figs/Raster/fig1.png Graphic file (type png)
 
 <use Chapter3/Figs/Raster/fig1.png>
-Package pdftex.def Info: Chapter3/Figs/Raster/fig1.png used on input line 773.
+Package pdftex.def Info: Chapter3/Figs/Raster/fig1.png used on input line 788.
 (pdftex.def)             Requested size: 292.28682pt x 105.99411pt.
- [93 <./Chapter3/Figs/Raster/fig1.png>])
+
 
 Package Fancyhdr Warning: \headheight is too small (14.5pt): 
  Make it at least 26.98592pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[94]
+[94 <./Chapter3/Figs/Raster/fig1.png>]) [95]
 \openout2 = `Chapter4/chapter4.aux'.
 
- (./Chapter4/chapter4.tex
-Chapter 4.
-[95
+ (./Chapter4/chapter4.tex [96
 
 
 
 ]
+Chapter 4.
+[97]
 Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
@@ -2234,7 +2236,7 @@ Package Fancyhdr Warning: \headheight is too small (14.5pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[96] <Chapter4/Figs/Raster/fig1.png, id=1617, 963.6pt x 542.025pt>
+[98] <Chapter4/Figs/Raster/fig1.png, id=1638, 963.6pt x 542.025pt>
 File: Chapter4/Figs/Raster/fig1.png Graphic file (type png)
 
 <use Chapter4/Figs/Raster/fig1.png>
@@ -2244,26 +2246,26 @@ Package pdftex.def Info: Chapter4/Figs/Raster/fig1.png used on input line 63.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[97]
+[99]
 
 Package Fancyhdr Warning: \headheight is too small (14.5pt): 
  Make it at least 26.98592pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[98 <./Chapter4/Figs/Raster/fig1.png (PNG copy)>] [99]
+[100 <./Chapter4/Figs/Raster/fig1.png (PNG copy)>] [101]
 
 Package Fancyhdr Warning: \headheight is too small (14.5pt): 
  Make it at least 26.98592pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[100] [101]
+[102] [103]
 Underfull \hbox (badness 10000) in paragraph at lines 136--137
 
  []
 
-<Chapter4/Figs/Raster/fig2.png, id=1668, 617.30624pt x 491.8375pt>
+<Chapter4/Figs/Raster/fig2.png, id=1689, 617.30624pt x 491.8375pt>
 File: Chapter4/Figs/Raster/fig2.png Graphic file (type png)
 
 <use Chapter4/Figs/Raster/fig2.png>
@@ -2276,12 +2278,12 @@ Package Fancyhdr Warning: \headheight is too small (14.5pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[102 <./Chapter4/Figs/Raster/fig2.png>]
+[104 <./Chapter4/Figs/Raster/fig2.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 150--151
 
  []
 
-<Chapter4/Figs/Raster/fig3.png, id=1676, 618.31pt x 301.125pt>
+<Chapter4/Figs/Raster/fig3.png, id=1698, 618.31pt x 301.125pt>
 File: Chapter4/Figs/Raster/fig3.png Graphic file (type png)
 
 <use Chapter4/Figs/Raster/fig3.png>
@@ -2292,15 +2294,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 172--173
 
  []
 
-[103 <./Chapter4/Figs/Raster/fig3.png>]
-<Chapter4/Figs/Raster/fig4.png, id=1683, 496.85625pt x 465.74pt>
+[105 <./Chapter4/Figs/Raster/fig3.png>]
+<Chapter4/Figs/Raster/fig4.png, id=1706, 496.85625pt x 465.74pt>
 File: Chapter4/Figs/Raster/fig4.png Graphic file (type png)
 
 <use Chapter4/Figs/Raster/fig4.png>
 Package pdftex.def Info: Chapter4/Figs/Raster/fig4.png used on input line 181.
 (pdftex.def)             Requested size: 248.4275pt x 232.86943pt.
 
-<Chapter4/Figs/Raster/fig5.png, id=1685, 495.8525pt x 466.74374pt>
+<Chapter4/Figs/Raster/fig5.png, id=1708, 495.8525pt x 466.74374pt>
 File: Chapter4/Figs/Raster/fig5.png Graphic file (type png)
 
 <use Chapter4/Figs/Raster/fig5.png>
@@ -2316,7 +2318,7 @@ Overfull \hbox (3.19875pt too wide) in paragraph at lines 197--198
 l con-junto de dig-i-tal-iza-ciones de las propiedades
  []
 
-<Chapter4/Figs/Raster/fig6.png, id=1687, 497.86pt x 463.7325pt>
+<Chapter4/Figs/Raster/fig6.png, id=1710, 497.86pt x 463.7325pt>
 File: Chapter4/Figs/Raster/fig6.png Graphic file (type png)
 
 <use Chapter4/Figs/Raster/fig6.png>
@@ -2329,9 +2331,9 @@ Package Fancyhdr Warning: \headheight is too small (14.5pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[104 <./Chapter4/Figs/Raster/fig4.png>] [105 <./Chapter4/Figs/Raster/fig5.png> 
+[106 <./Chapter4/Figs/Raster/fig4.png>] [107 <./Chapter4/Figs/Raster/fig5.png> 
 <./Chapter4/Figs/Raster/fig6.png>]
-<Chapter4/Figs/Raster/fig7.png, id=1701, 496.85625pt x 482.80376pt>
+<Chapter4/Figs/Raster/fig7.png, id=1722, 496.85625pt x 482.80376pt>
 File: Chapter4/Figs/Raster/fig7.png Graphic file (type png)
 
 <use Chapter4/Figs/Raster/fig7.png>
@@ -2344,24 +2346,24 @@ Package Fancyhdr Warning: \headheight is too small (14.5pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[106 <./Chapter4/Figs/Raster/fig7.png>]) [107]
+[108 <./Chapter4/Figs/Raster/fig7.png>]) [109]
 \openout2 = `Chapter5/chapter5.aux'.
 
  (./Chapter5/chapter5.tex
-[108
+[110
 
 
 
 ]
 Chapter 5.
-<Chapter5/Figs/Raster/fig1.png, id=1715, 475.7775pt x 436.63126pt>
+<Chapter5/Figs/Raster/fig1.png, id=1736, 475.7775pt x 436.63126pt>
 File: Chapter5/Figs/Raster/fig1.png Graphic file (type png)
 
 <use Chapter5/Figs/Raster/fig1.png>
 Package pdftex.def Info: Chapter5/Figs/Raster/fig1.png used on input line 21.
 (pdftex.def)             Requested size: 237.88815pt x 218.3151pt.
- [109 <./Chapter5/Figs/Raster/fig1.png>]
-[110]
+ [111 <./Chapter5/Figs/Raster/fig1.png>]
+[112]
 Overfull \hbox (61.21002pt too wide) in alignment at lines 70--73
  [] [] [] 
  []
@@ -2376,7 +2378,7 @@ Overfull \hbox (61.21002pt too wide) in alignment at lines 75--92
  [] [] [] 
  []
 
-[111] [112]
+[113] [114]
 Overfull \hbox (0.47101pt too wide) in alignment at lines 139--142
  [] [] [] [] 
  []
@@ -2391,7 +2393,7 @@ Overfull \hbox (0.47101pt too wide) in alignment at lines 144--160
  [] [] [] [] 
  []
 
-[113]) [114] (./thesis.bbl [115
+[115]) [116] (./thesis.bbl [117
 
 
 
@@ -2401,8 +2403,8 @@ Overfull \hbox (1.367pt too wide) in paragraph at lines 76--81
 ns: Structure, Function, and Bioinformatics\T1/ptm/m/n/12 (-20) , 71(4):1930--
  []
 
-[116] [117] [118] [119] [120] [121] [122] [123] [124] [125] [126]) [127]
-[128
+[118] [119] [120] [121] [122] [123] [124] [125] [126] [127] [128]) [129]
+[130
 
 ]
 No file thesis.ind.
@@ -2419,10 +2421,10 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 9F7B23E29444DABFD41ABDCD8BCE5494;22474.
  ) 
 Here is how much of TeX's memory you used:
- 27245 strings out of 493029
- 477079 string characters out of 6136234
- 545908 words of memory out of 5000000
- 29458 multiletter control sequences out of 15000+600000
+ 27255 strings out of 493029
+ 477321 string characters out of 6136234
+ 545978 words of memory out of 5000000
+ 29464 multiletter control sequences out of 15000+600000
  95603 words of font info for 322 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,15n,92p,10383b,1242s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2438,10 +2440,10 @@ nts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/ti
 mes/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
 xlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on thesis.pdf (138 pages, 3638429 bytes).
+Output written on thesis.pdf (140 pages, 3642701 bytes).
 PDF statistics:
- 1984 PDF objects out of 2073 (max. 8388607)
- 1756 compressed objects within 18 object streams
- 564 named destinations out of 1000 (max. 500000)
+ 2007 PDF objects out of 2073 (max. 8388607)
+ 1777 compressed objects within 18 object streams
+ 568 named destinations out of 1000 (max. 500000)
  53582 words of extra memory for PDF output out of 61914 (max. 10000000)
 

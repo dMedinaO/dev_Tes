@@ -295,11 +295,23 @@ Cooley, R., Mobasher, B., Srivastava, J., et~al. (1997).
 \newblock Web mining: Information and pattern discovery on the world wide web.
 \newblock In {\em ictai}, volume~97, pages 558--567.
 
+\bibitem[Cosic, 1994]{cosic1994macromolecular}
+Cosic, I. (1994).
+\newblock Macromolecular bioactivity: is it resonant interaction between
+  macromolecules?-theory and applications.
+\newblock {\em IEEE Transactions on Biomedical Engineering}, 41(12):1101--1114.
+
 \bibitem[Cosic et~al., 2016]{cosic2016analysis}
 Cosic, I., Cosic, D., and Lazar, K. (2016).
 \newblock Analysis of tumor necrosis factor function using the resonant
   recognition model.
 \newblock {\em Cell biochemistry and biophysics}, 74(2):175--180.
+
+\bibitem[{\'C}osi{\'c} and NESIC, 1987]{cosic1987prediction}
+{\'C}osi{\'c}, I. and NESIC, D. (1987).
+\newblock Prediction of ‘hot spots’ in sv40 enhancer and relation with
+  experimental data.
+\newblock {\em European journal of biochemistry}, 170(1-2):247--252.
 
 \bibitem[Curtarolo et~al., 2003]{PhysRevLett.91.135503}
 Curtarolo, S., Morgan, D., Persson, K., Rodgers, J., and Ceder, G. (2003).
