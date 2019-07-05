@@ -85,6 +85,12 @@ Battiti, R. (1992).
   and newton's method.
 \newblock {\em Neural computation}, 4(2):141--166.
 
+\bibitem[Bava et~al., 2004]{bava2004protherm}
+Bava, K.~A., Gromiha, M.~M., Uedaira, H., Kitajima, K., and Sarai, A. (2004).
+\newblock Protherm, version 4.0: thermodynamic database for proteins and
+  mutants.
+\newblock {\em Nucleic acids research}, 32(suppl\_1):D120--D121.
+
 \bibitem[Bedbrook et~al., 2019]{bedbrook2019machine}
 Bedbrook, C.~N., Yang, K.~K., Robinson, J.~E., Gradinaru, V., and Arnold, F.~H.
   (2019).
@@ -289,6 +295,12 @@ Cohen, P., West, S.~G., and Aiken, L.~S. (2014).
 \newblock {\em Applied multiple regression/correlation analysis for the
   behavioral sciences}.
 \newblock Psychology Press.
+
+\bibitem[Cooley et~al., 1970]{cooley1970fast}
+Cooley, J.~W., Lewis, P., and Welch, P. (1970).
+\newblock The fast fourier transform algorithm: Programming considerations in
+  the calculation of sine, cosine and laplace transforms.
+\newblock {\em Journal of Sound and Vibration}, 12(3):315--337.
 
 \bibitem[Cooley et~al., 1997]{cooley1997web}
 Cooley, R., Mobasher, B., Srivastava, J., et~al. (1997).
@@ -946,6 +958,12 @@ Scholkopf, B. and Smola, A.~J. (2001).
   optimization, and beyond}.
 \newblock MIT press.
 
+\bibitem[Schomburg et~al., 2004]{schomburg2004brenda}
+Schomburg, I., Chang, A., Ebeling, C., Gremse, M., Heldt, C., Huhn, G., and
+  Schomburg, D. (2004).
+\newblock Brenda, the enzyme database: updates and major new developments.
+\newblock {\em Nucleic acids research}, 32(suppl\_1):D431--D433.
+
 \bibitem[Schueler-Furman and Baker, 2003]{schueler2003conserved}
 Schueler-Furman, O. and Baker, D. (2003).
 \newblock Conserved residue clustering and protein structure prediction.
@@ -1067,6 +1085,12 @@ Wang, G., Zhao, Y., and Wang, D. (2008).
 Wegner, P. (1990).
 \newblock Concepts and paradigms of object-oriented programming.
 \newblock {\em ACM Sigplan Oops Messenger}, 1(1):7--87.
+
+\bibitem[Welch, 1967]{welch1967use}
+Welch, P. (1967).
+\newblock The use of fast fourier transform for the estimation of power
+  spectra: a method based on time averaging over short, modified periodograms.
+\newblock {\em IEEE Transactions on audio and electroacoustics}, 15(2):70--73.
 
 \bibitem[Wold et~al., 1987]{wold1987principal}
 Wold, S., Esbensen, K., and Geladi, P. (1987).

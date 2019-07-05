@@ -272,6 +272,33 @@ A partir de lo anterior, debido a los diferentes empleos que puede tener esta tr
  
 \subsection{Transformada rápida de Fourier (FFT)}
 
+La transformada rápida de Fourier (FFT por sus siglas en inglés), es un algoritmo que permite encontrar solución a una DFT con una disminución en la complejidad. Esto es, al resolver el problema directamente desde la DFT, se presenta una complejidad $O(N^2)$, en cambio, al utilizar FFT, se obtiene una complejidad de $O(N\log N)$.
+
+La idea general del algoritmo fue propuesto por Cooley \cite{cooley1970fast}. Dentro de sus particularidades, es que debido a la subdivisión en $N$ transformadas de menor complejidad a resolver, donde $N$ se compone de $n_1$ y $n_2$, se requiere que el conjunto de muestras, presente un tamaño del orden $2\cdot 2^n$, es decir, una potencia de 2. A pesar de que dicho algoritmo es uno de los más comunes para la resolución de transformadas de Fourier, no es el único, siendo algunos: Prime-factor FFT algorithm, Bruun's FFT algorithm, Rader's FFT algorithm, Bluestein's FFT algorithm, and Hexagonal Fast Fourier Transform.
+
+Las definiciones matemáticas del proceso, se realizaron por Peter D. Welch en \cite{welch1967use}, explicando la formulación del problema y las demostraciones de la solución. 
+
+La división que se genera en el algoritmo FFT propuesto por Cooley \cite{cooley1970fast}, se basa en el uso de radix-2 DIT, esto es, la división de una DFT de tamaño $N$ en dos DFT de tamaño $N/2$ de manera recursiva.
+
+De manera general, se estiman las DFT de los pares e impares por separado ($x_{2m}$ y $x_{2m+1}$, respectivamente), para luego combinarlas y estimar la DFT del espacio completo Debido a esta subdivisión recursiva en pares, se requiere un número de componetes en potencia de 2. Normalmente, se adicionan elementos para poder cumplir con dicha condición, comúnmente, se utiliza \textit{zero-padding}, para satisfacerlo.
+
+Matemáticamente, las DFT de los componentes pares e impares y su combinación se obtiene a partir de:
+
+\begin{equation}
+	X_{k} = \sum_{m=0}^{N/2 -1} x_{2m} e ^{-\dfrac{2\pi i}{N}2mk}\ +\ \sum_{m=0}^{N/2 -1} x_{2m+1} e ^{-\dfrac{2\pi i}{N}(2m+1)k} 
+	\label{tran3}
+\end{equation}  
+
+Donde el primer componente denota los elementos pares $E_k$ y el segundo componente los impares $O_k$ en la ecuación \ref{tran3}, respectivamente.
+
+Un esquema representativo de los pasos a seguir en el algoritmo, la utilización del radix-2 DIT y cómo se obtienen las DFT para luego combinarlas se expone en la Figura \ref{algo}.
+\begin{figure}[!h]
+	
+	\centering
+	\includegraphics[scale = .6]{algorithm.png}
+	\caption{Esquema representativo de los pasos asociados al algoritmo FFT, desarrollado por Cooley \cite{cooley1970fast}}
+	\label{algo}
+\end{figure}
 
 \subsection{Uso de Transformadas de Fourier en digitalización de propiedades fisicoquímicas}
 
@@ -774,7 +801,7 @@ Con $N$ como el de puntos en el set de datos, $C_{q}$ el set de puntos en el clu
 Dada la problemática existente sobre cómo representar conjuntos de secuencias lineales con el fin de poder desarrollar modelos de clasificación/regresión o identificación de patrones asociados a residuos claves que brindan la propiedad fisicoquímica. Y, en consideración de los diferentes usos que entrega las transformadas de Fourier, se plantea la hipótesis de este capítulo.
 
 \begin{center}
-	\textit{La codificación de secuencias lineales empleando espectros de frecuencia, basados en las propiedades fisicoquímicas de los residuos pertenecientes, permite generar descriptores que faciliten el aprendizaje de predictores de variantes enfocados a diferentes respuestas de interés? A su vez, los patrones de frecuencia, pueden ser asociados a residuos claves en familias de variantes?
+	\textit{La codificación de secuencias lineales empleando espectros de frecuencia, basados en las propiedades fisicoquímicas de los residuos pertenecientes, ¿permite generar descriptores que faciliten el aprendizaje de predictores de variantes enfocados a diferentes respuestas de interés? A su vez, los patrones de frecuencia, pueden ser asociados a residuos claves en familias de variantes?
 }
 \end{center}
 Si bien, en el planteamiento de la hipótesis se exponen dos preguntas, la interrogante en sí, se centra a los posibles usos que pueda tener los espectros de frecuencia en el estudio de variantes, identificación de patrones, residuos relevantes, etc.
@@ -785,7 +812,7 @@ En base a la hipótesis planteada y con el fin de responder a los planteamientos
 
 \subsection{Objetivo general}
 
-Diseñar e implementar metodología de codificación y digitalización de propiedades fisicoquímicas en secuencias lineales de proteínas, con el fin de poder ser utilizadas en identificación de patrones por medio de técnicas de clustering o desarrollo de predictores basados en algoritmos de aprendizaje supervisado.
+Diseñar e implementar metodología de codificación y digitalización de propiedades fisicoquímicas en secuencias lineales de proteínas, empleando transformadas rápidas de Fourier, con el fin de poder ser utilizadas en identificación de patrones por medio de técnicas de clustering o desarrollo de predictores basados en algoritmos de aprendizaje supervisado.
 
 \subsection{Objetivos específicos}
 
@@ -793,13 +820,14 @@ A partir del objetivo general, nacen los siguientes objetivos específicos.
 
 \begin{enumerate}
 	
-	\item Preparar y manipular base de datos de propiedades fisicoquímicas asociadas a la base de datos AAindex \cite{Kawashima2000}.
+	\item Preparar, manipular e implementar módulos de consultas para la base de datos de propiedades fisicoquímicas asociadas a la base de datos AAindex \cite{Kawashima2000}.
 	
-	\item Diseñar e implementar, metodología de codificación de propiedades fisicoquímicas y selección de las más representativas, por medio de técnicas de reducción de dimensionalidad y selección de features y descritas a través de espectros de frecuencia.
+	\item Diseñar e implementar, metodología de codificación de propiedades fisicoquímicas y selección de las más representativas, por medio de técnicas de reducción de dimensionalidad y selección de características, descritas a través de espectros de frecuencia.
 	
-	\item Implementar y validar modelos de clasificación para evaluación de análisis de estabilidad de variantes según descriptores basados en espectros de frecuencia de propiedades fisicoquímicas.
+	\item Implementar y validar modelos de clasificación/regresión para evaluación de análisis de estabilidad de variantes según descriptores basados en espectros de frecuencia de propiedades fisicoquímicas.
 	
-	\item Diseñar, implementar y validar metodología para identificación de patrones asociados a residuos y la generación de clustering de espectros de frecuencia.
+	
+	\item Diseñar, implementar y caracterizar grupos obtenidos a partir de algoritmos de aprendizaje no supervisados, considerando como descriptores los espectros de frecuencias asociados a las propiedades fisicoquímicas y crear metodología de reconocimiento de patrones basados en residuos claves correlacionados a peaks en en la distribución de espectros.
 	
 \end{enumerate}
 
@@ -828,9 +856,9 @@ En una primera instancia, se toma la secuencia y por cada residuo se crea un vec
 
 A partir de dicha matriz, técnicas de reducción de dimensionalidad y selección de características son implementadas, utilizando lenguaje de programación Python y la librería scikit-learn \cite{pedregosa2011scikit}, con el fin de seleccionar cuáles son las propiedades más representativas y qué porcentaje de la varianza permiten explicar.
 
-Dado el conjunto de propiedades seleccionadas, se implementarán rutinas basadas en lenguaje de programación Matlab, las cuales reciben el conjunto inicial de datos, en una primera instancia, aplica "zero-padding" con el fin generar vectores de tamaño 1024, requisito para la aplicación de FFT. A partir de esto, cada columna en el conjunto de elementos, se digitaliza por medio del uso de la transformada rápida de Fourier (FFT) y se obtienen los espectros de frecuencias para cada propiedad fisicoquímica seleccionada previamente.
+Dado el conjunto de propiedades seleccionadas, se implementarán rutinas basadas en lenguaje de programación Matlab, las cuales reciben el conjunto inicial de datos, en una primera instancia, aplica \textit{zero-padding} con el fin generar vectores de tamaño de potencia de 2, requisito para la aplicación de FFT. A partir de esto, cada columna en el conjunto de elementos, se digitaliza por medio del uso de la transformada rápida de Fourier (FFT) y se obtienen los espectros de frecuencias para cada propiedad fisicoquímica seleccionada previamente.
 
-De esta forma, por cada secuencia, se obtiene un conjunto de espectros de frecuencia, asociados a la digitalización de las propiedades fisicoquímicas seleccionadas mediante técnicas selección de características.
+De esta forma, por cada secuencia, se obtiene un conjunto de espectros de frecuencia, asociados a la digitalización de las propiedades fisicoquímicas seleccionadas mediante técnicas de selección de características.
 
 \subsection{Implementación de modelos de clasificación/regresión para análisis de variantes}
 
@@ -849,5 +877,24 @@ Los modelos serán comparados con los obtenidos en la fase de exploración de la
 
 \subsection{Aplicación de técnicas de clustering, para categorización de espectros de frecuencia}
 
+Uno de los supuestos más relevantes asociados al uso de la digitalización y las propiedades fisicoquímicas como descriptores de secuencias lineales, es el hecho de que, proteínas con una misma función, presentarán un espectro de frecuencia similar \cite{veljkovic1985possible}. 
+
+Esto, hace pensar que, para un conjunto de secuencias desconocidas, dada una selección de propiedades fisicoquímicas, a la hora de aplicar técnicas de clustering, empleando algoritmos de aprendizaje no supervisado, serán agrupadas de tal forma, que, los espectros de frecuencia en cada grupo presenten similitudes entre ellos, basados en propiedades estadísticas o por medio de análisis cross-espectral.
+ 
+Con el fin de corroborar este supuesto, además de demostrar que el uso de descriptores basados en espectros permite una agrupación de elementos correlacionados con alguna propiedad, en la Figura \ref{cap3:fig2} se expone la metodología planteada.
+
+\begin{figure}[!h]
+	
+	\centering
+	\includegraphics[scale=.4]{fig2.png}
+	\caption{Esquema representativo, metodología de clustering se secuencias por medio de espectros de frecuencias basados en propiedades fisicoquímicas.}
+	\label{cap3:fig2}
+\end{figure}
+
+En una primera instancia, se deberá identificar cuáles son las secuencias de interés, para ello, se trabajarán con diferentes secuencias lineales y variantes asociadas a ellas, principalmente de enzimas, con alguna propiedad característica, proteínas comunes de interés con mutaciones reportadas, etc. La descarga de éstas, se realizará desde diferentes bases de datos, en particular desde Brenda \cite{schomburg2004brenda}, para el caso de las enzimas, Protherm \cite{bava2004protherm} para otras propiedades de interés, relacionadas a estabilidad. Es importante mencionar, que no se quiere asociar o reconocer qué efecto causa la mutación. Si no, que simplemente, proteínas con similar función, tendrán un espectro de frecuencia con características similares. Es por ello, que la propiedad se conoce de antemano. Sin embargo, también se evaluará si es posible la generación de grupos donde la mutación afecte negativa y positivamente a la estabilidad en proteínas, utilizando para esto, el conjunto de set de datos expuestos en el capítulo \ref{cap2}.
+
+Una vez se tengan las secuencias, se aplicará la codificación de diferentes propiedades fisicoquímicas y a su vez, se digitalizará cada una de éstas. Es importante mencionar, que no se seleccionarán propiedades específicas ya que, puede que las más representativas o informativas no necesariamente generen conjuntos de datos agrupados con el mismo patrón de espectro de frecuencia. Esto implica, que se generarán $n$ espectros de frecuencia por cada secuencia y para cada propiedad se aplicarán técnicas de clustering, esto con el fin de determinar si aparecen grupos con misma propiedad conocida, correspondientes a las $n$ propiedades descritas en AAindex. Esto, con el fin de evaluar si proteínas con misma funcionalidad, o mismo plegamiento, o, alguna característica en común, quedan agrupadas.
+
+Finalmente, una vez se tengan estos grupos, se realizará la etapa de análisis, caracterización e identificación de patrones. Esto es, en base a la información conocida que se tiene del conjunto de proteínas, evaluar si los grupos formados presentan algo en común, ya sea, propiedades fisicoquímicas, plegamiento, actividad, funcionalidad, etc. Esto permitirá evaluar si los espectros de frecuencia, permiten agrupar secuencias con características o patrones en común y si son informativas para dicho objetivo. Se destaca además, que esto implica una fase exploratoria y es incierto lo que pueda resultar. Si bien se postuló las correlaciones entre espectro y propiedad \cite{veljkovic1985possible}, esto fue hecho hace un tiempo prolongado y sólo se evaluaron proteínas o enzimas con particularidades específicas, de esta forma, se espera poder reafirmar dicha afirmación y poder postular un nuevo método de clustering de propiedades en secuencias y sus variantes.
 
  
