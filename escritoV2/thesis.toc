@@ -75,34 +75,34 @@
 \contentsline {subsubsection}{M\IeC {\'e}todos de reducci\IeC {\'o}n de dimensionalidad no lineales}{74}{section*.40}
 \contentsline {subsection}{\numberline {3.1.5}Codificaci\IeC {\'o}n de residuos con adici\IeC {\'o}n de informaci\IeC {\'o}n de su entorno}{75}{subsection.3.1.5}
 \contentsline {section}{\numberline {3.2}Transformaciones de Fourier}{76}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Transformada r\IeC {\'a}pida de Fourier (FFT)}{76}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Uso de Transformadas de Fourier en digitalizaci\IeC {\'o}n de propiedades fisicoqu\IeC {\'\i }micas}{76}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}Clustering}{77}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Criterios de Similitud}{77}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Algoritmos de Clustering}{78}{subsection.3.3.2}
-\contentsline {subsubsection}{\textit {k}-Means}{78}{section*.41}
-\contentsline {subparagraph}{Clustering Jerarquizado\\\\}{79}{section*.43}
-\contentsline {subsubsection}{Affinity Propagation}{81}{section*.44}
-\contentsline {subsubsection}{Mean Shift}{82}{section*.45}
-\contentsline {subsubsection}{DBSCAN}{83}{section*.46}
-\contentsline {subsubsection}{Birch}{84}{section*.48}
-\contentsline {subsubsection}{Mixture Model}{85}{section*.49}
-\contentsline {subsubsection}{Cuadro Resumen}{87}{section*.51}
-\contentsline {subsubsection}{Evaluaci\IeC {\'o}n del desempe\IeC {\~n}o de un clustering}{87}{section*.53}
-\contentsline {subparagraph}{Adjusted Rand index\\\\}{89}{section*.54}
-\contentsline {subparagraph}{Informaci\IeC {\'o}n mutua basada en scores\\\\}{89}{section*.55}
-\contentsline {subparagraph}{Homogeneidad, Completaci\IeC {\'o}n y V-measure \\\\}{91}{section*.56}
-\contentsline {subparagraph}{Silhouette Coefficient\\\\}{92}{section*.57}
-\contentsline {subparagraph}{Calinski-Harabaz Index\\\\}{92}{section*.58}
-\contentsline {section}{\numberline {3.4}Hip\IeC {\'o}tesis}{92}{section.3.4}
-\contentsline {section}{\numberline {3.5}Objetivos}{93}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Objetivo general}{93}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Objetivos espec\IeC {\'\i }ficos}{93}{subsection.3.5.2}
-\contentsline {section}{\numberline {3.6}Metodolog\IeC {\'\i }a}{94}{section.3.6}
-\contentsline {subsection}{\numberline {3.6.1}Codificaci\IeC {\'o}n de secuencias lineales}{94}{subsection.3.6.1}
-\contentsline {subsection}{\numberline {3.6.2}Implementaci\IeC {\'o}n de modelos de clasificaci\IeC {\'o}n/regresi\IeC {\'o}n para an\IeC {\'a}lisis de variantes}{95}{subsection.3.6.2}
-\contentsline {subsection}{\numberline {3.6.3}Identificaci\IeC {\'o}n de residuos claves en espectros de frecuencia}{95}{subsection.3.6.3}
-\contentsline {subsection}{\numberline {3.6.4}Aplicaci\IeC {\'o}n de t\IeC {\'e}cnicas de clustering, para categorizaci\IeC {\'o}n de espectros de frecuencia}{95}{subsection.3.6.4}
+\contentsline {subsection}{\numberline {3.2.1}Transformada r\IeC {\'a}pida de Fourier (FFT)}{77}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Uso de Transformadas de Fourier en digitalizaci\IeC {\'o}n de propiedades fisicoqu\IeC {\'\i }micas}{77}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Clustering}{78}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Criterios de Similitud}{78}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Algoritmos de Clustering}{79}{subsection.3.3.2}
+\contentsline {subsubsection}{\textit {k}-Means}{79}{section*.41}
+\contentsline {subparagraph}{Clustering Jerarquizado\\\\}{80}{section*.43}
+\contentsline {subsubsection}{Affinity Propagation}{82}{section*.44}
+\contentsline {subsubsection}{Mean Shift}{83}{section*.45}
+\contentsline {subsubsection}{DBSCAN}{84}{section*.46}
+\contentsline {subsubsection}{Birch}{85}{section*.48}
+\contentsline {subsubsection}{Mixture Model}{86}{section*.49}
+\contentsline {subsubsection}{Cuadro Resumen}{88}{section*.51}
+\contentsline {subsubsection}{Evaluaci\IeC {\'o}n del desempe\IeC {\~n}o de un clustering}{88}{section*.53}
+\contentsline {subparagraph}{Adjusted Rand index\\\\}{90}{section*.54}
+\contentsline {subparagraph}{Informaci\IeC {\'o}n mutua basada en scores\\\\}{90}{section*.55}
+\contentsline {subparagraph}{Homogeneidad, Completaci\IeC {\'o}n y V-measure \\\\}{92}{section*.56}
+\contentsline {subparagraph}{Silhouette Coefficient\\\\}{93}{section*.57}
+\contentsline {subparagraph}{Calinski-Harabaz Index\\\\}{93}{section*.58}
+\contentsline {section}{\numberline {3.4}Hip\IeC {\'o}tesis}{93}{section.3.4}
+\contentsline {section}{\numberline {3.5}Objetivos}{94}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Objetivo general}{94}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Objetivos espec\IeC {\'\i }ficos}{94}{subsection.3.5.2}
+\contentsline {section}{\numberline {3.6}Metodolog\IeC {\'\i }a}{95}{section.3.6}
+\contentsline {subsection}{\numberline {3.6.1}Codificaci\IeC {\'o}n de secuencias lineales}{95}{subsection.3.6.1}
+\contentsline {subsection}{\numberline {3.6.2}Implementaci\IeC {\'o}n de modelos de clasificaci\IeC {\'o}n/regresi\IeC {\'o}n para an\IeC {\'a}lisis de variantes}{96}{subsection.3.6.2}
+\contentsline {subsection}{\numberline {3.6.3}Identificaci\IeC {\'o}n de residuos claves en espectros de frecuencia}{96}{subsection.3.6.3}
+\contentsline {subsection}{\numberline {3.6.4}Aplicaci\IeC {\'o}n de t\IeC {\'e}cnicas de clustering, para categorizaci\IeC {\'o}n de espectros de frecuencia}{96}{subsection.3.6.4}
 \contentsline {chapter}{\numberline {4}Filogen\IeC {\'e}tica, propiedades fisicoqu\IeC {\'\i }micas y miner\IeC {\'\i }a de datos aplicados al dise\IeC {\~n}o de mutaciones en secuencias de prote\IeC {\'\i }nas }{97}{chapter.4}
 \contentsline {section}{\numberline {4.1}Hip\IeC {\'o}tesis}{98}{section.4.1}
 \contentsline {section}{\numberline {4.2}Objetivos}{98}{section.4.2}

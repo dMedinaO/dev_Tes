@@ -238,6 +238,37 @@ Actualmente, el uso de codificaciones mediante propiedades fisicoquímicas y el 
 
 \section{Transformaciones de Fourier}
 
+Las transformadas de Fourier, corresponden a una transformación matemática que permite analizar una función definida en el espacio tiempo, denominada señal, en sus frecuencias constituyentes. Como característica general, se genera una función definida en el espacio de frecuencias, representada por un valor complejo, en el cual, su módulo corresponde al valor de dicha frecuencia en la función inicial y su coeficiente, corresponde al desfase sinusoidal en la frecuencia.
+
+Sea $f$ una función definida en el espacio tiempo, representando una señal, integrable Lebesgue, su transformada se define como $f: \mathbb{R} \to \mathbb{C}$, asociada a una frecuencia, denotada por $\hat{f}$, la cual se expresa como:
+
+\begin{equation}
+	\hat{f}(\xi) = \int_{-\infty}^{+\infty} f(x)e^{-2\pi i x \xi} dx
+	\label{tran1}
+\end{equation}
+
+Donde $\xi$ corresponde a un número real y $x$ representa al tiempo. A partir de \ref{tran1}, se puede definir la transformación inversa
+
+\begin{equation}
+	f(x) = \int_{-\infty}^{+\infty} \hat{f}(\xi) e^{-2\pi i x \xi} d\xi
+	\label{tran2}
+\end{equation}
+
+Tanto \ref{tran1} y \ref{tran2}, corresponden a funciones con distribución continua. De manera similar, es posible definir las transformada de Fourier y su inversa, en el espacio de distribuciones discretas, en donde, sólo se considera un segmento muestral finito del conjunto de datos continuos para reconstruir el espectro de frecuencias. Dado esto, la transformada de Fourier discreta se define como:
+
+\begin{equation}
+	X_k = \sum_{n=0}^{N-1} x_n e^{-\dfrac{2\pi i}{N} kn}\ \ \  \forall\  k \in [0, N-1]
+\end{equation} 
+
+Donde $N$ representa a una secuencia de números complejos $x_0, \cdots, x_{N-1}$. Se define la transformada discreta inversa de Fourier como:
+
+\begin{equation}
+	x_n = \dfrac{1}{N} \sum_{k=0}^{N-1} X_k e \dfrac{2\pi i}{N} kn \ \ \ \forall \ n \in [0, N-1]
+\end{equation}
+
+Las transformadas de Fourier han sido utilizadas en diferentes campos de investigación, tales como: física, teoría de números, procesamiento de señales, propagación de ondas, óptica, etc. Siendo el análisis armónico, la rama matemática encargada de este tipo de estudios.
+
+ 
 \subsection{Transformada rápida de Fourier (FFT)}
 
 \subsection{Uso de Transformadas de Fourier en digitalización de propiedades fisicoquímicas}
