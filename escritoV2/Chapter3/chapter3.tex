@@ -65,9 +65,9 @@ Con el fin de poder representar las secuencias lineales de proteínas, se idearo
 
 Expresado de forma matemática, sea $s$ una secuencia lineal de proteínas con $r$ residuos, su codificación se basa en la frecuencia de aparición del residuo en $s$, tal que, sea $R$ el espacio de los posibles residuos $r$ en $s$, se estima para cada $r_{j} \in\ R$ su frecuencia:
 
-\begin{center}
-	$frec(r_{j}) = \dfrac{cont(r_{j})\ if\  (r_{i}==r_{j})}{n}$
-\end{center}
+\begin{equation}
+	frec(r_{j}) = \dfrac{cont(r_{j})\ if\  (r_{i}==r_{j})}{n}
+\end{equation}
 
 Finalmente, se tiene que cada residuo $r_{i}$ se representa en su valor de frecuencia $frec(r_{i})$, generando un set de datos de tamaños $s \times 20$ con $s$ secuencias representadas por un vector de tamaño 20.
 
@@ -108,9 +108,9 @@ La correlación entre elementos, es posible definirla como una relación estadí
 
 De manera general, la correlación se relaciona con la covarianza entre las variables aleatorias \cite{cohen2014applied}, esto es: Sean $X$ e $Y$ variables aleatorias, el coeficiente de correlación $\rho$ entre ellas se define como:
 
-\begin{center}
-	$\rho X,Y = corr(X,Y) = \dfrac{cov(X,Y)}{\sigma_{Y}\sigma_{Y}} = \dfrac{E[(X - \mu_{X})(Y - \mu_{Y})]}{\sigma_{Y}\sigma_{Y}}$
-\end{center}
+\begin{equation}
+	\rho (X,Y) = corr(X,Y) = \dfrac{cov(X,Y)}{\sigma_{Y}\sigma_{Y}} = \dfrac{E[(X - \mu_{X})(Y - \mu_{Y})]}{\sigma_{Y}\sigma_{Y}}
+\end{equation}
 
 $\rho \in [-1, 1]$ de tal forma que -1 indica una correlación inversa entre los elementos y 1 una relación positiva. En efectos prácticos, ambos valores denotan una dependencia entre los elementos, por lo que no son informativos y es posible eliminar uno de ellos, dada la redundancia de información. Valores cercanos a 0, indican que las variables no se encuentran correlacionadas.
 
@@ -122,21 +122,21 @@ Es una medida de dependencia mutua entre dos variables aleatorias, permitiendo c
 
 Sean dos variables aleatorias $X$ e $Y$ con valores en el espacio $X \times Y$ y sea el conjunto $P_{(X,Y)}$ y las distribuciones marginales son $P_X$ y $P_Y$, respectivamente. El mutual information score para las variables $X$ e $Y$ es:
 
-\begin{center}
-	$I(X,Y) = D_{KL}(P_{(X,Y)} || P_X \otimes P_Y)$
-\end{center}
+\begin{equation}
+	I(X,Y) = D_{KL}(P_{(X,Y)} || P_X \otimes P_Y)
+\end{equation}
 
 Esto puede variar con respecto al tipo de variable a utilizar. En el caso de que pertenezcan a una distribución discreta el $I(X,Y)$ corresponde a:
 
-\begin{center}
-	$I(X,Y) = \sum_{y_{i} \in Y} \sum_{x \in X} P_{(x,y)} (x,y) \log (\dfrac{P_{(x,y)}(x,y)}{P_{x}(x)P_{y}(y)})$ 
-\end{center}
+\begin{equation}
+	I(X,Y) = \sum_{y_{i} \in Y} \sum_{x \in X} P_{(x,y)} (x,y) \log (\dfrac{P_{(x,y)}(x,y)}{P_{x}(x)P_{y}(y)})
+\end{equation}
 
 Mientras que para el caso de variables con distribución continua se tiene:
 
-\begin{center}
-	$I(X,Y) = \int_{y} \int_{x} P_{(x,y)} (x,y) \log (\dfrac{P_{(x,y)}(x,y)}{P_{x}(x)P_{y}(y)})$
-\end{center}
+\begin{equation}
+	I(X,Y) = \int_{y} \int_{x} P_{(x,y)} (x,y) \log (\dfrac{P_{(x,y)}(x,y)}{P_{x}(x)P_{y}(y)})
+\end{equation}
 
 Como interpretación, se tiene que presenta un rango de valores no negativos, donde un valor 0 indica que no existe información mutua entre ambas características y a mayor valor más relación existe entre ambos elementos.
 
@@ -184,15 +184,15 @@ El primer componente $ w_{{1}} $ debe satisfacer las siguientes características
 
 Los \textit{k} restantes componentes son encontrados efectuando la extracción de los primeros \textit{k-1} componentes principales desde $x$:
 
-\begin{center}
-	$\hat{x}_{k} = x - \sum_{\delta=1}^{k-1}Xw_{(\delta)}w^{T}_{(\delta)}$
-\end{center}
+\begin{equation}
+	\hat{x}_{k} = x - \sum_{\delta=1}^{k-1}Xw_{(\delta)}w^{T}_{(\delta)}
+\end{equation}
 
 A su vez, para encontrar el vector de carga, es necesario extraer la varianza máxima del nuevo set de datos, tal que:
 
-\begin{center}
-	$w_{(k)} = \arg \max_{||w||=1} \{||\hat{x}_{k}w||^{2}\} = \arg \max \{\frac{w^{T}X^{T}\hat{X}^{T}_{k}\hat{x}_{k}w}{w^{T}w}\}$
-\end{center}
+\begin{equation}
+	w_{(k)} = \arg \max_{||w||=1} \{||\hat{x}_{k}w||^{2}\} = \arg \max \{\frac{w^{T}X^{T}\hat{X}^{T}_{k}\hat{x}_{k}w}{w^{T}w}\}
+\end{equation}
 
 La matriz de covarianza juega un rol fundamental en este análisis, cuyo valor entre dos componentes principales viene dado por:
 \begin{center}
@@ -209,20 +209,13 @@ No obstante, sólo posee $ L $ características que definen el set de datos, de 
 
 $ t = W^{T}x$, donde $ x \in R^{p}, t \in R^{L}$, para las cuales las columnas $ p \times L $ de la matriz $ W $ forman una base ortogonal de las $ L $ características, de esta manera, al basarse en la construcción con sólo $ L $ columnas se maximiza la varianza original de los datos y se minimiza el error cuadrático tal que: 
 
-\begin{center}
-	$|| TW^{T} - T_{L}W_{L}^{T}||^{2}_{2} = ||X - X_{L}||_{2}^{2}$
-\end{center}
+\begin{equation}
+	|| TW^{T} - T_{L}W_{L}^{T}||^{2}_{2} = ||X - X_{L}||_{2}^{2}
+\end{equation}
 
 Normalmente esta reducción es usada para el manejo de set de datos de alta dimensionalidad.
 
 PCA presenta algunas variaciones en sus definiciones o en el uso de los datos, tales como: Incremental PCA. Este método, representa una ventaja computacional en cuanto al coste de memoria y a la manipulación de set de datos altamente dimensionales \cite{artac2002incremental}.
-
-
-\subsubsection{Métodos de reducción de dimensionalidad no lineales}
-
-A diferencia de los métodos de reducción lineales, como su nombre lo indica, permiten trabajar en espacios no lineales. Diferentes algoritmos o metodologías existen para la manipulación de este tipo de datos, siendo las principales expuestas en la Tabla
-
-
 
 \subsection{Codificación de residuos con adición de información de su entorno}
 
@@ -238,7 +231,7 @@ Actualmente, el uso de codificaciones mediante propiedades fisicoquímicas y el 
 
 \section{Transformaciones de Fourier}
 
-Las transformadas de Fourier, corresponden a una transformación matemática que permite analizar una función definida en el espacio tiempo, denominada señal, en sus frecuencias constituyentes. Como característica general, se genera una función definida en el espacio de frecuencias, representada por un valor complejo, en el cual, su módulo corresponde al valor de dicha frecuencia en la función inicial y su coeficiente, corresponde al desfase sinusoidal en la frecuencia.
+Las transformadas de Fourier, corresponden a una transformación matemática que permite analizar una función definida en el espacio tiempo, denominada señal, en sus frecuencias constituyentes. Como característica general, se genera una función definida en el espacio de frecuencias, representada por un valor complejo, en el cual, su módulo corresponde al valor de dicha frecuencia en la función inicial y su coeficiente, corresponde al desfase sinusoidal en la frecuencia \cite{sneddon1995fourier}.
 
 Sea $f$ una función definida en el espacio tiempo, representando una señal, integrable Lebesgue, su transformada se define como $f: \mathbb{R} \to \mathbb{C}$, asociada a una frecuencia, denotada por $\hat{f}$, la cual se expresa como:
 
@@ -254,7 +247,7 @@ Donde $\xi$ corresponde a un número real y $x$ representa al tiempo. A partir d
 	\label{tran2}
 \end{equation}
 
-Tanto \ref{tran1} y \ref{tran2}, corresponden a funciones con distribución continua. De manera similar, es posible definir las transformada de Fourier y su inversa, en el espacio de distribuciones discretas, en donde, sólo se considera un segmento muestral finito del conjunto de datos continuos para reconstruir el espectro de frecuencias. Dado esto, la transformada de Fourier discreta se define como:
+Tanto \ref{tran1} y \ref{tran2}, corresponden a funciones con distribución continua. De manera similar, es posible definir las transformada de Fourier y su inversa, en el espacio de distribuciones discretas, en donde, sólo se considera un segmento muestral finito del conjunto de datos continuos para reconstruir el espectro de frecuencias \cite{rao2014discrete}. Dado esto, la transformada de Fourier discreta se define como:
 
 \begin{equation}
 	X_k = \sum_{n=0}^{N-1} x_n e^{-\dfrac{2\pi i}{N} kn}\ \ \  \forall\  k \in [0, N-1]
@@ -272,15 +265,15 @@ A partir de lo anterior, debido a los diferentes empleos que puede tener esta tr
  
 \subsection{Transformada rápida de Fourier (FFT)}
 
-La transformada rápida de Fourier (FFT por sus siglas en inglés), es un algoritmo que permite encontrar solución a una DFT con una disminución en la complejidad. Esto es, al resolver el problema directamente desde la DFT, se presenta una complejidad $O(N^2)$, en cambio, al utilizar FFT, se obtiene una complejidad de $O(N\log N)$.
+La transformada rápida de Fourier (FFT por sus siglas en inglés), es un algoritmo que permite encontrar solución a una DFT con una disminución en la complejidad. Esto es, al resolver el problema directamente desde la DFT, se presenta una complejidad $O(N^2)$, en cambio, al utilizar FFT, se obtiene una complejidad de $O(N\log N)$ \cite{welch1967use}.
 
-La idea general del algoritmo fue propuesto por Cooley \cite{cooley1970fast}. Dentro de sus particularidades, es que debido a la subdivisión en $N$ transformadas de menor complejidad a resolver, donde $N$ se compone de $n_1$ y $n_2$, se requiere que el conjunto de muestras, presente un tamaño del orden $2\cdot 2^n$, es decir, una potencia de 2. A pesar de que dicho algoritmo es uno de los más comunes para la resolución de transformadas de Fourier, no es el único, siendo algunos: Prime-factor FFT algorithm, Bruun's FFT algorithm, Rader's FFT algorithm, Bluestein's FFT algorithm, and Hexagonal Fast Fourier Transform.
+La idea general del algoritmo fue propuesto por Cooley \cite{cooley1970fast}. Dentro de sus particularidades, es que debido a la subdivisión en $N$ transformadas de menor complejidad a resolver, donde $N$ se compone de $n_1$ y $n_2$, se requiere que el conjunto de muestras, presente un tamaño del orden $2\cdot 2^n$, es decir, una potencia de 2. A pesar de que dicho algoritmo es uno de los más comunes para la resolución de transformadas de Fourier, no es el único, siendo algunos: Prime-factor FFT algorithm \cite{kolba1977prime}, Bruun's FFT algorithm, Rader's FFT algorithm, Bluestein's FFT algorithm, and Hexagonal Fast Fourier Transform \cite{cui2005some}.
 
 Las definiciones matemáticas del proceso, se realizaron por Peter D. Welch en \cite{welch1967use}, explicando la formulación del problema y las demostraciones de la solución. 
 
 La división que se genera en el algoritmo FFT propuesto por Cooley \cite{cooley1970fast}, se basa en el uso de radix-2 DIT, esto es, la división de una DFT de tamaño $N$ en dos DFT de tamaño $N/2$ de manera recursiva.
 
-De manera general, se estiman las DFT de los pares e impares por separado ($x_{2m}$ y $x_{2m+1}$, respectivamente), para luego combinarlas y estimar la DFT del espacio completo Debido a esta subdivisión recursiva en pares, se requiere un número de componetes en potencia de 2. Normalmente, se adicionan elementos para poder cumplir con dicha condición, comúnmente, se utiliza \textit{zero-padding}, para satisfacerlo.
+De manera general, se estiman las DFT de los pares e impares por separado ($x_{2m}$ y $x_{2m+1}$, respectivamente), para luego combinarlas y estimar la DFT del espacio completo Debido a esta subdivisión recursiva en pares, se requiere un número de componetes en potencia de 2. Normalmente, se adicionan elementos para poder cumplir con dicha condición, comúnmente, se utiliza \textit{zero-padding} \cite{muquet2002cyclic}, para satisfacerlo.
 
 Matemáticamente, las DFT de los componentes pares e impares y su combinación se obtiene a partir de:
 
@@ -312,11 +305,13 @@ Un enfoque común, asociado al estudio de señales y modelos RRM, consiste en, a
 
 No obstante, existen otros enfoques, en donde se ha utilizado la digitalización de las propiedades fisicoquímicas como método de generación de atributos para set de datos, los cuales son sometidos a entrenamiento de predicciones, entregando medidas de desempeño satisfactorias, según los autores \cite{cadet2018application}. Sin embargo, la selección de las propiedades fisicoquímicas es arbitraria y sólo se considera la propiedad más informativa, no considerando el uso de combinaciones lineales o correlaciones entre las propiedades existentes.
 
-Uno de los puntos relevantes, es que a partir de un conjunto de espectros de frecuencia, es posible generar un consenso y a su vez, identificar residuos relevantes al espectro y que contribuyen de manera significativa en los peaks.
+Uno de los puntos relevantes, es que a partir de un conjunto de espectros de frecuencia, es posible generar un consenso y a su vez, identificar residuos relevantes al espectro y que contribuyen de manera significativa en los peaks, así como también la generación de espectros consenso a partir de secuencias diferentes, entregando uno de los principales planteamientos. \textit{Un mismo espectro de frecuencia, está asociado a una propiedad o una funcionalidad}, lo cual fue testeado en trabajos como \cite{veljkovic1985possible}. 
+
+Esto último, lo hace una de las ventajas más relevantes para el estudio de mutaciones o reconocimiento de patrones. Sin embargo, la generalización del método ha impedido que se utilice con un mayor impacto, sólo siendo empleado en los estudios nombrados previamente. No obstante, las posibilidades de encontrar patrones o permitir modelar sistemas complejos, además de aplicar las propiedades del estudio de señales a dichos entornos de secuencias, y, las posibilidades que este método entrega para el análisis de estructuras lineales, lo hace una propuesta interesante y novedosa, que merece un esfuerzo estudiarla y aplicarla durante este trabajo de tesis.
 
 \section{Clustering}
 
-Clustering se define como un método de aprendizaje no supervisado, en el cual se cuenta con un conjunto de datos que representan a una muestra y en base a ésta, se trata de obtener grupos de objetos, denominados clusters.
+Clustering se define como un método de aprendizaje no supervisado, en el cual se cuenta con un conjunto de datos que representan a una muestra y en base a ésta, se trata de obtener grupos de objetos, denominados clusters \cite{jain1999data}.
 
 Los clusters deben cumplir con dos características fundamentales:
 
@@ -335,13 +330,13 @@ Tal como se ha mencionado anteriormente, el hecho de tener elementos pertenecien
 
 Por lo tanto se debe determinar que tan similares o diferentes son los valores que tomen las variables con respecto al elemento al cual pertenece.
 
-Para medir lo similar o disimilar que son los individuos existe una enorme cantidad de índices de similaridad y de disimilaridad o divergencia. Todos ellos tienen propiedades y utilidades distintas y habrá que ser consciente de ellas para su correcta aplicación al momento de hacer uso de una de ellas.
+Para medir lo similar o disimilar que son los individuos existe una enorme cantidad de índices de similaridad y de disimilaridad o divergencia. Todos ellos tienen propiedades y utilidades distintas y habrá que ser consciente de ellas para su correcta aplicación al momento de hacer uso de una de ellas \cite{jain1999data}.
 
 Los índices expuestos normalmente pueden ser clasificados tal como sigue:
 
 \begin{enumerate}
 	
-	\item  Indicadores basados en la distancia, para lo cual se considera a los individuos como vectores en el espacio de las variables, en este sentido un elevado valor de la distancia entre dos individuos indicará un alto grado de disimilaridad entre ellos.
+	\item Indicadores basados en la distancia, para lo cual se considera a los individuos como vectores en el espacio de las variables, en este sentido un elevado valor de la distancia entre dos individuos indicará un alto grado de disimilaridad entre ellos.
 	
 	\item Indicadores basados en coeficientes de correlación; la correlación permite indicar cuál es la fuerza y la dirección de una relación lineal entre dos variables. Se considera que dos variables cuantitativas están correlacionadas cuando los valores de una de ellas varían sistemáticamente con respecto a los valores de la otra, esto es: si se tiene dos variables (A y B) existe correlación si al aumentar los valores de A lo hacen también los de B y viceversa.
 	
@@ -357,15 +352,15 @@ A continuación, se resumen algunos de los algoritmos de clustering más utiliza
 
 \subsubsection{\textit{k}-Means}
 
-El algoritmo \textit{k}-Means, trata la separación de muestras en $ n $ grupos de igual varianza, minimizando el criterio conocido como inercia, lo que se traduce en la suma de los cuadrados dentro de los clúster.
+El algoritmo \textit{k}-Means, trata la separación de muestras en $ n $ grupos de igual varianza, minimizando el criterio conocido como inercia, lo que se traduce en la suma de los cuadrados dentro de los clúster \cite{arthur2007k}.
 
 La principal característica y deficiencia a la vez, es que se requiere que el número de grupos sea entregado, es decir, se debe entregar el valor de $k$, así, si se selecciona un valor de $k = 3$, serán tres grupos los que se encontrarán. 
 
 Este algoritmo divide un set de $N$ ejemplos $X$ en $K$ particiones distintas denominadas clúster $C$, cada uno de ellos descrito por la media $\mu_{j}$ de las muestras en el clúster. Esta media es llamada centroide, por lo que en general, \textit{k}-means  elige sus centroides de tal manera que el principio de inercia sea reducido al mínimo, es decir, que la suma de los cuadrados de los integrantes de un mismo grupo sea mínima, a través de:
 
-\begin{center}
-	$\sum_{i=0}^{n} \min_{\mu_{j} \in C} (|| x_{j}-\mu_{i}||^{2})$
-\end{center}
+\begin{equation}
+	\sum_{i=0}^{n} \min_{\mu_{j} \in C} (|| x_{j}-\mu_{i}||^{2})
+\end{equation}
 
 Sin embargo, el principio de inercia, o la suma de los cuadrados mínimos entre los integrantes de los clustering, puede sufrir varios inconvenientes:
 
@@ -393,7 +388,7 @@ En una primera instancia, asigna cada muestra a su centroide más cercano. Poste
 
 \subparagraph{Clustering Jerarquizado\\\\}
 
-Clustering jerárquico o HCA (por sus siglas en inglés) es un método de análisis de conglomerados, que busca construir una jerarquía de agrupaciones. Las estrategias para la agrupación son posible dividirlas en dos:
+Clustering jerárquico o HCA (por sus siglas en inglés) es un método de análisis de conglomerados, que busca construir una jerarquía de agrupaciones. Las estrategias para la agrupación son posible dividirlas en dos \cite{johnson1967hierarchical}:
 
 \begin{itemize}
 	
@@ -403,7 +398,7 @@ Clustering jerárquico o HCA (por sus siglas en inglés) es un método de análi
 	
 \end{itemize}
 
-Siendo generalmente expuestos los resultados en forma de dendrograma, por otro lado, la complejidad del algoritmo, en el caso general es $\displaystyle O(n^{2}\log(n))$, lo cual presenta problemas para set de datos extensos.
+Siendo generalmente expuestos los resultados en forma de dendrograma \cite{sokal1962comparison}, por otro lado, la complejidad del algoritmo, en el caso general es $\displaystyle O(n^{2}\log(n))$, lo cual presenta problemas para set de datos extensos.
 
 Con el fin de decidir qué grupos se deben combinar (por aglomeración), o cuando un grupo se debe dividir (por división), se requiere una medida de disimilitud entre los conjuntos de observaciones. En la mayoría de los métodos de agrupación jerárquica, esto se logra mediante el uso de una métrica apropiada (una medida de la distancia entre pares de observaciones), y un criterio de vinculación que especifica la disimilitud de conjuntos como una función de las distancias por pares de observaciones en los conjuntos.
 
@@ -437,7 +432,7 @@ Un aspecto interesante de este algoritmo es que pueden ser añadidas las limitac
 
 \subsubsection{Affinity Propagation}
 
-AffinityPropagation crea grupos mediante el envío de mensajes entre pares de muestras hasta la convergencia. Un conjunto de datos es descrito por el uso de un pequeño número de ejemplares, que se identifican como las más representativas de otras muestras. Los mensajes enviados entre pares representan la idoneidad para una muestra a ser el ejemplo de la otra, la cual se actualiza en respuesta a los valores de otros pares. Esta actualización ocurre de forma iterativa hasta la convergencia, momento en el que se eligen los ejemplares finales, y por lo tanto se da el agrupamiento final.
+AffinityPropagation crea grupos mediante el envío de mensajes entre pares de muestras hasta la convergencia. Un conjunto de datos es descrito por el uso de un pequeño número de ejemplares, que se identifican como las más representativas de otras muestras. Los mensajes enviados entre pares representan la idoneidad para una muestra a ser el ejemplo de la otra, la cual se actualiza en respuesta a los valores de otros pares. Esta actualización ocurre de forma iterativa hasta la convergencia, momento en el que se eligen los ejemplares finales, y por lo tanto se da el agrupamiento final \cite{frey2007clustering}.
 
 Se elige el número de grupos en base a los datos proporcionados. Para este propósito, los dos parámetros importantes son la preferencia, que controla el número de ejemplares que se utilizan, y el factor de amortiguamiento.
 
@@ -454,40 +449,33 @@ Con respecto a la descripción del algoritmo, es posible mencionar que los mensa
 
 En forma matemática es posible definir la responsabilidad como:
 
-\begin{center}
-	
-	$r(i, k) \leftarrow s(i, k) - max [ a(i, \acute{k}) + s(i, \acute{k}) \forall \acute{k} \neq k ]$
-\end{center}
+\begin{equation}	
+	r(i, k) \leftarrow s(i, k) - max [ a(i, \acute{k}) + s(i, \acute{k}) \forall \acute{k} \neq k ]
+\end{equation}
 
 Donde $s(i,k)$ es la similaridad entre las muestras $i$ y $k$. 
 
 A su vez, la disponibilidad, es posible definirla como:
 
-\begin{center}
-	
-	$a(i, k) \leftarrow min [0, r(k, k) + \sum_{\acute{i}~s.t.~\acute{i} \notin \{i, k\}}{r(\acute{i}, k)}]$
-	
-\end{center}
+\begin{equation}
+	a(i, k) \leftarrow min [0, r(k, k) + \sum_{\acute{i}~s.t.~\acute{i} \notin \{i, k\}}{r(\acute{i}, k)}]
+\end{equation}
 
 \subsubsection{Mean Shift}
 
-El algoritmo de Mean Shift tiene como objetivo descubrir manchas (blobs) en una densidad uniforme de las muestras. Es un algoritmo basado en centroides, que funciona mediante la actualización de los candidatos para centroides para ser la media de los puntos dentro de una región determinada. Estos candidatos se filtran en una etapa de post-procesamiento para eliminar duplicados y así formar el conjunto final de centroides.
+El algoritmo de Mean Shift tiene como objetivo descubrir manchas (blobs) en una densidad uniforme de las muestras. Es un algoritmo basado en centroides, que funciona mediante la actualización de los candidatos para centroides para ser la media de los puntos dentro de una región determinada. Estos candidatos se filtran en una etapa de post-procesamiento para eliminar duplicados y así formar el conjunto final de centroides \cite{cheng1995mean}.
 
 Dado un candidato $x_{i}$ para la iteración $t$, el candidato a centroide es actualizado en base a la ecuación:
 
-\begin{center}
-	
-	$x_i^{t+1} = x_i^t + m(x_i^t)$
-\end{center}
+\begin{equation}
+	x_i^{t+1} = x_i^t + m(x_i^t)
+\end{equation}
 
 Donde $N (x_i)$ es la vecindad de las muestras dentro de una distancia dada alrededor $x_i$ y $m$ es el vector de desplazamiento medio, que se calcula para cada centroide que apunta hacia una región del aumento máximo en la densidad de puntos. Ésta se calcula utilizando la siguiente ecuación, en la que la actualización de manera efectiva denota a un centroide ser la media de las muestras dentro de su vecindad:
 
-\begin{center}
-	
-	
-	$m(x_i) = \frac{\sum_{x_j \in N(x_i)}K(x_j - x_i)x_j}{\sum_{x_j \in N(x_i)}K(x_j - x_i)}$
-	
-\end{center}
+\begin{equation}		
+	m(x_i) = \frac{\sum_{x_j \in N(x_i)}K(x_j - x_i)x_j}{\sum_{x_j \in N(x_i)}K(x_j - x_i)}
+\end{equation}
 
 Algunas de las características de Mean Shift, son
 
@@ -503,9 +491,9 @@ Algunas de las características de Mean Shift, son
 
 \subsubsection{DBSCAN}
 
-El algoritmo DBSCAN ve agrupaciones como áreas de alta densidad separadas por zonas de baja densidad. Debido a esta visión bastante genérica, las agrupaciones que se encuentran pueden ser de cualquier forma, en lugar de \textit{k}-means  que supone que los grupos tienen la forma convexa.
+El algoritmo DBSCAN ve agrupaciones como áreas de alta densidad separadas por zonas de baja densidad. Debido a esta visión bastante genérica, las agrupaciones que se encuentran pueden ser de cualquier forma, en lugar de \textit{k}-means  que supone que los grupos tienen la forma convexa \cite{tran2013revised}.
 
-El componente central de DBSCAN es el concepto de muestras de núcleo, las cuales son las muestras que se encuentran en áreas de alta densidad. Por lo tanto, un clúster es un conjunto de muestras de núcleos, cada uno cerca del otro (medido por alguna medida de distancia) y un conjunto de muestras no básicas que se encuentran cerca de una muestra básica. Hay dos parámetros necesarios para el algoritmo, min samples y EPS, los cuales definen formalmente la densidad deseada.
+El componente central de DBSCAN es el concepto de muestras de núcleo, las cuales son las muestras que se encuentran en áreas de alta densidad. Por lo tanto, un clúster es un conjunto de muestras de núcleos, cada uno cerca del otro (medido por alguna medida de distancia) y un conjunto de muestras no básicas que se encuentran cerca de una muestra básica. Hay dos parámetros necesarios para el algoritmo, min samples y EPS, los cuales definen formalmente la densidad deseada \cite{tran2013revised}.
 
 
 Más formalmente, se define una muestra del núcleo como una muestra del conjunto de datos de tal manera que existe una cantidad de muestra mínimas y a su vez otras muestras dentro de una distancia de EPS, que se definen como vecinos de la muestra del núcleo. Esto dice que la muestra de núcleo se encuentra en un área densa del espacio vectorial. Un clúster es un conjunto de muestras de núcleo que se puede construir mediante la adopción de forma recursiva de una muestra básica, la búsqueda de todos sus vecinos que son muestras de la base, la búsqueda de la totalidad de sus vecinos que son muestras de núcleo, y así sucesivamente. Un cluster también tiene un conjunto de muestras no básicas, que son las muestras que son vecinos de una muestra básica de la agrupación, pero no son en sí mismos muestras de núcleos. Intuitivamente, estas muestras están al margen de un clúster.
@@ -524,7 +512,7 @@ Normalmente, los resultados del algoritmo, pueden representarse tal como se expo
 
 \subsubsection{Birch}
 
-Birch construye un árbol llamado Characteristic Feature Tree (CFT) de los datos correspondientes. Los datos están esencialmente con pérdida de información, comprimidos en un conjunto de nodos de rasgo característico denominados CF nodos. Estos tienen una serie de subgrupos llamados subclusters de rasgo característico, ubicados en los nodos CF no terminales los cuales pueden tener CF nodos como hijos.
+Birch construye un árbol llamado Characteristic Feature Tree (CFT) de los datos correspondientes. Los datos están esencialmente con pérdida de información, comprimidos en un conjunto de nodos de rasgo característico denominados CF nodos. Estos tienen una serie de subgrupos llamados subclusters de rasgo característico, ubicados en los nodos CF no terminales los cuales pueden tener CF nodos como hijos \cite{zhang1997birch}.
 
 Los subgrupos CF pueden contener la información necesaria para la agrupación que evite la necesidad de mantener los datos de entrada enteros en la memoria. Esta información incluye:
 
@@ -558,20 +546,19 @@ Una descripción del algoritmo, es posible realizarla en los siguientes puntos:
 \subsubsection{Mixture Model}
 
 Los métodos de clustering basado en modelos tratan de optimizar el conjunto de datos a un modelo
-matemático. En general estos métodos se basan en la suposición que los datos han sido generados por una mezcla de distribuciones de probabilidad. Dentro de los más utilizados se encuentran \textbf{Gaussian Mixture} y \textbf{Expectation-Maximization}.
+matemático. En general estos métodos se basan en la suposición que los datos han sido generados por una mezcla de distribuciones de probabilidad. Dentro de los más utilizados se encuentran \textbf{Gaussian Mixture} \cite{zivkovic2004improved} y \textbf{Expectation-Maximization} \cite{moon1996expectation}.
 
-Expectation Maximization, supone que los datos emergen de una mecla de distribuciones, donde cada distribución se denomina como \textit{component distribution}, razón por la cual, los datos pueden agruparse usando un modelo de mezcla de densidades de $k$ distribuciones de probabilidades. Sin embargo, el problema reside en estimar los parámetros de estas distribuciones para proveer del mejor ajuste posible a los datos. 
+Expectation Maximization, supone que los datos emergen de una mecla de distribuciones, donde cada distribución se denomina como \textit{component distribution}, razón por la cual, los datos pueden agruparse usando un modelo de mezcla de densidades de $k$ distribuciones de probabilidades. Sin embargo, el problema reside en estimar los parámetros de estas distribuciones para proveer del mejor ajuste posible a los datos \cite{moon1996expectation}. 
 
 El algoritmo Expectation Maximization (EM) puede ser considerado como una extensión de \textit{k}-means, esto es debido a que: Si \textit{k}-means asigna cada objeto a un clúster en función de su media, EM asigna cada objeto a un clúster en función de un peso que representa la probabilidad de pertenencia al clúster. Esto requiere que se defina una distribución de probabilidad para los clusters.
 
-Por otro lado, un modelo de mezcla gaussiano como Gaussian Mixture Model (GMM) es una función de densidad de probabilidad representada por una suma de componentes gausianas, GMMs son usadas como modelos paramétricos de la distribución de probabilidad de medidas continuas, donde los parámetros de GMM son estimados usando iterativamente el algoritmo Expectation-Maximization.
+Por otro lado, un modelo de mezcla gaussiano como Gaussian Mixture Model (GMM) es una función de densidad de probabilidad representada por una suma de componentes gausianas, GMMs son usadas como modelos paramétricos de la distribución de probabilidad de medidas continuas, donde los parámetros de GMM son estimados usando iterativamente el algoritmo Expectation-Maximization \cite{zivkovic2004improved}.
 
 Un GMM es una suma con pesos de densidades gaussianas:
 
-\begin{center}
-	
-	$p(\vec{x}) = \sum_{i=1}^{M} w_i \times N(\vec{x}|\mu_i, \sum_{i})$ 
-\end{center}
+\begin{equation}	
+	p(\vec{x}) = \sum_{i=1}^{M} w_i \times N(\vec{x}|\mu_i, \sum_{i})
+\end{equation}
 
 Donde $\vec{x}$ es un vector D-dimensional de datos, $w_i$ son los pesos con $\sum_{i=1}^{M} w_i = 1$, y $N(\vec{x}|\mu_i, \sum_{i})$ es la densidad gaussiana, por lo tanto, la caracterización se completa con la media, la matríz de covarianza y el peso de cada componente gaussiana.
 
@@ -635,7 +622,7 @@ Existen diversas medidas de similitud con el fin de evaluar el clustering, las c
 
 \subparagraph{Adjusted Rand index\\\\}
 
-Dado el conocimiento de las clases asignadas como verdaderas (etiquetas verdaderas) y las etiquetas obtenidas por el algoritmo de clustering (etiquetas predichas) el adjuster rand index es una función que mide la similaridad de las dos asignaciones, ignorando permutaciones, posee valores entre -1 y 1, siendo 1 el valor perfecto. Sin embargo, es imperante para evaluar el desempeño, conocer las etiquetas verdaderas de los datos.
+Dado el conocimiento de las clases asignadas como verdaderas (etiquetas verdaderas) y las etiquetas obtenidas por el algoritmo de clustering (etiquetas predichas) el adjuster rand index es una función que mide la similaridad de las dos asignaciones, ignorando permutaciones, posee valores entre -1 y 1, siendo 1 el valor perfecto. Sin embargo, es imperante para evaluar el desempeño, conocer las etiquetas verdaderas de los datos \cite{yeung2001details}.
 
 Matemáticamente es posible definirlo como:
 
@@ -649,71 +636,65 @@ Sea $C$ una asignación de clase real y dada la agrupación $K$, se define $a$ y
 
 El valor del rand index no ajustado viene dado por:
 
-\begin{center}
-	$RI = \frac{a + b}{C_2^{n_{samples}}}$
-\end{center}
+\begin{equation}
+	RI = \frac{a + b}{C_2^{n_{samples}}}
+\end{equation}
 
 Donde $C_2^{n_{samples}}$ es el número total de posibles pares en el set de datos.
 
 Sin embargo, la puntuación de RI no garantiza que las asignaciones de etiquetas al azar conseguirán un valor cercano a cero, para contrarrestar este efecto se puede descartar la esperanza RI $E[RI]$ de etiquetas al azar mediante la definición del adjusted rand index:
 
-\begin{center}
-	$ARI = \frac{RI - E[RI]}{\max(RI) - E[RI]}$
-	
-\end{center}
+\begin{equation}
+	ARI = \frac{RI - E[RI]}{\max(RI) - E[RI]}	
+\end{equation}
 
 \subparagraph{Información mutua basada en scores\\\\}
 
 Dado el conocimiento de las etiquetas de las clases reales y las asignaciones obtenidas de algoritmos de agrupación de las mismas muestras, el mutual information es una función que mide el \textit{acuerdo} de las dos asignaciones, ignorando las permutaciones. Existen dos versiones normalizadas diferentes de esta medida:
 
-Normalized Mutual Information, NMI (Información mutua normalizada) y Adjusted Mutual Information, AMI (Información mutua ajustada). NMI es a menudo usado en la literatura mientras que AMI fue porpuesto más recientemente.
+Normalized Mutual Information, NMI (Información mutua normalizada) y Adjusted Mutual Information, AMI (Información mutua ajustada). NMI es a menudo usado en la literatura mientras que AMI fue porpuesto más recientemente \cite{peng2005feature}.
 
 Matemáticamente, es posible definir esta forma de evaluación tal que: se asume dos etiquetas asignadas (de los mismos $N$ objetos), $U$ y $V$, su entropía es la cantidad de incertidumbre para un conjunto de particiones definido por:
 
-\begin{center}
-	$H(U) = \sum_{i=1}^{|U|}P(i)\log(P(i))$
-\end{center}
+\begin{equation}
+	H(U) = \sum_{i=1}^{|U|}P(i)\log(P(i))
+\end{equation}
 
 donde $P(i) = |U_i| / N$ es la probabilidad que un objecto seleccionado aleatoriamente de la clase $U$ sea asignado a la clase $U_i$, de igual manera para $V$:
-\begin{center}
-	
-	$H(V) = \sum_{j=1}^{|V|}P'(j)\log(P'(j))$
-\end{center}
+
+\begin{equation}	
+	H(V) = \sum_{j=1}^{|V|}P'(j)\log(P'(j))
+\end{equation}
 
 Con $P'(j) = |V_j| / N$ el mutual information (MI) entre $U$ y $V$ es calculado por:
 
-\begin{center}
-	
-	$MI(U, V) = \sum_{i=1}^{|U|}\sum_{j=1}^{|V|}P(i, j)\log(\frac{P(i,j)}{P(i)P'(j)})$
-\end{center}
+\begin{equation}	
+	MI(U, V) = \sum_{i=1}^{|U|}\sum_{j=1}^{|V|}P(i, j)\log(\frac{P(i,j)}{P(i)P'(j)})
+\end{equation}
 
 donde $P(i, j) = |U_i \cap V_j| /N$ es la probabilidad de que un objeto seleccionado aleatoriamente sea asignado a ambas clases $U_i$ y $V_j$.
 
 El valor normalizado del mutual information es definido como:
 
-\begin{center}
-	
-	$NMI(U, V) = \frac{MI(U, V)}{\sqrt{H(U)H(V)}}$
-	
-\end{center}
+\begin{equation}	
+	NMI(U, V) = \frac{MI(U, V)}{\sqrt{H(U)H(V)}}
+\end{equation}
 Este valor del mutual information y también la variante normalizada no se ajusta al azar y tiende a aumentar a medida que aumenta el número de diferentes etiquetas (clusters), independientemente de la cantidad real de \textit{mutual information} entre las asignaciones de etiquetas.
 
 El valor esperado para el mutual information puede ser calculado usando la ecuación descrita por  Vinh, Epps, and Bailey, (2009). En esta ecuación, $a_i = |U_i|$ (el número de elementos en $U_i$) y $b_j = |V_j|$ (el número de elementos en $V_j$).
-\begin{center}
-	
-	$E[MI(U,V)]=\sum_{i=1}^|U| \sum_{j=1}^|V| \sum_{n_{ij}=(a_i+b_j-N)^+ }^{\min(a_i, b_j)} \frac{n_{ij}}{N}\log ( \frac{ N.n_{ij}}{a_i b_j}) \frac{a_i!b_j!(N-a_i)!(N-b_j)!}{N!n_{ij}!(a_i-n_{ij})!(b_j-n_{ij})! (N-a_i-b_j+n_{ij})!}
-	$
-\end{center}
+\begin{equation}	
+	E[MI(U,V)]=\sum_{i=1}^{|U|} \sum_{j=1}^{|V|} \sum_{n_{ij}=(a_i+b_j-N)^+ }^{\min(a_i, b_j)} \frac{n_{ij}}{N}\log ( \frac{ N.n_{ij}}{a_i b_j}) \frac{a_i!b_j!(N-a_i)!(N-b_j)!}{N!n_{ij}!(a_i-n_{ij})!(b_j-n_{ij})! (N-a_i-b_j+n_{ij})!}	
+\end{equation}
 
 Usando el valor esperado, el adjusted mutual information puede ser calculado usando una forma similar al ARI:
 
-\begin{center}
-	
-	$AMI = \frac{MI - E[MI]}{\max(H(U), H(V)) - E[MI]}$
-\end{center}
+\begin{equation}	
+	AMI = \frac{MI - E[MI]}{\max(H(U), H(V)) - E[MI]}
+\end{equation}
+
 \subparagraph{Homogeneidad, Completación y V-measure \\\\}
 
-Para el caso en el que se conozca a ciencia cierta las etiquetas reales de las clases, es posible definir medidas de evaluación basándose en la entropía existente. En particular Rosenberg y Hirschberg (2007) \cite{sesentaiocho} definen los siguientes dos objetivos deseables para cualquier asignación de clusters:
+Para el caso en el que se conozca a ciencia cierta las etiquetas reales de las clases, es posible definir medidas de evaluación basándose en la entropía existente. En particular Rosenberg y Hirschberg (2007) \cite{rosenberg2007v} definen los siguientes dos objetivos deseables para cualquier asignación de clusters:
 
 \begin{itemize}
 	
@@ -725,40 +706,39 @@ Para el caso en el que se conozca a ciencia cierta las etiquetas reales de las c
 
 Los valores de estos score abarcan los rangos entre 0 y 1, siendo 1 el score perfecto.
 
-Es posible definir la homogeneidad y el completeness como:
+Es posible definir la homogeneidad y el completeness como $h$ y $c$, respectivamente:
 
-\begin{center}
-	
-	$h = 1 - \frac{H(C|K)}{H(C)}$\\
-	$c = 1 - \frac{H(K|C)}{H(K)}$
-\end{center}
+\begin{equation}	
+	h = 1 - \frac{H(C|K)}{H(C)}	
+\end{equation}
+
+\begin{equation}
+	c = 1 - \frac{H(K|C)}{H(K)}
+\end{equation}
 
 donde $H(C|K)$ es la entropía condicional de las clases dada la asignación del clúster y es definida por:
 
-\begin{center}
-	
-	$H(C|K) = - \sum_{c=1}^{|C|} \sum_{k=1}^{|K|} \frac{n_{c,k}}{n} \cdot \log(\frac{n_{c,k}}{n_k})$
-	
-\end{center}
+\begin{equation}	
+	H(C|K) = - \sum_{c=1}^{|C|} \sum_{k=1}^{|K|} \frac{n_{c,k}}{n} \cdot \log(\frac{n_{c,k}}{n_k})
+\end{equation}
 
 y $H(C)$ es la entropía de la clase y cuyo valor viene dado por:
 
-\begin{center}
-	
-	$H(C) = - \sum_{c=1}^{|C|} \frac{n_c}{n} \cdot \log(\frac{n_c}{n})$
-\end{center}
+\begin{equation}	
+	H(C) = - \sum_{c=1}^{|C|} \frac{n_c}{n} \cdot \log(\frac{n_c}{n})
+\end{equation}
 
 con $n$ siendo el número total de muestras, $n_c$ y $n_k$ el número de muestras respectivamente pertenecientes a la clase $c$ y al clúster $k$, y finalmente $n_{c,k}$ el número de muestra de la clase $c$ asignados al clúster $k$.
 
-Rosenberg y Hirschberg también definieron un \textbf{V-measure} como el score medio de la homogeneidad y completeness:
+Rosenberg y Hirschberg \cite{rosenberg2007v} también definieron un \textbf{V-measure} como el score medio de la homogeneidad y completeness:
 
-\begin{center}
-	
-	$v = 2 \cdot \frac{h \cdot c}{h + c}$
-\end{center}
+\begin{equation}	
+	v = 2 \cdot \frac{h \cdot c}{h + c}
+\end{equation}
+
 \subparagraph{Silhouette Coefficient\\\\}
 
-Este coeficiente es posible utilizarlo cuando se desconocen las reales etiquetas de los ejemplos, una puntuación alta (por sobre 0.75) denota un modelo con grupos bien definidos. Este coeficiente se define para cada muestra y posee dos score:
+Este coeficiente es posible utilizarlo cuando se desconocen las reales etiquetas de los ejemplos, una puntuación alta (por sobre 0.75) denota un modelo con grupos bien definidos \cite{rousseeuw1987silhouettes}. Este coeficiente se define para cada muestra y posee dos score:
 
 \begin{itemize}
 	
@@ -769,41 +749,42 @@ Este coeficiente es posible utilizarlo cuando se desconocen las reales etiquetas
 
 El coeficiente para una única muestra, viene dado por:
 
-\begin{center}
-	
-	$s = \frac{b - a}{max(a, b)}$
-\end{center}
-
+\begin{equation}	
+	s = \frac{b - a}{max(a, b)}
+\end{equation}
 
 \subparagraph{Calinski-Harabaz Index\\\\}
 
-Este índice es utilizado cuando las etiquetas son desconocidas, donde un mayor valor de éste implica un modelo mejor definido.
+Este índice es utilizado cuando las etiquetas son desconocidas, donde un mayor valor de éste implica un modelo mejor definido \cite{calinski1974dendrite}.
 
 Para $k$ clusters, el Calinski-Harabaz index $s$ se da como la razón de la dispersión entre clusters y la dispersión dentro del grupo:
 
-\begin{center}
-	$s(k) = \frac{Tr(B_k)}{Tr(W_k)}  \frac{N - k}{k - 1}$
-\end{center}
+\begin{equation}
+	s(k) = \frac{Tr(B_k)}{Tr(W_k)}  \frac{N - k}{k - 1}
+\end{equation}
 
 
 Donde $B_{K}$ es la matriz de dispersión entre grupos y $W_{K}$ es la matriz de dispersión dentro del clúster definida por:
 
-\begin{center}
-	
-	$W_k = \sum_{q=1}^k \sum_{x \in C_q} (x - c_q) (x - c_q)^T$\\
-	$B_k = \sum_q n_q (c_q - c) (c_q - c)^T$
-\end{center}
+\begin{equation}	
+	W_k = \sum_{q=1}^k \sum_{x \in C_q} (x - c_q) (x - c_q)^T
+\end{equation}
+
+\begin{equation}
+	B_k = \sum_q n_q (c_q - c) (c_q - c)^T
+\end{equation}
 
 Con $N$ como el de puntos en el set de datos, $C_{q}$ el set de puntos en el cluster $q$, $c_{q}$ el centro del clúster $q$, $c$ el centro de $E$, $n_{q}$ el número de puntos en el clúster $q$.
 
 \section{Hipótesis}
 
-Dada la problemática existente sobre cómo representar conjuntos de secuencias lineales con el fin de poder desarrollar modelos de clasificación/regresión o identificación de patrones asociados a residuos claves que brindan la propiedad fisicoquímica. Y, en consideración de los diferentes usos que entrega las transformadas de Fourier, se plantea la hipótesis de este capítulo.
+Dada la problemática existente sobre cómo representar conjuntos de secuencias lineales con el fin de poder desarrollar modelos de clasificación/regresión o identificación de patrones asociados a propiedades fisicoquímicas. Y, en consideración de los diferentes usos que entrega las transformadas de Fourier, se plantea la hipótesis de este capítulo.
 
 \begin{center}
-	\textit{La codificación de secuencias lineales empleando espectros de frecuencia, basados en las propiedades fisicoquímicas de los residuos pertenecientes, ¿permite generar descriptores que faciliten el aprendizaje de predictores de variantes enfocados a diferentes respuestas de interés? A su vez, los patrones de frecuencia, pueden ser asociados a residuos claves en familias de variantes?
+	\textit{La codificación de secuencias lineales empleando espectros de frecuencia, basados en las propiedades fisicoquímicas de los residuos pertenecientes, ¿permite generar descriptores que faciliten el aprendizaje de predictores de variantes enfocados a diferentes respuestas de interés? A su vez, es posible correlacionar propiedades fisicoquímicas o funciones a espectros de frecuencia?
 }
 \end{center}
+
 Si bien, en el planteamiento de la hipótesis se exponen dos preguntas, la interrogante en sí, se centra a los posibles usos que pueda tener los espectros de frecuencia en el estudio de variantes, identificación de patrones, residuos relevantes, etc.
 
 \section{Objetivos}
@@ -825,9 +806,8 @@ A partir del objetivo general, nacen los siguientes objetivos específicos.
 	\item Diseñar e implementar, metodología de codificación de propiedades fisicoquímicas y selección de las más representativas, por medio de técnicas de reducción de dimensionalidad y selección de características, descritas a través de espectros de frecuencia.
 	
 	\item Implementar y validar modelos de clasificación/regresión para evaluación de análisis de estabilidad de variantes según descriptores basados en espectros de frecuencia de propiedades fisicoquímicas.
-	
-	
-	\item Diseñar, implementar y caracterizar grupos obtenidos a partir de algoritmos de aprendizaje no supervisados, considerando como descriptores los espectros de frecuencias asociados a las propiedades fisicoquímicas y crear metodología de reconocimiento de patrones basados en residuos claves correlacionados a peaks en en la distribución de espectros.
+		
+	\item Diseñar, implementar y caracterizar grupos obtenidos a partir de algoritmos de aprendizaje no supervisados, considerando como descriptores los espectros de frecuencias asociados a las propiedades fisicoquímicas.
 	
 \end{enumerate}
 
@@ -864,20 +844,34 @@ De esta forma, por cada secuencia, se obtiene un conjunto de espectros de frecue
 
 Uno de los objetivos de la codificación de secuencias lineales, es evaluar si el conjunto de espectros de frecuencia para un grupo de variantes, puede ser utilizado como características para generar set de datos y entrenar modelos a partir de estos.
 
-Con esto en mente y apoyados en los conjuntos de datos utilizados para la generación de descriptores basados en propiedades termodinámicas y filogenéticas, expuestos en el capítulo \ref{cap2}, se considerarán la secuencia original de la proteína y serán generadas las variantes con respecto a la mutación reportada. De esta forma se creará un conjunto de datos basados en una variante y la respuesta asociada, lo cual corresponde a las diferencias de energía libre que provoca la sustitución del residuo.
+Con esto en mente y apoyados en los conjuntos de datos utilizados para la generación de descriptores basados en propiedades termodinámicas y filogenéticas, expuestos en el capítulo \ref{cap2}, se desarrollarán modelos de clasificación para la evaluación de la estabilidad de proteína y modelos de regresión para la predicción del cambio en la energía libre provocado por los residuos.
 
-Al conjunto de secuencias generado, se aplicará la codificación y digitalización de las propiedades fisicoquímicas, descritas en el punto anterior. La selección de las características se basa en un consenso con respecto a las incidencias de cada propiedad en cada secuencia.
+En la Figura \ref{cap3:fig3}, se expone un esquema representativo asociado a los pasos a seguir para el desarrollo de los modelos.
 
-Una vez se tenga el conjunto de espectros, modelos predictivos serán entrenados aplicando algoritmos de aprendizaje supervisado al set de datos de espectros de frecuencia. Se utilizarán las medidas de desempeño expuestas en el capítulo anterior. Los modelos serán validados mediante validación cruzada con un valor de $k=10$, con el fin de evaluar el sobreajuste. 
+\begin{figure}[!h]
+	
+	\centering
+	\includegraphics[scale=.4]{fig2.png}
+	\caption{Esquema representativo, metodología de clustering se secuencias por medio de espectros de frecuencias basados en propiedades fisicoquímicas.}
+	\label{cap3:fig3}
+\end{figure}
 
-Los modelos serán comparados con los obtenidos en la fase de exploración de la metodología expuesta en el capítulo 2 y con los resultados finales a obtener. Esto con el fin de determinar, qué metodología o caracterización de datos, permite entregar un modelo con mejor desempeño o características deseables.
 
-\subsection{Identificación de residuos claves en espectros de frecuencia}
+En una primera instancia, se necesita preparar el conjunto de datos, para ello, se considerarán la secuencia original de la proteína y serán generadas las variantes con respecto a la mutación reportada. De esta forma se creará un conjunto de datos basados en una variante y la respuesta asociada, lo cual corresponde a las diferencias de energía libre que provoca la sustitución del residuo o clasificación de estabilidad.
 
+Al conjunto de secuencias generado, se aplicará la codificación de las propiedades fisicoquímicas, a partir de la información existente en la base de datos AAindex.
 
-\subsection{Aplicación de técnicas de clustering, para categorización de espectros de frecuencia}
+Posterior a ello, se seleccionarán las propiedades más informativas y se generará la digitalización de éstas, empleando la metodología descrita en el punto anterior. La selección de las características se basa en un consenso con respecto a las incidencias de cada propiedad en cada secuencia, esto es, dado a que se seleccionan $p$ propiedades por cada secuencia, es posible que diferentes secuencias, presente distintas propiedades. Por lo tanto, se seleccionarán aquellas propiedades que presenten mayor incidencia en el conjunto de secuencias, ya que éstas, serán las más representativas del conjunto completo. 
 
-Uno de los supuestos más relevantes asociados al uso de la digitalización y las propiedades fisicoquímicas como descriptores de secuencias lineales, es el hecho de que, proteínas con una misma función, presentarán un espectro de frecuencia similar \cite{veljkovic1985possible}. 
+Una vez se tenga el conjunto de espectros, modelos predictivos serán entrenados aplicando algoritmos de aprendizaje supervisado al set de datos de espectros de frecuencia. Se utilizarán las medidas de desempeño expuestas en el capítulo \ref{cap2}. Los modelos serán validados mediante validación cruzada con un valor de $k=10$, con el fin de evaluar el sobreajuste. 
+
+Finalmente, los resultados a obtener a partir de descriptores basados en espectros de frecuencia, serán comparados con los obtenidos en la fase de exploración de la metodología expuesta en el capítulo 2. Esto con el fin de determinar, qué metodología o caracterización de datos, permite entregar un modelo con mejor desempeño o características deseables. 
+
+Es importante mencionar que, los modelos que se obtengan a partir de la digitalización de propiedades fisicoquímicas, pueden presentar  performance inferior a los modelos a obtener aplicando la metodología del capítulo \ref{cap2}. Sin embargo, si el desempeño es alto, sería suficiente para responder la pregunta planteada. Si son bajos o azarosos, implica que se requiere un mayor refinamiento a la metodología, o, que simplemente el conjunto de datos presenta problemas para entrenar modelos, razón por la cual, debiese descartarse. 
+
+\subsection{Aplicación de técnicas de clustering sobre espectros de frecuencia}
+
+Uno de los supuestos más relevantes asociados al uso de la digitalización y las propiedades fisicoquímicas como descriptores de secuencias lineales, es el hecho de que, proteínas con una misma función, presentan un espectro de frecuencia similar \cite{veljkovic1985possible}. 
 
 Esto, hace pensar que, para un conjunto de secuencias desconocidas, dada una selección de propiedades fisicoquímicas, a la hora de aplicar técnicas de clustering, empleando algoritmos de aprendizaje no supervisado, serán agrupadas de tal forma, que, los espectros de frecuencia en cada grupo presenten similitudes entre ellos, basados en propiedades estadísticas o por medio de análisis cross-espectral.
  
@@ -891,10 +885,16 @@ Con el fin de corroborar este supuesto, además de demostrar que el uso de descr
 	\label{cap3:fig2}
 \end{figure}
 
-En una primera instancia, se deberá identificar cuáles son las secuencias de interés, para ello, se trabajarán con diferentes secuencias lineales y variantes asociadas a ellas, principalmente de enzimas, con alguna propiedad característica, proteínas comunes de interés con mutaciones reportadas, etc. La descarga de éstas, se realizará desde diferentes bases de datos, en particular desde Brenda \cite{schomburg2004brenda}, para el caso de las enzimas, Protherm \cite{bava2004protherm} para otras propiedades de interés, relacionadas a estabilidad. Es importante mencionar, que no se quiere asociar o reconocer qué efecto causa la mutación. Si no, que simplemente, proteínas con similar función, tendrán un espectro de frecuencia con características similares. Es por ello, que la propiedad se conoce de antemano. Sin embargo, también se evaluará si es posible la generación de grupos donde la mutación afecte negativa y positivamente a la estabilidad en proteínas, utilizando para esto, el conjunto de set de datos expuestos en el capítulo \ref{cap2}.
+En una primera instancia, se deberá identificar cuáles son las secuencias de interés, para ello, se trabajarán con diferentes secuencias lineales y variantes asociadas a ellas, principalmente de enzimas, con alguna propiedad característica, proteínas comunes de interés con mutaciones reportadas, etc. La descarga de éstas, se realizará desde diferentes bases de datos, en particular desde Brenda \cite{schomburg2004brenda}, para el caso de las enzimas, Protherm \cite{bava2004protherm} para otras propiedades de interés, relacionadas a estabilidad. 
 
-Una vez se tengan las secuencias, se aplicará la codificación de diferentes propiedades fisicoquímicas y a su vez, se digitalizará cada una de éstas. Es importante mencionar, que no se seleccionarán propiedades específicas ya que, puede que las más representativas o informativas no necesariamente generen conjuntos de datos agrupados con el mismo patrón de espectro de frecuencia. Esto implica, que se generarán $n$ espectros de frecuencia por cada secuencia y para cada propiedad se aplicarán técnicas de clustering, esto con el fin de determinar si aparecen grupos con misma propiedad conocida, correspondientes a las $n$ propiedades descritas en AAindex. Esto, con el fin de evaluar si proteínas con misma funcionalidad, o mismo plegamiento, o, alguna característica en común, quedan agrupadas.
+Es importante mencionar, que no se quiere asociar o reconocer qué efecto causa la mutación. Si no, probar que, proteínas con similar función, tendrán un espectro de frecuencia con características comunes. Es por ello, que la propiedad se conoce de antemano. Sin embargo, también se evaluará si es posible la generación de grupos donde la mutación afecte negativa y positivamente a la estabilidad en proteínas, utilizando para esto, el conjunto de set de datos expuestos en el capítulo \ref{cap2}.
 
-Finalmente, una vez se tengan estos grupos, se realizará la etapa de análisis, caracterización e identificación de patrones. Esto es, en base a la información conocida que se tiene del conjunto de proteínas, evaluar si los grupos formados presentan algo en común, ya sea, propiedades fisicoquímicas, plegamiento, actividad, funcionalidad, etc. Esto permitirá evaluar si los espectros de frecuencia, permiten agrupar secuencias con características o patrones en común y si son informativas para dicho objetivo. Se destaca además, que esto implica una fase exploratoria y es incierto lo que pueda resultar. Si bien se postuló las correlaciones entre espectro y propiedad \cite{veljkovic1985possible}, esto fue hecho hace un tiempo prolongado y sólo se evaluaron proteínas o enzimas con particularidades específicas, de esta forma, se espera poder reafirmar dicha afirmación y poder postular un nuevo método de clustering de propiedades en secuencias y sus variantes.
+Una vez se tengan las secuencias, se aplicará la codificación de diferentes propiedades fisicoquímicas y a su vez, se digitalizará cada una de éstas. Es importante mencionar, que no se seleccionarán propiedades específicas ya que, puede que las más representativas o informativas no necesariamente generen conjuntos de datos agrupados con el mismo patrón de espectro de frecuencia. 
+
+Esto implica, que se generarán $n$ espectros de frecuencia por cada secuencia y para cada propiedad se aplicarán técnicas de clustering, esto con el fin de determinar si aparecen grupos con misma propiedad conocida, correspondientes a las $n$ propiedades descritas en AAindex. Lo anterior, permitirá evaluar si proteínas con misma funcionalidad, o mismo plegamiento, o, alguna característica en común, quedan agrupadas.
+
+Finalmente, una vez se tengan estos grupos, se realizará la etapa de análisis, caracterización e identificación de patrones. Esto es, en base a la información conocida que se tiene del conjunto de proteínas, evaluar si los grupos formados presentan algo en común, ya sea, propiedades fisicoquímicas, plegamiento, actividad, funcionalidad, etc. 
+
+Esto permitirá evaluar si los espectros de frecuencia, permiten agrupar secuencias con características o patrones en común y si son informativas para dicho objetivo. Se destaca además, que esto implica una fase exploratoria y es incierto lo que pueda resultar. Si bien se postuló las correlaciones entre espectro y propiedad \cite{veljkovic1985possible}, esto fue hecho hace un tiempo prolongado y sólo se evaluaron proteínas o enzimas con particularidades específicas, de esta forma, se espera poder reafirmar dicha afirmación y poder postular un nuevo método de clustering de propiedades en secuencias y sus variantes.
 
  

@@ -74,7 +74,6 @@ Repeated entry---line 2288 of file References/references.bib
  : @article{michie1994machine
  :                           ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "sesentaiocho"
 Warning--empty journal in bedbrook2019machine
 Warning--empty year in prot20185
 Warning--there's a number but no series in graybill1976theory
@@ -83,45 +82,45 @@ Warning--empty journal in netzer2011reading
 Warning--there's a number but no volume in peng2005feature
 Warning--empty journal in schmidhuber1995learning
 Warning--there's a number but no volume in veljkovic1985possible
-You've used 195 entries,
+You've used 214 entries,
             1935 wiz_defined-function locations,
-            1597 strings with 39500 characters,
-and the built_in function-call counts, 85548 in all, are:
-= -- 8362
-> -- 3723
-< -- 123
-+ -- 1349
-- -- 1266
-* -- 7634
-:= -- 14638
-add.period$ -- 612
-call.type$ -- 195
-change.case$ -- 1578
-chr.to.int$ -- 188
-cite$ -- 203
-duplicate$ -- 3051
-empty$ -- 5915
-format.name$ -- 1539
-if$ -- 16819
+            1694 strings with 42504 characters,
+and the built_in function-call counts, 93442 in all, are:
+= -- 9176
+> -- 3975
+< -- 141
++ -- 1437
+- -- 1346
+* -- 8284
+:= -- 15943
+add.period$ -- 671
+call.type$ -- 214
+change.case$ -- 1710
+chr.to.int$ -- 207
+cite$ -- 222
+duplicate$ -- 3369
+empty$ -- 6508
+format.name$ -- 1655
+if$ -- 18409
 int.to.chr$ -- 8
 int.to.str$ -- 0
-missing$ -- 202
-newline$ -- 983
-num.names$ -- 593
-pop$ -- 1317
+missing$ -- 223
+newline$ -- 1078
+num.names$ -- 650
+pop$ -- 1431
 preamble$ -- 1
-purify$ -- 1589
+purify$ -- 1723
 quote$ -- 0
-skip$ -- 2312
+skip$ -- 2559
 stack$ -- 0
-substring$ -- 6453
-swap$ -- 438
-text.length$ -- 44
+substring$ -- 7115
+swap$ -- 493
+text.length$ -- 48
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 1148
+type$ -- 1258
 warning$ -- 8
-while$ -- 689
+while$ -- 765
 width$ -- 0
-write$ -- 2568
+write$ -- 2815
 (There were 10 error messages)

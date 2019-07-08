@@ -54,9 +54,9 @@ Regresión lineal, es uno de los métodos más simples en cuanto a predicción d
 
 Matemáticamente, se espera que el conjunto de respuesta sea el resultado de una combinación lineal de parámetros, es decir. Sea $\hat{y}$ el vector de predicciones, se tiene que:
 
-\begin{center}
-	$\hat{y}(w, x) = w_0 + w_1 x_1 + ... + w_p x_p$
-\end{center}
+\begin{equation}
+	\hat{y}(w, x) = w_0 + w_1 x_1 + ... + w_p x_p
+\end{equation}
 
 Donde $w_0$ es el intercepto y $w = (w_1,\cdots, w_p)$ el vector de coeficientes.
 
@@ -128,36 +128,34 @@ Este algoritmo de aprendizaje supervisado, puede ser utilizado tanto para el ent
 
 Naive Bayes es un conjunto de algoritmos de aprendizaje supervisados basados en la aplicación del teorema de Bayes con la suposición "ingenua" de independencia entre cada par de características \cite{zhang2004optimality}. Dada una variable de clase $y$ y un vector de característica dependientes de la forma $x_1,..., x_n$, el teorema de Bayes establece la siguiente relación:
 
-\begin{center}
-	$P(y \mid x_1, \dots, x_n) = \frac{P(y) P(x_1, \dots x_n \mid y)} {P(x_1, \dots, x_n)}
-	$
-\end{center}
+\begin{equation}
+	P(y \mid x_1, \dots, x_n) = \frac{P(y) P(x_1, \dots x_n \mid y)} {P(x_1, \dots, x_n)}
+\end{equation}
 
 Utilizando la suposición ingenua de independencia de características, se tiene que:
 
-\begin{center}
-	$P(x_i | y, x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_n) = P(x_i | y)$
-\end{center}
+\begin{equation}
+	P(x_i | y, x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_n) = P(x_i | y)
+\end{equation}
 
 Para todo $i$, esta relación se simplifica a:
 
-\begin{center}
-	$P(y \mid x_1, \dots, x_n) = \frac{P(y) \prod_{i=1}^{n} P(x_i \mid y)} {P(x_1, \dots, x_n)}$
-\end{center}
+\begin{equation}
+	P(y \mid x_1, \dots, x_n) = \frac{P(y) \prod_{i=1}^{n} P(x_i \mid y)} {P(x_1, \dots, x_n)}
+\end{equation}
 
 Dado que $P(x_1, \dots, x_n)$ es constante dada la entrada, se puede utilizar la siguiente regla de clasificación:
 
-\begin{center}
-	$P(y \mid x_1, \dots, x_n) \propto P(y) \prod_{i=1}^{n} P(x_i \mid y)$
-	
-\end{center}
+\begin{equation}
+	P(y \mid x_1, \dots, x_n) \propto P(y) \prod_{i=1}^{n} P(x_i \mid y)
+\end{equation}
 
 \begin{center}
 	$\Downarrow$ 
 \end{center}
-\begin{center}
-	$\hat{y} = \arg\max_y P(y) \prod_{i=1}^{n} P(x_i \mid y),$
-\end{center}
+\begin{equation}
+	\hat{y} = \arg\max_y P(y) \prod_{i=1}^{n} P(x_i \mid y)
+\end{equation}
 
 A pesar de sus supuestos aparentemente simplificados, los clasificadores de Naive Bayes han funcionado bastante bien en muchas situaciones del mundo real, la famosa clasificación de documentos y el filtrado de spam son ejemplos de ello \cite{10.1007/BFb0026666, Chen2009, metsis2006spam}. Requieren una pequeña cantidad de datos de entrenamiento para estimar los parámetros necesarios. Pueden ser extremadamente rápido en comparación con métodos más sofisticados. El desacoplamiento de las distribuciones de las características condicionales de clase significa que cada distribución se puede estimar de forma independiente como una distribución unidimensional. Esto a su vez ayuda a aliviar los problemas derivados de la dimensionalidad. 
 
@@ -167,9 +165,9 @@ Existen distintos tipos de clasificadores de Naive Bayes, diferenciándose entre
 	
 	\item \textbf{Gaussian Naive Bayes.}
 	
-	\begin{center}
-		$P(x_i \mid y) = \frac{1}{\sqrt{2\pi\sigma^2_y}} \exp\left(-\frac{(x_i - \mu_y)^2}{2\sigma^2_y}\right)$
-	\end{center}
+	\begin{equation}
+		P(x_i \mid y) = \frac{1}{\sqrt{2\pi\sigma^2_y}} \exp\left(-\frac{(x_i - \mu_y)^2}{2\sigma^2_y}\right)
+	\end{equation}
 	
 	\item \textbf{Multinomial Naive Bayes.}
 	
@@ -177,18 +175,17 @@ Existen distintos tipos de clasificadores de Naive Bayes, diferenciándose entre
 	
 	Cada $\theta_y$ es estimado por:
 	
-	\begin{center}
-		
-		$\hat{\theta}_{yi} = \frac{ N_{yi} + \alpha}{N_y + \alpha n}$		
-	\end{center}
+	\begin{equation}		
+		\hat{\theta}_{yi} = \frac{ N_{yi} + \alpha}{N_y + \alpha n}		
+	\end{equation}
 	
 	Donde $N_{yi} = \sum_{x \in T} x_i$ es el número  de veces que aparece la característica $i$ en la muestra de clase $y$ en el set de entrenamiento $T$ y $N_{y} = \sum_{i=1}^{|T|} N_{yi}$ representa el total de todas las características para la clase.
 	
 	\item \textbf{Bernoulli Naive Bayes.}
 	
-	\begin{center}
-		$P(x_i \mid y) = P(i \mid y) x_i + (1 - P(i \mid y)) (1 - x_i)$
-	\end{center}
+	\begin{equation}
+		P(x_i \mid y) = P(i \mid y) x_i + (1 - P(i \mid y)) (1 - x_i)
+	\end{equation}
 	
 \end{itemize}
 
@@ -255,16 +252,15 @@ Cada nodo $m$ puede ser representado por $Q$ y sea $\theta = (j, t_{m})$ la divi
 
 Asociado a las divisiones, se tiene que, cada nodo generado se mide con respecto a la impureza de éste, la cual, puede ser representada por una función $H()$ y a la ganancia de información que genera la división $G(Q, \theta)$, la cual se estima como:
 
-\begin{center}
-	$G(Q, \theta) = \frac{n_{left}}{N_m} H(Q_{left}(\theta))
-+ \frac{n_{right}}{N_m} H(Q_{right}(\theta)$
-\end{center}
+\begin{equation}
+	G(Q, \theta) = \frac{n_{left}}{N_m} H(Q_{left}(\theta)) + \frac{n_{right}}{N_m} H(Q_{right}(\theta)
+\end{equation}
 
 Los descriptores se seleccionan con respecto a aquel que minimice la impureza de los nodos:
 
-\begin{center}
-	$\theta^* = \operatorname{argmin}_\theta  G(Q, \theta)$
-\end{center}
+\begin{equation}
+	\theta^* = \operatorname{argmin}_\theta  G(Q, \theta)
+\end{equation}
 
 Finalmente, se tiene que para los subconjuntos $Q_{left}(\theta^*)$ y $Q_{rigth}(\theta^*)$ la profundidad máxima se alcanza si:
 
@@ -281,9 +277,9 @@ Los criterios de clasificación se basan en la proporción de las clases según 
 
 Si el vector de respuestas, es asociado a variables categóricas y toma valores entre $0,1,\cdots,k-1$ para un nodo $m$, representando una región $R_{m}$ con $N_{m}$ ejemplos, se tiene que la proporción  de observaciones de clase $k$ en un nodo $m$ puede definirse como:
 
-\begin{center}
-	$p_{mk} = 1/ N_m \sum_{x_i \in R_m} I(y_i = k)$
-\end{center}
+\begin{equation}
+	p_{mk} = \dfrac{1}{N_m} \sum_{x_i \in R_m} I(y_i = k)
+\end{equation}
 
 Con respecto a las diferentes funciones de impureza $H()$ que pueden ser utilizadas se tienen las siguientes, descritas en la Tabla \ref{tab:tab-form-impureza}. 
 
@@ -412,7 +408,7 @@ SVM construye un hiperplano o un conjunto de hiperplanos en un espacio altamente
 
 Intuitivamente, se logra una buena separación por el hiper plano que tiene la mayor distancia a los puntos de datos de entrenamiento más cercanos de cualquier clase, ya que en general, cuanto mayor sea la separación, menor será el error de generalización del modelo.
 
-Es posible observar este comportamiento en la Figura \ref{SVM2}
+Se observa este comportamiento en la Figura \ref{SVM2}
 
 \begin{figure}[!h]
 	\centering
@@ -427,19 +423,18 @@ Es posible entregar una definición matemática para SVM, haciendo una diferenci
 Dado los vectores de entrenamiento $x_{i}\ \in\ R$,
 i=1,..., n, en dos clases, y un vector, $y \in \{1, -1\}^n$, SVC resuelve el siguiente problema primario:
 
-\begin{center}
-	$\min_ {w, b, \zeta} \frac{1}{2} w^T w + C \sum_{i=1}^{n} \zeta_i$
-\end{center}
-\begin{center}
-	
+\begin{equation}
+	\min_ {w, b, \zeta} \frac{1}{2} w^T w + C \sum_{i=1}^{n} \zeta_i
+\end{equation}
+\begin{center}	
 	$para\ la\ clase\ y_i (w^T \phi (x_i) + b) \geq 1 - \zeta_i,\ \zeta_i \geq 0, i=1, ..., n$	
 \end{center}
 
 Su doble es
 
-\begin{center}
-	$\min_{\alpha} \frac{1}{2} \alpha^T Q \alpha - e^T \alpha$
-\end{center}
+\begin{equation}
+	\min_{\alpha} \frac{1}{2} \alpha^T Q \alpha - e^T \alpha
+\end{equation}
 \begin{center}
 	$para\ la\ clase\ y^T \alpha = 0\ 0 \leq \alpha_i \leq C, i=1, ..., n$
 \end{center}
@@ -448,9 +443,9 @@ Donde $e$ es el vector de todos los unos, $C > 0$ es el límite superior, $Q$ es
 
 La función de decisión es:
 
-\begin{center}
-	$sgn(\sum_{i=1}^n y_i \alpha_i K(x_i, x) + \rho)$
-\end{center}
+\begin{equation}
+	sgn(\sum_{i=1}^n y_i \alpha_i K(x_i, x) + \rho)
+\end{equation}
 
 Por otro lado, $\nu$SVC presenta características similares a SVC. No obstante, el uso del parámetro $\nu$ permite controlar el número de vectores de soporte y errores de entrenamiento. $\nu \in (0, 1]$ y  es un límite superior en la fracción de errores de entrenamiento y un límite inferior de la fracción de vectores de soporte.
 
@@ -461,19 +456,17 @@ Finalmente, ya que SVM también permite entrenar modelos de regresión particula
 Dados los vectores de entrenamiento  $x_{i} \in\ R^n$  
 $\varepsilon-SVR$ \cite{smola2004tutorial} resuelve el siguiente problema primario:
 
-\begin{center}
-	
-	$\min_ {w, b, \zeta, \zeta^*} \frac{1}{2} w^T w + C \sum_{i=1}^{n} (\zeta_i + \zeta_i^*)
-	$
-\end{center}
+\begin{equation}	
+	\min_ {w, b, \zeta, \zeta^*} \frac{1}{2} w^T w + C \sum_{i=1}^{n} (\zeta_i + \zeta_i^*)	
+\end{equation}
 
 \begin{center}
 	
 	$para\ la\ clase\ y_i - w^T \phi (x_i) - b \leq \varepsilon + \zeta_i,$
 \end{center}
-\begin{center}
-	$w^T \phi (x_i) + b - y_i \leq \varepsilon + \zeta_i^*,\ \zeta_i, \zeta_i^* \geq 0, i=1, ..., n$	
-\end{center}
+\begin{equation}
+	w^T \phi (x_i) + b - y_i \leq \varepsilon + \zeta_i^*,\ \zeta_i, \zeta_i^* \geq 0, i=1, ..., n
+\end{equation}
 
 Donde $e$ es el vector para todos, $C >$ 0 es el límite superior, $Q$ es una matriz de $n\ x\ n$ definida semipositiva, $Q_{ij} \equiv K(x_i, x_j) = \phi (x_i)^T \phi (x_j)$ es el kernel. Aquí los vectores de
 entrenamiento son implícitamente mapeados en un espacio dimensional mayor (tal vez infinito) por
@@ -481,9 +474,9 @@ la función $\phi$.
 
 La función de decisión es:
 
-\begin{center}
-	$\sum_{i=1}^n (\alpha_i - \alpha_i^*) K(x_i, x) + \rho$
-\end{center}
+\begin{equation}
+	\sum_{i=1}^n (\alpha_i - \alpha_i^*) K(x_i, x) + \rho
+\end{equation}
 
 Como se puede observar, las formulaciones matemáticas, tanto para SVC como SVR son similares. Sin embargo, se diferencian en la función de decisión a utilizar, esto es debido a que SVC es un clasificador, mientras que SVR es un métodos de regresión.
 
@@ -557,36 +550,36 @@ Dentro de las principales ventajas que posee, se encuentran: manejo natural de d
 
 Como formulación matemática, se tiene, la adición de modelos se basa en:
 
-\begin{center}
-	$F(x) = \sum_{m=1}^{M} \gamma_m h_m(x)$
-\end{center}
+\begin{equation}
+	F(x) = \sum_{m=1}^{M} \gamma_m h_m(x)
+\end{equation}
 
 Donde $h_{m}(x)$ es una función básica, conocida como \textit{weak learners} en el contexto de boosting. En particular, Gradient Tree Boosting, utiliza árboles de decisión de tamaño fijo como \textit{weak learners}. 
 
 
 Los modelos aditivos, se construyen de manera incremental, tal que:
 
-\begin{center}
-	$F_m(x) = F_{m-1}(x) + \gamma_m h_m(x)$
-\end{center}
+\begin{equation}
+	F_m(x) = F_{m-1}(x) + \gamma_m h_m(x)
+\end{equation}
 
 De tal manera que el nuevo árbol agregado $h_{m}$ trata de minimizar la pérdida $L$ dado el previo ensamble $F_{m-1}$, es decir:
 
-\begin{center}
-	$h_m =  \arg\min_{h} \sum_{i=1}^{n} L(y_i, F_{m-1}(x_i) + h(x_i))$
-\end{center}
+\begin{equation}
+	h_m =  \arg\min_{h} \sum_{i=1}^{n} L(y_i, F_{m-1}(x_i) + h(x_i))
+\end{equation}
 
 Este algoritmo, resuelve el problema de minimización numéricamente, a través de steepest descent \cite{battiti1992first}. La dirección de steepest descent es el gradiente negativo de la función de pérdida $L$ evaluada en el modelo actual $F_{m-1}$, el cual puede ser calculado para cualquier función de pérdida diferenciable, tal que:
 
-\begin{center}
-	$F_m(x) = F_{m-1}(x) - \gamma_m \sum_{i=1}^{n} \nabla_F L(y_i, F_{m-1}(x_i))$
-\end{center}
+\begin{equation}
+	F_m(x) = F_{m-1}(x) - \gamma_m \sum_{i=1}^{n} \nabla_F L(y_i, F_{m-1}(x_i))
+\end{equation}
 
 Donde la longitud del paso $\gamma_{m}$ es seleccionada mediante una búsqueda lineal, aplicando:
 
-\begin{center}
-	$\gamma_m = \arg\min_{\gamma} \sum_{i=1}^{n} L(y_i, F_{m-1}(x_i) - \gamma \frac{\partial L(y_i, F_{m-1}(x_i))}{\partial F_{m-1}(x_i)})$
-\end{center}
+\begin{equation}
+	\gamma_m = \arg\min_{\gamma} \sum_{i=1}^{n} L(y_i, F_{m-1}(x_i) - \gamma \frac{\partial L(y_i, F_{m-1}(x_i))}{\partial F_{m-1}(x_i)})
+\end{equation}
 
 A la hora de estimar un valor continuo por medio de algoritmos de regresión o clasificar un nuevo ejemplo a través de un clasificador, existe una única diferencia, la cual radica en la función de pérdida $L$ que es utilizada. En la Tabla \ref{tab:function-loss} se resumen las funciones de pérdida y sus definiciones, normalmente utilizadas en métodos basados en Gradient Tree Boosting.
 
@@ -666,16 +659,40 @@ A continuación, se define brevemente algunas de las medidas más utilizadas a l
 	\item \textbf{Tasa de Falsos Positivos}: corresponde a la medida asociada a las clasificaciones mal efectuadas, es decir, cuántas predicciones erradas existen con respecto a una clase.
 	
 	
-	\item \textbf{Accuracy}: corresponde al total de predicciones correctas con respecto al total de la muestra. Sea $\hat{y}_i$ el valor de predicción del ejemplo $i$ e $y_{i}$ corresponde al verdadero valor, la Accuracy se define como: $\texttt{accuracy}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} 1(\hat{y}_i = y_i)$
+	\item \textbf{Accuracy}: corresponde al total de predicciones correctas con respecto al total de la muestra. Sea $\hat{y}_i$ el valor de predicción del ejemplo $i$ e $y_{i}$ corresponde al verdadero valor, la Accuracy se define como: 
+	\begin{equation}
+		\texttt{accuracy}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} 1(\hat{y}_i = y_i)
+	\end{equation}
 	
-	\item \textbf{Precision}: es la capacidad del clasificador asociada a no etiquetar como positiva una muestra que es negativa, se define como: $\text{precision} = \frac{tp}{tp + fp}$, donde tp corresponde a verdaderos positivos y fp a los falsos positivos.
+	
+	\item \textbf{Precision}: es la capacidad del clasificador asociada a no etiquetar como positiva una muestra que es negativa, se define como: 
+	
+	\begin{equation}
+		\text{precision} = \frac{tp}{tp + fp}
+	\end{equation}
+	Donde tp corresponde a verdaderos positivos y fp a los falsos positivos.
 	
 	
-	\item \textbf{Recall}: es la capacidad del clasificador asociada encontrar todas las muestras positivas, se define como: $\text{recall} = \frac{tp}{tp + fn}$ , donde tp corresponde a verdaderos positivos y fp a los falsos positivos.
+	\item \textbf{Recall}: es la capacidad del clasificador asociada encontrar todas las muestras positivas, se define como: 
 	
-	\item \textbf{F-$\beta$}: representa una ponderación armónica entre la Precision y el Recall, se define como: $F_\beta = (1 + \beta^2) \frac{\text{precision} \times \text{recall}}{\beta^2 \text{precision} + \text{recall}}.$ , donde $\beta$ un factor de ponderación.
+	\begin{equation}
+		\text{recall} = \frac{tp}{tp + fn}
+	\end{equation}
+	Donde tp corresponde a verdaderos positivos y fp a los falsos positivos.
 	
-	\item \textbf{Coeficiente de correlación de Matthews}: Se asocia a una medida de la calidad de las clasificaciones, la cual no se ve afectada por el desbalance de clases que pudiese existir, se define como $MCC = \frac{tp \times tn - fp \times fn}{\sqrt{(tp + fp)(tp + fn)(tn + fp)(tn + fn)}}$, donde tp corresponde a verdaderos positivos y fp a los falsos positivos.
+	\item \textbf{F-$\beta$}: representa una ponderación armónica entre la Precision y el Recall, se define como: 
+	
+	\begin{equation}
+		F_\beta = (1 + \beta^2) \frac{\text{precision} \times \text{recall}}{\beta^2 \text{precision} + \text{recall}}
+	\end{equation}
+	Donde $\beta$ un factor de ponderación.
+	
+	\item \textbf{Coeficiente de correlación de Matthews}: Se asocia a una medida de la calidad de las clasificaciones, la cual no se ve afectada por el desbalance de clases que pudiese existir, se define como: 
+	
+	\begin{equation}
+		MCC = \frac{tp \times tn - fp \times fn}{\sqrt{(tp + fp)(tp + fn)(tn + fp)(tn + fn)}}
+	\end{equation}
+	Donde $tp$ corresponde a verdaderos positivos y $fp$ a los falsos positivos.
 	
 \end{itemize}
 	
@@ -683,21 +700,62 @@ Las mediciones expuestas previamente, se utilizan para medir el desempeño de mo
 	
 \begin{itemize}
 		
-	\item \textbf{Coeficiente de Pearson}: Medida lineal entre dos variables cuantitativas aleatorias que permite evaluar el grado de relación entre ellas, se encuentra en rangos entre -1 y 1 donde -1 indica que las variables no presentan relación y 1 que las muestras están estrechamente relacionadas. Se obtiene a partir de $\rho X,Y= \frac{n\sum x_{i}y_{i} - \sum x_{i} \sum y_{i}}{\sqrt{n\sum x^{2}_{i}- (\sum x_{i})^{2}} \sqrt{n\sum y^{2}_{i}- (\sum y_{i})^{2}}}$ donde $x_{i}$ representa los valores de predicción e $y_{i}$ representa los valores reales de la muestra para $n$ ejemplos.
+	\item \textbf{Coeficiente de Pearson}: Medida lineal entre dos variables cuantitativas aleatorias que permite evaluar el grado de relación entre ellas, se encuentra en rangos entre -1 y 1 donde -1 indica que las variables no presentan relación y 1 que las muestras están estrechamente relacionadas. Se obtiene a partir de:
+	
+	\begin{equation}
+\rho (X,Y)= \frac{n\sum x_{i}y_{i} - \sum x_{i} \sum y_{i}}{\sqrt{n\sum x^{2}_{i}- (\sum x_{i})^{2}} \sqrt{n\sum y^{2}_{i}- (\sum y_{i})^{2}}}
+	\end{equation}
+	Donde $x_{i}$ representa los valores de predicción e $y_{i}$ representa los valores reales de la muestra para $n$ ejemplos.
 		
-	\item \textbf{Coeficiente de Spearman}: Medida de correlación que permite evaluar la asociación o relación entre dos muestras, su interpretación es similar al coeficiente de Pearson y se estima a partir de $\rho = 1- \frac{6\sum D^{2}}{N(N^{2}-1)}$ donde $D$ es la diferencia $x-y$ para el $i-th$ ejemplo y $N$ es el total de ejemplos en la muestra.
+	\item \textbf{Coeficiente de Spearman}: Medida de correlación que permite evaluar la asociación o relación entre dos muestras, su interpretación es similar al coeficiente de Pearson y se estima a partir de:
+	
+	\begin{equation}
+		\rho = 1- \frac{6\sum D^{2}}{N(N^{2}-1)}
+	\end{equation}
+	Donde $D$ es la diferencia $x-y$ para el $i-th$ ejemplo y $N$ es el total de ejemplos en la muestra.
 		
-	\item \textbf{Kendall $\tau$ rank}: Medida que permite evaluar la relación entre dos variables, su interpretación es similar a las basadas en coeficiente de Pearson y Spearman. Se obtiene a partir de $\tau = \frac{\text{(numbers of concordant pairs)} - \text{(number of discordant pairs)}}{n(n-1)/2}$
+	\item \textbf{Kendall $\tau$ rank}: Medida que permite evaluar la relación entre dos variables, su interpretación es similar a las basadas en coeficiente de Pearson y Spearman. Se obtiene a partir de:
+	
+	\begin{equation}
+		\tau = \frac{\text{(numbers of concordant pairs)} - \text{(number of discordant pairs)}}{n(n-1)/2}
+	\end{equation} 
 		
-	\item \textbf{Coeficiente de determinación $R^{2}\ score$}: es una medida que cuantifica cómo el predictor se adapta a nuevos ejemplos, posee un rango entre -1 y 1 donde -1 es lo peor y 1 lo mejor, esto es debido a que el estimador puede bajar su rendimiento. Se estima en base a $R^2(y, \hat{y}) = 1 - \frac{\sum_{i=0}^{n_{\text{samples}} - 1} (y_i - \hat{y}_i)^2}{\sum_{i=0}^{n_\text{samples} - 1} (y_i - \bar{y})^2}$ donde $\hat{y}_i$ corresponde al valor predicho para el $i-th$ ejemplo e $y_{i}$ corresponde al valor real en una muestra de $n-samples$.
+	\item \textbf{Coeficiente de determinación $R^{2}\ score$}: es una medida que cuantifica cómo el predictor se adapta a nuevos ejemplos, posee un rango entre -1 y 1 donde -1 es lo peor y 1 lo mejor, esto es debido a que el estimador puede bajar su rendimiento. Se estima en base a:
+	
+	\begin{equation}
+		R^2(y, \hat{y}) = 1 - \frac{\sum_{i=0}^{n_{\text{samples}} - 1} (y_i - \hat{y}_i)^2}{\sum_{i=0}^{n_\text{samples} - 1} (y_i - \bar{y})^2}
+	\end{equation}
+	Donde $\hat{y}_i$ corresponde al valor predicho para el $i-th$ ejemplo e $y_{i}$ corresponde al valor real en una muestra de $n-samples$.
 		
-	\item \textbf{Error medio absoluto}: Estima la diferencia positiva entre el valor real y el valor predicho para un conjunto de ejemplos. Se estima a partir de $\text{MAE}(y, \hat{y}) = \frac{1}{n_{\text{samples}}} \sum_{i=0}^{n_{\text{samples}}-1} \left| y_i - \hat{y}_i \right|.$ donde $\hat{y}_i$ corresponde al valor predicho para el $i-th$ ejemplo e $y_{i}$ corresponde al valor real en una muestra de $n-samples$.
+	\item \textbf{Error medio absoluto}: Estima la diferencia positiva entre el valor real y el valor predicho para un conjunto de ejemplos. Se estima a partir de: 
+	
+	\begin{equation}
+		\text{MAE}(y, \hat{y}) = \frac{1}{n_{\text{samples}}} \sum_{i=0}^{n_{\text{samples}}-1} \left| y_i - \hat{y}_i \right|
+	\end{equation}
+	Donde $\hat{y}_i$ corresponde al valor predicho para el $i-th$ ejemplo e $y_{i}$ corresponde al valor real en una muestra de $n-samples$.
 		
-	\item \textbf{Error cuadrático medio}: Estima la diferencia cuadrática entre el valor real y el valor predicho para un conjunto de ejemplos. Se obtiene a partir de $\text{MSE}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples} - 1} (y_i - \hat{y}_i)^2$ donde $\hat{y}_i$ corresponde al valor predicho para el $i-th$ ejemplo e $y_{i}$ corresponde al valor real en una muestra de $n-samples$.
+	\item \textbf{Error cuadrático medio}: Estima la diferencia cuadrática entre el valor real y el valor predicho para un conjunto de ejemplos. Se obtiene a partir de:
+	
+	\begin{equation}
+		\text{MSE}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples} - 1} (y_i - \hat{y}_i)^2
+	\end{equation}
+	Donde $\hat{y}_i$ corresponde al valor predicho para el $i-th$ ejemplo e $y_{i}$ corresponde al valor real en una muestra de $n-samples$.
 		
-	\item \textbf{Error logarítmico cuadrático medio}: Es similar al error cuadrático medio, la diferencia principal es que se utiliza el logaritmo natural de las diferencias entre respuesta y valor predicho. Se estima en base a $\text{MSLE}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples} - 1} (\log_e (1 + y_i) - \log_e (1 + \hat{y}_i) )^2$ donde $\hat{y}_i$ corresponde al valor predicho para el $i-th$ ejemplo e $y_{i}$ corresponde al valor real en una muestra de $n-samples$.
+	\item \textbf{Error logarítmico cuadrático medio}: Es similar al error cuadrático medio, la diferencia principal es que se utiliza el logaritmo natural de las diferencias entre respuesta y valor predicho. Se estima en base a: 
+	
+	\begin{equation}
+		\text{MSLE}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples} - 1} (\log_e (1 + y_i) - \log_e (1 + \hat{y}_i) )^2
+	\end{equation}
+	
+	Donde $\hat{y}_i$ corresponde al valor predicho para el $i-th$ ejemplo e $y_{i}$ corresponde al valor real en una muestra de $n-samples$.
 		
-	\item \textbf{Error mediano absoluto}: es una medida robusta ante outliers, la pérdida o el error se calcula a partir de las medianas de las diferencias absolutas entre la respuesta y el valor predicho. Se estima en base a $\text{MedAE}(y, \hat{y}) = \text{median}(\mid y_1 - \hat{y}_1 \mid, \ldots, \mid y_n - \hat{y}_n \mid)$ donde $\hat{y}_i$ corresponde al valor predicho para el $i-th$ ejemplo e $y_{i}$ corresponde al valor real en una muestra de $n-samples$.
+	\item \textbf{Error mediano absoluto}: es una medida robusta ante outliers, la pérdida o el error se calcula a partir de las medianas de las diferencias absolutas entre la respuesta y el valor predicho. Se estima en base a: 
+	
+	\begin{equation}
+		\text{MedAE}(y, \hat{y}) = \text{median}(\mid y_1 - \hat{y}_1 \mid, \ldots, \mid y_n - \hat{y}_n \mid)
+	\end{equation}
+	
+	Donde $\hat{y}_i$ corresponde al valor predicho para el $i-th$ ejemplo e $y_{i}$ corresponde al valor real en una muestra de $n-samples$.
 		
 		
 \end{itemize}

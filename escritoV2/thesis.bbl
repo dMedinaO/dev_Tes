@@ -66,6 +66,13 @@ Artac, M., Jogan, M., and Leonardis, A. (2002).
 \newblock In {\em Object recognition supported by user interaction for service
   robots}, volume~3, pages 781--784. IEEE.
 
+\bibitem[Arthur and Vassilvitskii, 2007]{arthur2007k}
+Arthur, D. and Vassilvitskii, S. (2007).
+\newblock k-means++: The advantages of careful seeding.
+\newblock In {\em Proceedings of the eighteenth annual ACM-SIAM symposium on
+  Discrete algorithms}, pages 1027--1035. Society for Industrial and Applied
+  Mathematics.
+
 \bibitem[Barandiaran, 1998]{barandiaran1998random}
 Barandiaran, I. (1998).
 \newblock The random subspace method for constructing decision forests.
@@ -203,6 +210,11 @@ Cadet, F., Fontaine, N., Vetrivel, I., Chong, M. N.~F., Savriama, O., Cadet,
   protein engineering.
 \newblock {\em BMC bioinformatics}, 19(1):382.
 
+\bibitem[Cali{\'n}ski and Harabasz, 1974]{calinski1974dendrite}
+Cali{\'n}ski, T. and Harabasz, J. (1974).
+\newblock A dendrite method for cluster analysis.
+\newblock {\em Communications in Statistics-theory and Methods}, 3(1):1--27.
+
 \bibitem[Canutescu et~al., 2003]{canutescu2003graph}
 Canutescu, A.~A., Shelenkov, A.~A., and Dunbrack~Jr, R.~L. (2003).
 \newblock A graph-theory algorithm for rapid protein side-chain prediction.
@@ -284,6 +296,12 @@ Chen, J., Huang, H., Tian, S., and Qu, Y. (2009).
   communities.
 \newblock {\em IEEE Access}, 5:8869--8879.
 
+\bibitem[Cheng, 1995]{cheng1995mean}
+Cheng, Y. (1995).
+\newblock Mean shift, mode seeking, and clustering.
+\newblock {\em IEEE transactions on pattern analysis and machine intelligence},
+  17(8):790--799.
+
 \bibitem[Chien and Chen, 2008]{Chien2008}
 Chien, C.-F. and Chen, L.-F. (2008).
 \newblock Data mining to improve personnel selection and enhance human capital:
@@ -324,6 +342,12 @@ Cosic, I., Cosic, D., and Lazar, K. (2016).
 \newblock Prediction of ‘hot spots’ in sv40 enhancer and relation with
   experimental data.
 \newblock {\em European journal of biochemistry}, 170(1-2):247--252.
+
+\bibitem[Cui-xiang et~al., 2005]{cui2005some}
+Cui-xiang, Z., Guo-qiang, H., and Ming-He, H. (2005).
+\newblock Some new parallel fast fourier transform algorithms.
+\newblock In {\em Sixth International Conference on Parallel and Distributed
+  Computing Applications and Technologies (PDCAT'05)}, pages 624--628. IEEE.
 
 \bibitem[Curtarolo et~al., 2003]{PhysRevLett.91.135503}
 Curtarolo, S., Morgan, D., Persson, K., Rodgers, J., and Ceder, G. (2003).
@@ -417,6 +441,11 @@ Forbes, S.~A., Bindal, N., Bamford, S., Cole, C., Kok, C.~Y., Beare, D., Jia,
 Freund, Y. and Mason, L. (1999).
 \newblock The alternating decision tree learning algorithm.
 \newblock In {\em icml}, volume~99, pages 124--133.
+
+\bibitem[Frey and Dueck, 2007]{frey2007clustering}
+Frey, B.~J. and Dueck, D. (2007).
+\newblock Clustering by passing messages between data points.
+\newblock {\em science}, 315(5814):972--976.
 
 \bibitem[Friedman, 2001]{gradient}
 Friedman, J.~H. (2001).
@@ -577,6 +606,11 @@ Jain, A.~K., Dubes, R.~C., et~al. (1988).
 \newblock {\em Algorithms for clustering data}, volume~6.
 \newblock Prentice hall Englewood Cliffs.
 
+\bibitem[Jain et~al., 1999]{jain1999data}
+Jain, A.~K., Murty, M.~N., and Flynn, P.~J. (1999).
+\newblock Data clustering: a review.
+\newblock {\em ACM computing surveys (CSUR)}, 31(3):264--323.
+
 \bibitem[Japkowicz and Stephen, 2002]{japkowicz2002class}
 Japkowicz, N. and Stephen, S. (2002).
 \newblock The class imbalance problem: A systematic study.
@@ -593,6 +627,11 @@ John, G.~H. and Langley, P. (1995).
 \newblock Estimating continuous distributions in bayesian classifiers.
 \newblock In {\em Proceedings of the Eleventh conference on Uncertainty in
   artificial intelligence}, pages 338--345. Morgan Kaufmann Publishers Inc.
+
+\bibitem[Johnson, 1967]{johnson1967hierarchical}
+Johnson, S.~C. (1967).
+\newblock Hierarchical clustering schemes.
+\newblock {\em Psychometrika}, 32(3):241--254.
 
 \bibitem[Jolliffe, 2011]{jolliffe2011principal}
 Jolliffe, I. (2011).
@@ -625,6 +664,12 @@ Kohavi, R. et~al. (1995).
 \newblock A study of cross-validation and bootstrap for accuracy estimation and
   model selection.
 \newblock In {\em Ijcai}, volume~14, pages 1137--1145. Montreal, Canada.
+
+\bibitem[Kolba and Parks, 1977]{kolba1977prime}
+Kolba, D. and Parks, T. (1977).
+\newblock A prime factor fft algorithm using high-speed convolution.
+\newblock {\em IEEE Transactions on Acoustics, Speech, and Signal Processing},
+  25(4):281--294.
 
 \bibitem[Kotsiantis et~al., 2007]{kotsiantis2007supervised}
 Kotsiantis, S.~B., Zaharakis, I., and Pintelas, P. (2007).
@@ -778,11 +823,23 @@ Michie, D., Spiegelhalter, D.~J., Taylor, C., et~al. (1994).
 \newblock Machine learning.
 \newblock {\em Neural and Statistical Classification}, 13.
 
+\bibitem[Moon, 1996]{moon1996expectation}
+Moon, T.~K. (1996).
+\newblock The expectation-maximization algorithm.
+\newblock {\em IEEE Signal processing magazine}, 13(6):47--60.
+
 \bibitem[Muggleton et~al., 1992]{Muggleton1992}
 Muggleton, S., King, R.~D., and Stenberg, M. J.~E. (1992).
 \newblock Protein secondary structure prediction using logic-based machine
   learning.
 \newblock {\em Protein Engineering, Design and Selection}, 5(7):647--657.
+
+\bibitem[Muquet et~al., 2002]{muquet2002cyclic}
+Muquet, B., Wang, Z., Giannakis, G.~B., De~Courville, M., and Duhamel, P.
+  (2002).
+\newblock Cyclic prefixing or zero padding for wireless multicarrier
+  transmissions?
+\newblock {\em IEEE Transactions on communications}, 50(12):2136--2148.
 
 \bibitem[Netzer et~al., 2011]{netzer2011reading}
 Netzer, Y., Wang, T., Coates, A., Bissacco, A., Wu, B., and Ng, A.~Y. (2011).
@@ -897,6 +954,12 @@ Ramakrishnan, R., Dral, P.~O., Rupp, M., and von Lilienfeld, O.~A. (2015).
   learning approach.
 \newblock {\em Journal of Chemical Theory and Computation}, 11(5):2087--2096.
 
+\bibitem[Rao and Yip, 2014]{rao2014discrete}
+Rao, K.~R. and Yip, P. (2014).
+\newblock {\em Discrete cosine transform: algorithms, advantages,
+  applications}.
+\newblock Academic press.
+
 \bibitem[Rebhan et~al., 1998]{Rebhan1998}
 Rebhan, M., Chalifa-Caspi, V., Prilusky, J., and Lancet, D. (1998).
 \newblock Genecards: a novel functional genomics compendium with automated data
@@ -917,6 +980,20 @@ Release, S. (2016).
 Rohl, C.~A., Strauss, C.~E., Misura, K.~M., and Baker, D. (2004).
 \newblock Protein structure prediction using rosetta.
 \newblock In {\em Methods in enzymology}, volume 383, pages 66--93. Elsevier.
+
+\bibitem[Rosenberg and Hirschberg, 2007]{rosenberg2007v}
+Rosenberg, A. and Hirschberg, J. (2007).
+\newblock V-measure: A conditional entropy-based external cluster evaluation
+  measure.
+\newblock In {\em Proceedings of the 2007 joint conference on empirical methods
+  in natural language processing and computational natural language learning
+  (EMNLP-CoNLL)}, pages 410--420.
+
+\bibitem[Rousseeuw, 1987]{rousseeuw1987silhouettes}
+Rousseeuw, P.~J. (1987).
+\newblock Silhouettes: a graphical aid to the interpretation and validation of
+  cluster analysis.
+\newblock {\em Journal of computational and applied mathematics}, 20:53--65.
 
 \bibitem[{Ruck} et~al., 1990]{80266}
 {Ruck}, D.~W., {Rogers}, S.~K., {Kabrisky}, M., {Oxley}, M.~E., and {Suter},
@@ -982,6 +1059,16 @@ Smola, A.~J. and Sch{\"o}lkopf, B. (2004).
 \newblock A tutorial on support vector regression.
 \newblock {\em Statistics and computing}, 14(3):199--222.
 
+\bibitem[Sneddon, 1995]{sneddon1995fourier}
+Sneddon, I.~N. (1995).
+\newblock {\em Fourier transforms}.
+\newblock Courier Corporation.
+
+\bibitem[Sokal and Rohlf, 1962]{sokal1962comparison}
+Sokal, R.~R. and Rohlf, F.~J. (1962).
+\newblock The comparison of dendrograms by objective methods.
+\newblock {\em Taxon}, 11(2):33--40.
+
 \bibitem[Sun et~al., 2017]{Sun2017}
 Sun, L., Li, L., Peng, Y., Jia, Z., and Alexov, E. (2017).
 \newblock Predicting protein-dna binding free energy change upon missense
@@ -1015,6 +1102,12 @@ Tian, J., Wu, N., Chu, X., and Fan, Y. (2010).
 Tovchigrechko, A. and Vakser, I.~A. (2006).
 \newblock Gramm-x public web server for protein--protein docking.
 \newblock {\em Nucleic acids research}, 34(suppl\_2):W310--W314.
+
+\bibitem[Tran et~al., 2013]{tran2013revised}
+Tran, T.~N., Drab, K., and Daszykowski, M. (2013).
+\newblock Revised dbscan algorithm to cluster data with dense adjacent
+  clusters.
+\newblock {\em Chemometrics and Intelligent Laboratory Systems}, 120:92--96.
 
 \bibitem[Trott and Olson, 2010]{trott2010autodock}
 Trott, O. and Olson, A.~J. (2010).
@@ -1122,6 +1215,13 @@ Yang, K.~K., Wu, Z., and Arnold, F.~H. (2018).
 \newblock Machine learning in protein engineering.
 \newblock {\em arXiv preprint arXiv:1811.10775}.
 
+\bibitem[Yeung and Ruzzo, 2001]{yeung2001details}
+Yeung, K.~Y. and Ruzzo, W.~L. (2001).
+\newblock Details of the adjusted rand index and clustering algorithms,
+  supplement to the paper an empirical study on principal component analysis
+  for clustering gene expression data.
+\newblock {\em Bioinformatics}, 17(9):763--774.
+
 \bibitem[Yoo et~al., 2012]{Yoo2012}
 Yoo, I., Alafaireet, P., Marinov, M., Pena-Hernandez, K., Gopidi, R., Chang,
   J.-F., and Hua, L. (2012).
@@ -1134,12 +1234,22 @@ Zhang, H. (2004).
 \newblock The optimality of naive bayes.
 \newblock {\em AA}, 1(2):3.
 
+\bibitem[Zhang et~al., 1997]{zhang1997birch}
+Zhang, T., Ramakrishnan, R., and Livny, M. (1997).
+\newblock Birch: A new data clustering algorithm and its applications.
+\newblock {\em Data Mining and Knowledge Discovery}, 1(2):141--182.
+
 \bibitem[Zhou and Zhou, 2004]{Zhou2004}
 Zhou, H. and Zhou, Y. (2004).
 \newblock Quantifying the effect of burial of amino acid residues on protein
   stability.
 \newblock {\em Proteins: Structure, Function, and Bioinformatics},
   54(2):315--322.
+
+\bibitem[Zivkovic et~al., 2004]{zivkovic2004improved}
+Zivkovic, Z. et~al. (2004).
+\newblock Improved adaptive gaussian mixture model for background subtraction.
+\newblock In {\em ICPR (2)}, pages 28--31.
 
 \bibitem[Zou and Hastie, 2005]{zou2005regularization}
 Zou, H. and Hastie, T. (2005).
