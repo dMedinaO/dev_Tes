@@ -437,6 +437,12 @@ Forbes, S.~A., Bindal, N., Bamford, S., Cole, C., Kok, C.~Y., Beare, D., Jia,
   mutations in cancer.
 \newblock {\em Nucleic Acids Research}, 39(suppl\_1):D945--D950.
 
+\bibitem[Fortunato and Castellano, 2012]{fortunato2012community}
+Fortunato, S. and Castellano, C. (2012).
+\newblock Community structure in graphs.
+\newblock {\em Computational Complexity: Theory, Techniques, and Applications},
+  pages 490--512.
+
 \bibitem[Freund and Mason, 1999]{freund1999alternating}
 Freund, Y. and Mason, L. (1999).
 \newblock The alternating decision tree learning algorithm.
@@ -845,6 +851,17 @@ Muquet, B., Wang, Z., Giannakis, G.~B., De~Courville, M., and Duhamel, P.
 Netzer, Y., Wang, T., Coates, A., Bissacco, A., Wu, B., and Ng, A.~Y. (2011).
 \newblock Reading digits in natural images with unsupervised feature learning.
 
+\bibitem[Newman, 2004]{newman2004detecting}
+Newman, M.~E. (2004).
+\newblock Detecting community structure in networks.
+\newblock {\em The European Physical Journal B}, 38(2):321--330.
+
+\bibitem[Newman, 2006]{Newman8577}
+Newman, M. E.~J. (2006).
+\newblock Modularity and community structure in networks.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  103(23):8577--8582.
+
 \bibitem[Obenshain, 2004]{obenshain2004}
 Obenshain, M.~K. (2004).
 \newblock Application of data mining techniques to healthcare data.
@@ -1148,6 +1165,13 @@ Veljkovic, V., Cosic, I., Lalovic, D., et~al. (1985).
 \newblock Is it possible to analyze dna and protein sequences by the methods of
   digital signal processing?
 \newblock {\em IEEE Transactions on Biomedical Engineering}, (5):337--341.
+
+\bibitem[Vijayakumar et~al., 1998]{vijayakumar1998electrostatic}
+Vijayakumar, M., Wong, K.-Y., Schreiber, G., Fersht, A.~R., Szabo, A., and
+  Zhou, H.-X. (1998).
+\newblock Electrostatic enhancement of diffusion-controlled protein-protein
+  association: comparison of theory and experiment on barnase and barstar.
+\newblock {\em Journal of molecular biology}, 278(5):1015--1024.
 
 \bibitem[Vishveshwara et~al., 2002]{vishveshwara2002protein}
 Vishveshwara, S., Brinda, K., and Kannan, N. (2002).

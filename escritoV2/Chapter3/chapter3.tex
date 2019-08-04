@@ -13,7 +13,7 @@
 
 Desarrollar modelos predictivos basados en algoritmos de aprendizaje supervisado, o, la identificación de patrones aplicando técnicas de clustering, son tareas muy relevantes a la hora de trabajar con secuencias de proteínas, ya sea para identificar grupos con características comunes o entrenar modelos predictivos de respuestas de interés. En ambos casos, se requiere el uso de conjuntos de datos altamente informativos y con características numéricas para poder utilizar los métodos implementados en las librerías actuales \cite{pedregosa2011scikit}.
 
-Diferentes metodologías se han implementado, para manipular las variables categóricas en set de datos y lograr su codificación numérica. Enfoques basados en adición de columnas según las categorías o simple transformación empleando representaciones en conjuntos naturales, suelen ser utilizados. No obstante, generan bastante discusión sobre las nuevas representaciones. y a su vez, el hecho de aumentar el número de columnas, conlleva a incrementar las dimensiones del conjunto de datos, provocando efectos en los desempeños de los algoritmos \cite{pedregosa2011scikit}. 
+Diferentes metodologías se han implementado, para manipular las variables categóricas en set de datos y lograr su codificación numérica. Enfoques basados en adición de columnas según las categorías o simple transformación empleando representaciones en conjuntos naturales, suelen ser utilizados. No obstante, generan bastante discusión sobre las nuevas representaciones y, a su vez, el hecho de aumentar el número de columnas, conlleva a incrementar las dimensiones del conjunto de datos, provocando efectos negativos en los desempeños de los algoritmos \cite{pedregosa2011scikit}. 
 
 Particularmente, en secuencias de proteínas, se han utilizado las frecuencias de incidencia de los residuos para codificarlos, la cual, pese a su simplicidad, ha resultado ser efectiva en diferentes casos de uso \cite{ozbudak2014protein}. No obstante, este tipo de codificación, no permite explorar el ambiente bajo el cual se encuentran los residuos y tampoco considera el efecto de propiedades fisicoquímicas ni termodinámicas.
 
@@ -27,7 +27,7 @@ En el presente capítulo, se exponen en detalle, diferentes formas de representa
 
 \section{Metodologías asociadas a la codificación de variables categóricas}
 
-Diferentes metodologías existen para poder codificar variables categóricas, a su vez, para set de datos de proteínas con secuencias lineales, es factible utilizar sus propiedades fisicoquímicas o frecuencias de residuos. Las principales metodologías usadas a la fecha se expone a continuación.
+Diferentes metodologías existen para poder codificar variables categóricas, a su vez, para set de datos de proteínas con secuencias lineales, es factible utilizar sus propiedades fisicoquímicas o frecuencias de residuos. Las principales metodologías usadas a la fecha se exponen a continuación.
 
 \subsection{One Hot encoder}
 
@@ -49,7 +49,7 @@ Su codificación mediante One Hot Encoder corresponde al vector x'(x)
 \vdots\\
 0 & 0 & 0 & \cdots & 1 \end{array} \right) \] 
 
-Esta metodología, si bien es altamente usada, implica que, a medida que aumentan la cantidad de categorías incrementan el número de columnas a agregar en el set de datos, es decir, si se tienen $m$ categorías se adicionan $m$ columnas. Esto último, puede provocar que los set de datos se afecten por problemas relacionados con la \textit{maldición de dimensionalidad} \footnote{Ver sección \ref{problemas}}, ya que, a medida que aumentan los descriptores, aumenta la probabilidad de que estos no sean informativos, provocando una adición de información innecesaria y que perjudicaría el rendimiento de los algoritmos de aprendizajes supervisado y no supervisado.
+Esta metodología, si bien es altamente usada, implica que, a medida que aumentan la cantidad de categorías incrementan el número de columnas a agregar en el set de datos, es decir, si se tienen $m$ categorías se adicionan $m$ columnas. Esto último, puede provocar que los set de datos se afecten por problemas relacionados con la \textit{maldición de dimensionalidad} \footnote{Ver sección \ref{problemas}}, ya que, a medida que aumentan los descriptores, aumenta la probabilidad de que estos no sean informativos, provocando una adición de información innecesaria y que perjudicaría el rendimiento de los algoritmos de aprendizajes supervisado y no supervisado, ya sea por la alta correlación existente entre los elementos, o ruido que pueda causar el incremento de las dimensiones para un conjunto dado.
 
 \subsection{Ordinal encoder}
 
@@ -81,7 +81,7 @@ Esta es una de las representaciones más utilizadas y más simples a la hora de 
 	
 	\item La codificación por frecuencias es utilizada como un primer acercamiento a la representación del problema y principalmente perjudica a los modelos ya que puede generar atributos no informativos, como lo son los residuos sin incidencia, esto conlleva a modelos sobre ajustados y a creación de set de datos no informativos.
 	
-	\item No evalúa elementos relevantes a la caracterización de residuos claves, ambiente bajo el cual ocurren mutaciones o componentes adicionales que facilitarían una mayor comprensión del problema, ya que, sólo conocer las incidencias, proporciona un conocimiento sobre la moda y cuáles son los residuos más relevantes. No obstante, sólo permite inferir características, relacionadas a estos.
+	\item No evalúa elementos relevantes a la caracterización de residuos claves, ambiente bajo el cual ocurren mutaciones o componentes adicionales que facilitarían una mayor comprensión del problema, ya que, sólo conocer las incidencias, proporciona un conocimiento sobre la moda y cuáles son los residuos más relevantes. No obstante, sólo permite inferir características relacionadas a estos.
 \end{itemize}
 
 El uso de las frecuencias de residuos, es una de las primeras aproximaciones a la codificación de secuencias lineales de proteínas. No obstante, en todos los casos donde han sido utilizadas, se agrega información adicional, que permite comprender diferentes comportamientos y evalúa ciertas propiedades del entorno, razones por las cuales, se recomiendan utilizarlas en conjunto con otros descriptores. 
@@ -776,6 +776,18 @@ Donde $B_{K}$ es la matriz de dispersión entre grupos y $W_{K}$ es la matriz de
 
 Con $N$ como el de puntos en el set de datos, $C_{q}$ el set de puntos en el cluster $q$, $c_{q}$ el centro del clúster $q$, $c$ el centro de $E$, $n_{q}$ el número de puntos en el clúster $q$.
 
+\subsection{Métodos de clustering empleando estructuras de grafos}
+
+Un grafo, es una estructura de datos compleja, que se compone de nodos y aristas, los nodos, son aquellos que representan la información y las aristas, permiten enlazar nodos. Existen diferentes tipos de representaciones, los cuales se basan en cómo fluye la información, encontrándose grafos dirigidos y no dirigidos. Los primeros, tienen una dirección entre un nodo $A$ y $B$, la cual puede indicar diferentes comportamientos, por ejemplo, si los nodos representan genes, es posible mencionar que $A$ regula a $B$. En el caso de grafos no dirigidos, no existe la relación expuesta previamente.
+
+Matemáticamente, es posible definir las estructuras de gráfos, como un par de conjuntos $G =(V,E)$, donde $V$ es el conjunto de vértices y  $E$ representa las aristas del grafo. En un grafo no dirigido, cada arista es un par no ordenado ${v,w}$. En un grafo dirigido, las aristas son pares ordenados. Los vértices $v$ y $w$ son llamados puntos finales de una arista. La cantidad de aristas $|E|=m$ es el tamaño del grafo. En un grafo ponderado, una función $\omega: E \rightarrow \mathbb{R}$ es definida la cual pondera cada arista.
+
+Existen diversas utilidades que pueden ser expuestas usa para modelar problemas reales como redes de computadoras, redes sociales y estructuras de proteínas, entre otros. 
+
+Otro de los puntos que pueden ser explotados en un grafo, es el hecho de generar clustering o identificación de comunidades, las cuales se definen como un conjunto de nodos, los que están fuertemente conectados entre sí y débilmente enlazados con otros elementos \cite{fortunato2012community}. Los principales uso de las comunidades o sub grafos, corresponden a identificación de patrones con comportamientos particulares desde un punto de vista diferente a cómo lo hacen los métodos de aprendizaje no supervisado. Dentro de los diferentes algoritmos que permiten efectuar dicha búsqueda, se encuentran: Fast Greedy, Edge Betweenness, Cluster Walktrap, Leading eigenvector, Louvain, Infomap, dentro de los principales \cite{newman2004detecting}.
+ 
+De manera análoga a las medidas de desempeño para la evaluación de los clustering empleadas en algoritmos de aprendizaje no supervisado, existe el concepto de modularidad \cite{Newman8577}, el cual permite evaluar la disgregación de los elementos y la densidad de las comunidades. Donde un valor de 0.35 es aceptado como comunidades bien definidas.
+
 \section{Hipótesis}
 
 Dada la problemática existente sobre cómo representar conjuntos de secuencias lineales con el fin de poder desarrollar modelos de clasificación/regresión o identificación de patrones asociados a propiedades fisicoquímicas. Y, en consideración de los diferentes usos que entrega las transformadas de Fourier, se plantea la hipótesis de este capítulo.
@@ -817,9 +829,17 @@ Con el fin de poder cumplir con el objetivo general planteado y los objetivos es
 
 A continuación de exponen las diferentes etapas asociadas al proceso.
 
+\subsection{Identificación y selección de propiedades fisicoquímicas}
+
+El uso de la base de datos AAIndex, contempla trabajar con 566 propiedades que describen a un residuo, dentro de las cuales, existen altas correlaciones entre diferentes propiedades, ya que, evalúan el mismo concepto. Pero, empleando técnicas o metodologías diferentes. Razón por la cual, es necesario evaluar cuáles son las propiedades que pueden ser utilizadas, con el fin de no generar redundancia de información.
+
+A partir de lo anterior, se emplean estructuras de grafos no dirigidos, en los cuales, los nodos representan la propiedad y las aristas corresponden a si existe una alta correlación entre la propiedad $A$ y $B$. Se destaca que dicha correlación se mide con respecto al coeficiente de Pearson y sólo se considerará altamente correlacionados si dicho índice es sobre 0.9. Una vez creado el nodo, se aplicarán diferentes algoritmos de identificación de comunidades y se evaluará la modularidad de estos, a través de la cual, se seleccionarán las con mayor índice.
+
+Esto último, permite generar grupos de propiedades cuya característica principal es que presentan alta correlación entre ellos, dado esto, si se tienen $n$ comunidades, es posible representar una secuencia lineal a partir de cualquier propiedad seleccionada de cada comunidad $n_i$. De esta forma, se reduce la dimensión del espacio muestral.
+
 \subsection{Codificación de secuencias lineales}
 
-La codificación de secuencias lineales, se basa en el uso de propiedades fisicoquímicas representativas de la secuencia, las cuales se obtienen a partir de la base de datos AAindex \cite{Kawashima2000}.
+La codificación de secuencias lineales, se basa en el uso de propiedades fisicoquímicas representativas de la secuencia, las cuales se obtienen a partir de la base de datos AAindex\cite{Kawashima2000} y son seleccionadas de manera aleatoria con respecto a las comunidades identificadas a través de la correlación de dichas características desde las estructuras de grafos generadas.
 
 Un esquema representativo del proceso, se observa en la Figura \ref{cap3:fig1}, en la cual, se detallan los diferentes pasos a seguir para generar la codificación correspondiente y obtener los espectros de frecuencias asociados a cada propiedad fisicoquímica.
 
@@ -831,14 +851,46 @@ Un esquema representativo del proceso, se observa en la Figura \ref{cap3:fig1}, 
 	\label{cap3:fig1}
 \end{figure}
 
-En una primera instancia, se toma la secuencia y por cada residuo se crea un vector de tamaño $n$ el cual representa el número de propiedades fisicoquímicas descritas en la base de datos AAindex. De esta forma, se crea una matriz de tamaño $r \times n$ donde $r$ representa la cantidad de residuos en la secuencia.
+En una primera instancia, se toma la secuencia y por cada residuo se crea un vector de tamaño $n$ el cual representa el número de propiedades fisicoquímicas a considerar a partir de las comunidades generadas. De esta forma, se crea una matriz de tamaño $r \times n$ donde $r$ representa la cantidad de residuos en la secuencia.
 
 
 A partir de dicha matriz, técnicas de reducción de dimensionalidad y selección de características son implementadas, utilizando lenguaje de programación Python y la librería scikit-learn \cite{pedregosa2011scikit}, con el fin de seleccionar cuáles son las propiedades más representativas y qué porcentaje de la varianza permiten explicar.
 
-Dado el conjunto de propiedades seleccionadas, se implementarán rutinas basadas en lenguaje de programación Matlab, las cuales reciben el conjunto inicial de datos, en una primera instancia, aplica \textit{zero-padding} con el fin generar vectores de tamaño de potencia de 2, requisito para la aplicación de FFT. A partir de esto, cada columna en el conjunto de elementos, se digitaliza por medio del uso de la transformada rápida de Fourier (FFT) y se obtienen los espectros de frecuencias para cada propiedad fisicoquímica seleccionada previamente.
+Dado el conjunto de propiedades seleccionadas, se implementarán rutinas basadas en lenguaje de programación Matlab, las cuales reciben el conjunto inicial de datos, en una primera instancia, aplica \textit{zero-padding} con el fin generar vectores de tamaño de potencia de $2\cdot2^n$, requisito para la aplicación de FFT. A partir de esto, cada columna en el conjunto de elementos, se digitaliza por medio del uso de la transformada rápida de Fourier (FFT) y se obtienen los espectros de frecuencias para cada propiedad fisicoquímica seleccionada previamente.
 
 De esta forma, por cada secuencia, se obtiene un conjunto de espectros de frecuencia, asociados a la digitalización de las propiedades fisicoquímicas seleccionadas mediante técnicas de selección de características.
+
+\subsection{Caracterización del espectro de frecuencias}
+
+Dado el conjunto de espectros de frecuencia generado para las secuencias lineales, es necesario extraer información relevante de estos con el fin de caracterizarlo, para ello, se plantean diferentes metodologías con el fin de poder generar los conjuntos de entrenamientos, y, a partir de estos, implementar los modelos predictivos propuestos. Es importante mencionar, que dichos patrones también pueden ser utilizados como método de reconocimiento de residuos relevantes en las variantes, ya que, si se aplica la transformada inversa de Fourier, es posible la identificación de los elementos que participan en algún peak del espectro \cite{veljkovic1985possible}.
+
+Tomando esto en consideración, se plantean diversas metodologías que serán implementadas para llevar a cabo la caracterización del espectro. Un punto relevante, es el hecho de que al ser una etapa exploratoria, será necesario evaluar cuál es la mejor, a la hora de aplicarla en entrenamiento de modelos predictivos. Cada una de las cuales, se explica a continuación.
+
+\subsubsection{Diferencias espectrales}
+ 
+Sea $f_i(wild)$ el espectro de frecuencia de la proteína no mutada para la propiedad $i$ y $f_i(mut_{j})$ el espectro de frecuencia para la mutante $j$. Se define el espectro diferencial como la resta de $f_i(wild)$ y $f_i(mut_{j})$.
+
+Ya que se tendrán $j$ mutantes, existirán $j$ diferencias espectrales, a partir de las cuales, se emplearán para formar conjuntos de datos y entrenar modelos predictivos.
+
+Uno de los puntos importantes a destacar, radica en el hecho de es posible identificar variaciones positivas y negativas, lo cual puede influir de diferentes formas en la propiedad y por consecuencia, en la función o respuesta asociada a evaluar.
+
+\subsubsection{Binarización de diferencias espectrales}
+
+A partir de las diferencias espectrales expuestas en el punto anterior, es posible desarrollar distribuciones de las diferencias de los espectros, de tal manera, que se apliquen test estadísticos para la identificación de outliers en la muestra, con un nivel de significancia $\alpha$.
+
+Dado esta identificación, se considera el conjunto de elementos y se codifica con respecto a si es un outlier positivo, negativo o se encuentra dentro del rango normal de distribución. De esta forma, por cada espectro, se forma un vector binarizado, dando origen a una matriz de espectros codificados en base a la significancia de su diferencia.
+
+Dicha matriz se utiliza para el entrenamiento de modelos predictivos, a su vez, esta matriz podría ser representada en un heat map, con el fin de poder identificar zonas en las que exista una mayor densidad de puntos con tendencia hacia un tipo de outlier.
+
+\subsubsection{Identificación de zonas en el espacio espectral}
+
+De manera visual, el espectro de frecuencia en sí, es informativo, ya que, permite identificar zonas en las que existe un peak, las cuales reflejarían una característica correlacionada con la función \cite{vijayakumar1998electrostatic}. A su vez, si se considera la diferencia espectral, ésta, permitirá identificar cómo fue la variación con respecto a la proteína inicial, de tal manera que, una distribución uniforme con valor 0 debiese pertenecer a variantes que no afecten los valores de la propiedad en sí, mientras que, variaciones importantes, serán detectadas en zonas específicas de la distribución. A su vez, al binarizar la distribución de diferencias, es posible visualizar estas tendencias. 
+
+Con el fin de reconocer de manera automática dichas zonas, se trabaja con las distribuciones discretas de los espectros binarizados, obtenidos previamente, para las cuales, se diseñará e implementará un algoritmo de detección de cambios en la distribución, tal que, permita ir marcando por zonas en donde se exhiba un cambio positivo, negativo o neutro. 
+
+A su vez, sería interesante de estudiar, o, identificar las variantes generadas y sus correspondientes efectos y ver cómo se clasifican en estas zonas, ya que, podría ser identificable, zonas en el espectro, que conllevan una alteración negativa para una proteína, tal que, se podría identificar, cuáles son los residuos o posiciones que más afectan a un cambio negativo en la proteína. 
+
+Con los diferentes puntos expuestos previamente, se generan distintas caracterizaciones, que permiten describir el espectro y generar el conjunto de datos, el cual será utilizada para el entrenamiento de modelos predictivos.
 
 \subsection{Implementación de modelos de clasificación/regresión para análisis de variantes}
 
@@ -851,7 +903,7 @@ En la Figura \ref{cap3:fig3}, se expone un esquema representativo asociado a los
 \begin{figure}[!h]
 	
 	\centering
-	\includegraphics[scale=.4]{fig2.png}
+	\includegraphics[scale=.4]{fig3.png}
 	\caption{Esquema representativo, metodología de clustering se secuencias por medio de espectros de frecuencias basados en propiedades fisicoquímicas.}
 	\label{cap3:fig3}
 \end{figure}
@@ -863,7 +915,7 @@ Al conjunto de secuencias generado, se aplicará la codificación de las propied
 
 Posterior a ello, se seleccionarán las propiedades más informativas y se generará la digitalización de éstas, empleando la metodología descrita en el punto anterior. La selección de las características se basa en un consenso con respecto a las incidencias de cada propiedad en cada secuencia, esto es, dado a que se seleccionan $p$ propiedades por cada secuencia, es posible que diferentes secuencias, presente distintas propiedades. Por lo tanto, se seleccionarán aquellas propiedades que presenten mayor incidencia en el conjunto de secuencias, ya que éstas, serán las más representativas del conjunto completo. 
 
-Una vez se tenga el conjunto de espectros, modelos predictivos serán entrenados aplicando algoritmos de aprendizaje supervisado al set de datos de espectros de frecuencia. Se utilizarán las medidas de desempeño expuestas en el capítulo \ref{cap2}. Los modelos serán validados mediante validación cruzada con un valor de $k=10$, con el fin de evaluar el sobreajuste. 
+Una vez se tenga el conjunto de espectros caracterizado, modelos predictivos serán entrenados aplicando algoritmos de aprendizaje supervisado al set de datos de espectros de frecuencia. Se utilizarán las medidas de desempeño expuestas en el capítulo \ref{cap2}. Los modelos serán validados mediante validación cruzada con un valor de $k=10$, con el fin de evaluar el sobreajuste. 
 
 Finalmente, los resultados a obtener a partir de descriptores basados en espectros de frecuencia, serán comparados con los obtenidos en la fase de exploración de la metodología expuesta en el capítulo 2. Esto con el fin de determinar, qué metodología o caracterización de datos, permite entregar un modelo con mejor desempeño o características deseables. 
 
