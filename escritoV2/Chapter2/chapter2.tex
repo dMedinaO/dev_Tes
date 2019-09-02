@@ -11,17 +11,17 @@
     \graphicspath{{Chapter2/Figs/Vector/}{Chapter2/Figs/}}
 \fi
 
-El análisis del efecto de mutaciones puntuales en proteínas, es una de las problemáticas más estudiadas en los últimos años. Las investigaciones se enfocan principalmente, en la evaluación de cambios en la estabilidad de la proteína mediante la variación de energía libre que la mutación provoca \cite{Schymkowitz2005,Pandurangan2017,rohl2004protein,Parthiban2006}. 
+El análisis del efecto de mutaciones puntuales en proteínas, es una de las problemáticas más estudiadas en los últimos años. Las investigaciones se enfocan principalmente en la evaluación de cambios en la estabilidad de la proteína mediante la variación de energía libre que la mutación provoca \cite{Schymkowitz2005,Pandurangan2017,rohl2004protein,Parthiban2006}. 
 
-Diferentes modelos predictivos han sido desarrollados para poder predecir cambios de energía libre, en base a algoritmos de aprendizaje supervisado o mediante técnicas de minería de datos, y así, determinar el efecto de la mutación en set de proteínas de interés \cite{Quan2016,Capriotti2008,Broom2017,Khan2010,vaisman,Getov2016,Capriotti2005}. No obstante, en casos más específicos, se han desarrollado modelos para proteínas independientes, con el fin de asociar la mutación a un rasgo clínico, particularmente, enfocado a casos de cáncer \cite{article, Forbes2010}, cambios en termo estabilidad \cite{Tian2010}, propiedades geométricas \cite{Barenboim2008}, entre las principales.
+Diferentes modelos predictivos han sido desarrollados para poder predecir cambios de energía libre, en base a algoritmos de aprendizaje supervisado o mediante técnicas de minería de datos y así, determinar el efecto de la mutación en set de proteínas de interés \cite{Quan2016,Capriotti2008,Broom2017,Khan2010,vaisman,Getov2016,Capriotti2005}. No obstante, en casos más específicos, se han desarrollado modelos para proteínas independientes, con el fin de asociar la mutación a un rasgo clínico, particularmente, enfocado a casos de cáncer \cite{article, Forbes2010}, cambios en termo estabilidad \cite{Tian2010}, propiedades geométricas \cite{Barenboim2008}, entre las principales.
 
-Sin importar el uso o la respuesta de los modelos, es necesario construir set de datos con ejemplos etiquetados, es decir, cuya respuesta sea conocida para poder entrenar modelos basados en algoritmos de aprendizaje supervisado y así evaluar su desempeño. Los enfoques principales al desarrollo de descriptores se basan en propiedades fisicoquímicas y termodinámicas, así como también, el ambiente bajo el cual se encuentra la mutación \cite{Capriotti2005}, ya sea a partir de la información estructural o sólo considerando la secuencia lineal. Sin embargo, no son considerados, los componentes asociados a conceptos filogenéticos y la propensión a cambios de dicha mutación generando un gap entre ambos puntos de vista \cite{Olivera-Nappa2011}.
+Sin importar el uso o la respuesta de los modelos, es necesario construir set de datos con ejemplos etiquetados, es decir, cuya respuesta sea conocida para poder entrenar modelos basados en algoritmos de aprendizaje supervisado y así evaluar su desempeño. Los enfoques principales al desarrollo de descriptores se basan en propiedades fisicoquímicas y termodinámicas, así como también, el ambiente bajo el cual se encuentra la mutación \cite{Capriotti2005}, ya sea a partir de la información estructural o sólo considerando la secuencia lineal. Sin embargo, no son considerados, los componentes asociados a conceptos filogenéticos y la propensión a cambios de dicha mutación, generando un gap entre ambos puntos de vista \cite{Olivera-Nappa2011}.
 
 Dado a los modelos existentes y en vista a la necesidad de generar nuevos sistemas de predicción para mutaciones puntuales en proteínas, en respuesta al aumento considerable de reportes en los últimos años, se propone una nueva metodología para el diseño e implementación de modelos predictivos en mutaciones puntuales de proteínas.
 
 Las mutaciones son descritas desde los puntos de vista estructural, termodinámico y filogenético. El desarrollo de los predictores es inspirado en el concepto de Meta Learning y es apoyado con técnicas estadísticas, tanto para la selección de modelos como para la evaluación de medidas de desempeño, entregando como resultado, un conjunto de modelos para las mutaciones puntuales reportadas, unificados en un único meta modelo.
 
-Esta metodología será aplicada para generar estimadores en diferentes proteínas con mutaciones reportadas con respuesta conocida, como por ejemplo: evaluando las diferencias de energía libre que provoca la mutación y clasificaciones para evaluar si la sustitución de residuos aumenta o disminuye la estabilidad. A su vez, se implementarán modelos de clasificación para determinar la propensión clínica en un conjunto de mutaciones conocidas relacionados con el gen \textit{p}VHL, responsable de la enfermedad von Hippel Lindau, con el fin de exponer la versatilidad de la metodología y los problemas relevantes a set de datos altamente no-lineales.
+Esta metodología será aplicada para generar estimadores en diferentes proteínas con mutaciones reportadas con respuesta conocida, como por ejemplo: evaluando las diferencias de energía libre que provoca la mutación y clasificaciones para evaluar si la sustitución de residuos aumenta o disminuye la estabilidad. A su vez, se implementarán modelos de clasificación para determinar la propensión clínica en un conjunto de mutaciones conocidas relacionados con el gen \textit{p}VHL, responsable de la enfermedad von Hippel-Lindau, con el fin de exponer la versatilidad de la metodología y los problemas relevantes a set de datos altamente no-lineales.
 
 A continuación, se describen los principales conceptos relacionados a aprendizaje supervisado, seguido de algunas herramientas computacionales para el análisis de mutaciones y su relevancia en la de estabilidad de una proteína, continuando con la metodología propuesta, la caracterización de los diferentes set de datos a utilizar y resultados parciales obtenidos al aplicar esta metodología.
 
@@ -61,30 +61,6 @@ Matemáticamente, se espera que el conjunto de respuesta sea el resultado de una
 Donde $w_0$ es el intercepto y $w = (w_1,\cdots, w_p)$ el vector de coeficientes.
 
 Existente diferentes métodos de regresión lineal, los cuales cumplen con el mismo objetivo. Sin embargo, la forma en la que minimizan el error asociado a las diferencias entre los valores predichos y los observados.
-
-A modo de ejemplo, en la Tabla \ref{tab:tab-regression} se exponen distintas formas de ajustar o minimizar el error asociado.
-
-% Please add the following required packages to your document preamble:
-% \usepackage{longtable}
-% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
-\begin{longtable}[c]{|l|l|l|}
-	\hline
-	\multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Tipo de\\ regresión\end{tabular}}} & \multicolumn{1}{c|}{\textbf{Minimización}} & \multicolumn{1}{c|}{\textbf{Descripción}}                                                                                                                                   \\ \hline
-	\endfirsthead
-	%
-	\endhead
-	%
-	\begin{tabular}[c]{@{}l@{}}Ordinary\\ Least\\ Squares \cite{golub1980analysis} \end{tabular}                         & $\min_{w} || X w - y||_2^2$                & \begin{tabular}[c]{@{}l@{}}Método más simple,\\ no implica parámetros\\ externos.\end{tabular}                                                                              \\ \hline
-	\begin{tabular}[c]{@{}l@{}}Ridge\\ Regression \cite{hoerl1970ridge}\end{tabular}                                 &   $\min_{w} || X w - y||_2^2 + \alpha ||w||_2^2$                                         & \begin{tabular}[c]{@{}l@{}}Adición de penalización\\ $\alpha$.\end{tabular}                                                                                                 \\ \hline
-	Lasso  \cite{hans2009bayesian}                                                                                    &  $\min_{w} { \frac{1}{2n_{\text{samples}}} ||X w - y||_2 ^ 2 + \alpha ||w||_1}$                                          & \begin{tabular}[c]{@{}l@{}}Reduce el número de\\ características bajo las\\ cuales depende la\\ solución final.\end{tabular}                                                \\ \hline
-	Elastic-Net  \cite{zou2005regularization}                                                                              & $\min_{w} { \frac{1}{2n_{\text{samples}}} ||X w - y||_2 ^ 2 + \alpha \rho ||w||_1 +
-		\frac{\alpha(1-\rho)}{2} ||w||_2 ^ 2} $                                           & \begin{tabular}[c]{@{}l@{}}Usado principalmente\\ en caso de atributos\\ con alta correlación.\end{tabular}                                                                 \\ \hline
-	\begin{tabular}[c]{@{}l@{}}Orthogonal\\ Matching\\ Pursuit\\ (OMP) \cite{pati1993orthogonal}\end{tabular}            &   $\underset{\gamma}{\operatorname{arg\,min\,}}  ||y - X\gamma||_2^2 \text{ subject to } ||\gamma||_0 \leq n_{\text{nonzero\_coefs}}$                                         & \begin{tabular}[c]{@{}l@{}}Permite fijar el número\\ de coeficientes no nulos.\end{tabular}                                                                                 \\ \hline
-	\begin{tabular}[c]{@{}l@{}}Bayesian\\ Regression \cite{castillo2015bayesian}\end{tabular}                              &  $p(y|X,w,\alpha) = \mathcal{N}(y|X w,\alpha)$                                          & \begin{tabular}[c]{@{}l@{}}Se adapta a de manera\\ eficiente a los datos de\\ entrenamiento y permite\\ incluir penalizaciones \\ asociadas a los coeficientes\end{tabular} \\ \hline
-	\caption{Tipos de regresión con su función de minimización y descripciones correspondientes a las características que estos poseen.
-	}
-	\label{tab:tab-regression}\\
-\end{longtable}
 
 Pese a su simplicidad, los métodos basados en regresiones lineales han sido ampliamente utilizados. No obstante, presentan diferentes problemas asociados al sobreajuste de parámetros.
  
