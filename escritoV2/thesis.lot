@@ -1,19 +1,8 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Resumen tipos de distancias utilizadas en procesos de comparaci\IeC {\'o}n de ejemplos \relax }}{18}{table.2.1}
-\contentsline {table}{\numberline {2.2}{\ignorespaces Resumen de algoritmos comunes para la creaci\IeC {\'o}n de \IeC {\'a}rboles de decisi\IeC {\'o}n. \relax }}{23}{table.2.2}
-\contentsline {table}{\numberline {2.3}{\ignorespaces Tipos de medidas de impureza que pueden ser utilizadas en \IeC {\'a}rboles de decisi\IeC {\'o}n para modelos de clasificaci\IeC {\'o}n. \relax }}{24}{table.2.3}
-\contentsline {table}{\numberline {2.4}{\ignorespaces Tipos de kernels aplicados por SVM para la transformaci\IeC {\'o}n espacial de los datos. \relax }}{25}{table.2.4}
-\contentsline {table}{\numberline {2.5}{\ignorespaces Funciones de p\IeC {\'e}rdida comunes utilizadas en los algoritmos Gradient Tree Boosting, ya sea en forma de clasificador como regresor.\relax }}{34}{table.2.5}
-\contentsline {table}{\numberline {2.6}{\ignorespaces Principales herramientas computacionales enfocadas a la evaluaci\IeC {\'o}n de la estabilidad o predicci\IeC {\'o}n de cambios en la energ\IeC {\'\i }a libre, asociado a mutaciones puntuales en prote\IeC {\'\i }na. \relax }}{45}{table.2.6}
-\contentsline {table}{\numberline {2.7}{\ignorespaces Tabla resumen, algoritmos implementados, par\IeC {\'a}metros utilizados e iteraciones involucradas por cada algoritmo.\relax }}{53}{table.2.7}
-\contentsline {table}{\numberline {2.8}{\ignorespaces Resumen de prote\IeC {\'\i }nas utilizadas para el desarrollo de meta modelos basados en metodolog\IeC {\'\i }a Meta Learning System propuesta durante este cap\IeC {\'\i }tulo.\relax }}{60}{table.2.8}
+\contentsline {table}{\numberline {2.1}{\ignorespaces Principales herramientas computacionales enfocadas a la evaluaci\IeC {\'o}n de la estabilidad o predicci\IeC {\'o}n de cambios en la energ\IeC {\'\i }a libre, asociado a mutaciones puntuales en prote\IeC {\'\i }na. \relax }}{27}{table.2.1}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Tabla resumen, algoritmos implementados, par\IeC {\'a}metros utilizados e iteraciones involucradas por cada algoritmo.\relax }}{34}{table.2.2}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Resumen de prote\IeC {\'\i }nas utilizadas para el desarrollo de meta modelos basados en metodolog\IeC {\'\i }a Meta Learning System propuesta durante este cap\IeC {\'\i }tulo.\relax }}{41}{table.2.3}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {3.1}{\ignorespaces Resumen de linkages comunes utilizados en m\IeC {\'e}todos de clustering jer\IeC {\'a}rquicos.\relax }}{84}{table.3.1}
-\contentsline {table}{\numberline {3.2}{\ignorespaces Cuadro resumen de algoritmos de aprendizaje supervizado\relax }}{91}{table.caption.52}
+\contentsline {table}{\numberline {3.1}{\ignorespaces Cuadro resumen de algoritmos de aprendizaje supervizado\relax }}{57}{table.caption.25}
 \addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Resumen de actividades principales a desarrollar, enfocadas el desarrollo de modelos predictivos para mutaciones puntuales en prote\IeC {\'\i }nas.\relax }}{121}{table.5.1}
-\contentsline {table}{\numberline {5.2}{\ignorespaces Resumen de actividades asociadas a la codificaci\IeC {\'o}n y digitalizaci\IeC {\'o}n de propiedades fisicoqu\IeC {\'\i }micas\relax }}{122}{table.5.2}
-\contentsline {table}{\numberline {5.3}{\ignorespaces Resumen de actividades asociadas al desarrollo de herramienta computacional web para dise\IeC {\~n}o de mutaciones\relax }}{122}{table.5.3}
-\contentsline {table}{\numberline {5.4}{\ignorespaces Resumen y estado de actividades principales asociadas al desarrollo de modelos de clasificaci\IeC {\'o}n en mutaciones puntuales.\relax }}{123}{table.5.4}

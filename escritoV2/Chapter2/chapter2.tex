@@ -68,59 +68,11 @@ Pese a su simplicidad, los métodos basados en regresiones lineales han sido amp
 
 Algoritmo de aprendizaje supervisado, el cual tiene por objetivo asociar un elemento a una clase en particular, dada la información de ejemplos de entrada que tengan asociadas características particulares, que puedan declararse como \textit{vecinos} del nuevo ejemplo a clasificar, siendo \textbf{k} el número de vecinos que se está dispuesto a utilizar para aplicar la clasificación \cite{6313426}. La mejor elección de \textbf{k} depende fundamentalmente de los datos; generalmente, valores grandes de \textbf{k} reducen el efecto de ruido en la clasificación, pero crean límites entre clases parecidas.
 
-Con el fin de evaluar la cercanía de los ejemplos existentes contra el nuevo ejemplo a clasificar, es necesario asociar ciertas medidas de distancia que permitan cuantificar esta característica, para así poder comparar esta distancia y evaluar la cercanía para asociarle una clase a este nuevo ejemplo \cite{5408784}. La distancia a emplear para evaluar la cercanía puede ser: Euclidiana \cite{DANIELSSON1980227}, Manhattan \cite{PERLIBAKAS2004711}, coseno \cite{LIAO20155328} o Mahalanobis \cite{DEMAESSCHALCK20001}, entre las principales, las cuales son expuestas de manera general en la Tabla \ref{tab:tab-form-distance}.
-
-% Please add the following required packages to your document preamble:
-% \usepackage{longtable}
-% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
-\begin{longtable}[c]{|l|l|l|}
-	\hline
-	\multicolumn{1}{|c|}{\textbf{Distancia}} & \multicolumn{1}{c|}{\textbf{Fórmula}}                  & \multicolumn{1}{c|}{\textbf{Descripción}}                                                            \\ \hline
-	\endfirsthead
-	%
-	\endhead
-	%
-	Euclideana                               & $D_{(X,Y)}\ =\ \sqrt{\sum_{i=1}^{l}(X_{i}-Y_{j})^{2}}$ & Se basa en una recta entre dos puntos                                                                \\ \hline
-	Coseno                                   & $D_{(X,Y)}\ =\ \arccos(\frac{X^{T}Y}{||X||\ ||Y||})$   & \begin{tabular}[c]{@{}l@{}}Se basa en vectores y en el coseno del\\ ángulo que forman\end{tabular}   \\ \hline
-	Manhattan                                & $D_{(X,Y)}\ =\ \sum_{i=1}{n} |X_{i}-Y_{i}|$            & Distancia en forma de zig-zag                                                                        \\ \hline
-	Mahalanobis                              & $D_{(X,Y)}\ =\ \sqrt{(X-Y)^{T}S^{-1}(X-Y)}$            & \begin{tabular}[c]{@{}l@{}}Considera las correlaciones entre las\\ variables de estudio\end{tabular} \\ \hline
-	\caption{Resumen tipos de distancias utilizadas en procesos de comparación de ejemplos
-	}
-	\label{tab:tab-form-distance}\\
-\end{longtable}
-
-
-K-Nearest Neighbors (KNN por su descripción en inglés), presenta algunos problemas, tales como: posibles errores al existir más de un elemento de distinta clase cercano al nuevo ejemplo a clasificar. Sin embargo, dicho error estimado es reducido \cite{6313426}.
-
-Existen dos variaciones para la aplicación de KNN: aplicación basada en las distancias y aplicación basada en radios con respecto a puntos, la primera es mayormente usada. No obstante, en el caso de que los puntos no se encuentren uniformemente distribuidos es una mejor opción usar la segunda alternativa, siendo muy eficaz en problemas conocidos como \textit{la maldición de la dimensionalidad}\footnote{Para más detalles ver sección \ref{problemas}}. 
-
-KNN utiliza el componente de peso \cite{TAN2005667}, es decir, valores asignados a puntos específicos para determinar si un elemento a clasificar es de una clase o no, normalmente se utilizan pesos uniformes. Sin embargo, es posible asignar valores de tal manera que al momento de realizar la votación puntos más cercanos en base a distancias presenten más peso que otros.
-
-Se han implementando diversos algoritmos a la hora de aplicar la técnica de KNN, los cuales tienen relación con el coste computacional que presentan, dentro de estos se encuentran: Brute Force, K-D Tree y Ball Tree \cite{pedregosa2011scikit}.
-
-Este algoritmo de aprendizaje supervisado, puede ser utilizado tanto para el entrenamiento de modelos de clasificación (respuestas categóricas) y de regresión (respuestas continuas).
+Con el fin de evaluar la cercanía de los ejemplos existentes contra el nuevo ejemplo a clasificar, es necesario asociar ciertas medidas de distancia que permitan cuantificar esta característica, para así poder comparar esta distancia y evaluar la cercanía para asociarle una clase a este nuevo ejemplo \cite{5408784}. La distancia a emplear para evaluar la cercanía puede ser: Euclidiana \cite{DANIELSSON1980227}, Manhattan \cite{PERLIBAKAS2004711}, coseno \cite{LIAO20155328} o Mahalanobis \cite{DEMAESSCHALCK20001}, entre las principales.
 
 \subsection{Naive Bayes}
 
-Naive Bayes es un conjunto de algoritmos de aprendizaje supervisados basados en la aplicación del teorema de Bayes con la suposición "ingenua" de independencia entre cada par de características \cite{zhang2004optimality}. Dada una variable de clase $y$ y un vector de característica dependientes de la forma $x_1,..., x_n$, el teorema de Bayes establece la siguiente relación:
-
-\begin{equation}
-	P(y \mid x_1, \dots, x_n) = \frac{P(y) P(x_1, \dots x_n \mid y)} {P(x_1, \dots, x_n)}
-\end{equation}
-
-Utilizando la suposición ingenua de independencia de características, se tiene que:
-
-\begin{equation}
-	P(x_i | y, x_1, \dots, x_{i-1}, x_{i+1}, \dots, x_n) = P(x_i | y)
-\end{equation}
-
-Para todo $i$, esta relación se simplifica a:
-
-\begin{equation}
-	P(y \mid x_1, \dots, x_n) = \frac{P(y) \prod_{i=1}^{n} P(x_i \mid y)} {P(x_1, \dots, x_n)}
-\end{equation}
-
-Dado que $P(x_1, \dots, x_n)$ es constante dada la entrada, se puede utilizar la siguiente regla de clasificación:
+Naive Bayes es un conjunto de algoritmos de aprendizaje supervisados basados en la aplicación del teorema de Bayes con la suposición "ingenua" de independencia entre cada par de características \cite{zhang2004optimality}. Dada una variable de clase $y$ y un vector de característica dependientes de la forma $x_1,..., x_n$ se puede utilizar la siguiente regla de clasificación:
 
 \begin{equation}
 	P(y \mid x_1, \dots, x_n) \propto P(y) \prod_{i=1}^{n} P(x_i \mid y)
@@ -133,166 +85,16 @@ Dado que $P(x_1, \dots, x_n)$ es constante dada la entrada, se puede utilizar la
 	\hat{y} = \arg\max_y P(y) \prod_{i=1}^{n} P(x_i \mid y)
 \end{equation}
 
-A pesar de sus supuestos aparentemente simplificados, los clasificadores de Naive Bayes han funcionado bastante bien en muchas situaciones del mundo real, la famosa clasificación de documentos y el filtrado de spam son ejemplos de ello \cite{10.1007/BFb0026666, Chen2009, metsis2006spam}. Requieren una pequeña cantidad de datos de entrenamiento para estimar los parámetros necesarios. Pueden ser extremadamente rápido en comparación con métodos más sofisticados. El desacoplamiento de las distribuciones de las características condicionales de clase significa que cada distribución se puede estimar de forma independiente como una distribución unidimensional. Esto a su vez ayuda a aliviar los problemas derivados de la dimensionalidad. 
+A pesar de sus supuestos aparentemente simplificados, los clasificadores de Naive Bayes han funcionado bastante bien en muchas situaciones del mundo real, la famosa clasificación de documentos y el filtrado de spam son ejemplos de ello \cite{10.1007/BFb0026666, Chen2009, metsis2006spam}. Requieren una pequeña cantidad de datos de entrenamiento para estimar los parámetros necesarios. Pueden ser extremadamente rápido en comparación con métodos más sofisticados. 
 
-Existen distintos tipos de clasificadores de Naive Bayes, diferenciándose entre sí en la función de distribución de probabilidad que utilizan \cite{metsis2006spam,john1995estimating,manning2010introduction}, dentro de los que se encuentran:
-
-\begin{itemize}
-	
-	\item \textbf{Gaussian Naive Bayes.}
-	
-	\begin{equation}
-		P(x_i \mid y) = \frac{1}{\sqrt{2\pi\sigma^2_y}} \exp\left(-\frac{(x_i - \mu_y)^2}{2\sigma^2_y}\right)
-	\end{equation}
-	
-	\item \textbf{Multinomial Naive Bayes.}
-	
-	La distribución se parametriza por el vector $\theta_y = (\theta_{y1},\ldots,\theta_{yn})$ para cada clase $y$, donde $n$ es el número de características y $\theta_{y1}$ es la probabilidad $P(x_i \mid y)$ de que la característica $i$ aparezca en una muestra que pertence a la clase $y$.
-	
-	Cada $\theta_y$ es estimado por:
-	
-	\begin{equation}		
-		\hat{\theta}_{yi} = \frac{ N_{yi} + \alpha}{N_y + \alpha n}		
-	\end{equation}
-	
-	Donde $N_{yi} = \sum_{x \in T} x_i$ es el número  de veces que aparece la característica $i$ en la muestra de clase $y$ en el set de entrenamiento $T$ y $N_{y} = \sum_{i=1}^{|T|} N_{yi}$ representa el total de todas las características para la clase.
-	
-	\item \textbf{Bernoulli Naive Bayes.}
-	
-	\begin{equation}
-		P(x_i \mid y) = P(i \mid y) x_i + (1 - P(i \mid y)) (1 - x_i)
-	\end{equation}
-	
-\end{itemize}
+Existen distintos tipos de clasificadores de Naive Bayes, diferenciándose entre sí en la función de distribución de probabilidad que utilizan \cite{metsis2006spam,john1995estimating,manning2010introduction}, dentro de los que se encuentran: Gaussian Naive Bayes, Multinomial Naive Bayes y Bernoulli Naive Bayes.
 
 \subsection{Árboles de Decisión}
 
-Se define árbol de  decisión como un modelo de predicción, utilizado en el ámbito de la inteligencia artificial, en el cual,  dado un conjunto de datos, se fabrican diagramas de construcciones lógicas, muy similares a los sistemas de predicción basados en reglas, que sirven para representar y categorizar una serie de condiciones que ocurren de forma sucesiva, para la resolución de un problema.  
-
-Aprendizaje basado en árboles de decisión es un método comúnmente utilizado en la minería de datos, cuyo objetivo consiste en desarrollar un modelo de predicción para el valor de una variable de destino en función de diversas variables de entrada \cite{freund1999alternating}.
+Se define árbol de  decisión como un modelo de predicción, utilizado en el ámbito de la inteligencia artificial, en el cual,  dado un conjunto de datos, se fabrican diagramas de construcciones lógicas, muy similares a los sistemas de predicción basados en reglas, que sirven para representar y categorizar una serie de condiciones que ocurren de forma sucesiva, para la resolución de un problema \cite{freund1999alternating}.  
 
 El aprendizaje basado en árboles de decisión utiliza un árbol como un modelo predictivo que mapea las observaciones de las características que presenta un elemento. En estas estructuras de árbol, las hojas representan etiquetas de conjuntos ya clasificados, los nodos, a su vez, nombres o identificadores de los atributos y las ramas representan posibles valores para dichos atributos \cite{bhargava2013decision}.
 
-A modo de ejemplo, se expone en la Figura \ref{arboles}, una representación de un posible árbol, el cual fue desarrollado para entrenar modelos de clasificación utilizando el set de datos iris \cite{fisher1936use}.
-
-\begin{figure}[!h]
-	
-	\centering
-	\includegraphics[scale=.4]{iris.png}
-	\caption{Estructura de árbol para modelo de clasificación de set de datos iris.}
-	\label{arboles}
-\end{figure}
-
-
-Un árbol puede ser entrenado mediante el fraccionamiento del conjunto inicial en subconjuntos basados en una prueba de valor de atributo. Este proceso se repite en cada subconjunto derivado de una manera recursiva, el cual es denominado \textit{particionamiento recursivo}. La recursividad termina cuando el subconjunto en un nodo $m$ tiene todos sus miembros el mismo valor de la variable categórica o pertenecen al mismo intervalo finito, para el caso en que las respuestas se asocian a distribuciones continuas, o cuando la partición ya no agrega valor a las predicciones.
-
-Para cada división, es necesario el uso de una función que entregue una medida de impureza en cada partición, esto, con el objetivo de seleccionar el mejor subconjunto para un atributo dado, la elección de dicho descriptor, se basa en el objetivo de separar de mejor manera los ejemplos. 
-
-La selección de los atributos se basa en qué atributo, al momento de clasificar, genera nodos más puros. Para ello, se utiliza una función de ganancia de información, la cual representa la ganancia  obtenida a partir de una división de los ejemplos de entrenamiento \cite{breiman2017classification}. 
-
-Existen diferentes tipos de algoritmos bajo los cuales son implementados las ideologías de los árboles de decisión, cada uno presenta características particulares. Sin embargo, cumplen con el mismo objetivo. A modo general, en la Tabla \ref{tab:summary-alg-trees} se exponen algunos de los algoritmos existentes \cite{hssina2014comparative}.
-
-% Please add the following required packages to your document preamble:
-% \usepackage{longtable}
-% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
-\begin{longtable}[c]{|l|l|}
-	\hline
-	\multicolumn{2}{|c|}{\textbf{Algoritmos de árboles de decisión}} \\ \hline
-	\endfirsthead
-	%
-	\endhead
-	%
-	\multicolumn{1}{|c|}{\textbf{Algoritmo}} & \multicolumn{1}{c|}{\textbf{Descripción}} \\ \hline
-	Iterative Dichotomiser 3 (ID3) & \begin{tabular}[c]{@{}l@{}}Se crea un árbol de múltiples vías, encontrando para cada\\ nodo la característica categórica que producirá la mayor\\ ganancia de información. Por lo general, se aplica un\\ paso de poda para mejorar la capacidad del árbol asociada\\ a la generalización.\end{tabular} \\ \hline
-	C4.5 & \begin{tabular}[c]{@{}l@{}}Permite manipular variables continuas, mediante la definición\\ dinámica de atributos discretos, dividiendo el valor continuo en\\ un conjunto finito de intervalos discretos. La poda se realiza\\ eliminando la condición previa de una regla si la precisión de\\ la regla mejora sin ella.\end{tabular} \\ \hline
-	C5.0 & \begin{tabular}[c]{@{}l@{}}Genera un conjunto de reglas más pequeñas en comparación a\\ C4.5. Sin embargo, este último es más preciso en cuanto al \\ entrenamiento.\end{tabular} \\ \hline
-	\begin{tabular}[c]{@{}l@{}}Classification and Regression\\ Trees (CART)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Construye árboles binarios utilizando la característica y el\\ umbral que producen la mayor ganancia de información en\\ cada nodo.\end{tabular} \\ \hline
-	\caption{Resumen de algoritmos comunes para la creación de árboles de decisión. }
-	\label{tab:summary-alg-trees}\\
-\end{longtable}
-
-\subsubsection{Formulación matemática}
-
-Una definición matemática, tanto del proceso de clasificación o regresión y cómo son los criterios de selección de atributos es expuesta a continuación.
-
-Sea $x_{i} \in R^{n}$ los vectores de entrenamiento del conjunto de datos y sea $y \in R^l$ el vector de respuestas asociadas a cada ejemplo. Un árbol de decisión divide el espacio de forma recursiva, de manera que las muestras con las mismas etiquetas se agrupan.
-
-Cada nodo $m$ puede ser representado por $Q$ y sea $\theta = (j, t_{m})$ la división candidata para un atributo $j$ y un umbral $t_{m}$, se definen las particiones $Q_{left}(\theta)$ y $Q_{rigth}(\theta)$ tal que:
-
-\begin{align}
-	\begin{aligned}
-		Q_{left}(\theta) = {(x, y) | x_j <= t_m}\\Q_{right}(\theta) = Q \setminus Q_{left}(\theta)
-	\end{aligned}
-\end{align}
- 
-
-Asociado a las divisiones, se tiene que, cada nodo generado se mide con respecto a la impureza de éste, la cual, puede ser representada por una función $H()$ y a la ganancia de información que genera la división $G(Q, \theta)$, la cual se estima como:
-
-\begin{equation}
-	G(Q, \theta) = \frac{n_{left}}{N_m} H(Q_{left}(\theta)) + \frac{n_{right}}{N_m} H(Q_{right}(\theta)
-\end{equation}
-
-Los descriptores se seleccionan con respecto a aquel que minimice la impureza de los nodos:
-
-\begin{equation}
-	\theta^* = \operatorname{argmin}_\theta  G(Q, \theta)
-\end{equation}
-
-Finalmente, se tiene que para los subconjuntos $Q_{left}(\theta^*)$ y $Q_{rigth}(\theta^*)$ la profundidad máxima se alcanza si:
-
-\begin{itemize}
-	
-	\item $N_{m} < min_{samples}$ 
-	
-	\item $N_{m} = 1$
-\end{itemize}
-
-Con $N_{m}$ representando el número de nodos $m$.
-
-Los criterios de clasificación se basan en la proporción de las clases según sus observaciones y en la función de impureza que es posible utilizar.
-
-Si el vector de respuestas, es asociado a variables categóricas y toma valores entre $0,1,\cdots,k-1$ para un nodo $m$, representando una región $R_{m}$ con $N_{m}$ ejemplos, se tiene que la proporción  de observaciones de clase $k$ en un nodo $m$ puede definirse como:
-
-\begin{equation}
-	p_{mk} = \dfrac{1}{N_m} \sum_{x_i \in R_m} I(y_i = k)
-\end{equation}
-
-Con respecto a las diferentes funciones de impureza $H()$ que pueden ser utilizadas se tienen las siguientes, descritas en la Tabla \ref{tab:tab-form-impureza}. 
-
-% Please add the following required packages to your document preamble:
-% \usepackage{longtable}
-% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
-\begin{longtable}[c]{|l|l|}
-	\hline
-	\multicolumn{1}{|c|}{\textbf{Función}} & \multicolumn{1}{c|}{\textbf{Fórmula}}   \\ \hline
-	\endfirsthead
-	%
-	\endhead
-	%
-	Gini                                   & $H(X_m) = \sum_k p_{mk} (1 - p_{mk})$   \\ \hline
-	Entropía                               & $H(X_m) = - \sum_k p_{mk} \log(p_{mk})$ \\ \hline
-	\textit{Misclassification}                      & $H(X_m) = 1 - \max(p_{mk})$             \\ \hline
-	\caption{Tipos de medidas de impureza que pueden ser utilizadas en árboles de decisión para modelos de clasificación.
-	}
-	\label{tab:tab-form-impureza}\\
-\end{longtable} 
-
-Siendo $X_{m}$ datos de entrenamiento en el nodo $m$.
-
-A la hora de entrenar modelos de regresión, es decir, con respuestas asociadas a una distribución continua, se tiene que para el nodo $m$, el cual representa una región $R_{m}$ con observaciones $N_{m}$, los criterios comunes para minimizar errores en futuras divisiones son el Error cuadrático medio y el Error absoluto medio, quienes minimizan el error tipo II y el error tipo I, respectivamente.
-
-Estos se pueden definir como:
-
-\begin{itemize}
-	
-	\item \textbf{Error cuadrático medio}: 
-	
-	\begin{align}\begin{aligned}\bar{y}_m = \frac{1}{N_m} \sum_{i \in N_m} y_i\\H(X_m) = \frac{1}{N_m} \sum_{i \in N_m} (y_i - \bar{y}_m)^2\end{aligned}\end{align}
-	
-	\item \textbf{Error absoluto medio}: 
-	
-	\begin{align}\begin{aligned}\bar{y}_m = \frac{1}{N_m} \sum_{i \in N_m} y_i\\H(X_m) = \frac{1}{N_m} \sum_{i \in N_m} |y_i - \bar{y}_m|\end{aligned}\end{align}
-\end{itemize}
 
 Este tipo de entrenamiento, es uno de los más utilizados, debido a su simplicidad a la forma en la que trabaja, ya que, permite comprender del problema, con respecto a los atributos y cómo estos van distribuyendo las respuestas, así, es posible entender las decisiones que toma el algoritmo para clasificar o predecir nuevos ejemplos, determinar comportamientos preferentes y tendencias sobre atributos y rangos de estos.
 
@@ -303,158 +105,6 @@ Máquina soporte de vectores (SVM por sus siglas en inglés), es un conjunto de 
 SVM genera una representación de los ejemplos como puntos en el espacio, mapeados de modo que los ejemplos de las categorías separadas se dividan por un espacio claro que es tan amplio como sea posible. Nuevos ejemplos son entonces mapeados en ese mismo espacio y predicen si pertenecen a una categoría en base a qué lado del espacio son asignados \cite{scholkopf2001learning}.
 
 Las predicciones se realizan de manera eficiente, utilizando funciones kernel para su transformación en espacios no lineales \cite{amari1999improving}. Esto permite generar transformaciones de espacio dimensional de los datos, para mapear implícitamente sus entradas en espacios característicos de alta dimensión. 
-
-Las funciones de kernel que pueden ser utilizadas, son descritas en la Tabla \ref{tab:tab-kernel}
-
-% Please add the following required packages to your document preamble:
-% \usepackage{longtable}
-% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
-\begin{longtable}[c]{|l|l|}
-	\hline
-	\multicolumn{1}{|c|}{\textbf{Kernel}} & \multicolumn{1}{c|}{\textbf{Fórmula}}   \\ \hline
-	\endfirsthead
-	%
-	\endhead
-	%
-	Lineal                                & $\langle x, x'\rangle$                  \\ \hline
-	Polinomial                            & $(\gamma \langle x, x'\rangle + r)^d$   \\ \hline
-	Radio basis function (RBF)            & $\exp(-\gamma \|x-x'\|^2)$              \\ \hline
-	Sigmoideo                             & $\tanh(\gamma \langle x,x'\rangle + r)$ \\ \hline
-	\caption{Tipos de kernels aplicados por SVM para la transformación espacial de los datos.
-	}
-	\label{tab:tab-kernel}\\
-\end{longtable}
-
-Existen ventajas y desventajas al usar SVM como algoritmo de aprendizaje supervisado, las cuales se listan a continuación.
-
-\begin{itemize}
-	
-	\item Efectivo en espacios de alta dimensión.
-	\item Eficiente cuando el número de atributos supera a la cantidad de ejemplos en un conjunto de datos.
-	\item Utiliza un subconjunto de puntos de entrenamiento en la función de decisión (llamada
-	vectores de soporte), por lo que también es memoria eficiente.
-	\item Versátil: diferentes funciones de kernel pueden ser especificadas para la función de decisión. 
-	
-\end{itemize}
-
-Las desventajas de las máquinas de soporte vectorial incluyen:
-
-\begin{itemize}
-	
-	\item Si el número de características es mucho mayor que el número de muestras, es probable que
-	el método tenga un mal desempeño.
-	\item SVM no proporciona directamente estimaciones de probabilidad \cite{wu2004probability}, estos se calculan utilizando cinco veces una costosa validación cruzada.
-	
-\end{itemize}
-
-Existen diversas variaciones de SVM, tales como: SVC \cite{guyon1993automatic}, $\nu$SVC y LinearSVC, los cuales son capaces de realizar una clasificación multiclase\footnote{Implica la existencia de un número de clases mayor a dos} en un conjunto de datos, es decir, ya no depender de un clasificador binario. A su vez, presentan sus variantes para el entrenamiento de modelos de regresión, asociados a respuestas con distribución continua, denominados SVR, $\nu$SVR y LinearSVR, respectivamente.
-
-De manera simple, se puede describir algunos puntos como:
-
-\begin{itemize}
-
-	\item SVC es implementado basado en libsvm \cite{chang2011libsvm}. La complejidad del tiempo de ajuste se hace cuadrática con el número de muestras, lo que dificulta escalar a conjunto de datos con tamaño mayor a 10000 ejemplos.
-
-	\item Por otro lado, $\nu$SVC presenta características similares a SVC. Pero, utiliza el parámetro $\nu$ para controlar el número de vectores de soporte. Su implementación, al igual que SVC se basa en libsvm.
-
-	\item LinearSVC es similar a SVC pero, se utiliza una función de kernel lineal. Además, es implementado en términos de liblinear, por lo que tiene más flexibilidad en la elección de las penalizaciones y las funciones de pérdida y facilita una mayor escalabilidad para conjuntos de datos con gran cantidad de ejemplos.
-	
-\end{itemize}
-
-
-Cada uno de los clasificadores expuestos en los puntos anteriores toman como entrada el set de entramiento y las etiquetas asociadas a las clases, con el fin de generar tanto el testeo como la validación del modelo.
-
-Previo a la etapa de entrenamiento, se utilizan vectores de apoyo para el set de entrenamiento, los que son denominados vectores de soporte, normalmente obtenidos a partir de funciones de kernel para.
-
-SVC y NuSVC implementan el enfoque \textit{uno contra uno} para la clasificación multiclase. Si existen $n$ clases, se construyen $\frac{n*(n-1)}{2}$ clasificadores, de los cuales cada uno forma un set datos de dos clases; por otro lado, LinearSVC implementa una estrategia multi-clase \textit{uno contra el resto}, formando así modelos de $n$ clases, los cuales son entrenados $n$ veces. Si sólo hay dos clases, sólo se entrena un modelo.
-
-Los algoritmos SVM están asociados a diversos problemas. Sin embargo, el principal, radica en el desbalance de clases, ya sea por el número que presentan o por el peso asociado a éstas, tal como se expone en la Figura  \ref{SVM1}:
-
-\begin{figure}[!h]
-	
-	\centering
-	\includegraphics[scale=.5]{SVM1.png}
-	\caption{Muestra de desbalance de clases en SVM.}
-	\label{SVM1}
-\end{figure}
-
-\subsubsection{Formulación matemática}
-
-SVM construye un hiperplano o un conjunto de hiperplanos en un espacio altamente dimensiona, el cual es utilizado tanto para la clasificación de elementos, com para la predicción de valores continuos, a su vez, puede ser implementado para detección de puntos outliers. 
-
-Intuitivamente, se logra una buena separación por el hiper plano que tiene la mayor distancia a los puntos de datos de entrenamiento más cercanos de cualquier clase, ya que en general, cuanto mayor sea la separación, menor será el error de generalización del modelo.
-
-Se observa este comportamiento en la Figura \ref{SVM2}
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[scale=.5]{SVM2.png}
-	\caption{Esquema de hiperplanos en SVM.}
-	\label{SVM2}
-	
-\end{figure}
-
-Es posible entregar una definición matemática para SVM, haciendo una diferenciación asociados a los métodos de clasificación y regresión. De tal manera que, para SVC, se tiene que:
-
-Dado los vectores de entrenamiento $x_{i}\ \in\ R$,
-i=1,..., n, en dos clases, y un vector, $y \in \{1, -1\}^n$, SVC resuelve el siguiente problema primario:
-
-\begin{equation}
-	\min_ {w, b, \zeta} \frac{1}{2} w^T w + C \sum_{i=1}^{n} \zeta_i
-\end{equation}
-\begin{center}	
-	$para\ la\ clase\ y_i (w^T \phi (x_i) + b) \geq 1 - \zeta_i,\ \zeta_i \geq 0, i=1, ..., n$	
-\end{center}
-
-Su doble es
-
-\begin{equation}
-	\min_{\alpha} \frac{1}{2} \alpha^T Q \alpha - e^T \alpha
-\end{equation}
-\begin{center}
-	$para\ la\ clase\ y^T \alpha = 0\ 0 \leq \alpha_i \leq C, i=1, ..., n$
-\end{center}
-
-Donde $e$ es el vector de todos los unos, $C > 0$ es el límite superior, $Q$ es una matriz de $n\ x\ n$ definida semipositiva, $Q_{ij} \equiv y_i y_j K(x_i, x_j)$, donde $K(x_i, x_j) = \phi (x_i)^T \phi (x_j)$ es el kernel. Los vectores de entrenamiento son implícitamente mapeados en un espacio dimensional mayor (tal vez infinito) por la función $\phi$.
-
-La función de decisión es:
-
-\begin{equation}
-	sgn(\sum_{i=1}^n y_i \alpha_i K(x_i, x) + \rho)
-\end{equation}
-
-Por otro lado, $\nu$SVC presenta características similares a SVC. No obstante, el uso del parámetro $\nu$ permite controlar el número de vectores de soporte y errores de entrenamiento. $\nu \in (0, 1]$ y  es un límite superior en la fracción de errores de entrenamiento y un límite inferior de la fracción de vectores de soporte.
-
-A su vez, LinearSVC presenta el mismo comportamiento a SVC. Sin embargo, la gran diferencia es la utilización de un kernel lineal como función de transformación de espacio y evaluación de puntos.
-
-Finalmente, ya que SVM también permite entrenar modelos de regresión particularmente con SVR, una definición matemática de éste se expone como:
-
-Dados los vectores de entrenamiento  $x_{i} \in\ R^n$  
-$\varepsilon-SVR$ \cite{smola2004tutorial} resuelve el siguiente problema primario:
-
-\begin{equation}	
-	\min_ {w, b, \zeta, \zeta^*} \frac{1}{2} w^T w + C \sum_{i=1}^{n} (\zeta_i + \zeta_i^*)	
-\end{equation}
-
-\begin{center}
-	
-	$para\ la\ clase\ y_i - w^T \phi (x_i) - b \leq \varepsilon + \zeta_i,$
-\end{center}
-\begin{equation}
-	w^T \phi (x_i) + b - y_i \leq \varepsilon + \zeta_i^*,\ \zeta_i, \zeta_i^* \geq 0, i=1, ..., n
-\end{equation}
-
-Donde $e$ es el vector para todos, $C >$ 0 es el límite superior, $Q$ es una matriz de $n\ x\ n$ definida semipositiva, $Q_{ij} \equiv K(x_i, x_j) = \phi (x_i)^T \phi (x_j)$ es el kernel. Aquí los vectores de
-entrenamiento son implícitamente mapeados en un espacio dimensional mayor (tal vez infinito) por
-la función $\phi$.
-
-La función de decisión es:
-
-\begin{equation}
-	\sum_{i=1}^n (\alpha_i - \alpha_i^*) K(x_i, x) + \rho
-\end{equation}
-
-Como se puede observar, las formulaciones matemáticas, tanto para SVC como SVR son similares. Sin embargo, se diferencian en la función de decisión a utilizar, esto es debido a que SVC es un clasificador, mientras que SVR es un métodos de regresión.
 
 \subsection{Métodos de ensamble}
 
@@ -476,110 +126,21 @@ A continuación, se explican brevemente algunos de los algoritmos asociados a la
 
 Bagging forma parte de los métodos ponderados, en particular, se puede definir como métodos que forman una clase de algoritmos compuestos por varias instancias de un estimador, entrenados en base a subconjuntos aleatorios del set de datos original, ponderando sus predicciones individuales en una respuesta ponderada. El objetivo general de estos métodos es reducir la varianza de un estimador, por medio del proceso de entrenamiento de subconjuntos aleatorios \cite{breiman1996bagging}. 
 
-Existen diferentes formas de generar los subconjuntos aleatorios de entrenamiento, dentro de las cuales se destacan las siguientes.
-
-\begin{itemize}
-	
-	\item Los subconjuntos aleatorios del conjunto de datos se basan en subconjuntos aleatorios de las muestras, esto se conoce como \textit{"Pasting o Pegado"} \cite{breiman1999pasting}. 
-	
-	\item Las muestras se extraen con reemplazo, siendo este método conocido como \textit{"Bagging"} \cite{breiman1996bagging}.
-	
-	\item Los subconjuntos aleatorios del conjunto de datos se basan en subconjuntos aleatorios de las características, esto se conoce como \textit{"subespacios aleatorios"} \cite{barandiaran1998random}.
-	
-	\item Los subconjuntos aleatorios se crean en base a subconjuntos aleatorios de características y muestras, esto se conoce como \textit{"Random Patches"} \cite{ref10.1007/978-3-642-33460-3_28}.
-	
-\end{itemize}
-
 \subsubsection{Random Forest \label{rf}}
 
 Random Forest es un método de ensamble ponderado basado en árboles de decisión aleatorios. Conjuntos de diversos clasificadores son creados basados en efectos aleatorios tanto de la extracción de características como de ejemplos, formando subconjuntos de elementos, cada uno de estos aporta con un valor de estimación, el cual es ponderado con los restantes, obteniendo así, la medida general \cite{breiman1998}.
-
-Un esquema representativo del proceso, es como se expone en la Figura \ref{rf1}. En ella, se aprecian que se generan $n$ árboles, los cuales contemplan diferentes cantidades de ejemplos o atributos y la estimación final se basa en una ponderación, ya sea por proceso de votación, en el caso de modelos de clasificación, o simplemente por la media, para modelos de regresión \cite{Breiman2001}.
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[scale=.5]{rf.png}
-	\caption{Esquema representativo de algoritmo Random Forest.}
-	\label{rf1}
-	
-\end{figure}
 
 \subsubsection{AdaBoost}
 
 AdaBoost, es un algoritmo basado en el método boosting, lo que implica que se ajusta a una secuencia de estimadores débiles obtenidos a partir de diferentes subconjuntos de datos generados de manera aleatoria desde el conjunto inicial de datos de entrenamiento \cite{CAO2013745}. 
 
-Cada una de las predicciones obtenidas por los estimadores se combinan de manera ponderada por votación, en el caso de modelos de clasificación, o a través de un promedio en base a las estimaciones resultantes, en el caso de modelos de regresión.
-
-Las modificaciones de los datos en cada iteración de boosting, consisten en aplicar pesos $w_{1},w_{2},..,w_{N}$, a cada una de las muestras de entrenamiento. 
-
-Inicialmente, todos los pesos están configurados en $\Psi_{i}\ =\ 1/N$, de modo que el primer paso simplemente entrena un modelo débil en los datos originales. Para cada iteración sucesiva, las ponderaciones de la muestra se modifican individualmente y el algoritmo de aprendizaje se vuelve a aplicar a los datos ponderados. 
-
-En un paso dado, los ejemplos de entrenamiento que fueron predichos incorrectamente por el modelo mejorado inducido en el paso anterior tienen sus pesos incrementados, mientras que los pesos se disminuyen para aquellos que fueron predichos correctamente \cite{hastie2009multi}. 
-
-A medida que avanzan las iteraciones, los ejemplos que son difíciles de predecir reciben una influencia cada vez mayor. Por lo tanto, cada modelo de aprendizaje débil subsiguiente se ve forzado a concentrarse en los ejemplos que se pierden en los anteriores en la secuencia.
+Cada una de las predicciones obtenidas por los estimadores se combinan de manera ponderada por votación, en el caso de modelos de clasificación, o a través de un promedio en base a las estimaciones resultantes, en el caso de modelos de regresión \cite{hastie2009multi}. 
 
 \subsubsection{Gradient Tree Boosting}
 
 Gradient Tree Boosting o Gradient Boosted Regression Trees, es una generalización de métodos de boosting para funciones diferenciables arbitrarias de pérdida \cite{gradient}. Es un método considerado como preciso y efectivo, el cual puede usarse tanto para el desarrollo de modelos de clasificación como de regresión, siendo usado en diferentes áreas de investigación: motores de búsqueda, ecología, minerología, biotecnología, entre otros.
 
 Dentro de las principales ventajas que posee, se encuentran: manejo natural de diferentes tipos de características en un set de datos, alto poder predictivo y robusto frente a la predicción de valores atípicos en una muestra \cite{FRIEDMAN2002367}.
-
-Como formulación matemática, se tiene, la adición de modelos se basa en:
-
-\begin{equation}
-	F(x) = \sum_{m=1}^{M} \gamma_m h_m(x)
-\end{equation}
-
-Donde $h_{m}(x)$ es una función básica, conocida como \textit{weak learners} en el contexto de boosting. En particular, Gradient Tree Boosting, utiliza árboles de decisión de tamaño fijo como \textit{weak learners}. 
-
-
-Los modelos aditivos, se construyen de manera incremental, tal que:
-
-\begin{equation}
-	F_m(x) = F_{m-1}(x) + \gamma_m h_m(x)
-\end{equation}
-
-De tal manera que el nuevo árbol agregado $h_{m}$ trata de minimizar la pérdida $L$ dado el previo ensamble $F_{m-1}$, es decir:
-
-\begin{equation}
-	h_m =  \arg\min_{h} \sum_{i=1}^{n} L(y_i, F_{m-1}(x_i) + h(x_i))
-\end{equation}
-
-Este algoritmo, resuelve el problema de minimización numéricamente, a través de steepest descent \cite{battiti1992first}. La dirección de steepest descent es el gradiente negativo de la función de pérdida $L$ evaluada en el modelo actual $F_{m-1}$, el cual puede ser calculado para cualquier función de pérdida diferenciable, tal que:
-
-\begin{equation}
-	F_m(x) = F_{m-1}(x) - \gamma_m \sum_{i=1}^{n} \nabla_F L(y_i, F_{m-1}(x_i))
-\end{equation}
-
-Donde la longitud del paso $\gamma_{m}$ es seleccionada mediante una búsqueda lineal, aplicando:
-
-\begin{equation}
-	\gamma_m = \arg\min_{\gamma} \sum_{i=1}^{n} L(y_i, F_{m-1}(x_i) - \gamma \frac{\partial L(y_i, F_{m-1}(x_i))}{\partial F_{m-1}(x_i)})
-\end{equation}
-
-A la hora de estimar un valor continuo por medio de algoritmos de regresión o clasificar un nuevo ejemplo a través de un clasificador, existe una única diferencia, la cual radica en la función de pérdida $L$ que es utilizada. En la Tabla \ref{tab:function-loss} se resumen las funciones de pérdida y sus definiciones, normalmente utilizadas en métodos basados en Gradient Tree Boosting.
-
-% Please add the following required packages to your document preamble:
-% \usepackage{longtable}
-% Note: It may be necessary to compile the document several times to get a multi-page table to line up properly
-\begin{longtable}[c]{|l|l|l|}
-	\hline
-	\multicolumn{3}{|c|}{\textbf{Funciones de pérdida utilizadas en métodos GTB}} \\ \hline
-	\endfirsthead
-	%
-	\endhead
-	%
-	\multicolumn{1}{|c|}{\textbf{Función}} & \multicolumn{1}{c|}{\textbf{Descripción}} & \multicolumn{1}{c|}{\textbf{Uso}} \\ \hline
-	Least squares & \begin{tabular}[c]{@{}l@{}}Valor inicial se obtiene a partir de la\\ media de los vectores respuesta\end{tabular} & Regresión \\ \hline
-	Least absolute deviation & \begin{tabular}[c]{@{}l@{}}Valor inicial se obtiene a partir de la\\ mediana de los vectores respuesta\end{tabular} & Regresión \\ \hline
-	Huber & \begin{tabular}[c]{@{}l@{}}Combina el uso de mínimos cuadrados\\ y los errores absolutos\end{tabular} & Regresión \\ \hline
-	Quantile & \begin{tabular}[c]{@{}l@{}}Se basa en el uso de cuantiles para\\ crear rangos de predicción\end{tabular} & Regresión \\ \hline
-	Binomial deviance & \begin{tabular}[c]{@{}l@{}}Se basa en la distribución de probabilidad\\ binomial, para modelos binarios de\\ clasificación\end{tabular} & Clasificación \\ \hline
-	Multinomial deviance & \begin{tabular}[c]{@{}l@{}}Se basa en la distribución de probabilidad\\ multinomial y su valor inicial corresponde\\ a las probabilidades a priori de cada\\ categoría\end{tabular} & Clasificación \\ \hline
-	Exponential loss & \begin{tabular}[c]{@{}l@{}}Se basa en distribución exponencial y sólo\\ puede ser utilizada en modelos de clasificación\\ binarios\end{tabular} & Clasificación \\ \hline
-	\caption{Funciones de pérdida comunes utilizadas en los algoritmos Gradient Tree Boosting, ya sea en forma de clasificador como regresor.}
-	\label{tab:function-loss}\\
-\end{longtable}
 
 \subsection{Redes Neuronales y Deep Learning}
 
@@ -624,139 +185,8 @@ Existen diferentes enfoques asociados al Meta-Learning y distintas formas de uso
 
 \subsection{Medidas de desempeño \label{desempeno}}
 
-Medir el desempeño del modelo predictivo es importante a la hora de evaluar qué tan efectivo es el entrenamiento o la clasificación que se genera, existen medidas que sólo se basan en la cantidad de aciertos o errores que comete el clasificador, otras que implican la eficiencia del modelo y otras que se basan en la precisión.
+Medir el desempeño del modelo predictivo es importante a la hora de evaluar qué tan efectivo es el entrenamiento o la clasificación que se genera, existen medidas que sólo se basan en la cantidad de aciertos o errores que comete el clasificador, otras que implican la eficiencia del modelo y otras que se basan en la precisión. A su vez, es posible generar una división de las medidas con respecto al tipo de modelo, es decir, si se entrena un clasificador o un modelo predictivo. Para el primer caso, se tienen medidas como Accuracy, Recall, Precision y F$\beta$, mientras que para el segundo, se tienen Coeficiente de Pearson, Coeficiente de Spearman, Kendall $\tau$ rank, Coeficiente de determinación $R^{2}\ score$ y Error cuadrático medio, dentro de las principales.
 
-A continuación, se define brevemente algunas de las medidas más utilizadas a la hora de evaluar modelos de aprendizaje supervisados:
-
-\begin{itemize}
-	
-	\item \textbf{Tasa de Verdaderos Positivos}: corresponde a la medida asociada a las correctas clasificaciones versus el total de clasificaciones realizadas, es decir, cuántas predicciones efectivas se obtuvieron con respecto a una clase.
-	
-	\item \textbf{Tasa de Falsos Positivos}: corresponde a la medida asociada a las clasificaciones mal efectuadas, es decir, cuántas predicciones erradas existen con respecto a una clase.
-	
-	
-	\item \textbf{Accuracy}: corresponde al total de predicciones correctas con respecto al total de la muestra. Sea $\hat{y}_i$ el valor de predicción del ejemplo $i$ e $y_{i}$ corresponde al verdadero valor, la Accuracy se define como: 
-	\begin{equation}
-		\texttt{accuracy}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples}-1} 1(\hat{y}_i = y_i)
-	\end{equation}
-	
-	
-	\item \textbf{Precision}: es la capacidad del clasificador asociada a no etiquetar como positiva una muestra que es negativa, se define como: 
-	
-	\begin{equation}
-		\text{precision} = \frac{tp}{tp + fp}
-	\end{equation}
-	Donde tp corresponde a verdaderos positivos y fp a los falsos positivos.
-	
-	
-	\item \textbf{Recall}: es la capacidad del clasificador asociada encontrar todas las muestras positivas, se define como: 
-	
-	\begin{equation}
-		\text{recall} = \frac{tp}{tp + fn}
-	\end{equation}
-	Donde tp corresponde a verdaderos positivos y fp a los falsos positivos.
-	
-	\item \textbf{F-$\beta$}: representa una ponderación armónica entre la Precision y el Recall, se define como: 
-	
-	\begin{equation}
-		F_\beta = (1 + \beta^2) \frac{\text{precision} \times \text{recall}}{\beta^2 \text{precision} + \text{recall}}
-	\end{equation}
-	Donde $\beta$ un factor de ponderación.
-	
-	\item \textbf{Coeficiente de correlación de Matthews}: Se asocia a una medida de la calidad de las clasificaciones, la cual no se ve afectada por el desbalance de clases que pudiese existir, se define como: 
-	
-	\begin{equation}
-		MCC = \frac{tp \times tn - fp \times fn}{\sqrt{(tp + fp)(tp + fn)(tn + fp)(tn + fn)}}
-	\end{equation}
-	Donde $tp$ corresponde a verdaderos positivos y $fp$ a los falsos positivos.
-	
-\end{itemize}
-	
-Las mediciones expuestas previamente, se utilizan para medir el desempeño de modelos de clasificación, mientras que para evaluar un estimador basado en respuestas continuas, normalmente se utilizan las siguientes:
-	
-\begin{itemize}
-		
-	\item \textbf{Coeficiente de Pearson}: Medida lineal entre dos variables cuantitativas aleatorias que permite evaluar el grado de relación entre ellas, se encuentra en rangos entre -1 y 1 donde -1 indica que las variables no presentan relación y 1 que las muestras están estrechamente relacionadas. Se obtiene a partir de:
-	
-	\begin{equation}
-\rho (X,Y)= \frac{n\sum x_{i}y_{i} - \sum x_{i} \sum y_{i}}{\sqrt{n\sum x^{2}_{i}- (\sum x_{i})^{2}} \sqrt{n\sum y^{2}_{i}- (\sum y_{i})^{2}}}
-	\end{equation}
-	Donde $x_{i}$ representa los valores de predicción e $y_{i}$ representa los valores reales de la muestra para $n$ ejemplos.
-		
-	\item \textbf{Coeficiente de Spearman}: Medida de correlación que permite evaluar la asociación o relación entre dos muestras, su interpretación es similar al coeficiente de Pearson y se estima a partir de:
-	
-	\begin{equation}
-		\rho = 1- \frac{6\sum D^{2}}{N(N^{2}-1)}
-	\end{equation}
-	Donde $D$ es la diferencia $x-y$ para el $i-th$ ejemplo y $N$ es el total de ejemplos en la muestra.
-		
-	\item \textbf{Kendall $\tau$ rank}: Medida que permite evaluar la relación entre dos variables, su interpretación es similar a las basadas en coeficiente de Pearson y Spearman. Se obtiene a partir de:
-	
-	\begin{equation}
-		\tau = \frac{\text{(numbers of concordant pairs)} - \text{(number of discordant pairs)}}{n(n-1)/2}
-	\end{equation} 
-		
-	\item \textbf{Coeficiente de determinación $R^{2}\ score$}: es una medida que cuantifica cómo el predictor se adapta a nuevos ejemplos, posee un rango entre -1 y 1 donde -1 es lo peor y 1 lo mejor, esto es debido a que el estimador puede bajar su rendimiento. Se estima en base a:
-	
-	\begin{equation}
-		R^2(y, \hat{y}) = 1 - \frac{\sum_{i=0}^{n_{\text{samples}} - 1} (y_i - \hat{y}_i)^2}{\sum_{i=0}^{n_\text{samples} - 1} (y_i - \bar{y})^2}
-	\end{equation}
-	Donde $\hat{y}_i$ corresponde al valor predicho para el $i-th$ ejemplo e $y_{i}$ corresponde al valor real en una muestra de $n-samples$.
-		
-	\item \textbf{Error medio absoluto}: Estima la diferencia positiva entre el valor real y el valor predicho para un conjunto de ejemplos. Se estima a partir de: 
-	
-	\begin{equation}
-		\text{MAE}(y, \hat{y}) = \frac{1}{n_{\text{samples}}} \sum_{i=0}^{n_{\text{samples}}-1} \left| y_i - \hat{y}_i \right|
-	\end{equation}
-	Donde $\hat{y}_i$ corresponde al valor predicho para el $i-th$ ejemplo e $y_{i}$ corresponde al valor real en una muestra de $n-samples$.
-		
-	\item \textbf{Error cuadrático medio}: Estima la diferencia cuadrática entre el valor real y el valor predicho para un conjunto de ejemplos. Se obtiene a partir de:
-	
-	\begin{equation}
-		\text{MSE}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples} - 1} (y_i - \hat{y}_i)^2
-	\end{equation}
-	Donde $\hat{y}_i$ corresponde al valor predicho para el $i-th$ ejemplo e $y_{i}$ corresponde al valor real en una muestra de $n-samples$.
-		
-	\item \textbf{Error logarítmico cuadrático medio}: Es similar al error cuadrático medio, la diferencia principal es que se utiliza el logaritmo natural de las diferencias entre respuesta y valor predicho. Se estima en base a: 
-	
-	\begin{equation}
-		\text{MSLE}(y, \hat{y}) = \frac{1}{n_\text{samples}} \sum_{i=0}^{n_\text{samples} - 1} (\log_e (1 + y_i) - \log_e (1 + \hat{y}_i) )^2
-	\end{equation}
-	
-	Donde $\hat{y}_i$ corresponde al valor predicho para el $i-th$ ejemplo e $y_{i}$ corresponde al valor real en una muestra de $n-samples$.
-		
-	\item \textbf{Error mediano absoluto}: es una medida robusta ante outliers, la pérdida o el error se calcula a partir de las medianas de las diferencias absolutas entre la respuesta y el valor predicho. Se estima en base a: 
-	
-	\begin{equation}
-		\text{MedAE}(y, \hat{y}) = \text{median}(\mid y_1 - \hat{y}_1 \mid, \ldots, \mid y_n - \hat{y}_n \mid)
-	\end{equation}
-	
-	Donde $\hat{y}_i$ corresponde al valor predicho para el $i-th$ ejemplo e $y_{i}$ corresponde al valor real en una muestra de $n-samples$.
-		
-		
-\end{itemize}
-
-\subsection{Problemas asociados a los modelos de aprendizaje supervisado \label{problemas}}
-
-Dentro de los principales problemas que pueden presentar los modelos de aprendizaje supervisado, se encuentran las situaciones en las que la cantidad de atributos que puede contener un set de datos es mucho mayor con respecto a la cantidad de ejemplos que se posee, conocido también como \textit{"Maldición de la dimensionalidad"} \cite{indyk1998approximate}.
-
-Es posible definirla como: dado un conjunto de datos $nxm$ con $n$ ejemplos y $m$ descriptores, si $m >> n$, es decir, si $m= n\ x\ n$, es posible que ocurra dicha problemática.
-
-Posibles soluciones a este problema comprenden técnicas asociadas a reducción de dimensionalidad \cite{sarwar2000application, van2009dimensionality}, siendo las más utilizadas \footnote{Estas técnicas, se explican en el capítulo \ref{cap3}}:
-
-\begin{itemize}
-	
-	\item Métodos lineales de reducción como Análisis de componentes principales (PCA) y derivados.
-	\item Análisis de características basados en modelos de clasificación/regresión aplicando Random Forest.
-	\item Técnicas probabilísticas asociadas al Mutual Information.
-	\item Evaluación de características relacionadas mediante coeficientes de Pearson o matrices de Correlación
-\end{itemize}
- 
-En forma similar, también es posible que un set de datos contemple una gran cantidad de ejemplos y sus descriptores sean escasos. Estos casos se tratan con técnicas de reducción de dimensionalidad y contemplan la eliminación de ejemplos redundantes con el fin de maximizar la variabilidad de los ejemplos, técnicas como Mutual Information, Análisis de Correlaciones son bastante utilizadas en este problema.
-
-Otro posible problema que se puede denotar es el sobreajuste \cite{hawkins2004problem}, esto quiere decir, que el modelo es extremadamente complejo, por lo que éste se ajusta muy bien al set de entrenamiento. No obstante, a la hora de probar con nuevos set de datos no representa la performance obtenida. 
-
-Finalmente, un problema adicional a los modelos de clasificación se basa en el desbalance de clases \cite{japkowicz2002class}. Esto quiere decir, que existe una diferencia significativa entre los contadores de categorías asociadas a las clases, lo cual afecta a los algoritmos a la hora de entrenar, debido a que aumenta el riesgo de cometer errores del tipo I (falsos positivos). Normalmente, esto conlleva a una reducción de ejemplos de la clase mayoritaria en la etapa de entrenamiento o si es posible, la adición de nuevos ejemplos de la clase minoritaria. 
 
 \subsection{Validación de modelos}
 
@@ -764,49 +194,8 @@ La validación de los modelos trata los problemas de sobreajuste y la generaliza
 
 Con el fin de poder evitar esta problemática, normalmente los set de datos se dividen en 3 conjuntos: Entrenamiento, validación y testeo. Esto quiere decir, se considera una porción de elementos para entrenar el modelo, una segunda instancia para obtener las medidas de desempeño y una tercera con el fin de determinar si el clasificador entrega resultados acorde a las respuestas conocidas \cite{kohavi1995study}.
 
-Existen técnicas que a partir del set de entrenamiento, generan múltiples divisiones, con el fin de entrenar subconjuntos de elementos del conjunto de entrenamiento y así obtener modelos ponderados.
+Existen técnicas que a partir del set de entrenamiento, generan múltiples divisiones, con el fin de entrenar subconjuntos de elementos del conjunto de entrenamiento y así obtener modelos ponderados, estas técnicas permiten prevenir el sobre ajuste, siendo la más conocida la Validación Cruzada  \cite{golub1979generalized} , la cual, recibe un parámetro $k$, el cual determina el número de divisiones a realizar al conjunto de datos, cuando $k$ es equivalente al número de ejemplos, se habla del caso de Leave one Out \cite{vehtari2017practical}.
 
-La subdivisión en $n$ modelos para entrenar y generar modelos ponderados, permite aumentar la generalización del modelo, debido a que las medidas de desempeño varían levemente de aplicación en aplicación y al considerar las divisiones, se tienen distribuciones de las medidas del modelo. Dada las distribuciones, el entrenamiento reporta, la media de dicha distribución \cite{golub1979generalized}. 
-
-Dentro de las principales técnicas de validación se encuentra la Validación cruzada con $k$ divisiones \cite{golub1979generalized} y un caso particular conocido como \textit{Leave one out}, en el cual el valor de $k$ es igual a la cantidad de ejemplos en el entrenamiento \cite{vehtari2017practical}. Éstas se explican a continuación.
-
-\subsubsection{Validación Cruzada}
-
-La validación cruzada, a veces llamada estimación de la rotación, es una técnica de validación del
-modelo para evaluar cómo los resultados de un análisis estadístico se generalizarán a un conjunto de datos independiente. 
-
-Se utiliza principalmente en entornos donde la meta es la predicción, y se
-quiere estimar la precisión con la que un modelo predictivo se llevará a cabo en la práctica \cite{golub1979generalized}. 
-
-En un problema de predicción, a un modelo se le suele asignar un conjunto de datos, con respuestas conocidas, sobre los que se ejecuta el entrenamiento (conjunto de datos de formación) y un conjunto de datos desconocidos contra los que se prueba el modelo. El objetivo de la validación cruzada es definir un conjunto de datos para \textit{probar} el modelo en la fase de entrenamiento (es decir, el conjunto de datos de validación), con el fin de limitar problemas asociados al sobre ajuste.
-
-La idea es dividir el set de datos en $K$ sub conjuntos, donde por cada subdivisión se entrena con elementos de tamaño $k-1$ y el conjunto restante, es usado para validar el modelo. Una explicación visual del problema, se puede explicar en la Figura  \ref{VC}:
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[scale=.5]{validacionCruzada.jpg}
-	\caption{Esquema representativo de validación cruzada.}
-	\label{VC}
-\end{figure}
-
-A modo de ejemplo, sea $K=10$ el número de divisiones a realizar, esto implica, que para un conjunto de datos de tamaño $n$ se forman 10 sub conjuntos de tamaño $n/10$. La validación cruzada implica el entrenamiento y testeo del modelo $K$ veces, en este caso, 10. Por cada iteración, se forma un conjunto de entrenamiento de tamaño $9n/10$ y se testea con un sub conjunto de tamaño $n/10$. 
-
-Por cada iteración, se rota el conjunto de entrenamiento y de testeo, y se obtiene una distribución del desempeño del modelo, reportando el promedio de las métricas asociadas.
-
-\subsubsection{Leave one out}
-
-Es un tipo especial de validación cruzada, en donde se tiene una muestra con $n$ ejemplos en la etapa de entrenamiento se subdivide dicho set de datos considerando $n-1$ elementos, de tal manera que 1 no se considera, la idea en particular radica en entrenar con los $n-1$ ejemplos y validar o testear con el ejemplo restante, esto se itera $n$ veces, tal como se expone en \ref{LOO}, implicando una mayor cantidad de iteraciones que validación cruzada, provocando además un mayor coste computacional \cite{kohavi1995study}.
-
-\begin{figure}[!h]
-	\centering
-	\includegraphics[scale=.5]{Leave-one-out.jpg}
-	\caption{Esquema representativo de Leave One.}
-	\label{LOO}
-\end{figure}
-
-Es decir, es un caso particular de validación cruzada, donde $K=n$ siendo $n$ el número de ejemplos en el conjunto de datos.
-
-Este tipo de validación, provoca disminuciones en las medidas de desempeño, ya que, aumentan la cantidad de puntos en la distribución. Además, en términos computacionales, resulta ser más costosa, por lo que se suele emplear con conjuntos de datos de tamaño bajo, normalmente, menores a 20 ejemplos.
 
 \section{Herramientas computacionales asociadas a evaluación de mutaciones}
 
@@ -862,7 +251,7 @@ Además, SDM entrega resultados adicionales que permiten comprender el ambiente 
 
 Mutagenesis Objetive Search and Selection Tool (MOSST) \cite{Olivera-Nappa2011}, es una herramienta que permite analizar una proteína de interés, con respecto a un conjunto de proteínas con relación filogenética, representadas en un alineamiento múltiple de secuencias. Esto con el fin, de poder detectar posiciones en la proteína de interés o target, que podrían ser mutadas para alterar o no las características de la misma.
 
-Por otro lado , permite estimar mutagénesis relacionadas con la posibilidad de si un cambio de aminoácido dado tendría efectos perjudiciales sobre la proteína. 
+Por otro lado, permite estimar mutagénesis relacionadas con la posibilidad de si un cambio de aminoácido dado tendría efectos perjudiciales sobre la proteína. 
 
 Además, como un uso alternativo, es factible la identificación de nsSNPs cuyos fenotipos son relevantes en una familia de genes, permitiendo separar, a aquellas sustituciones que no tienen implicaciones a nivel de funcionalidad.
 
@@ -881,7 +270,7 @@ En base a las herramientas existentes y en vista del aumento considerable de dat
 
 Dado esto se propone la siguiente hipótesis.\\
 
-\textit{El uso de propiedades filogenéticas, termodinámicas y estructurales como descriptores de mutaciones permite el desarrollo de modelos predictivos inspirados en sistemas de meta-learning?}\\
+\textit{El uso de propiedades filogenéticas, termodinámicas y estructurales como descriptores de mutaciones permite el desarrollo de modelos predictivos inspirados en sistemas de meta-learning}\\
 
 Además de la hipótesis central surgen interrogantes como.
 
@@ -911,11 +300,11 @@ Dentro de los objetivos específicos se encuentran los siguientes.
 	
 	\item Implementar y evaluar metodología de meta learning para el diseño de meta modelos de clasificación y regresión de mutaciones puntuales aplicados a set de datos de proteínas generadas.
 	
-	\item Diseñar e implementar herramienta computacional que permita el entrenamiento de set de datos y el uso de meta modelos para la evaluación de nuevos ejemplos.
+	\item Diseñar e implementar herramientas computacionales que permitan el entrenamiento de set de datos y el uso de meta modelos para la evaluación de nuevos ejemplos.
 	
-	\item Testear y evaluar comportamiento de la herramienta y los meta modelos en base a sistemas de datos que involucren mutaciones en proteínas con respuesta conocida.
+	\item Testear y evaluar comportamiento de las herramientas y los meta modelos en base a sistemas de datos que involucren mutaciones en proteínas con respuesta conocida.
 	
-	\item Implementar modelos de clasificación para la relevancia clínica de mutaciones puntuales en proteína pVHL, asociada a la enfermedad von Hippel Lindau. 
+	\item Implementar modelos de clasificación para la relevancia clínica de mutaciones puntuales en proteína pVHL, asociada a la enfermedad von Hippel-Lindau. 
 	
 \end{enumerate}
 
